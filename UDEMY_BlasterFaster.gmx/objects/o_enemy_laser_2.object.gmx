@@ -62,145 +62,40 @@ if global.Sound == 'On'
           <argument>
             <kind>1</kind>
             <string>/// Damage the gun
-if instance_exists(o_ship_new)
+if global.ship.can_be_hit == true
 {
-    player_ship = o_ship_new;
-}
-
-if (player_ship.shield &gt; 0)
-{
-    player_ship.shield -= 1;
-}
-else if (other.armor &gt; 0)
-{
-    other.armor -= 1;
-}
-else if (other.hull &gt; 0)
-{
-    other.hull -= 1;
-}
-
-// now destroy the enemy gun
-hull = 0;
-
-// create red flash
-instance_create(0,0, o_screen_flash);
-
-// call screen shake
-add_screenshake(4, room_speed*.125);
-
-// play the sound effect
-if global.Sound == 'On'
-{
-    audio_play_sound(a_ship_hit, 6, false);
-}    
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="o_ship_new">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Damage the ship
-
-instance_destroy();
-instance_create(x,y,o_explosion_center);
-
-if (other.shield &gt; 0)
-{
-    other.shield -= 1;
-}
-else if (other.armor &gt; 0)
-{
-    other.armor -= 1;
-}
-else if (other.hull &gt; 0)
-{
-    other.hull -= 1;
-}
-
-// create red flash
-instance_create(0,0, o_screen_flash);
-
-// call screen shake
-add_screenshake(4, room_speed*.125);
-
-// create flare
-instance_create(x, y, o_flare);
-
-// play the sound effect
-if global.Sound == 'On'
-{
-    audio_play_sound(a_ship_hit, 6, false);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="o_ship">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Damage the ship
-
-instance_destroy();
-instance_create(x,y,o_explosion_center);
-
-if (other.shield &gt; 0)
-{
-    other.shield -= 1;
-}
-else if (other.armor &gt; 0)
-{
-    other.armor -= 1;
-}
-else if (other.hull &gt; 0)
-{
-    other.hull -= 1;
-}
-
-// create red flash
-instance_create(0,0, o_screen_flash);
-
-// call screen shake
-add_screenshake(4, room_speed*.125);
-
-// create flare
-instance_create(x, y, o_flare);
-
-// play the sound effect
-if global.Sound == 'On'
-{
-    audio_play_sound(a_ship_hit, 6, false);
+    if instance_exists(o_ship_new)
+    {
+        player_ship = o_ship_new;
+    }
+    
+    if (player_ship.shield &gt; 0)
+    {
+        player_ship.shield -= 1;
+    }
+    else if (other.armor &gt; 0)
+    {
+        other.armor -= 1;
+    }
+    else if (other.hull &gt; 0)
+    {
+        other.hull -= 1;
+    }
+    
+    // now destroy the enemy gun
+    hull = 0;
+    
+    // create red flash
+    instance_create(0,0, o_screen_flash);
+    
+    // call screen shake
+    add_screenshake(4, room_speed*.125);
+    
+    // play the sound effect
+    if global.Sound == 'On'
+    {
+        audio_play_sound(a_ship_hit, 6, false);
+    }    
 }
 </string>
           </argument>
@@ -225,36 +120,38 @@ if global.Sound == 'On'
           <argument>
             <kind>1</kind>
             <string>/// Damage the ship
-
-instance_destroy();
-instance_create(x,y,o_explosion_center);
-
-if (other.shield &gt; 0)
+if global.ship.can_be_hit == true
 {
-    other.shield -= 1;
-}
-else if (other.armor &gt; 0)
-{
-    other.armor -= 1;
-}
-else if (other.hull &gt; 0)
-{
-    other.hull -= 1;
-}
-
-// create red flash
-instance_create(0,0, o_screen_flash);
-
-// call screen shake
-add_screenshake(4, room_speed*.125);
-
-// create flare
-instance_create(x, y, o_flare);
-
-// play the sound effect
-if global.Sound == 'On'
-{
-    audio_play_sound(a_ship_hit, 6, false);
+    instance_destroy();
+    instance_create(x,y,o_explosion_center);
+    
+    if (other.shield &gt; 0)
+    {
+        other.shield -= 1;
+    }
+    else if (other.armor &gt; 0)
+    {
+        other.armor -= 1;
+    }
+    else if (other.hull &gt; 0)
+    {
+        other.hull -= 1;
+    }
+    
+    // create red flash
+    instance_create(0,0, o_screen_flash);
+    
+    // call screen shake
+    add_screenshake(4, room_speed*.125);
+    
+    // create flare
+    instance_create(x, y, o_flare);
+    
+    // play the sound effect
+    if global.Sound == 'On'
+    {
+        audio_play_sound(a_ship_hit, 6, false);
+    }
 }
 </string>
           </argument>

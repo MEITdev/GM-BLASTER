@@ -33,6 +33,7 @@ can_fire = true;
 ammo = 0;
 max_ammo = ammo;
 hull = 0;
+armor = 0;
 gun_slot_id = 0;
 
 action_button = "";

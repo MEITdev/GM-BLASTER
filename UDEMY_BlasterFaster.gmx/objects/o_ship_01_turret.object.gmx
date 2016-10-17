@@ -32,6 +32,7 @@ event_inherited();
 ammo = 1000;
 max_ammo = ammo;
 hull = 5;
+armor = 0;
 action_button = " ";
 action_mouse_button = mb_middle;
 

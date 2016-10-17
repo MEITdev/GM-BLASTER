@@ -34,7 +34,7 @@ image_xscale = -1;
 ammo = 500;
 max_ammo = ammo;
 hull = 1;
-armor = 1;
+armor = 0;
 action_button = "2";
 action_mouse_button = mb_right;
 

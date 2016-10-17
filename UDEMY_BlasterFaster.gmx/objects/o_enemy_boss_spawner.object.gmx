@@ -50,7 +50,7 @@
             <string>/// Create the boss SCARAB object - Level 1 Boss
 if instance_exists(global.ship)
 {
-    if score &gt;= 750
+    if score &gt;= 750 &amp;&amp; !(instance_exists(o_enemy_boss_01))
     {
         global.boss = instance_create(room_width/2, 0, o_enemy_boss_01);
         

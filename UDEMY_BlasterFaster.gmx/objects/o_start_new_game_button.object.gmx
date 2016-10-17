@@ -59,7 +59,7 @@ else
 {
     // change this to reflect the player name or something sanitized
     save_game("default_ship.ini");
-    room_goto(r_space_new);
+    room_goto(r_mission_01);
 }
 </string>
           </argument>

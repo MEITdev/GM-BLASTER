@@ -32,7 +32,7 @@ event_inherited();
 ammo = 500;
 max_ammo = ammo;
 hull = 1;
-armor = 1;
+armor = 0;
 action_button = "1";
 action_mouse_button = mb_left;
 

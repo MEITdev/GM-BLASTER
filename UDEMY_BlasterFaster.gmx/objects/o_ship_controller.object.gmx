@@ -51,6 +51,7 @@ if file_exists("default_ship.ini")
     global.ship.armor = ship_armor;
     global.ship.hull = ship_hull;
     global.ship.movement_speed = ship_speed;
+    global.ship.max_movement_speed = global.ship.movement_speed;
     
     // instantiate the slots upon creation
     for (i = 0; i &lt;= global.ship.ship_slots - 1; i++)
@@ -95,6 +96,7 @@ else
     global.ship.armor = 3;
     global.ship.hull = 3;
     global.ship.movement_speed = 7;
+    global.ship.max_movement_speed = 7;
     
     // instantiate the slots upon creation
     for (i = 0; i &lt;= global.ship.ship_slots - 1; i++)

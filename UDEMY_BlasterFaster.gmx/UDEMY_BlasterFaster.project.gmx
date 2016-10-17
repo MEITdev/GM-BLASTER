@@ -177,8 +177,8 @@
       <object>objects\o_weapon_choose_slot0_button</object>
       <object>objects\o_weapon_choose_slot1_button</object>
       <object>objects\o_weapon_choose_slot2_button</object>
-      <object>objects\o_start_button</object>
       <object>objects\o_button_player_name</object>
+      <object>objects\o_start_button</object>
       <object>objects\o_start_new_game_button</object>
       <object>objects\o_start_platformer_button</object>
       <object>objects\o_configure_ship</object>
@@ -339,7 +339,7 @@
     </rooms>
     <rooms name="SpaceMissions">
       <room>rooms\r_space</room>
-      <room>rooms\r_space_new</room>
+      <room>rooms\r_mission_01</room>
       <room>rooms\r_mission_select</room>
     </rooms>
     <rooms name="SpaceStations">

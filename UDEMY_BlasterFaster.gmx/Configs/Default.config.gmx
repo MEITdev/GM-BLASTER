@@ -655,7 +655,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="17">
+    <constants number="20">
       <constant name="LASER_ALARM">0</constant>
       <constant name="SPAWNER_ALARM">0</constant>
       <constant name="POWERUP_SPAWNER">1</constant>
@@ -673,6 +673,9 @@
       <constant name="ENERGY_RECHARGE">1</constant>
       <constant name="SPEED_BOOST">0</constant>
       <constant name="BOSS_LGUN">2</constant>
+      <constant name="PUSH_BACK">1</constant>
+      <constant name="SHIP_BOOSTER">2</constant>
+      <constant name="BOOSTER_ALLOWED">3</constant>
     </constants>
   </ConfigConstants>
 </Config>

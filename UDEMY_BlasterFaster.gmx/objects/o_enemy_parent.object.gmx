@@ -61,19 +61,29 @@ if (hull &lt;= 0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Push the player back after collision
-with (global.ship)
-{
-    // store existing y coordinate
-    yy = global.ship.y;
-    
-    if point_distance(global.ship.x, global.ship.y, global.ship.x, yy) &gt; 25
-    {
-        move_towards_point(global.ship.x, yy + 25, 20);
-    }
-    else global.ship.speed = 0;
-}
+            <string>///Push back the player ship
 
+if global.ship.can_be_hit == true
+{
+    with (global.ship)
+    {
+        if can_be_hit == true
+        {
+            can_be_hit = false;
+            alarm[PUSH_BACK] = room_speed / 8;
+            if y &lt; (room_height - sprite_height/2) - 25
+            {
+                vspeed = 15;
+                
+            }
+    //        else
+    //        {
+    //            y = room_height - sprite_height/2;
+    //        }
+        }
+    }
+
+}
 </string>
           </argument>
         </arguments>
@@ -95,35 +105,39 @@ with (global.ship)
           <argument>
             <kind>1</kind>
             <string>/// Damage the gun
-if instance_exists(global.ship)
+if global.ship.can_be_hit == true
 {
-    if (global.ship.shield &gt; 0)
+    
+    if instance_exists(global.ship)
     {
-        global.ship.shield -= 1;
+        if (global.ship.shield &gt; 0)
+        {
+            global.ship.shield -= 1;
+        }
+        else if (global.ship.armor &gt; 0)
+        {
+            global.ship.armor -= 1;
+        }
+        else if (other.hull &gt; 0)
+        {
+            other.hull -= 1;
+        }
     }
-    else if (global.ship.armor &gt; 0)
+    // now destroy the enemy
+    hull -= 1;
+    
+    // create red flash
+    instance_create(0,0, o_screen_flash);
+    
+    // call screen shake
+    add_screenshake(4, room_speed*.125);
+    
+    // play the sound effect
+    if global.Sound == 'On'
     {
-        global.ship.armor -= 1;
-    }
-    else if (other.hull &gt; 0)
-    {
-        other.hull -= 1;
-    }
+        audio_play_sound(a_ship_hit, 6, false);
+    }    
 }
-// now destroy the enemy
-hull = 0;
-
-// create red flash
-instance_create(0,0, o_screen_flash);
-
-// call screen shake
-add_screenshake(4, room_speed*.125);
-
-// play the sound effect
-if global.Sound == 'On'
-{
-    audio_play_sound(a_ship_hit, 6, false);
-}    
 </string>
           </argument>
         </arguments>
@@ -147,33 +161,40 @@ if global.Sound == 'On'
           <argument>
             <kind>1</kind>
             <string>/// Damage the ship
-if (other.shield &gt; 0)
+
+if global.ship.can_be_hit == true
 {
-    other.shield -= 1;
+
+    if (other.shield &gt; 0)
+    {
+        other.shield -= 1;
+    }
+    else if (other.armor &gt; 0)
+    {
+        other.armor -= 1;
+    }
+    else if (other.hull &gt; 0)
+    {
+        other.hull -= 1;
+    }
+    
+    // now destroy the enemy ship
+    hull -= 1;
+    
+    // create red flash
+    instance_create(0,0, o_screen_flash);
+    
+    // call screen shake
+    add_screenshake(4, room_speed*.125);
+    
+    // play the sound effect
+    if global.Sound == 'On'
+    {
+        audio_play_sound(a_ship_hit, 6, false);
+    }    
 }
-else if (other.armor &gt; 0)
-{
-    other.armor -= 1;
-}
-else if (other.hull &gt; 0)
-{
-    other.hull -= 1;
-}
 
-// now destroy the enemy ship
-hull = 0;
 
-// create red flash
-instance_create(0,0, o_screen_flash);
-
-// call screen shake
-add_screenshake(4, room_speed*.125);
-
-// play the sound effect
-if global.Sound == 'On'
-{
-    audio_play_sound(a_ship_hit, 6, false);
-}    
 </string>
           </argument>
         </arguments>
@@ -194,19 +215,29 @@ if global.Sound == 'On'
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Push the player back after collision
-with (global.ship)
-{
-    // store existing y coordinate
-    yy = global.ship.y;
-    
-    if point_distance(global.ship.x, global.ship.y, global.ship.x, yy + 50) &gt; 25
-    {
-        move_towards_point(global.ship.x, yy + 25, 20);
-    }
-    else global.ship.speed = 0;
-}
+            <string>///Push back the player ship
 
+if global.ship.can_be_hit == true
+{
+    with (global.ship)
+    {
+        if can_be_hit == true
+        {
+            can_be_hit = false;
+            alarm[PUSH_BACK] = room_speed / 8;
+            if y &lt; (room_height - sprite_height/2) - 25
+            {
+                vspeed = 15;
+                
+            }
+    //        else
+    //        {
+    //            y = room_height - sprite_height/2;
+    //        }
+        }
+    }
+
+}
 </string>
           </argument>
         </arguments>
