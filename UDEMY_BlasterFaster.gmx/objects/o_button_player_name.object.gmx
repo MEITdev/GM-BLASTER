@@ -27,7 +27,15 @@
             <kind>1</kind>
             <string>/// initialise the button
 event_inherited();
-text = "Name";
+
+if global.current_player.name == ""
+{
+    text = "Name";
+}
+else
+{
+    text = string(global.current_player.name);
+}
 </string>
           </argument>
         </arguments>

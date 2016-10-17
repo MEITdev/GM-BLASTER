@@ -90,6 +90,38 @@ if (hull &lt;= 0)
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Push the player back after collision
+with (global.ship)
+{
+    if y &lt;= room_height - 25
+    {
+        // if the player is already at the bottom do not push him
+    }
+    else
+    {
+        move_towards_point(x, y - 25, 20);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Damage the gun
 if instance_exists(global.ship)
 {
@@ -126,6 +158,38 @@ if global.Sound == 'On'
       </action>
     </event>
     <event eventtype="4" ename="o_player_ship_parent">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Push the player back after collision
+with (global.ship)
+{
+    if y &lt;= room_height - 25
+    {
+        // if the player is already at the bottom do not push him
+    }
+    else
+    {
+        move_towards_point(x, y - 25, 20);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -192,7 +256,10 @@ if global.Sound == 'On'
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(global.boss)
+            <string>/// Force update the X nad Y coordinates
+// this will ensure the values are updated before the attached
+// guns are in their draw phase
+if instance_exists(global.boss)
 {   
 
     x = (global.boss.x + global.boss.ship_mount_x[gun_slot_id]);

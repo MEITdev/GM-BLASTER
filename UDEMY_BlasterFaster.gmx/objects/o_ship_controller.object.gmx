@@ -40,7 +40,7 @@ if file_exists("default_ship.ini")
 
     // read player name
     player_name = ini_read_string("player", "name", "dead");
-    global.current_player.name = player_name;    
+    global.current_player.name = player_name;
     
     // store pointer to the created ship as the players current ship
     global.ship = instance_create(room_width/2, room_height - 64, asset_get_index(ship_type));
