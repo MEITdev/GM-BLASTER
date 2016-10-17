@@ -65,13 +65,15 @@ if (hull &lt;= 0)
 with (global.ship)
 {
     // store existing y coordinate
-    yy = y;
-    if point_distance(x, y, x, yy) &gt; 25
+    yy = global.ship.y;
+    
+    if point_distance(global.ship.x, global.ship.y, global.ship.x, yy) &gt; 25
     {
-        move_towards_point(x, yy + 25, 20);
+        move_towards_point(global.ship.x, yy + 25, 20);
     }
-    else speed = 0;
+    else global.ship.speed = 0;
 }
+
 </string>
           </argument>
         </arguments>
@@ -196,12 +198,13 @@ if global.Sound == 'On'
 with (global.ship)
 {
     // store existing y coordinate
-    yy = y;
-    if point_distance(global.ship.x, global.ship.y, global.ship.x, yy) &gt; 25
+    yy = global.ship.y;
+    
+    if point_distance(global.ship.x, global.ship.y, global.ship.x, yy + 50) &gt; 25
     {
         move_towards_point(global.ship.x, yy + 25, 20);
     }
-    else speed = 0;
+    else global.ship.speed = 0;
 }
 
 </string>
