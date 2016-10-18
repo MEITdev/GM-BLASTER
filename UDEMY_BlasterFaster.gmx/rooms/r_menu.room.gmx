@@ -61,6 +61,7 @@ cursor_sprite = s_cursor_crosshair;</code>
     <instance objName="o_start_platformer_button" x="504" y="240" name="inst_1B47BFD7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_start_button" x="774" y="88" name="inst_08085E4C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_mission_select_button" x="414" y="240" name="inst_3790D515" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="o_text_box" x="414" y="80" name="inst_B9339537" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

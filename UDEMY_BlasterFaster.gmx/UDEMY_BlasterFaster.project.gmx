@@ -149,6 +149,7 @@
     <scripts name="Game HUD">
       <script>scripts\draw_damage.gml</script>
       <script>scripts\draw_player_stats.gml</script>
+      <script>scripts\text_box.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -270,6 +271,7 @@
       <object>objects\o_damage_display</object>
       <object>objects\o_armor_new</object>
       <object>objects\o_danger_indicator</object>
+      <object>objects\o_text_box</object>
       <objects name="Gun HUD">
         <object>objects\o_weapon_hud_parent</object>
         <object>objects\o_hull_gun</object>
