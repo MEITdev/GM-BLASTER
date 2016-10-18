@@ -114,6 +114,7 @@
       <sprite>sprites\s_gas_giant_selected</sprite>
       <sprite>sprites\s_ice_giant</sprite>
       <sprite>sprites\s_exoplanet_01</sprite>
+      <sprite>sprites\s_exoplanet_01_selected</sprite>
       <sprite>sprites\s_exoplanet_02</sprite>
       <sprite>sprites\s_exoplanet_03</sprite>
       <sprite>sprites\s_red_giant</sprite>
@@ -122,6 +123,9 @@
     <sprites name="Avatars">
       <sprite>sprites\s_dummy_avatar</sprite>
       <sprite>sprites\s_manga_avatar</sprite>
+    </sprites>
+    <sprites name="NPC ships">
+      <sprite>sprites\s_carrier_NPC</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -313,6 +317,7 @@
     <objects name="Space Planets">
       <object>objects\o_sun</object>
       <object>objects\o_gas_giant</object>
+      <object>objects\o_gas_giant_moon_01</object>
     </objects>
     <objects name="Space Asteroids">
       <object>objects\o_asteroids_parent</object>
@@ -341,6 +346,9 @@
     </objects>
     <objects name="Avatars">
       <object>objects\o_avatar</object>
+    </objects>
+    <objects name="NPC Ships">
+      <object>objects\o_carrier_NPC</object>
     </objects>
   </objects>
   <rooms name="rooms">

@@ -81,9 +81,9 @@ image_angle += .1;
           <argument>
             <kind>1</kind>
             <string>/// Update the point on the circle for the planets
-angle = angle + .5;
-gas_giant.x = (x + lengthdir_x(800, angle));
-gas_giant.y = (y + lengthdir_y(800, angle));
+angle = angle + .05;
+gas_giant.x = (x + lengthdir_x(900, angle));
+gas_giant.y = (y + lengthdir_y(900, angle));
 </string>
           </argument>
         </arguments>
