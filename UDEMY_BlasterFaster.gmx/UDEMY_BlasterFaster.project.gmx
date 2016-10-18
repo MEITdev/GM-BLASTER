@@ -22,6 +22,7 @@
     <sprite>sprites\s_me_it_logo</sprite>
     <sprites name="Player Ships">
       <sprite>sprites\s_ship_01_hull</sprite>
+      <sprite>sprites\s_ship_mini</sprite>
       <sprite>sprites\s_ship_01_Lgun</sprite>
       <sprite>sprites\s_ship_01_Rgun</sprite>
       <sprite>sprites\s_ship_02_Lgun</sprite>
@@ -74,6 +75,7 @@
       <sprite>sprites\s_armor_new_gun</sprite>
       <sprite>sprites\s_armor_new</sprite>
       <sprite>sprites\s_danger_indicator</sprite>
+      <sprite>sprites\s_mission_indicator</sprite>
     </sprites>
     <sprites name="Effects">
       <sprite>sprites\s_explosion_center</sprite>
@@ -212,6 +214,7 @@
       <object>objects\o_player_ship_parent</object>
       <object>objects\o_ship</object>
       <object>objects\o_ship_new</object>
+      <object>objects\o_ship_mini</object>
       <object>objects\o_ship_01_engine_jet</object>
     </objects>
     <objects name="Weapons">
@@ -281,6 +284,7 @@
       <object>objects\o_damage_display</object>
       <object>objects\o_armor_new</object>
       <object>objects\o_danger_indicator</object>
+      <object>objects\o_mission_indicator</object>
       <object>objects\o_dialog_box</object>
       <objects name="Gun HUD">
         <object>objects\o_weapon_hud_parent</object>

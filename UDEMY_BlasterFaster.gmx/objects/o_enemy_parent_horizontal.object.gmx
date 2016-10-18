@@ -54,6 +54,50 @@ if (hull &lt;= 0)
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="o_asteroids_parent">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Damage the ship and destroy the asteroid
+with (other)
+{
+    // asteroid gets destroyed
+    hull = 0;
+}
+    
+// ship gets damaged
+hull -= 1;
+    
+// create red flash
+instance_create(0,0, o_screen_flash);
+
+// call screen shake
+add_screenshake(4, room_speed*.125);
+
+// play the sound effect
+if global.Sound == 'On'
+{
+    audio_play_sound(a_ship_hit, 6, false);
+}    
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="o_parent_gun">
       <action>
         <libid>1</libid>

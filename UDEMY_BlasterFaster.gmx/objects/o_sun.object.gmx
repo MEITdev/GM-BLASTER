@@ -32,8 +32,8 @@ gas_giant = instance_create(x, y, o_gas_giant);
 // pass on the ID of this object as the owner
 gas_giant.owner = id;
 // set planet scale
-gas_giant.image_xscale = .1;
-gas_giant.image_yscale = .1;
+gas_giant.image_xscale = .5;
+gas_giant.image_yscale = .5;
 // set the initial angle
 angle = image_angle;
 </string>
@@ -82,8 +82,8 @@ image_angle += .1;
             <kind>1</kind>
             <string>/// Update the point on the circle for the planets
 angle = angle + .5;
-gas_giant.x = (x + lengthdir_x(200, angle));
-gas_giant.y = (y + lengthdir_y(200, angle));
+gas_giant.x = (x + lengthdir_x(800, angle));
+gas_giant.y = (y + lengthdir_y(800, angle));
 </string>
           </argument>
         </arguments>

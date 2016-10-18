@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// Initialize enemy spawner
 alarm[SPAWNER_ALARM] = room_speed*3; // wait 3 seconds
-alarm[POWERUP_SPAWNER] = room_speed*5; // ... 5 seconds
+//alarm[POWERUP_SPAWNER] = room_speed*5; // ... 5 seconds
 </string>
           </argument>
         </arguments>
