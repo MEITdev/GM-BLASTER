@@ -23,7 +23,9 @@
     <sprites name="Player Ships">
       <sprite>sprites\s_ship_01_hull</sprite>
       <sprite>sprites\s_ship_01_Lgun</sprite>
+      <sprite>sprites\s_ship_01_Rgun</sprite>
       <sprite>sprites\s_ship_02_Lgun</sprite>
+      <sprite>sprites\s_ship_02_Rgun</sprite>
       <sprite>sprites\s_player_ship</sprite>
       <sprite>sprites\s_ship</sprite>
       <sprite>sprites\s_ship_01_engine_jet</sprite>

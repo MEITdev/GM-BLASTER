@@ -11,3 +11,4 @@ global.LEFT = ini_read_real("controls", "LEFT", ord("A"));
 global.RIGHT = ini_read_real("controls", "RIGHT", ord("D"));
 
 ini_close();
+

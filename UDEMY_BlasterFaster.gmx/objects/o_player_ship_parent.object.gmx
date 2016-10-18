@@ -47,6 +47,54 @@ can_use_boost = true;
 
 // for push back events, if the player can be hit
 can_be_hit = true;
+
+// X and Y used in the Dash effect when using the speed boost
+old_x = 0;
+old_y = 0;
+draw_dash_sprite = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Save X and Y for the dash animation
+with (global.ship)
+{
+    old_x = x;
+    old_y = y;
+
+    // update the old_x and old_y for each turret
+    for (i = 0; i &lt;= ship_slots - 1; i++)
+    {
+        if instance_exists(slot[i])
+        {
+            slot[i].old_x = slot[i].x;
+            slot[i].old_y = slot[i].y;
+        }
+    }
+
+}
+// allow another sprite to be drawn
+draw_dash_sprite = true;
+
+
 </string>
           </argument>
         </arguments>
@@ -118,6 +166,8 @@ else if speed_boost == false
     //speed_boost = true;
     movement_speed = max_movement_speed;
     can_be_hit = true;
+    // disable the dash effect
+    draw_dash_sprite = false;
     image_alpha = 1;
     
     // now loop all the guns and set the alpha for them
@@ -210,15 +260,26 @@ else if (global.Controller == 'Keyboard')
             movement_speed = max_movement_speed + 5;
             // player cannot be hit by lasers
             can_be_hit = false;
+            
+            draw_dash_sprite = true;
+            
+            
             // call the alarm that will stop the boost
             image_alpha = .5;
 
+            // set the initial X and Y for the dash effect sprites
+            old_x = x;
+            old_y = y;
+            
             // now loop all the guns and set the alpha for them
             for (i = 0; i &lt;= ship_slots - 1; i++)
             {
                 if instance_exists(slot[i])
                 {
                     slot[i].image_alpha = .5;
+                    // set the old X and Y values for the dash effect
+                    slot[i].old_x = slot[i].x;
+                    slot[i].old_y = slot[i].y;
                 }
             }
             
@@ -417,6 +478,78 @@ if (hull &lt;= 0)
     // reset score to 0 for next game
     score = 0;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Create the dash movement effect
+
+draw_self();
+with (global.ship)
+{
+    if can_be_hit == false
+    {
+//        if draw_dash_sprite == true
+//        {
+        
+ //           draw_dash_sprite = false;
+            
+            // Draw the ship sprite at the last position saved by the alarm
+            to_draw = sprite_index;
+            //draw_sprite(to_draw, 0, old_x, old_y);
+            draw_sprite_ext(to_draw, 0, old_x, old_y, 1, 1, 0, c_white, .4);
+
+            // create dash effect for the guns as well (for each)
+            for (i = 0; i &lt;= ship_slots - 1; i++)
+            {
+                if instance_exists(slot[i])
+                {
+                    draw_sprite_ext(slot[i].sprite_index, 0, slot[i].old_x, slot[i].old_y, 1, 1, 0, c_white, .4);
+                }
+            }
+
+//            old_x = x;
+//            old_y = y;
+            //sprite_index.image_alpha = .5;
+            // reset the timing alarm
+            // this will get the X and Y again for another sprite
+            if draw_dash_sprite == true
+            {
+                draw_dash_sprite = false;
+                // play with this to get different effect for dash
+                alarm[BLUR_TIMER] = room_speed/16;
+            }
+    //    }
+    }
+}
+/*
+// make all the guns blurred as well
+for (i = 0; i &lt;= ship_slots - 1; i++)
+{
+    if instance_exists(slot[i])
+    {
+        slot[i].image_alpha = .5;
+    }
+}
+*/
 </string>
           </argument>
         </arguments>

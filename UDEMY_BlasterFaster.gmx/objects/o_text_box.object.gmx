@@ -139,8 +139,6 @@ if string_height(str) &gt; (height - padding)
 str = string_copy(message, ds_list_find_value(start, line), count-ds_list_find_value(start, line));
 
 // Draw the text
-draw_set_valign(fa_center);
-draw_set_halign(fa_center);
 draw_text(x+padding, y+padding, str);
 </string>
           </argument>
