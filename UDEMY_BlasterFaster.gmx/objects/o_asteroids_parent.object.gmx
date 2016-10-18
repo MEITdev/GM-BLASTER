@@ -35,11 +35,25 @@ if (hull &lt;= 0)
     {
         // do not spawn any more fragments
     }
+    // the biggest asteroid produces 2 smaller asteroids
+    else if object_index == o_asteroid_grey_03
+    {
+        // spawn fragment asteroids
+        // random number form 0 to 3 asteroids
+        no_of_fragments = random_range(0, 1);
+        for (i = 0; i &lt;= no_of_fragments; i++)
+        {
+            // create on of the smaller asteroids
+            fragment[i] = instance_create(x, y, choose(o_asteroid_grey_01, o_asteroid_grey_02));
+            // set the direction and motion of the asteroid
+            fragment[i].direction = random_range(1, 360);
+        }
+    }
     else
     {
         // spawn fragment asteroids
         // random number form 0 to 3 asteroids
-        no_of_fragments = random_range(0, 2);
+        no_of_fragments = random_range(0, 3);
         for (i = 0; i &lt;= no_of_fragments; i++)
         {
             // create on of the asteroid fragments
@@ -128,7 +142,7 @@ if global.ship.can_be_hit == true
     }
     
     // now destroy the asteroid
-    hull = 0;
+    hull -= 1;
     
     // create red flash
     instance_create(0,0, o_screen_flash);
@@ -181,7 +195,7 @@ if global.ship.can_be_hit == true
     }
     
     // now destroy the enemy ship
-    hull = 0;
+    hull -= 1;
     
     // create red flash
     instance_create(0,0, o_screen_flash);
