@@ -51,15 +51,13 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="o_ship_controller" x="234" y="152" name="inst_48EBE9B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_ship_controller" x="468" y="304" name="inst_48EBE9B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_start_new_game_button" x="90" y="56" name="inst_C93057F8" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="o_menu_button" x="90" y="440" name="inst_EB7F68A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_button_player_name" x="90" y="184" name="inst_C3F77E95" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_save_game_button" x="90" y="328" name="inst_6D14625C" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="o_weapon_choose_slot0_button" x="90" y="232" name="inst_ACFB37A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_weapon_choose_slot1_button" x="90" y="280" name="inst_EB8F79FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_view_controller" x="306" y="240" name="inst_0508C31D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_asteroid_spawner" x="414" y="152" name="inst_C61A6BE4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_view_controller" x="162" y="96" name="inst_0508C31D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_asteroid_spawner" x="198" y="96" name="inst_C61A6BE4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_hull_new" x="468" y="48" name="inst_E9A32EBF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_shield_new" x="216" y="48" name="inst_A7FFD947" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_armor_new" x="342" y="48" name="inst_C01218E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

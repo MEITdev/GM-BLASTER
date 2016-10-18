@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// initialise the button
 event_inherited();
-text = "Save";
+text = "Continue";
 </string>
           </argument>
         </arguments>
@@ -50,8 +50,15 @@ text = "Save";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Save the player name
+            <string>///Save the player
+
+// Get the player name from the text box
 global.current_player.name = o_textbox.txt;
+
+// Save the player information
+save_player(global.current_player.name);
+
+// And now go to the ship configuration room
 room_goto(r_configure_ship);
 </string>
           </argument>

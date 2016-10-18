@@ -51,16 +51,11 @@ text = "Start!";
           <argument>
             <kind>1</kind>
             <string>/// Start the game
-if global.current_player.name == ""
-{
-    room_goto(r_player_name);
-}
-else
-{
-    // change this to reflect the player name or something sanitized
-    save_game("default_ship.ini");
-    room_goto(r_mission_01);
-}
+
+// save the ship configuration and jump to mission!
+save_game(global.current_player.ship_save_file);
+room_goto(r_mission_01);
+
 </string>
           </argument>
         </arguments>

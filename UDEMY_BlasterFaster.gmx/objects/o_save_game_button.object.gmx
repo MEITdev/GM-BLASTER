@@ -51,7 +51,11 @@ text = "Save";
           <argument>
             <kind>1</kind>
             <string>///Save the current ship settings
-save_game("default_ship.ini");
+//save_game("default_ship.ini");
+
+
+// use the current players save file name to save the ship
+save_game(global.current_player.ship_save_file);
 </string>
           </argument>
         </arguments>

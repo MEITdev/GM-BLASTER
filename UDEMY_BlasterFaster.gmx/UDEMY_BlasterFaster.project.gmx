@@ -122,10 +122,14 @@
     </sprites>
     <sprites name="Avatars">
       <sprite>sprites\s_dummy_avatar</sprite>
+      <sprite>sprites\s_avatar_player_01</sprite>
       <sprite>sprites\s_manga_avatar</sprite>
     </sprites>
     <sprites name="NPC ships">
       <sprite>sprites\s_carrier_NPC</sprite>
+    </sprites>
+    <sprites name="Skills">
+      <sprite>sprites\s_player_skill</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -154,6 +158,7 @@
       <script>scripts\save_game.gml</script>
       <script>scripts\load_game.gml</script>
       <script>scripts\draw_string.gml</script>
+      <script>scripts\save_player.gml</script>
     </scripts>
     <scripts name="Effects">
       <script>scripts\add_screenshake.gml</script>
@@ -197,13 +202,15 @@
       <object>objects\o_weapon_choose_slot2_button</object>
       <object>objects\o_button_player_name</object>
       <object>objects\o_start_button</object>
+      <object>objects\o_next_avatar_button</object>
+      <object>objects\o_next_skill_button</object>
       <object>objects\o_start_new_game_button</object>
       <object>objects\o_start_platformer_button</object>
       <object>objects\o_configure_ship</object>
       <object>objects\o_mission_select_button</object>
       <object>objects\o_save_game_button</object>
       <object>objects\object118</object>
-      <object>objects\o_save_player_name</object>
+      <object>objects\o_save_player</object>
       <object>objects\o_settings_up_control</object>
       <object>objects\o_settings_down_control</object>
       <object>objects\o_settings_left_control</object>
@@ -215,6 +222,12 @@
     </objects>
     <objects name="Player Characters">
       <object>objects\o_player_character</object>
+      <objects name="Skills">
+        <object>objects\o_player_skill</object>
+      </objects>
+      <objects name="Avatars">
+        <object>objects\o_avatar_player</object>
+      </objects>
     </objects>
     <objects name="Player Ships">
       <object>objects\o_player_ship_parent</object>
@@ -343,7 +356,7 @@
       <object>objects\o_weapon_controller</object>
       <object>objects\o_ship_controller</object>
     </objects>
-    <objects name="Avatars">
+    <objects name="NPC Avatars">
       <object>objects\o_avatar</object>
     </objects>
     <objects name="NPC Ships">
@@ -359,7 +372,7 @@
       <room>rooms\r_settings</room>
       <room>rooms\r_highscore</room>
       <room>rooms\r_help</room>
-      <room>rooms\r_player_name</room>
+      <room>rooms\r_create_player</room>
       <rooms name="Settings">
         <room>rooms\r_set_up_key</room>
         <room>rooms\r_set_down_key</room>

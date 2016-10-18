@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="o_textbox" x="448" y="224" name="inst_B47259FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_save_player_name" x="448" y="320" name="inst_73B1D0BF" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="o_save_player" x="448" y="320" name="inst_73B1D0BF" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

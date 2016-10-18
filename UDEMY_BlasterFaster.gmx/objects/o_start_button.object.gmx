@@ -51,7 +51,7 @@ text = "Start";
           <argument>
             <kind>1</kind>
             <string>/// Start the game
-room_goto(r_space);
+room_goto(r_create_player);
 
 </string>
           </argument>

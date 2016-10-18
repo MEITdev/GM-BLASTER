@@ -28,12 +28,5 @@ for (i = 0; i <= global.ship.ship_slots -1; i++)
     ini_write_real("slots", string(i) + "_mount_y", global.ship.ship_mount_y[i]);
 }
 
-
-// save Player information
-ini_write_string("player", "name", global.current_player.name);
-ini_write_real("player", "level", global.current_player.level);
-ini_write_real("player", "experience", global.current_player.experience);
-ini_write_real("player", "credits", global.current_player.credits);
-
 // close the file
 ini_close();
