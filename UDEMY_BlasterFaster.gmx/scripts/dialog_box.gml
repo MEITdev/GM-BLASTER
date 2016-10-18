@@ -1,4 +1,4 @@
-///text_box(x, y, height, width, title, text_to_display, avatar_id)
+///dialog_box(x, y, height, width, title, text_to_display, avatar_id)
 xx = argument0;
 yy = argument1;
 height = argument2;

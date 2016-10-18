@@ -33,8 +33,8 @@ owner = "";
 moon = instance_create(x, y, o_gas_giant_moon_01);
 moon.owner = id;
 
-moon.image_xscale = .25;
-moon.image_yscale = .25;
+moon.image_xscale = .5;
+moon.image_yscale = .5;
 
 angle = image_angle;
 </string>
@@ -60,9 +60,9 @@ angle = image_angle;
           <argument>
             <kind>1</kind>
             <string>/// Update the point on the circle for the moon
-angle = angle + .1;
-moon.x = (x + lengthdir_x(300, angle));
-moon.y = (y + lengthdir_y(300, angle));
+angle = angle + .05;
+moon.x = (x + lengthdir_x(1200, angle));
+moon.y = (y + lengthdir_y(1200, angle));
 </string>
           </argument>
         </arguments>

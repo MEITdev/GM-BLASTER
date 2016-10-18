@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>///Initialise the controller
 // load the saved settins
+
+load_game("default_ship.ini");
+/*
 if file_exists("default_ship.ini")
 {
     ini_open("default_ship.ini");
@@ -71,8 +74,6 @@ if file_exists("default_ship.ini")
 //    global.ship.ship_mount_x[1] = (global.ship.sprite_width/2);
 //    global.ship.ship_mount_y[1] = 0;
 
-    
-    
     // attach guns to the ship
     for (i = 0; i &lt;= global.ship.ship_slots -1; i++)
     {
@@ -85,7 +86,17 @@ if file_exists("default_ship.ini")
     ini_close();
 }
 else
-{
+{  */
+
+    // if there is no loaded game, assume defaults
+if instance_exists(global.ship)
+    {
+    }
+else
+    {
+    // set default player name
+    global.current_player.name = "Player";
+    
     // if there is no save file load the default ship configuration
     // store pointer to the created ship as the players current ship
     global.ship = instance_create(room_width/2, room_height - 64, o_ship_new);
@@ -112,7 +123,6 @@ else
 
     global.ship.ship_mount_x[1] = (global.ship.sprite_width/2);
     global.ship.ship_mount_y[1] = 0;
-
     
     // TESTING attaching the turret
     global.ship.ship_mount_x[2] = 0;
@@ -126,8 +136,6 @@ else
  
     global.ship.slot[2] = instance_create(global.ship.ship_mount_x[2], global.ship.ship_mount_y[2], o_ship_01_turret);
     global.ship.slot[2].gun_slot_id = 2;
-        
-    
  
     // and save it so in the next boot we just load it to the game
     save_game("default_ship.ini");

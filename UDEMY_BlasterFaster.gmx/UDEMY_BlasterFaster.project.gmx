@@ -152,6 +152,7 @@
       <script>scripts\load_settings.gml</script>
       <script>scripts\save_settings.gml</script>
       <script>scripts\save_game.gml</script>
+      <script>scripts\load_game.gml</script>
       <script>scripts\draw_string.gml</script>
     </scripts>
     <scripts name="Effects">
@@ -165,7 +166,7 @@
     <scripts name="Game HUD">
       <script>scripts\draw_damage.gml</script>
       <script>scripts\draw_player_stats.gml</script>
-      <script>scripts\text_box.gml</script>
+      <script>scripts\dialog_box.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -201,6 +202,7 @@
       <object>objects\o_configure_ship</object>
       <object>objects\o_mission_select_button</object>
       <object>objects\o_save_game_button</object>
+      <object>objects\object118</object>
       <object>objects\o_save_player_name</object>
       <object>objects\o_settings_up_control</object>
       <object>objects\o_settings_down_control</object>
@@ -340,9 +342,6 @@
     <objects name="Controllers">
       <object>objects\o_weapon_controller</object>
       <object>objects\o_ship_controller</object>
-    </objects>
-    <objects name="Menu Box">
-      <object>objects\o_small_box</object>
     </objects>
     <objects name="Avatars">
       <object>objects\o_avatar</object>

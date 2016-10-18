@@ -41,13 +41,11 @@ last_space = 0;
 line = 0;
 
 // Set the window Title
-title = "Title";
-
+title = "";
 // set the Avatar for the window
-avatar_id = s_dummy_avatar;
-
+avatar_id = 0;
 // Set the message
-message = "Welcome to Blaster! The game that is about shooting things with lasers so you can buy better lasers to shoot more things, but with better lasers!";
+message = "";
 str = ""; // what gets displayed to the screen
 </string>
           </argument>

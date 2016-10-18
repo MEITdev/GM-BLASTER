@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1</depth>
   <persistent>0</persistent>
-  <parentName>self</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -39,6 +39,14 @@ ship_engine_jet = instance_create(x,y+32, o_ship_01_engine_jet);
 // initialise the planet indicator
 planet_indicator = instance_create(x, y, o_mission_indicator);
 planet_indicator.target_planet = o_gas_giant;
+
+planet_indicator = instance_create(x, y, o_mission_indicator);
+planet_indicator.target_planet = o_sun;
+
+planet_indicator = instance_create(x, y, o_mission_indicator);
+planet_indicator.target_planet = o_gas_giant_moon_01;
+
+
 </string>
           </argument>
         </arguments>

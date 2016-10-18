@@ -53,7 +53,7 @@ owner = "";
           <argument>
             <kind>1</kind>
             <string>///Planet rotation
-image_angle += 1;
+image_angle += .5;
 </string>
           </argument>
         </arguments>
