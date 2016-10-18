@@ -154,6 +154,9 @@ if can_fire == true
             projectile = instance_create(x + correction_x , y + correction_y, o_projectile);
             projectile.direction = image_angle + 90;
             projectile.speed = projectile_speed;
+           
+            // create the muzzle flash
+            instance_create(x + correction_x, y + correction_y, o_projectile_gun_flare);
             
             // reset the cooldown counter
             //cooldown = room_speed/2;
@@ -164,7 +167,7 @@ if can_fire == true
         else
         {
             // no ammo left...
-            instance_create(x, y-20, o_flare);
+            //instance_create(x, y-20, o_flare);
             // Play no ammo sound and display something
             
         }

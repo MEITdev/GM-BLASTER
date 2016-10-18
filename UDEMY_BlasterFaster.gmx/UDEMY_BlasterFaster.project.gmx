@@ -87,6 +87,10 @@
       <sprite>sprites\s_laser_directional</sprite>
       <sprite>sprites\s_projectile</sprite>
       <sprite>sprites\s_enemy_laser</sprite>
+      <sprites name="Projectiles">
+        <sprite>sprites\s_projectile_gun_bullet</sprite>
+        <sprite>sprites\s_projectile_gun_flare</sprite>
+      </sprites>
     </sprites>
     <sprites name="Player Characters">
       <sprite>sprites\s_player_character_01_walking</sprite>
@@ -317,6 +321,7 @@
       <object>objects\o_explosion_center</object>
       <object>objects\o_screen_flash</object>
       <object>objects\o_flare</object>
+      <object>objects\o_projectile_gun_flare</object>
     </objects>
     <objects name="Spawners">
       <object>objects\o_enemy_boss_spawner</object>

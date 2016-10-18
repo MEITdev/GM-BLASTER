@@ -96,8 +96,12 @@ if instance_exists(global.ship.slot[0])
 
 // now attach the weapon    
 //add_weapon(o_ship_new, weapons_slot[gun_choice], 0);
-global.ship.slot[0] = instance_create(global.ship.ship_mount_x[0], global.ship.ship_mount_y[0], weapons_slot[gun_choice]);
-global.ship.slot[0].gun_slot_id = 0;
+
+// TESTING
+//global.ship.slot[0] = instance_create(global.ship.ship_mount_x[0], global.ship.ship_mount_y[0], weapons_slot[gun_choice]);
+//global.ship.slot[0].gun_slot_id = 0;
+add_weapon(weapons_slot[gun_choice], 0);
+
 </string>
           </argument>
         </arguments>

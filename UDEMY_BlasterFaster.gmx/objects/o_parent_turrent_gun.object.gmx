@@ -152,15 +152,24 @@ if can_fire == true
             // create the projectile instance
             projectile[0] = instance_create(x + lengthdir_x(correction_x, image_angle - correction_x), y + lengthdir_y(correction_y, image_angle - correction_y), o_projectile);
             projectile[1] = instance_create(x + lengthdir_x(correction_x, image_angle + correction_x), y + lengthdir_y(correction_y, image_angle + correction_y), o_projectile);
-           
+
+            // create the muzzle flash
+            muzzle_flash[0] = instance_create(x + lengthdir_x(correction_x, image_angle - correction_x), y + lengthdir_y(correction_y, image_angle - correction_y), o_projectile_gun_flare);
+            muzzle_flash[1] = instance_create(x + lengthdir_x(correction_x, image_angle + correction_x), y + lengthdir_y(correction_y, image_angle + correction_y), o_projectile_gun_flare);
+
+                       
             for (i = 0; i &lt;= array_length_1d(projectile) - 1; i++)
             {
                 projectile[i].direction = image_angle;
                 projectile[i].speed = projectile_speed;
-                
-                
+                // adjust the image angle
+                projectile[i].image_angle = image_angle - 90;
+
+                muzzle_flash[i].image_angle = image_angle - 90;
             }
 
+
+            
             can_fire = false;
             // subtract the ammo
             ammo -= 1;
