@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>///Initialise the text box
 width = 256;
-height = 64;
-padding = 8;
+height = 128;
+padding = 4;
 
 // Keep track of the starting line
 start = ds_list_create();
@@ -39,6 +39,12 @@ ds_list_add(start, 0);
 count = 0;
 last_space = 0;
 line = 0;
+
+// Set the window Title
+title = "Title";
+
+// set the Avatar for the window
+avatar_id = s_dummy_avatar;
 
 // Set the message
 message = "Welcome to Blaster! The game that is about shooting things with lasers so you can buy better lasers to shoot more things, but with better lasers!";
@@ -96,11 +102,26 @@ ds_list_destroy(start);
 draw_set_alpha(.5);
 draw_roundrect_colour(x, y, x+width, y+height, c_blue, c_red, true);
 
+// draw a title "bar"
+draw_set_color(c_green);
+draw_rectangle(x + 2, y + 2, x + width - 2, y + string_height(title) + 2, false);
+
 // set the alpha back to 1 so the text is not transparent
 draw_set_alpha(1);
 
 // set the colour
 draw_set_colour(c_white);
+
+// set text alignment
+draw_set_valign(fa_left);
+draw_set_halign(fa_top);
+
+// Place the title on top of the box
+draw_text(x + padding, y + padding, title);
+
+// Place the avatar on the top left position
+// Create the avatar
+avatar = instance_create(x + width + padding, y + padding, o_avatar); 
 
 // Check if the string is past the width
 // Insert a line break if yes
@@ -139,7 +160,8 @@ if string_height(str) &gt; (height - padding)
 str = string_copy(message, ds_list_find_value(start, line), count-ds_list_find_value(start, line));
 
 // Draw the text
-draw_text(x+padding, y+padding, str);
+title_height = string_height(title);
+draw_text(x+padding, y+padding + title_height , str);
 </string>
           </argument>
         </arguments>

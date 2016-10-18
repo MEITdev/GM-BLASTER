@@ -29,6 +29,27 @@
 if (hull &lt;= 0)
 {
     create_explosion(x, y);
+    
+    // ONLY if not fragment asteroid already
+    if object_index == o_asteroid_grey_01_fragment_01 || object_index == o_asteroid_grey_01_fragment_02
+    {
+        // do not spawn any more fragments
+    }
+    else
+    {
+        // spawn fragment asteroids
+        // random number form 0 to 3 asteroids
+        no_of_fragments = random_range(0, 2);
+        for (i = 0; i &lt;= no_of_fragments; i++)
+        {
+            // create on of the asteroid fragments
+            fragment[i] = instance_create(x, y, choose(o_asteroid_grey_01_fragment_01, o_asteroid_grey_01_fragment_02));
+            // set the direction and motion of the asteroid
+            fragment[i].direction = random_range(1, 360);
+        }
+    }
+
+    //destroy the parent asteroid    
     instance_destroy();
     
     score += 1;

@@ -96,6 +96,10 @@
     </sprites>
     <sprites name="Space Asteroids">
       <sprite>sprites\s_asteroid_grey_01</sprite>
+      <sprite>sprites\s_asteroid_grey_01_fragment_01</sprite>
+      <sprite>sprites\s_asteroid_grey_01_fragment_02</sprite>
+      <sprite>sprites\s_asteroid_grey_02</sprite>
+      <sprite>sprites\s_asteroid_grey_03</sprite>
     </sprites>
     <sprites name="Mouse_Cursors">
       <sprite>sprites\s_cursor_crosshair</sprite>
@@ -112,6 +116,10 @@
       <sprite>sprites\s_exoplanet_03</sprite>
       <sprite>sprites\s_red_giant</sprite>
       <sprite>sprites\s_star</sprite>
+    </sprites>
+    <sprites name="Avatars">
+      <sprite>sprites\s_dummy_avatar</sprite>
+      <sprite>sprites\s_manga_avatar</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -273,7 +281,7 @@
       <object>objects\o_damage_display</object>
       <object>objects\o_armor_new</object>
       <object>objects\o_danger_indicator</object>
-      <object>objects\o_text_box</object>
+      <object>objects\o_dialog_box</object>
       <objects name="Gun HUD">
         <object>objects\o_weapon_hud_parent</object>
         <object>objects\o_hull_gun</object>
@@ -302,9 +310,13 @@
       <object>objects\o_sun</object>
       <object>objects\o_gas_giant</object>
     </objects>
-    <objects name="Asteroids">
+    <objects name="Space Asteroids">
       <object>objects\o_asteroids_parent</object>
       <object>objects\o_asteroid_grey_01</object>
+      <object>objects\o_asteroid_grey_01_fragment_01</object>
+      <object>objects\o_asteroid_grey_01_fragment_02</object>
+      <object>objects\o_asteroid_grey_02</object>
+      <object>objects\o_asteroid_grey_03</object>
     </objects>
     <objects name="Persistent objects">
       <objects name="Singletons">
@@ -322,6 +334,9 @@
     </objects>
     <objects name="Menu Box">
       <object>objects\o_small_box</object>
+    </objects>
+    <objects name="Avatars">
+      <object>objects\o_avatar</object>
     </objects>
   </objects>
   <rooms name="rooms">
