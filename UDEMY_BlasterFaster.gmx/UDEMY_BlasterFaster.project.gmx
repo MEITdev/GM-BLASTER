@@ -381,6 +381,7 @@
       <object>objects\o_weapon_controller</object>
       <object>objects\o_ship_controller</object>
       <object>objects\o_mission_controller</object>
+      <object>objects\o_dialog_box_controller</object>
     </objects>
     <objects name="NPC Avatars">
       <object>objects\o_avatar</object>

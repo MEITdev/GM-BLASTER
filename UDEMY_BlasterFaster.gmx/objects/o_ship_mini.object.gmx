@@ -33,20 +33,20 @@ target_y = y;
 
 hull = 1;
 
-//create the ship engine jet
-ship_engine_jet = instance_create(x,y+32, o_ship_01_engine_jet);
-
 // initialise the planet indicator
 planet_indicator = instance_create(x, y, o_mission_indicator);
-planet_indicator.target_planet = o_gas_giant;
+planet_indicator.target = o_gas_giant;
 
 planet_indicator = instance_create(x, y, o_mission_indicator);
-planet_indicator.target_planet = o_sun;
+planet_indicator.target = o_sun;
 
 planet_indicator = instance_create(x, y, o_mission_indicator);
-planet_indicator.target_planet = o_gas_giant_moon_01;
+planet_indicator.target = o_gas_giant_moon_01;
 
 
+// initialise the mothership indicator
+mothership_indicator = instance_create(x, y, o_mission_indicator);
+mothership_indicator.target = o_carrier_NPC;
 </string>
           </argument>
         </arguments>

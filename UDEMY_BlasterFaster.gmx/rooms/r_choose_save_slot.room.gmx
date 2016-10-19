@@ -10,10 +10,7 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>// TESTING REMOVE _!!___
-dialog_box(16, 16, 128, 200, "Choose Save slot", "Select a slot with already existing game to continue. To start a new game simply click on a empty slot, or delete an existing one with the [X] button to make room for your own ultimate adventure! Screw the other pilot!");
-avatar = instance_create(dialog.x + dialog.width + dialog.padding, dialog.y, o_robot_avatar);
-dialog.avatar = avatar.object_index;</code>
+  <code></code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -58,6 +55,7 @@ dialog.avatar = avatar.object_index;</code>
     <instance objName="o_save_slot_1" x="416" y="224" name="inst_B1B26B64" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="o_save_slot_2" x="416" y="384" name="inst_1FAD0F5B" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="o_menu_button" x="96" y="448" name="inst_B261CD64" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="o_dialog_box_controller" x="32" y="32" name="inst_8B6FE515" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

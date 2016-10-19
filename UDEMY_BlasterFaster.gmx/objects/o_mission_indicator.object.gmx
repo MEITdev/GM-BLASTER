@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Initialise the danger indicator
-target_planet = noone;
+target = noone;
 image_angle = 0;
 </string>
           </argument>
@@ -53,21 +53,21 @@ image_angle = 0;
             <string>///Update position
 if instance_exists(o_ship_mini)
 {
-    if instance_exists(target_planet)
+    if instance_exists(target)
     {
-        if target_planet.x &lt;= o_ship_mini.x
+        if target.x &lt;= o_ship_mini.x
         {
             xx = o_ship_mini.x - 32;
         }
-        if target_planet.x &gt; o_ship_mini.x
+        if target.x &gt; o_ship_mini.x
         {
             xx = o_ship_mini.x + 32;
         }
-        if target_planet.y &lt;= o_ship_mini.y
+        if target.y &lt;= o_ship_mini.y
         {
             yy = o_ship_mini.y - 32
         }
-        if target_planet.y &gt; o_ship_mini.y
+        if target.y &gt; o_ship_mini.y
         {
             yy = o_ship_mini.y + 32
         }
@@ -107,18 +107,18 @@ else
           <argument>
             <kind>1</kind>
             <string>/// Maintain angle towards target
-if instance_exists(target_planet)
+if instance_exists(target)
 {
-    direction_of_planet = point_direction(x, y, target_planet.x, target_planet.y);
+    direction_of_target = point_direction(x, y, target.x, target.y);
 }
 else
 {
-    direction_of_planet = image_angle;
+    direction_of_target = image_angle;
     // if there is no planet destroy this instance
     instance_destroy();
 }
 
-image_angle = direction_of_planet;
+image_angle = direction_of_target;
 </string>
           </argument>
         </arguments>
@@ -143,13 +143,13 @@ image_angle = direction_of_planet;
             <kind>1</kind>
             <string>///Mission indicator
 draw_self();
-if instance_exists(target_planet)
+if instance_exists(target)
 {
-    distance_to_planet = distance_to_object(target_planet)
+    distance_to_target = distance_to_object(target)
 
     //Draw distance to planet
     // under the indicator
-    draw_string(x, y + 16, "[ " + string(distance_to_planet) + "km ]");    
+    draw_string(x, y + 16, "[ " + string(distance_to_target) + "km ]");    
 
 }
 </string>

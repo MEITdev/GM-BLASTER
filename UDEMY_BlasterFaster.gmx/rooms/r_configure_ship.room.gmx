@@ -10,10 +10,7 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>// TESTING REMOVE _!!___
-dialog_box(16, 16, 120, 220, "Create your first ship", "Change the left, right and turret guns to find out which suits you the best. Practice on asteroids to get the feeling. Also collect SHIELD, ARMOR and HULL power ups to stay alive.");
-avatar = instance_create(dialog.x + dialog.padding, dialog.y + dialog.height + dialog.padding, o_robot_avatar);
-dialog.avatar = avatar.object_index;</code>
+  <code></code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -69,6 +66,7 @@ dialog.avatar = avatar.object_index;</code>
     <instance objName="o_hull_powerup" x="558" y="80" name="inst_CDF80451" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_weapon_choose_slot2_button" x="414" y="440" name="inst_33080E9F" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="o_mission_select_button" x="684" y="448" name="inst_72F23918" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_dialog_box_controller" x="180" y="184" name="inst_E093A691" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
