@@ -125,7 +125,7 @@ sprite_index = s_exoplanet_01_selected;
           <argument>
             <kind>1</kind>
             <string>/// Go to ship configuration / selection room
-room_goto(r_configure_ship);
+room_goto(r_mission_02);
 </string>
           </argument>
         </arguments>

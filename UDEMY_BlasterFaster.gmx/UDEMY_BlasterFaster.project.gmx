@@ -76,14 +76,17 @@
       <sprite>sprites\s_armor_new</sprite>
       <sprite>sprites\s_danger_indicator</sprite>
       <sprite>sprites\s_mission_indicator</sprite>
+      <sprite>sprites\s_skills_toolbar</sprite>
     </sprites>
     <sprites name="Effects">
       <sprite>sprites\s_explosion_center</sprite>
       <sprite>sprites\s_smoke</sprite>
       <sprite>sprites\s_flare</sprite>
+      <sprite>sprites\s_shield_hit</sprite>
     </sprites>
     <sprites name="Weapons">
       <sprite>sprites\s_laser</sprite>
+      <sprite>sprites\s_laser_flare</sprite>
       <sprite>sprites\s_laser_directional</sprite>
       <sprite>sprites\s_projectile</sprite>
       <sprite>sprites\s_enemy_laser</sprite>
@@ -128,6 +131,7 @@
       <sprite>sprites\s_dummy_avatar</sprite>
       <sprite>sprites\s_avatar_player_01</sprite>
       <sprite>sprites\s_manga_avatar</sprite>
+      <sprite>sprites\s_robot_avatar</sprite>
     </sprites>
     <sprites name="NPC ships">
       <sprite>sprites\s_carrier_NPC</sprite>
@@ -148,6 +152,8 @@
       <background>background\b_stars_far</background>
       <background>background\b_stars_close</background>
       <background>background\b_space_far</background>
+      <background>background\b_space_themed</background>
+      <background>background\b_space_themed_2</background>
     </backgrounds>
     <backgrounds name="PlatformerMissions">
       <background>background\b_station_tileset</background>
@@ -176,6 +182,9 @@
       <script>scripts\draw_damage.gml</script>
       <script>scripts\draw_player_stats.gml</script>
       <script>scripts\dialog_box.gml</script>
+    </scripts>
+    <scripts name="Enemies">
+      <script>scripts\add_boss.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -309,6 +318,7 @@
       <object>objects\o_danger_indicator</object>
       <object>objects\o_mission_indicator</object>
       <object>objects\o_dialog_box</object>
+      <object>objects\o_skills_toolbar</object>
       <objects name="Gun HUD">
         <object>objects\o_weapon_hud_parent</object>
         <object>objects\o_hull_gun</object>
@@ -322,6 +332,8 @@
       <object>objects\o_screen_flash</object>
       <object>objects\o_flare</object>
       <object>objects\o_projectile_gun_flare</object>
+      <object>objects\o_shield_hit</object>
+      <object>objects\o_laser_gun_flare</object>
     </objects>
     <objects name="Spawners">
       <object>objects\o_enemy_boss_spawner</object>
@@ -360,9 +372,11 @@
     <objects name="Controllers">
       <object>objects\o_weapon_controller</object>
       <object>objects\o_ship_controller</object>
+      <object>objects\o_mission_controller</object>
     </objects>
     <objects name="NPC Avatars">
       <object>objects\o_avatar</object>
+      <object>objects\o_robot_avatar</object>
     </objects>
     <objects name="NPC Ships">
       <object>objects\o_carrier_NPC</object>
@@ -388,6 +402,7 @@
     <rooms name="SpaceMissions">
       <room>rooms\r_space</room>
       <room>rooms\r_mission_01</room>
+      <room>rooms\r_mission_02</room>
       <room>rooms\r_mission_select</room>
     </rooms>
     <rooms name="SpaceStations">

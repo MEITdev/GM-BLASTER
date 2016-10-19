@@ -190,6 +190,9 @@ if instance_exists(global.boss)
         create_explosion(x, y);
         instance_destroy();
         
+        // Set the FLAG for this mission
+        mission_completed = true;
+        
         score += 100;       
         
         if instance_exists(global.ship)
@@ -202,7 +205,6 @@ if instance_exists(global.boss)
         score = 0;
     }
 }
-
 </string>
           </argument>
         </arguments>

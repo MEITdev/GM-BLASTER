@@ -155,8 +155,8 @@ sprite_index = s_gas_giant_selected;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Go to ship configuration / selection room
-room_goto(r_configure_ship);
+            <string>/// Go to mission 01
+room_goto(r_mission_01);
 </string>
           </argument>
         </arguments>

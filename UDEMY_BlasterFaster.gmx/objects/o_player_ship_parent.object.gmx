@@ -514,6 +514,7 @@ with (global.ship)
             
             // Draw the ship sprite at the last position saved by the alarm
             to_draw = sprite_index;
+            
             //draw_sprite(to_draw, 0, old_x, old_y);
             draw_sprite_ext(to_draw, 0, old_x, old_y, 1, 1, 0, c_white, .4);
 

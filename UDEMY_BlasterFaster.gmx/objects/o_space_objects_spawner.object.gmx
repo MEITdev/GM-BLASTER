@@ -26,11 +26,42 @@
           <argument>
             <kind>1</kind>
             <string>///Initialise spawner object
-alarm[PLANET_TIMER] = room_speed * 30;
-alarm[SCALE_TIMER] = 1;
-planet_scale = .1;
 
-alarm[NEBULAE_TIMER] = room_speed * 5;
+// default level value
+level = 0;
+
+alarm[LEVEL_CHOOSER] = room_speed / 4;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Set the timers according to the level
+if level == 1
+{
+    alarm[PLANET_TIMER] = room_speed * 30;
+    alarm[SCALE_TIMER] = 1;
+    planet_scale = .1;
+    alarm[NEBULAE_TIMER] = room_speed * 5;
+}
+
 </string>
           </argument>
         </arguments>

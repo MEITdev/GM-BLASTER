@@ -31,7 +31,7 @@
 vspeed = -8;
 
 // create flare
-instance_create(x, y, o_flare);
+instance_create(x, y, o_laser_gun_flare);
 
 // play the sound effect
 if global.Sound == 'On'
