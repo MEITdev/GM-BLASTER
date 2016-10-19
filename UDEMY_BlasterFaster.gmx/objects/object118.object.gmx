@@ -51,7 +51,7 @@ text = "Load";
           <argument>
             <kind>1</kind>
             <string>///Save the current ship settings
-load_game("default_ship.ini");
+load_player_ship("default_ship.ini");
 </string>
           </argument>
         </arguments>

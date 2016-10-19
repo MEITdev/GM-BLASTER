@@ -655,7 +655,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="23">
+    <constants number="24">
       <constant name="LASER_ALARM">0</constant>
       <constant name="SPAWNER_ALARM">0</constant>
       <constant name="POWERUP_SPAWNER">1</constant>
@@ -679,6 +679,7 @@
       <constant name="BLUR_TIMER">4</constant>
       <constant name="LEVEL_CHOOSER">7</constant>
       <constant name="BOSS_SPAWNER">10</constant>
+      <constant name="DESTROY_DIALOG_BOX">0</constant>
     </constants>
   </ConfigConstants>
 </Config>

@@ -57,6 +57,7 @@
       <sprite>sprites\s_left_control</sprite>
       <sprite>sprites\s_right_control</sprite>
       <sprite>sprites\s_input_box</sprite>
+      <sprite>sprites\s_delete_save</sprite>
     </sprites>
     <sprites name="Menu Buttons">
       <sprite>sprites\s_button</sprite>
@@ -165,10 +166,12 @@
     <scripts name="System">
       <script>scripts\load_settings.gml</script>
       <script>scripts\save_settings.gml</script>
-      <script>scripts\save_game.gml</script>
-      <script>scripts\load_game.gml</script>
+      <script>scripts\save_player_ship.gml</script>
+      <script>scripts\load_player_ship.gml</script>
+      <script>scripts\load_player_data.gml</script>
       <script>scripts\draw_string.gml</script>
       <script>scripts\save_player.gml</script>
+      <script>scripts\create_default_ship.gml</script>
     </scripts>
     <scripts name="Effects">
       <script>scripts\add_screenshake.gml</script>
@@ -224,6 +227,9 @@
       <object>objects\o_save_game_button</object>
       <object>objects\object118</object>
       <object>objects\o_save_player_button</object>
+      <object>objects\o_save_slot_0</object>
+      <object>objects\o_save_slot_1</object>
+      <object>objects\o_save_slot_2</object>
       <object>objects\o_load_player_button</object>
       <object>objects\o_settings_up_control</object>
       <object>objects\o_settings_down_control</object>
@@ -233,6 +239,7 @@
       <object>objects\o_setup_down_key</object>
       <object>objects\o_setup_left_key</object>
       <object>objects\o_setup_right_key</object>
+      <object>objects\o_delete_save_button</object>
     </objects>
     <objects name="Player Characters">
       <object>objects\o_player_character</object>
@@ -387,6 +394,7 @@
     <room>rooms\r_splashscreen</room>
     <rooms name="Menu">
       <room>rooms\r_menu</room>
+      <room>rooms\r_choose_save_slot</room>
       <room>rooms\r_configure_ship</room>
       <room>rooms\r_ship_select</room>
       <room>rooms\r_settings</room>

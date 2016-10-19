@@ -56,7 +56,7 @@ text = "Load";
 global.current_player.name = o_textbox.txt;
 
 // Call the load script, that will take us from this screen
-load_game(global.current_player.name);
+load_player_ship(global.current_player.name);
 </string>
           </argument>
         </arguments>

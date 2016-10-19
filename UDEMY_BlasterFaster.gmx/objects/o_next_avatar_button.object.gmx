@@ -59,6 +59,12 @@ else
 {
     global.current_player.avatar_id = 0;
 }
+
+// update the image index on the current avatar
+with (o_avatar_player)
+{
+    image_index = global.current_player.avatar_id;
+}
 </string>
           </argument>
         </arguments>

@@ -53,7 +53,7 @@ text = "Start!";
             <string>/// Start the game
 
 // save the ship configuration and jump to mission!
-save_game(global.current_player.ship_save_file);
+save_player_ship(global.current_player.ship_save_file);
 room_goto(r_mission_select);
 
 </string>

@@ -17,7 +17,8 @@ cursor_sprite = s_cursor_crosshair;
 
 // TESTING REMOVE _!!___
 dialog_box(room_width/2 - 125, 100, 75, 250, "Welcome!", "Hello there, welcome to pre-alpha stage of this game. Hope you or your computer do not crash too much...");
-instance_create(dialog.x - 96, dialog.y, o_robot_avatar);</code>
+avatar = instance_create(dialog.x - 96, dialog.y, o_robot_avatar);
+dialog.avatar = avatar.object_index;</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

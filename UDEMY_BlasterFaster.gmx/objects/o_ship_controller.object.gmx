@@ -29,8 +29,8 @@
 
 // Ship controller will instantiate the loaded ship
 
-//load_game("default_ship.ini");
-
+load_player_ship(global.current_player.ship_save_file);
+/*
 if file_exists(global.current_player.ship_save_file)
 {
     ini_open(global.current_player.ship_save_file);
@@ -72,11 +72,11 @@ if file_exists(global.current_player.ship_save_file)
     ini_close();
 }
 else
-{  
+{ 
+    // create default ship when the save file for this ship is not present
+    create_default_ship();
+ 
     {
-        // set default player name
-        global.current_player.name = "Player";
-        
         // if there is no save file load the default ship configuration
         // store pointer to the created ship as the players current ship
         global.ship = instance_create(room_width/2, room_height - 64, o_ship_new);
@@ -118,9 +118,9 @@ else
         global.ship.slot[2].gun_slot_id = 2;
      
         // and save it so in the next boot we just load it to the game
-        save_game("default_ship.ini");
+        //save_game("default_ship.ini");
     }
-}
+}*/
 </string>
           </argument>
         </arguments>

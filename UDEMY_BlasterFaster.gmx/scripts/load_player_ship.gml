@@ -1,28 +1,11 @@
-///load_game(name)
-file_name = string(argument0) + ".ini";
+///load_player_ship(file_name)
+file_name = argument0;
 
 // Load the player variables from the save file
 if file_exists(file_name)
 {
     ini_open(file_name);
     
-    // save Player information
-    global.current_player.name = ini_read_string("player", "name", "Bob");
-    global.current_player.experience = ini_read_real("player","experience", 0);
-    global.current_player.level = ini_read_real("player","level", 1);
-    global.current_player.credits = ini_read_real("player", "credits", 0);
-    global.current_player.avatar_id = ini_read_real("player", "avatar_id", 0);
-    global.current_player.skill_id = ini_read_real("player", "skill_id", 0);
-    // now select that as the file ship name   
-    global.current_player.ship_save_file = ini_read_string("player", "ship", "default_ship.ini");
-    
-    //close the save file
-    ini_close();
-    
-    // now use the loaded ship save file ID to load the ship information
-    if file_exists(global.current_player.ship_save_file) // check because ... paranoia
-    {
-        ini_open(global.current_player.ship_save_file);
 
         ship_type = ini_read_string("ship", "type", 0);
         ship_shield = ini_read_real("ship", "shield", 0);
@@ -60,10 +43,13 @@ if file_exists(file_name)
             global.ship.slot[i].gun_slot_id = i;
         }
         ini_close();   
-    }
     
     // now that all is loaded, we can go to the mothership room (ship upgrade room)
     // for now start a mission to test if all is loaded properly
-    room_goto(r_mission_01);
+    //room_goto(r_mission_01);
     
+}
+else
+{
+    create_default_ship();
 }

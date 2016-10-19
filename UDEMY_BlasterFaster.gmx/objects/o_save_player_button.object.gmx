@@ -56,7 +56,7 @@ text = "Continue";
 global.current_player.name = o_textbox.txt;
 
 // Save the player information
-save_player(global.current_player.name);
+save_player(global.current_player.save_slot);
 
 // And now go to the ship configuration room
 room_goto(r_configure_ship);

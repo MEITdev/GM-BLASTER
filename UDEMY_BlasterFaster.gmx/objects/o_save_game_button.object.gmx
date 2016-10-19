@@ -55,7 +55,7 @@ text = "Save";
 
 
 // use the current players save file name to save the ship
-save_game(global.current_player.ship_save_file);
+save_player_ship(global.current_player.ship_save_file);
 </string>
           </argument>
         </arguments>

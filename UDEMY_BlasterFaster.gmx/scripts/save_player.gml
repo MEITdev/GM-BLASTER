@@ -1,6 +1,6 @@
-///save_player(name)
+///save_player(slot)
 // Saves the player created character information
-save_file = string(argument0) + ".ini";
+save_file = "slot_" + string(argument0) + ".ini";
 
 if file_exists(save_file)
 {
@@ -35,9 +35,5 @@ else
     
     //close the save file
     ini_close();
-    
-    // now call the method to save and create new ship from scratch 
-    
+        
 }
-
-

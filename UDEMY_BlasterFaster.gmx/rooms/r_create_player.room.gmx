@@ -12,7 +12,8 @@
   <showcolour>-1</showcolour>
   <code>// TESTING REMOVE _!!___
 dialog_box(16, 16, 100, 200, "Create your pilot", "Select a name, your avatar and one special Skill that you can use during your next mission. You can always change those once docked at the mothership.");
-instance_create(dialog.x + dialog.width + dialog.padding, dialog.y, o_robot_avatar);</code>
+avatar = instance_create(dialog.x + dialog.width + dialog.padding, dialog.y, o_robot_avatar);
+dialog.avatar = avatar.object_index;</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

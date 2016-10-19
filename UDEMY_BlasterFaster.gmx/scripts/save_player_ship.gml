@@ -1,4 +1,4 @@
-///save_game(name)
+///save_player_ship(name)
 file_name = argument0;
 
 // delete if file already exists
