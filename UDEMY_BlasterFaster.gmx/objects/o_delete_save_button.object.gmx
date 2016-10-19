@@ -104,6 +104,17 @@ image_index = 1;
             <string>///Delete selected save button
 if file_exists("slot_" + string(selected_save) + ".ini")
 {
+
+    // open the file and delete the associated ship file first
+    ini_open("slot_" + string(selected_save) + ".ini");
+    ship_file = ini_read_string("player", "ship", "default_ship.ini");
+    ini_close();
+    if file_exists(ship_file)
+    {
+        file_delete(ship_file);
+    }
+
+    // delete the player save file
     file_delete("slot_" + string(selected_save) + ".ini");
     
     // restart the room

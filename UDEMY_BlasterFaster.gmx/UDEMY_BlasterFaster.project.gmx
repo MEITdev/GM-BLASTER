@@ -58,10 +58,17 @@
       <sprite>sprites\s_right_control</sprite>
       <sprite>sprites\s_input_box</sprite>
       <sprite>sprites\s_delete_save</sprite>
+      <sprites name="Weapons">
+        <sprite>sprites\s_gun_00_avatar</sprite>
+        <sprite>sprites\s_gun_01_avatar</sprite>
+        <sprite>sprites\s_gun_02_avatar</sprite>
+        <sprite>sprites\s_gun_stats</sprite>
+      </sprites>
     </sprites>
     <sprites name="Menu Buttons">
       <sprite>sprites\s_button</sprite>
       <sprite>sprites\s_score</sprite>
+      <sprite>sprites\s_credits</sprite>
     </sprites>
     <sprites name="Space HUD">
       <sprite>sprites\s_armor</sprite>
@@ -192,6 +199,8 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_score</font>
+    <font>fonts\f_gun_stats</font>
+    <font>fonts\f_credits</font>
   </fonts>
   <objects name="objects">
     <object>objects\o_me_it_logo</object>
@@ -219,13 +228,15 @@
       <object>objects\o_button_player_name</object>
       <object>objects\o_start_button</object>
       <object>objects\o_next_avatar_button</object>
+      <object>objects\o_gun_00_avatar</object>
+      <object>objects\o_gun_01_avatar</object>
+      <object>objects\o_gun_02_avatar</object>
       <object>objects\o_next_skill_button</object>
       <object>objects\o_start_new_game_button</object>
       <object>objects\o_start_platformer_button</object>
       <object>objects\o_configure_ship</object>
       <object>objects\o_mission_select_button</object>
       <object>objects\o_save_game_button</object>
-      <object>objects\object118</object>
       <object>objects\o_save_player_button</object>
       <object>objects\o_save_slot_0</object>
       <object>objects\o_save_slot_1</object>
@@ -240,6 +251,7 @@
       <object>objects\o_setup_left_key</object>
       <object>objects\o_setup_right_key</object>
       <object>objects\o_delete_save_button</object>
+      <object>objects\o_gun_stats</object>
     </objects>
     <objects name="Player Characters">
       <object>objects\o_player_character</object>
@@ -317,6 +329,7 @@
     <objects name="Game HUD">
       <object>objects\o_hull_new</object>
       <object>objects\o_score</object>
+      <object>objects\o_credits</object>
       <object>objects\o_armor</object>
       <object>objects\o_shield</object>
       <object>objects\o_hull</object>
@@ -397,6 +410,7 @@
       <room>rooms\r_menu</room>
       <room>rooms\r_choose_save_slot</room>
       <room>rooms\r_configure_ship</room>
+      <room>rooms\r_mothership_hangar</room>
       <room>rooms\r_ship_select</room>
       <room>rooms\r_settings</room>
       <room>rooms\r_highscore</room>

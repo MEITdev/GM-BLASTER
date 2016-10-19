@@ -83,7 +83,7 @@ else // take the player to the "hangar" of the mothership
     // load the global data again to memory
     load_player_data(2);
 
-    room_goto(r_configure_ship);
+    room_goto(r_mothership_hangar);
 }
 
 </string>

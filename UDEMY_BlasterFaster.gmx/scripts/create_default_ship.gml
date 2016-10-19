@@ -1,6 +1,6 @@
 ///create_default_ship()
 
-global.ship = instance_create(room_width/2, room_height - 64, o_ship_new);
+global.ship = instance_create(room_width/2, room_height/2, o_ship_new);
        
 // Set the ship slots, this depends on the type of the ship
 global.ship.ship_slots = 3;

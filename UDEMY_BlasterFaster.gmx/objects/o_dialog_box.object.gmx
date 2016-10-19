@@ -49,7 +49,7 @@ str = ""; // what gets displayed to the screen
 
 // Time To Live for the dialog box, default is 5 seconds
 ttl = room_speed * 5;
-alarm[DESTROY_DIALOG_BOX] = ttl;
+//alarm[DESTROY_DIALOG_BOX] = ttl;
 
 // id to the corresponding avatar that has been created with the dialog box
 avatar = noone;

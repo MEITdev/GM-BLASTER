@@ -16,7 +16,7 @@ if file_exists(file_name)
 
         // Create the instance of the ship... this may need to be changed in the end...
         // store pointer to the created ship as the players current ship
-        global.ship = instance_create(room_width/2, room_height - 64, asset_get_index(ship_type));
+        global.ship = instance_create(room_width/2, room_height/2, asset_get_index(ship_type));
         
         // Set the ship slots, this depends on the type of the ship
         global.ship.ship_slots = ship_slots;
