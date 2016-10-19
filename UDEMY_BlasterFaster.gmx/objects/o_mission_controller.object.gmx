@@ -42,11 +42,46 @@ if room_get_name(room) == "r_mission_01"
     
     instance_create(0,0, o_view_controller);
     instance_create(0,0, o_ship_controller);
+
+    // START THE TIMER
+    start_time = date_current_datetime();
+
+        
 }
 
 if room_get_name(room) == "r_mission_02"
 {
     
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// TESTING 
+diff = date_second_span(start_time, date_current_datetime());
+if diff &gt; 5
+{
+    // if it took more than 5 seconds to finish the level, reset
+    // for testing - just go to the main menu
+    room_goto(r_menu);
 }
 </string>
           </argument>
