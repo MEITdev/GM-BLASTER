@@ -15,7 +15,9 @@ window_set_cursor(cr_none);
 //set default "cursor"
 cursor_sprite = s_cursor_crosshair;
 
-dialog_box(room_width/2 - 125, 100, 75, 250, "Welcome!", "Hello there, welcome to pre-alpha stage of this game. Hope you or your computer do not crash too much...", o_robot_avatar);</code>
+// TESTING REMOVE _!!___
+dialog_box(room_width/2 - 125, 100, 75, 250, "Welcome!", "Hello there, welcome to pre-alpha stage of this game. Hope you or your computer do not crash too much...");
+instance_create(dialog.x - 96, dialog.y, o_robot_avatar);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

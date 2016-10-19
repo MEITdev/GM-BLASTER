@@ -42,8 +42,7 @@ line = 0;
 
 // Set the window Title
 title = "";
-// set the Avatar for the window
-avatar_id = 0;
+
 // Set the message
 message = "";
 str = ""; // what gets displayed to the screen
@@ -98,7 +97,10 @@ ds_list_destroy(start);
 
 // draw the box first, 50% transparency
 draw_set_alpha(.5);
-draw_roundrect_colour(x, y, x+width, y+height, c_blue, c_red, true);
+//draw_roundrect_colour(x, y, x+width, y+height, c_blue, c_red, true);
+draw_set_colour(c_gray);
+draw_rectangle(x, y, x+width, y+height, false);
+draw_set_colour(c_white);
 
 // draw a title "bar"
 draw_set_color(c_green);
@@ -116,10 +118,6 @@ draw_set_halign(fa_top);
 
 // Place the title on top of the box
 draw_text(x + padding, y + padding, title);
-
-// Place the avatar on the top left position
-// Create the avatar
-avatar = instance_create(x + width + padding, y + padding, o_avatar); 
 
 // Check if the string is past the width
 // Insert a line break if yes
