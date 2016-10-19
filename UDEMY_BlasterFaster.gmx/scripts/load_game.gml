@@ -1,49 +1,69 @@
 ///load_game(name)
-file_name = argument0;
+file_name = string(argument0) + ".ini";
 
-// load the saved settins
+// Load the player variables from the save file
 if file_exists(file_name)
 {
     ini_open(file_name);
-
-    // read player name
-    player_name = ini_read_string("player", "name", "dead");
-    global.current_player.name = player_name;
     
-    ship_type = ini_read_string("ship", "type", 0);
-    ship_shield = ini_read_real("ship", "shield", 0);
-    ship_armor = ini_read_real("ship", "armor", 0);
-    ship_hull = ini_read_real("ship", "hull", 0);
-    ship_speed = ini_read_real("ship", "speed", 0);
-    ship_slots = ini_read_real("ship", "ship_slots", 0);
+    // save Player information
+    global.current_player.name = ini_read_string("player", "name", "Bob");
+    global.current_player.experience = ini_read_real("player","experience", 0);
+    global.current_player.level = ini_read_real("player","level", 1);
+    global.current_player.credits = ini_read_real("player", "credits", 0);
+    global.current_player.avatar_id = ini_read_real("player", "avatar_id", 0);
+    global.current_player.skill_id = ini_read_real("player", "skill_id", 0);
+    // now select that as the file ship name   
+    global.current_player.ship_save_file = ini_read_string("player", "ship", "default_ship.ini");
     
-    // Create the instance of the ship... this may need to be changed in the end...
-    // store pointer to the created ship as the players current ship
-    global.ship = instance_create(room_width/2, room_height - 64, asset_get_index(ship_type));
-    
-    // Set the ship slots, this depends on the type of the ship
-    global.ship.ship_slots = ship_slots;
-    global.ship.shield = ship_shield;
-    global.ship.armor = ship_armor;
-    global.ship.hull = ship_hull;
-    global.ship.movement_speed = ship_speed;
-    global.ship.max_movement_speed = global.ship.movement_speed;
-    
-    // instantiate the slots upon creation
-    for (i = 0; i <= global.ship.ship_slots - 1; i++)
-    {
-        global.ship.slot[i] = 0;
-        global.ship.ship_mount_x[i] = ini_read_real("slots", string(i) + "_mount_x", 0);
-        global.ship.ship_mount_y[i] = ini_read_real("slots", string(i) + "_mount_y", 0);
-    }
-
-    // attach guns to the ship
-    for (i = 0; i <= global.ship.ship_slots -1; i++)
-    {
-        gun_to_create = asset_get_index(ini_read_string("slots", string(i), 0));
-        //add_weapon(ship, asset_get_index(gun_to_create), i);
-        global.ship.slot[i] = instance_create(global.ship.ship_mount_x[i], global.ship.ship_mount_y[i], gun_to_create);
-        global.ship.slot[i].gun_slot_id = i;
-    }
+    //close the save file
     ini_close();
+    
+    // now use the loaded ship save file ID to load the ship information
+    if file_exists(global.current_player.ship_save_file) // check because ... paranoia
+    {
+        ini_open(global.current_player.ship_save_file);
+
+        ship_type = ini_read_string("ship", "type", 0);
+        ship_shield = ini_read_real("ship", "shield", 0);
+        ship_armor = ini_read_real("ship", "armor", 0);
+        ship_hull = ini_read_real("ship", "hull", 0);
+        ship_speed = ini_read_real("ship", "speed", 0);
+        ship_slots = ini_read_real("ship", "ship_slots", 0);
+
+        // Create the instance of the ship... this may need to be changed in the end...
+        // store pointer to the created ship as the players current ship
+        global.ship = instance_create(room_width/2, room_height - 64, asset_get_index(ship_type));
+        
+        // Set the ship slots, this depends on the type of the ship
+        global.ship.ship_slots = ship_slots;
+        global.ship.shield = ship_shield;
+        global.ship.armor = ship_armor;
+        global.ship.hull = ship_hull;
+        global.ship.movement_speed = ship_speed;
+        global.ship.max_movement_speed = global.ship.movement_speed;
+        
+        // instantiate the slots upon creation
+        for (i = 0; i <= global.ship.ship_slots - 1; i++)
+        {
+            global.ship.slot[i] = 0;
+            global.ship.ship_mount_x[i] = ini_read_real("slots", string(i) + "_mount_x", 0);
+            global.ship.ship_mount_y[i] = ini_read_real("slots", string(i) + "_mount_y", 0);
+        }
+    
+        // attach guns to the ship
+        for (i = 0; i <= global.ship.ship_slots -1; i++)
+        {
+            gun_to_create = asset_get_index(ini_read_string("slots", string(i), 0));
+            //add_weapon(ship, asset_get_index(gun_to_create), i);
+            global.ship.slot[i] = instance_create(global.ship.ship_mount_x[i], global.ship.ship_mount_y[i], gun_to_create);
+            global.ship.slot[i].gun_slot_id = i;
+        }
+        ini_close();   
+    }
+    
+    // now that all is loaded, we can go to the mothership room (ship upgrade room)
+    // for now start a mission to test if all is loaded properly
+    room_goto(r_mission_01);
+    
 }

@@ -223,7 +223,8 @@
       <object>objects\o_mission_select_button</object>
       <object>objects\o_save_game_button</object>
       <object>objects\object118</object>
-      <object>objects\o_save_player</object>
+      <object>objects\o_save_player_button</object>
+      <object>objects\o_load_player_button</object>
       <object>objects\o_settings_up_control</object>
       <object>objects\o_settings_down_control</object>
       <object>objects\o_settings_left_control</object>
