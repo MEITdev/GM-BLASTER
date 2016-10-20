@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Initialise the laser
+event_inherited();
+
 // start shooting
 can_fire = true;
 
