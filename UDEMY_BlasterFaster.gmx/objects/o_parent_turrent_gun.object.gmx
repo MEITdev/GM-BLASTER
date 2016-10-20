@@ -52,6 +52,15 @@ correction_y = 0;
 
 old_x = 0;
 old_y = 0;
+
+
+// Gun stats - displayed in the hangar - override
+damage = .5;
+ammo_capacity = max_ammo;
+recharge_time = 0;
+fire_rate = room_speed/8;
+price = 350;
+energy_consumption = 0;
 </string>
           </argument>
         </arguments>

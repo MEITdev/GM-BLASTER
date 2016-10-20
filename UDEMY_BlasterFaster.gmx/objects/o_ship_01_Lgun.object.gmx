@@ -35,7 +35,6 @@ action_mouse_button = mb_left;
 // initialise energy
 max_energy_level = 100;
 energy_level = max_energy_level;
-
 armor = 0;
 hull = 3;
 
@@ -49,6 +48,9 @@ hull_status.parent_gun = object_index;
 // create the ammo counter indicator
 ammo_counter = instance_create(0, 0, o_ammo_counter);
 ammo_counter.parent_gun = object_index;
+
+//re-read the ammo capacity for the gun stats object
+ammo_capacity = max_energy_level;
 </string>
           </argument>
         </arguments>

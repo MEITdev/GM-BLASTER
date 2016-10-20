@@ -42,6 +42,8 @@ projectile_speed = 8;
 correction_x = 22;
 correction_y = 22;
 
+// for the gun stats we need to re-read the ammo_capacity
+ammo_capacity = max_ammo;
 </string>
           </argument>
         </arguments>

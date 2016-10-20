@@ -30,7 +30,7 @@
 name = "";
 experience = 0;
 level = 1;
-credits = 0;
+credits = 500;
 
 // pointer to players created ship
 score = 0;

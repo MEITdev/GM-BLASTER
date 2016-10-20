@@ -50,6 +50,16 @@ for (i = 0; i &lt; array_length_1d(weapons_slot); i++)
 // create the gun stats for the gun
 gun_stats = instance_create(x - sprite_width/2, y-sprite_height/2, o_gun_stats);
 gun_stats.owner = id;
+
+
+// Get the detailsfrom the gun for the Gun Stats display
+gun_stats.damage = global.ship.slot[0].damage;
+gun_stats.ammo_capacity = global.ship.slot[0].ammo_capacity;
+gun_stats.recharge_time = global.ship.slot[0].recharge_time;
+gun_stats.fire_rate = global.ship.slot[0].fire_rate;
+gun_stats.price = global.ship.slot[0].price;
+gun_stats.energy_consumption = global.ship.slot[0].energy_consumption;
+
 /*
 current_gun = o_ship_new.slot[0];
 old_mount_x = o_ship_new.slot[0].mount_x;
@@ -108,11 +118,12 @@ add_weapon(weapons_slot[gun_choice], 0);
 
 // Get the detailsfrom the gun for the Gun Stats display
 gun_stats.damage = global.ship.slot[0].damage;
-gun_stats.ammo = global.ship.slot[0].ammo;
+gun_stats.ammo_capacity = global.ship.slot[0].ammo_capacity;
 gun_stats.recharge_time = global.ship.slot[0].recharge_time;
 gun_stats.fire_rate = global.ship.slot[0].fire_rate;
 gun_stats.price = global.ship.slot[0].price;
 gun_stats.energy_consumption = global.ship.slot[0].energy_consumption;
+
 </string>
           </argument>
         </arguments>

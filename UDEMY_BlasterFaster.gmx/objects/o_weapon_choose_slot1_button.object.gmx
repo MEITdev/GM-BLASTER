@@ -45,6 +45,19 @@ for (i = 0; i &lt; array_length_1d(weapons_slot); i++)
             gun_choice = i;
     } else gun_choice += 1;
 }
+
+// create the gun stats for the gun
+gun_stats = instance_create(x - sprite_width/2, y-sprite_height/2, o_gun_stats);
+gun_stats.owner = id;
+
+
+// Get the detailsfrom the gun for the Gun Stats display
+gun_stats.damage = global.ship.slot[1].damage;
+gun_stats.ammo_capacity = global.ship.slot[1].ammo_capacity;
+gun_stats.recharge_time = global.ship.slot[1].recharge_time;
+gun_stats.fire_rate = global.ship.slot[1].fire_rate;
+gun_stats.price = global.ship.slot[1].price;
+gun_stats.energy_consumption = global.ship.slot[1].energy_consumption;
 </string>
           </argument>
         </arguments>
@@ -93,6 +106,15 @@ if instance_exists(global.ship.slot[1])
 //global.ship.slot[1].gun_slot_id = 1;
 
 add_weapon(weapons_slot[gun_choice], 1);
+
+// Get the detailsfrom the gun for the Gun Stats display
+gun_stats.damage = global.ship.slot[1].damage;
+gun_stats.ammo_capacity = global.ship.slot[1].ammo_capacity;
+gun_stats.recharge_time = global.ship.slot[1].recharge_time;
+gun_stats.fire_rate = global.ship.slot[1].fire_rate;
+gun_stats.price = global.ship.slot[1].price;
+gun_stats.energy_consumption = global.ship.slot[1].energy_consumption;
+
 </string>
           </argument>
         </arguments>

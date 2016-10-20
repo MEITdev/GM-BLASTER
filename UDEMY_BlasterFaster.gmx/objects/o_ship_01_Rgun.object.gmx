@@ -52,6 +52,9 @@ ammo_counter.parent_gun = object_index;
 
 correction_x = +5;
 correction_y = -24;
+
+//re-read the ammo capacity for the gun stats object
+ammo_capacity = max_energy_level;
 </string>
           </argument>
         </arguments>

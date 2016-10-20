@@ -26,8 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>///Initialise the laser
-event_inherited();
-
 // start shooting
 can_fire = true;
 
@@ -55,9 +53,17 @@ projectile_speed = 10;
 correction_x = 0;
 correction_y = 0;
 
-
 old_x = 0;
 old_y = 0;
+
+
+// Gun stats - displayed in the hangar - override
+damage = 1;
+ammo_capacity = max_energy_level;
+recharge_time = room_speed;
+fire_rate = room_speed/8;
+price = 100;
+energy_consumption = 0;
 </string>
           </argument>
         </arguments>

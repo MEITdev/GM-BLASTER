@@ -67,6 +67,7 @@
     <instance objName="o_weapon_choose_slot2_button" x="416" y="408" name="inst_33080E9F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_mission_select_button" x="684" y="448" name="inst_72F23918" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_dialog_box_controller" x="180" y="184" name="inst_E093A691" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_credits" x="792" y="32" name="inst_56944445" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

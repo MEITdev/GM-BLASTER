@@ -26,12 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>///Initialise the object
-damage = 1;
-ammo = 500;
-recharge_time = 0;
-fire_rate = .25;
-price = 150;
-energy_consumption = 25;
+damage = 999;
+ammo_capacity = 999;
+recharge_time = 999;
+fire_rate = 999;
+price = 999;
+energy_consumption = 999;
 
 owner = noone;
 </string>
@@ -66,13 +66,15 @@ draw_text(owner.x-24, owner.y-22, string(fire_rate));
 // recharge_time
 draw_text(owner.x-6, owner.y-22, string(recharge_time));
 // ammo
-draw_text(owner.x+12, owner.y-22, string(ammo));
+draw_text(owner.x+12, owner.y-22, string(ammo_capacity));
 // energy_consumption
 draw_text(owner.x+30, owner.y-22, string(energy_consumption));
 draw_set_font(f_credits);
 // price
 draw_text(owner.x, owner.y + 2, string(price));
 
+// set the font back
+draw_set_font(f_score);
 </string>
           </argument>
         </arguments>

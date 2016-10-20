@@ -47,6 +47,10 @@ hull_status.parent_gun = object_index;
 // create the ammo counter indicator
 ammo_counter = instance_create(0, 0, o_ammo_counter);
 ammo_counter.parent_gun = object_index;
+
+
+// for the gun stats we need to re-read the ammo_capacity
+ammo_capacity = max_ammo;
 </string>
           </argument>
         </arguments>
