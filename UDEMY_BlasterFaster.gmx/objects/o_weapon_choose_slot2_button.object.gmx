@@ -62,7 +62,7 @@ if instance_exists(global.ship.slot[2])
 else
 {
     // if there is no weapon just add the default one
-    add_weapon(o_ship_00_dummyGun, 2);
+    add_weapon(o_ship_02_dummyGun, 2);
 }
 
 // Get the detailsfrom the gun for the Gun Stats display
@@ -156,6 +156,7 @@ gun_stats.energy_consumption = weapons_slot[gun_choice].energy_consumption;
             <string>/// Set the image
 image_index = gun_choice;
 draw_self();
+draw_text(x,y,string(gun_choice));
 </string>
           </argument>
         </arguments>
