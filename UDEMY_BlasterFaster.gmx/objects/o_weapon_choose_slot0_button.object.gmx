@@ -40,15 +40,17 @@ gun_choice = 0;
 // check what is the value and set it
 for (i = 0; i &lt; array_length_1d(weapons_slot) - 1; i++)
 {
-    if instance_exists(global.ship.slot[0])
+    if instance_exists(global.ship.slot[1])
     {
         if object_get_name(global.ship.slot[0].object_index) == object_get_name(weapons_slot[i])
         {
-                gun_choice = i;
+                gun_choice =   i;
         } 
-        else gun_choice += 1;
-    }
-    else
+        else 
+        {
+            gun_choice = 0;
+        }
+    } else 
         gun_choice = 0;
 }
 

@@ -178,6 +178,7 @@
       <script>scripts\load_player_data.gml</script>
       <script>scripts\draw_string.gml</script>
       <script>scripts\save_player.gml</script>
+      <script>scripts\update_player.gml</script>
       <script>scripts\create_default_ship.gml</script>
     </scripts>
     <scripts name="Effects">
@@ -208,6 +209,7 @@
       <object>objects\o_button_parent</object>
       <object>objects\o_highscore_button</object>
       <object>objects\o_menu_button</object>
+      <object>objects\o_purchase_button</object>
       <object>objects\o_quit_button</object>
       <object>objects\o_settings_music</object>
       <object>objects\o_view_controller</object>
