@@ -29,6 +29,8 @@ global.ship.ship_mount_y[1] = 0;
 global.ship.ship_mount_x[2] = 0;
 global.ship.ship_mount_y[2] = 0;
 
+// Default ship has no guns
+/*
 // attach guns to the ship
 global.ship.slot[0] = instance_create(global.ship.ship_mount_x[0], global.ship.ship_mount_y[0], o_ship_01_Lgun);
 global.ship.slot[0].gun_slot_id = 0;
@@ -37,6 +39,7 @@ global.ship.slot[1].gun_slot_id = 1;
 
 global.ship.slot[2] = instance_create(global.ship.ship_mount_x[2], global.ship.ship_mount_y[2], o_ship_01_turret);
 global.ship.slot[2].gun_slot_id = 2;
+*/
 
 // and save it so in the next boot we just load it to the game
 save_player_ship(global.current_player.ship_save_file);

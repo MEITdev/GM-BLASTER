@@ -55,7 +55,6 @@
     <instance objName="o_start_new_game_button" x="774" y="440" name="inst_C93057F8" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="o_menu_button" x="90" y="440" name="inst_EB7F68A4" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="o_weapon_choose_slot0_button" x="280" y="408" name="inst_ACFB37A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_weapon_choose_slot1_button" x="552" y="408" name="inst_EB8F79FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_view_controller" x="180" y="104" name="inst_0508C31D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_asteroid_spawner" x="216" y="104" name="inst_C61A6BE4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_hull_new" x="504" y="40" name="inst_E9A32EBF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -64,10 +63,11 @@
     <instance objName="o_shield_powerup" x="288" y="80" name="inst_E3F974F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_armor_powerup" x="432" y="80" name="inst_742C5FD6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_hull_powerup" x="558" y="80" name="inst_CDF80451" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_weapon_choose_slot2_button" x="416" y="408" name="inst_33080E9F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_mission_select_button" x="684" y="448" name="inst_72F23918" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_dialog_box_controller" x="180" y="184" name="inst_E093A691" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_credits" x="792" y="32" name="inst_56944445" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_weapon_choose_slot1_button" x="552" y="408" name="inst_59B2CAE6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_weapon_choose_slot2_button" x="416" y="408" name="inst_519F5EAC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

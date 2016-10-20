@@ -21,11 +21,14 @@ ini_write_real("ship", "ship_slots", global.ship.ship_slots);
 // save the ship slots and the weapons
 for (i = 0; i <= global.ship.ship_slots -1; i++)
 {
-    ini_write_string("slots", string(i), object_get_name(global.ship.slot[i].object_index));
-
+    if instance_exists(global.ship.slot[i])
+    {
+        ini_write_string("slots", string(i), object_get_name(global.ship.slot[i].object_index));
+    }
     // save mont points for the guns as well
     ini_write_real("slots", string(i) + "_mount_x", global.ship.ship_mount_x[i]);
     ini_write_real("slots", string(i) + "_mount_y", global.ship.ship_mount_y[i]);
+
 }
 
 // close the file

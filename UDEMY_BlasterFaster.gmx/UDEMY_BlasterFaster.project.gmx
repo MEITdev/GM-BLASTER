@@ -296,6 +296,11 @@
           <object>objects\o_parent_turrent_gun</object>
           <object>objects\o_ship_01_turret</object>
         </objects>
+        <objects name="Dummy Guns">
+          <object>objects\o_ship_00_dummyGun</object>
+          <object>objects\o_ship_01_dummyGun</object>
+          <object>objects\o_ship_02_dummyGun</object>
+        </objects>
       </objects>
     </objects>
     <objects name="Enemy Ships">

@@ -28,8 +28,9 @@
             <string>//Initialise the controller
 
 // Ship controller will instantiate the loaded ship
-
 load_player_ship(global.current_player.ship_save_file);
+
+
 /*
 if file_exists(global.current_player.ship_save_file)
 {

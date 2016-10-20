@@ -26,38 +26,61 @@
           <argument>
             <kind>1</kind>
             <string>/// initialise the button
-event_inherited();
-text = "";
+image_speed = 0;
 
 //create array of available guns
 // Slot [0]
-weapons_slot[0] = o_ship_01_Rgun;
-weapons_slot[1] = o_ship_02_Rgun;
+weapons_slot[0] = o_ship_00_dummyGun;
+weapons_slot[1] = o_ship_01_Lgun;
+weapons_slot[2] = o_ship_02_Lgun;
 
-// initialize with the first gun
+// initialise the variable for toggling the guns
 gun_choice = 0;
 
 // check what is the value and set it
-for (i = 0; i &lt; array_length_1d(weapons_slot); i++)
+for (i = 0; i &lt; array_length_1d(weapons_slot) - 1; i++)
 {
-    if object_get_name(global.ship.slot[1].object_index) == object_get_name(weapons_slot[i])
+    if instance_exists(global.ship.slot[1])
     {
-            gun_choice = i;
-    } else gun_choice += 1;
+        if object_get_name(global.ship.slot[1].object_index) == object_get_name(weapons_slot[i])
+        {
+                gun_choice = i;
+        } 
+        else gun_choice += 1;
+    }
+    else
+        gun_choice = 0;
 }
 
+
+// TESTING
 // create the gun stats for the gun
 gun_stats = instance_create(x - sprite_width/2, y-sprite_height/2, o_gun_stats);
 gun_stats.owner = id;
 
+if instance_exists(global.ship.slot[1])
+{
+    // do nothing really
+}
+else
+{
+    // if there is no weapon just add the default one
+    add_weapon(o_ship_00_dummyGun, 1);
+}
 
 // Get the detailsfrom the gun for the Gun Stats display
-gun_stats.damage = global.ship.slot[1].damage;
-gun_stats.ammo_capacity = global.ship.slot[1].ammo_capacity;
-gun_stats.recharge_time = global.ship.slot[1].recharge_time;
-gun_stats.fire_rate = global.ship.slot[1].fire_rate;
-gun_stats.price = global.ship.slot[1].price;
-gun_stats.energy_consumption = global.ship.slot[1].energy_consumption;
+gun_stats.damage = weapons_slot[gun_choice].damage;
+gun_stats.ammo_capacity = weapons_slot[gun_choice].ammo_capacity;
+gun_stats.recharge_time = weapons_slot[gun_choice].recharge_time;
+gun_stats.fire_rate = weapons_slot[gun_choice].fire_rate;
+gun_stats.price = weapons_slot[gun_choice].price;
+gun_stats.energy_consumption = weapons_slot[gun_choice].energy_consumption;
+
+/*
+current_gun = o_ship_new.slot[0];
+old_mount_x = o_ship_new.slot[0].mount_x;
+old_mount_y = o_ship_new.slot[0].mount_y;
+*/
 </string>
           </argument>
         </arguments>
@@ -82,13 +105,13 @@ gun_stats.energy_consumption = global.ship.slot[1].energy_consumption;
             <kind>1</kind>
             <string>/// Toggle available weapons
 
-if gun_choice &gt;= array_length_1d(weapons_slot) - 1
+if gun_choice &lt; array_length_1d(weapons_slot) - 1
 {
-    gun_choice = 0;
+    gun_choice += 1;
 }
 else
 {
-    gun_choice += 1;
+    gun_choice = 0;
 }
 
 // destroy if existing gun
@@ -99,22 +122,35 @@ if instance_exists(global.ship.slot[1])
         instance_destroy();
     }
 }
-   
+
 // now attach the weapon    
-//add_weapon(o_ship_new, weapons_slot[gun_choice], 1);
-//global.ship.slot[1] = instance_create(global.ship.ship_mount_x[1], global.ship.ship_mount_y[1], weapons_slot[gun_choice]);
-//global.ship.slot[1].gun_slot_id = 1;
+//add_weapon(o_ship_new, weapons_slot[gun_choice], 0);
+
+// TESTING
+//global.ship.slot[0] = instance_create(global.ship.ship_mount_x[0], global.ship.ship_mount_y[0], weapons_slot[gun_choice]);
+//global.ship.slot[0].gun_slot_id = 0;
 
 add_weapon(weapons_slot[gun_choice], 1);
 
-// Get the detailsfrom the gun for the Gun Stats display
-gun_stats.damage = global.ship.slot[1].damage;
-gun_stats.ammo_capacity = global.ship.slot[1].ammo_capacity;
-gun_stats.recharge_time = global.ship.slot[1].recharge_time;
-gun_stats.fire_rate = global.ship.slot[1].fire_rate;
-gun_stats.price = global.ship.slot[1].price;
-gun_stats.energy_consumption = global.ship.slot[1].energy_consumption;
 
+// Read the data from the gun instance
+gun_stats.damage = weapons_slot[gun_choice].damage;
+gun_stats.ammo_capacity = weapons_slot[gun_choice].ammo_capacity;
+gun_stats.recharge_time = weapons_slot[gun_choice].recharge_time;
+gun_stats.fire_rate = weapons_slot[gun_choice].fire_rate;
+gun_stats.price = weapons_slot[gun_choice].price;
+gun_stats.energy_consumption = weapons_slot[gun_choice].energy_consumption;
+
+/*
+// Get the detailsfrom the gun for the Gun Stats display
+gun_stats.damage = global.ship.slot[0].damage;
+gun_stats.ammo_capacity = global.ship.slot[0].ammo_capacity;
+gun_stats.recharge_time = global.ship.slot[0].recharge_time;
+gun_stats.fire_rate = global.ship.slot[0].fire_rate;
+gun_stats.price = global.ship.slot[0].price;
+gun_stats.energy_consumption = global.ship.slot[0].energy_consumption;
+
+*/
 </string>
           </argument>
         </arguments>
