@@ -48,6 +48,8 @@ ship_save_file = "default_ship.ini";
 // the slot save ID, default 0
 save_slot = 0;
 
+// here save the weapons that have been purchased by the player
+purchased = 0
 </string>
           </argument>
         </arguments>

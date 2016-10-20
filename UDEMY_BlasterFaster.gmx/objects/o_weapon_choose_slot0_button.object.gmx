@@ -75,8 +75,23 @@ gun_stats.damage = weapons_slot[gun_choice].damage;
 gun_stats.ammo_capacity = weapons_slot[gun_choice].ammo_capacity;
 gun_stats.recharge_time = weapons_slot[gun_choice].recharge_time;
 gun_stats.fire_rate = weapons_slot[gun_choice].fire_rate;
-gun_stats.price = weapons_slot[gun_choice].price;
 gun_stats.energy_consumption = weapons_slot[gun_choice].energy_consumption;
+
+
+// TESTING
+
+for (i = 0; i &lt; array_length_1d(global.current_player.purchased); i++)
+{
+    if global.current_player.purchased[i] == object_get_name(weapons_slot[gun_choice])
+    {
+        // set the price value to 0.....
+        weapons_slot[gun_choice].price = 0;
+    }
+}
+
+// now set the price
+gun_stats.price = weapons_slot[gun_choice].price;
+
 
 /*
 current_gun = o_ship_new.slot[0];
@@ -133,7 +148,6 @@ if instance_exists(global.ship.slot[0])
 //global.ship.slot[0].gun_slot_id = 0;
 
 add_weapon(weapons_slot[gun_choice], 0);
-
 
 // Read the data from the gun instance
 gun_stats.damage = weapons_slot[gun_choice].damage;

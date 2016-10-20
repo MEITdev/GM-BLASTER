@@ -13,6 +13,13 @@ ini_write_real("player", "avatar_id", global.current_player.avatar_id);
 ini_write_real("player", "skill_id", global.current_player.skill_id);
 ini_write_string("player", "ship", global.current_player.ship_save_file);
 
+// save the items the player has already purchased
+for (i = 0; i <= array_length_1d(global.current_player.purchased) - 1; i++)
+{
+    // this will store the name of the object in text form
+    ini_write_string("purchased", string(i), string(global.current_player.purchased[i]));
+}
+
 //close the save file
 ini_close();
         

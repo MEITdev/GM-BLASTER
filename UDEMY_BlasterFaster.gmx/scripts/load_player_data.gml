@@ -16,6 +16,13 @@ if file_exists(file_name)
     // now select that as the file ship name   
     global.current_player.ship_save_file = ini_read_string("player", "ship", "default_ship.ini");
     
+    // load the items the player has already purchased
+    for (i = 0; i < array_length_1d(global.current_player.purchased); i++)
+    {
+        // read the name of the object as text
+        global.current_player.purchased[i] = ini_read_string("purchased", string(i), 0);
+    }
+    
     //close the save file
     ini_close();
 }

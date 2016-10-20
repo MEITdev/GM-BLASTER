@@ -64,7 +64,12 @@ if (global.current_player.credits - total_price) &gt;= 0
 {
     // update the amount of credits available
     global.current_player.credits = global.current_player.credits - total_price;
+
     
+    // TESTING ====================================
+    // update the list of purchased items
+    global.current_player.purchased[array_length_1d(global.current_player.purchased) + 1] = object_get_name(global.ship.slot[0].object_index);
+        
     // save the player and the ship configuration 
     update_player(global.current_player.save_slot);
     save_player_ship(global.current_player.ship_save_file);
