@@ -50,7 +50,7 @@ ship_save_file = "default_ship.ini";
 save_slot = 0;
 
 // here save the weapons that have been purchased by the player
-purchased[0] = 0
+purchased[0] = 99
 </string>
           </argument>
         </arguments>
