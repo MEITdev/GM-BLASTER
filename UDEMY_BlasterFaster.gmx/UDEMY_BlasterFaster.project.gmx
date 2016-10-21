@@ -98,6 +98,7 @@
       <sprite>sprites\s_laser_directional</sprite>
       <sprite>sprites\s_projectile</sprite>
       <sprite>sprites\s_enemy_laser</sprite>
+      <sprite>sprites\s_blank</sprite>
       <sprites name="Projectiles">
         <sprite>sprites\s_projectile_gun_bullet</sprite>
         <sprite>sprites\s_projectile_gun_flare</sprite>

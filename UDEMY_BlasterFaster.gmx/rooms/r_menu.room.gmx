@@ -56,6 +56,7 @@
     <instance objName="o_start_platformer_button" x="504" y="240" name="inst_1B47BFD7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_start_button" x="414" y="240" name="inst_BAB3D163" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="o_dialog_box_controller" x="36" y="32" name="inst_4EF5360C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_credits" x="54" y="376" name="inst_A7E60AEE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

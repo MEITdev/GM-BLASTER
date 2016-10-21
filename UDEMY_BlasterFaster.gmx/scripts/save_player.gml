@@ -26,7 +26,7 @@ else
     for (i = 0; i <= array_length_1d(global.current_player.purchased) - 1; i++)
     {
         // this will store the name of the object in text form
-        ini_write_string("purchased", string(i), global.current_player.purchased[i]);
+        ini_write_string("purchased", string(i), string(global.current_player.purchased[i]));
     }
 
        

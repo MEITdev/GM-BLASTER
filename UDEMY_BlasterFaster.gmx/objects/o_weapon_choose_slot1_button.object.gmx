@@ -30,7 +30,7 @@ image_speed = 0;
 
 //create array of available guns
 // Slot [0]
-weapons_slot[0] = o_ship_00_dummyGun;
+weapons_slot[0] = o_ship_01_dummyGun;
 weapons_slot[1] = o_ship_01_Rgun;
 weapons_slot[2] = o_ship_02_Rgun;
 
@@ -46,7 +46,7 @@ for (i = 0; i &lt; array_length_1d(weapons_slot) - 1; i++)
         {
                 gun_choice = i;
         } 
-        else gun_choice = 0;
+//        else gun_choice = 0;
     }
     else
         gun_choice = 0;
