@@ -101,15 +101,23 @@ alarm[LASER_LGUN] = room_speed/8;
           <argument>
             <kind>1</kind>
             <string>///Update the hull and ammo status indicators
-hull_status.image_index = hull;
-hull_status.x = global.ship.x + global.ship.ship_mount_x[gun_slot_id];
-hull_status.y = global.ship.y + global.ship.ship_mount_y[gun_slot_id] + 16;
+if instance_exists(global.ship)
+{
+    hull_status.image_index = hull;
+    hull_status.x = global.ship.x + global.ship.ship_mount_x[gun_slot_id];
+    hull_status.y = global.ship.y + global.ship.ship_mount_y[gun_slot_id] + 16;
+    
+    // update the value to be displayed on the ammo counter
+    ammo_counter.counter = ammo;
+    // update the ammo counter position
+    ammo_counter.x = global.ship.x + global.ship.ship_mount_x[gun_slot_id];
+    ammo_counter.y = global.ship.y + global.ship.ship_mount_y[gun_slot_id] + 44;
 
-// update the value to be displayed on the ammo counter
-ammo_counter.counter = ammo;
-// update the ammo counter position
-ammo_counter.x = global.ship.x + global.ship.ship_mount_x[gun_slot_id];
-ammo_counter.y = global.ship.y + global.ship.ship_mount_y[gun_slot_id] + 44;
+}
+else
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

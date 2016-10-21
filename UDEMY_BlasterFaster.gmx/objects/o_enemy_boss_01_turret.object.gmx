@@ -118,10 +118,18 @@ alarm[LASER_ALARM] =  room_speed/4;
           <argument>
             <kind>1</kind>
             <string>///Update rotation
-event_inherited();
-
-// always point towards the mouse
-image_angle = (point_direction(x, y, global.ship.x, global.ship.y));
+if instance_exists(global.ship)
+{
+    
+    event_inherited();
+    
+    // always point towards the mouse
+    image_angle = (point_direction(x, y, global.ship.x, global.ship.y));
+}
+else
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

@@ -44,6 +44,10 @@ correction_y = 22;
 
 // for the gun stats we need to re-read the ammo_capacity
 ammo_capacity = max_ammo;
+
+// create the ammo counter indicator
+ammo_counter = instance_create(0, 0, o_ammo_counter_turret);
+ammo_counter.parent_gun = object_index;
 </string>
           </argument>
         </arguments>
@@ -119,6 +123,39 @@ event_inherited();
 
 // always point towards the mouse
 image_angle = (point_direction(x, y, mouse_x, mouse_y));
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Update ammo counter
+if instance_exists(global.ship)
+{
+    // update the value to be displayed on the ammo counter
+    ammo_counter.counter = ammo;
+    // update the ammo counter position
+    ammo_counter.x = global.ship.x + global.ship.ship_mount_x[gun_slot_id];
+    ammo_counter.y = global.ship.y + global.ship.ship_mount_y[gun_slot_id] + 72;
+}
+else
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

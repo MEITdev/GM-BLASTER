@@ -39,5 +39,7 @@ global.ship.slot[1].gun_slot_id = 1;
 global.ship.slot[2] = instance_create(global.ship.ship_mount_x[2], global.ship.ship_mount_y[2], o_ship_02_dummyGun);
 global.ship.slot[2].gun_slot_id = 2;
 
+
+
 // and save it so in the next boot we just load it to the game
 save_player_ship(global.current_player.ship_save_file);

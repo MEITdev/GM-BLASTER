@@ -415,7 +415,7 @@ y = clamp(y, 16, room_height-16);
 // return to the main menu
 if (keyboard_check(vk_backspace))
 {
-    
+    score = 0;
     room_goto(r_menu);
 }
 

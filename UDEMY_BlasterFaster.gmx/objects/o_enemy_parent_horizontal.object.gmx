@@ -80,10 +80,6 @@ with (other)
     
 // ship gets damaged
 hull -= 1;
-    
-// create red flash
-instance_create(0,0, o_screen_flash);
-
 // call screen shake
 add_screenshake(4, room_speed*.125);
 

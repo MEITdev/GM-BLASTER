@@ -31,7 +31,6 @@ name = "";
 experience = 0;
 level = 1;
 credits = 1000;
-xcredits = 999;
 
 // pointer to players created ship
 score = 0;
@@ -48,9 +47,6 @@ ship_save_file = "default_ship.ini";
 
 // the slot save ID, default 0
 save_slot = 0;
-
-// here save the weapons that have been purchased by the player
-purchased[0] = 99
 </string>
           </argument>
         </arguments>

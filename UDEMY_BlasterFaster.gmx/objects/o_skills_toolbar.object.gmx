@@ -54,15 +54,21 @@ active_skill.image_index = global.current_player.skill_id;
           <argument>
             <kind>1</kind>
             <string>///Draw the readiness status of the skill
-if o_player_ship_parent.can_use_boost
+if instance_exists(global.ship)
 {
-    active_skill.image_alpha = 1;
+    if o_player_ship_parent.can_use_boost
+    {
+        active_skill.image_alpha = 1;
+    }
+    else
+    {
+        active_skill.image_alpha = .5;
+    }
 }
 else
 {
-    active_skill.image_alpha = .5;
+    instance_destroy();
 }
-
 </string>
           </argument>
         </arguments>

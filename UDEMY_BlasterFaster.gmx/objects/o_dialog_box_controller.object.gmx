@@ -67,6 +67,14 @@ if r_name == "r_mission_select"
     dialog.avatar = avatar.object_index;
     dialog.ttl = 60;
 }
+
+if room_get_name(room) == "r_mission_failed"
+{
+    dialog_box(room_width/2 - 125, room_height - 32, 75, 250, "Mission Failed", "Too slow, the mission is a failure. Return to your mothership to repari, refuel and rearm if you wish");
+    avatar = instance_create(dialog.x - 96, dialog.y, o_robot_avatar);
+    dialog.avatar = avatar.object_index;
+    dialog.ttl = 120;    
+}
 </string>
           </argument>
         </arguments>

@@ -57,7 +57,7 @@ if (hull &lt;= 0)
 {
 
     /// Create the powerup
-    var powerup = choose(o_armor_powerup, o_laser_powerup, o_shield_powerup, o_hull_powerup);
+    var powerup = choose(o_armor_powerup, o_laser_powerup, o_shield_powerup, o_hull_powerup, o_trap_powerup);
     instance_create(x, y, powerup);
 
     create_explosion(x, y);
@@ -96,9 +96,6 @@ with (other)
     
 // ship gets damaged
 hull -= 1;
-    
-// create red flash
-instance_create(0,0, o_screen_flash);
 
 // call screen shake
 add_screenshake(4, room_speed*.125);

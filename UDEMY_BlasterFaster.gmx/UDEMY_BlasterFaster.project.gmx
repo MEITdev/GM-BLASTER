@@ -45,6 +45,7 @@
     </sprites>
     <sprites name="Player Powerups">
       <sprite>sprites\s_laser_powerup</sprite>
+      <sprite>sprites\s_trap_powerup</sprite>
       <sprite>sprites\s_hull_powerup</sprite>
       <sprite>sprites\s_shield_powerup</sprite>
       <sprite>sprites\s_armor_powerup</sprite>
@@ -75,6 +76,7 @@
       <sprite>sprites\s_shield_new</sprite>
       <sprite>sprites\s_shield</sprite>
       <sprite>sprites\s_ammo_counter</sprite>
+      <sprite>sprites\s_ammo_counter_turret</sprite>
       <sprite>sprites\s_ammo_counter_mirror</sprite>
       <sprite>sprites\s_hull</sprite>
       <sprite>sprites\s_hull_new</sprite>
@@ -203,6 +205,7 @@
     <font>fonts\f_score</font>
     <font>fonts\f_gun_stats</font>
     <font>fonts\f_credits</font>
+    <font>fonts\f_timer</font>
   </fonts>
   <objects name="objects">
     <object>objects\o_me_it_logo</object>
@@ -244,7 +247,6 @@
       <object>objects\o_save_slot_0</object>
       <object>objects\o_save_slot_1</object>
       <object>objects\o_save_slot_2</object>
-      <object>objects\o_load_player_button</object>
       <object>objects\o_settings_up_control</object>
       <object>objects\o_settings_down_control</object>
       <object>objects\o_settings_left_control</object>
@@ -329,6 +331,7 @@
     </objects>
     <objects name="Player Powerups">
       <object>objects\o_armor_powerup</object>
+      <object>objects\o_trap_powerup</object>
       <object>objects\o_hull_powerup</object>
       <object>objects\o_laser_powerup</object>
       <object>objects\o_shield_powerup</object>
@@ -353,6 +356,7 @@
         <object>objects\o_hull_gun</object>
         <object>objects\o_hull_gun_mirrored</object>
         <object>objects\o_ammo_counter</object>
+        <object>objects\o_ammo_counter_turret</object>
         <object>objects\o_ammo_counter_mirrored</object>
       </objects>
     </objects>
@@ -417,6 +421,7 @@
     <rooms name="Menu">
       <room>rooms\r_menu</room>
       <room>rooms\r_choose_save_slot</room>
+      <room>rooms\r_mission_failed</room>
       <room>rooms\r_configure_ship</room>
       <room>rooms\r_mothership_hangar</room>
       <room>rooms\r_ship_select</room>

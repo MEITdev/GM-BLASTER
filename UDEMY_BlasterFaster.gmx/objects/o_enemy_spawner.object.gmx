@@ -34,6 +34,9 @@ alarm[LEVEL_CHOOSER] = room_speed / 4;
 
 //alarm[POWERUP_SPAWNER] = room_speed*5; // ... 5 seconds
 
+// keep track of the level stage, used for dialog display
+stage = 0;
+
 
 </string>
           </argument>
@@ -118,14 +121,16 @@ var enemy = o_enemy_one;
 var alarm_time = random_range(room_speed*.5, room_speed*2);
 
 // Increase the difficulty
-if (score &gt;= 200)
+if (score &gt;= stage1)
 {
+    stage = 1;
     enemy = choose(o_enemy_one, o_enemy_one, o_enemy_two);
     alarm_time = random_range(room_speed*.25, room_speed*1.5);
 }
 // Increase the difficulty
-if (score &gt;= 500)
+if (score &gt;= stage2)
 {
+    stage = 2;
     enemy = choose(o_enemy_one, o_enemy_two, o_enemy_two);
     alarm_time = random_range(room_speed*.25, room_speed);
 }

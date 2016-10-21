@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1000</depth>
   <persistent>0</persistent>
-  <parentName>self</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -38,7 +38,7 @@ weapons_slot[2] = o_ship_02_Lgun;
 gun_choice = 0;
 
 // check what is the value and set it
-for (i = 0; i &lt; array_length_1d(weapons_slot) - 1; i++)
+for (i = 0; i &lt;= array_length_1d(weapons_slot) - 1; i++)
 {
     if instance_exists(global.ship.slot[0])
     {
@@ -53,7 +53,7 @@ for (i = 0; i &lt; array_length_1d(weapons_slot) - 1; i++)
     } else 
         gun_choice = 0;
 }
-
+show_debug_message("gun_choice = " + string(gun_choice));
 
 // TESTING
 // create the gun stats for the gun
@@ -76,19 +76,6 @@ gun_stats.ammo_capacity = weapons_slot[gun_choice].ammo_capacity;
 gun_stats.recharge_time = weapons_slot[gun_choice].recharge_time;
 gun_stats.fire_rate = weapons_slot[gun_choice].fire_rate;
 gun_stats.energy_consumption = weapons_slot[gun_choice].energy_consumption;
-
-
-// TESTING
-
-for (i = 0; i &lt; array_length_1d(global.current_player.purchased); i++)
-{
-    if global.current_player.purchased[i] == object_get_name(weapons_slot[gun_choice])
-    {
-        // set the price value to 0.....
-        weapons_slot[gun_choice].price = 0;
-    }
-}
-
 // now set the price
 gun_stats.price = weapons_slot[gun_choice].price;
 
@@ -154,23 +141,6 @@ gun_stats.damage = weapons_slot[gun_choice].damage;
 gun_stats.ammo_capacity = weapons_slot[gun_choice].ammo_capacity;
 gun_stats.recharge_time = weapons_slot[gun_choice].recharge_time;
 gun_stats.fire_rate = weapons_slot[gun_choice].fire_rate;
-
-// TESTING
-// check if the weapon is purchased, if it is the price is 0
-
-// loop through the "purchased" items
-for (i = 0; i &lt; array_length_1d(global.current_player.purchased) - 1; i++)
-{
-    // now loop through the guns
-    for (j = 0; j &lt; array_length_1d(weapons_slot) - 1; j++)
-    {
-        if weapons_slot[j] == global.current_player.purchased[i]
-        {
-            weapons_slot[j].price = 0;
-        }
-    }
-}
-
 gun_stats.price = weapons_slot[gun_choice].price;
 gun_stats.energy_consumption = weapons_slot[gun_choice].energy_consumption;
 

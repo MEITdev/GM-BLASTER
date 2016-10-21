@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1000</depth>
   <persistent>0</persistent>
-  <parentName>self</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -38,7 +38,7 @@ weapons_slot[2] = o_ship_02_Rgun;
 gun_choice = 0;
 
 // check what is the value and set it
-for (i = 0; i &lt; array_length_1d(weapons_slot) - 1; i++)
+for (i = 0; i &lt;= array_length_1d(weapons_slot) - 1; i++)
 {
     if instance_exists(global.ship.slot[1])
     {
