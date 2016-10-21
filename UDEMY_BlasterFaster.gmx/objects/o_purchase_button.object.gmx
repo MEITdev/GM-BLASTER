@@ -72,30 +72,75 @@ if (global.current_player.credits - total_price) &gt;= 0
     // update the list of purchased items
 
     
-//    global.current_player.purchased[0] = string(object_get_name(global.ship.slot[0].object_index));
-//    global.current_player.purchased[1] = string(object_get_name(global.ship.slot[1].object_index));        
-//    global.current_player.purchased[2] = string(object_get_name(global.ship.slot[2].object_index));
+    global.current_player.purchased[0] = string(object_get_name(global.ship.slot[0].object_index));
+    global.current_player.purchased[1] = string(object_get_name(global.ship.slot[1].object_index));
+    global.current_player.purchased[2] = string(object_get_name(global.ship.slot[2].object_index));
+    //global.current_player.purchased[1] = string(object_get_name(global.ship.slot[1].object_index));       
+    //global.current_player.purchased[2] = string(object_get_name(global.ship.slot[2].object_index));
+    
+    for (i = 0; i &lt; array_length_1d(global.current_player.purchased); i++)
+    {
+        if global.current_player.purchased[i] == string(object_get_name(global.ship.slot[0].object_index))
+        {
+            global.current_player.purchased[i] = string(object_get_name(global.ship.slot[0].object_index));
+        }
+        else
+            global.current_player.purchased[i + 1] = string(object_get_name(global.ship.slot[0].object_index));
+    }
 
     
+    for (i = 0; i &lt; array_length_1d(global.current_player.purchased); i++)
+    {
+        if global.current_player.purchased[i] == string(object_get_name(global.ship.slot[1].object_index))
+        {
+            global.current_player.purchased[i] = string(object_get_name(global.ship.slot[1].object_index));
+        }
+        else
+            global.current_player.purchased[i + 1] = string(object_get_name(global.ship.slot[1].object_index));
+    }
+
+    for (i = 0; i &lt; array_length_1d(global.current_player.purchased); i++)
+    {
+        if global.current_player.purchased[i] == string(object_get_name(global.ship.slot[2].object_index))
+        {
+            global.current_player.purchased[i] = string(object_get_name(global.ship.slot[2].object_index));
+        }
+        else
+            global.current_player.purchased[i + 1] = string(object_get_name(global.ship.slot[2].object_index));
+    }
+
         
+     /*   
     // loop through the list of already purchased weapons and see if the weapon is there
-    for (i = 0; i &lt; global.ship.ship_slots - 1; i++)
+    for (i = 0; i &lt;= global.ship.ship_slots - 1; i++)
     {
         for (j = 0; j &lt;= array_length_1d(global.current_player.purchased) - 1; j++)
         {
             if object_get_name(global.ship.slot[i].object_index) == global.current_player.purchased[j]
             {
                 // if the name is already in the index, do not save
+                global.current_player.purchased[j] = object_get_name(global.ship.slot[i].object_index);
+                show_debug_message("i: " + string(i));
+                show_debug_message("j: " + string(j));
+                show_debug_message(object_get_name(global.ship.slot[i].object_index));
+                show_debug_message("purchase_len = " + string(array_length_1d(global.current_player.purchased)));
+                show_debug_message("==========================================================");
+                
             }
             else
             {
                 // otherwise add this to the purchased list
                 global.current_player.purchased[j+1] = object_get_name(global.ship.slot[i].object_index);
+                show_debug_message("i: " + string(i));
+                show_debug_message("j: " + string(j));
+                show_debug_message(object_get_name(global.ship.slot[i].object_index));
+                show_debug_message("purchase_len = " + string(array_length_1d(global.current_player.purchased)));
+
             }
         }
     }
 
-            
+*/            
 //    else global.current_player.purchased[array_length_1d(global.current_player.purchased) + 1] = object_get_name(global.ship.slot[i].object_index);
 
     // save the player and the ship configuration 
@@ -142,10 +187,12 @@ else
           <argument>
             <kind>1</kind>
             <string>draw_self();
+/*
 for (i = 0; i &lt;= array_length_1d(global.current_player.purchased) - 1; i++)
 {
     draw_text(room_width/2,128 + (i*24), string(i) + ": " + global.current_player.purchased[i]);
 }
+*/
 draw_text(room_width/2, 64, "ship_slots: " + string(global.ship.ship_slots));
 draw_text(room_width/2, 96, "purchased_len: " + string(array_length_1d(global.current_player.purchased)));
 

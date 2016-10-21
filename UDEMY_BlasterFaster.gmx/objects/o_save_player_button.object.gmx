@@ -56,7 +56,7 @@ text = "Continue";
 global.current_player.credits = 1000;
 // Get the player name from the text box
 global.current_player.name = o_textbox.txt;
-
+global.current_player.purchased[0] = 0;
 
 // Save the player information
 save_player(global.current_player.save_slot);
