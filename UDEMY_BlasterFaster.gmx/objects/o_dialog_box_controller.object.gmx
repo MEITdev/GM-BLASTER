@@ -48,7 +48,7 @@ if r_name == "r_choose_save_slot"
 }
 if r_name == "r_mothership_hangar"
 {
-    dialog_box(room_width/2, 16, 120, 220, "Create your first ship", "Change the left, right and turret guns to find out which suits you the best. Practice on asteroids to get the feeling. Also collect SHIELD, ARMOR and HULL power ups to stay alive.");
+    dialog_box(room_width/2 + 40, 16, 120, 220, "Create your first ship", "Change the left, right and turret guns to find out which suits you the best. Practice on asteroids to get the feeling. Also collect SHIELD, ARMOR and HULL power ups to stay alive.");
     avatar = instance_create(dialog.x + dialog.padding, dialog.y + dialog.height + dialog.padding, o_robot_avatar);
     dialog.avatar = avatar.object_index;
     dialog.ttl = 30;

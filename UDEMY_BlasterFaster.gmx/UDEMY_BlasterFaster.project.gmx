@@ -70,9 +70,11 @@
       <sprite>sprites\s_delete_save</sprite>
       <sprites name="Weapons">
         <sprite>sprites\s_gun_00_avatar</sprite>
+        <sprite>sprites\s_gun_00_box</sprite>
         <sprite>sprites\s_gun_01_avatar</sprite>
         <sprite>sprites\s_gun_02_avatar</sprite>
         <sprite>sprites\s_gun_stats</sprite>
+        <sprite>sprites\s_gun_00_box_alt</sprite>
       </sprites>
     </sprites>
     <sprites name="Menu Buttons">
@@ -182,6 +184,10 @@
     <backgrounds name="PlatformerMissions">
       <background>background\b_station_tileset</background>
       <background>background\b_city_background</background>
+    </backgrounds>
+    <backgrounds name="Mothership">
+      <background>background\b_hangar_01</background>
+      <background>background\b_shipyard_ext</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>

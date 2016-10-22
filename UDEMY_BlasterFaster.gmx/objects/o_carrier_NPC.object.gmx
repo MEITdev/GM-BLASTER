@@ -33,7 +33,7 @@ info_box_exists = false;
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="4">
+    <event eventtype="4" ename="o_ship_mini">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -50,8 +50,34 @@ info_box_exists = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///DEBUG
-room_goto(r_mothership_hangar);
+            <string>///Enter the ship
+if keyboard_check(ord("E"))
+{
+    room_goto(r_mothership_hangar);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Display dialog
+dialog_box(x , y, 48, 128, "Enter Mothership", "Pree [E] to dock to the Shipyard");
+dialog.ttl = 5
 </string>
           </argument>
         </arguments>
