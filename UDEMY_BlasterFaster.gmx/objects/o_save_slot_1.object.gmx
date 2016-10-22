@@ -35,7 +35,7 @@ if file_exists("slot_1.ini")
     // display the saved players name
     text = global.current_player.name;
     // create avatar instance
-    avatar = instance_create(x, y + 64, o_avatar_player);
+    avatar = instance_create(x, y + 80, o_avatar_player);
     // load the proper avatar for this save file
     avatar.image_index = global.current_player.avatar_id;
     
