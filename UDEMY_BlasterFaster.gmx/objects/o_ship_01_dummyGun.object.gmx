@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Initialise the laser
+event_inherited();
 
 // initialise variables for child objects to override
 hull = 0;

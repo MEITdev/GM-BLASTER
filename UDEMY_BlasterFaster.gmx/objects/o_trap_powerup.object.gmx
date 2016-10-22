@@ -111,6 +111,9 @@ if instance_exists(global.ship)
 if (hull &lt;= 0)
 {
     create_explosion(x, y);
+    // call screen shake
+    add_screenshake(4, room_speed*.125);
+
     instance_destroy();
     
     score += 5;

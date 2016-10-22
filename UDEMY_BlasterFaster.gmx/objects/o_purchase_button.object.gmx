@@ -51,64 +51,6 @@ total_price = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Purchase the guns
-
-// loop through the choices (weapons on the ship)
-for (i = 0; i &lt; global.ship.ship_slots - 1; i++)
-{
-    total_price = total_price + global.ship.slot[i].price;
-}
-
-// if the player has enough money, save the ship
-if (global.current_player.credits - total_price) &gt;= 0
-{
-    // update the amount of credits available
-
-    // UNCOMMENT AFTER TESTING (decrements credits after purchase)
-//    global.current_player.credits = global.current_player.credits - total_price;
-
-    
-    // save the player and the ship configuration 
-    update_player(global.current_player.save_slot);
-    save_player_ship(global.current_player.ship_save_file);
-    
-    dialog_box(room_width/2, room_height/2, 100, 100, "Done!", "Changes saved! Thank you!");
-    avatar = instance_create(dialog.x - 48, dialog.y, o_robot_avatar);
-    dialog.avatar = avatar.object_index;
-    avatar.image_xscale = .5;
-    avatar.image_yscale = .5;
-    dialog.ttl = 10;    
-}
-else
-{
-    // otherwise show a dialog box
-    dialog_box(room_width/2, room_height/2, 100, 100, "Insufficient funds!", "Not enough money. Sorry, changes will not be saved!");
-    avatar = instance_create(dialog.x - 48, dialog.y, o_robot_avatar);
-    dialog.avatar = avatar.object_index;
-    avatar.image_xscale = .5;
-    avatar.image_yscale = .5;
-    dialog.ttl = 10;    
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Add the selected weapons to the list of unlocked weapons
 for (i = 0; i &lt; global.ship.ship_slots; i++)
 {
@@ -139,6 +81,67 @@ for (g = 0; g &lt; array_length_1d(global.current_player.purchased); g++)
 
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Purchase the guns
+
+// loop through the choices (weapons on the ship)
+for (i = 0; i &lt; global.ship.ship_slots - 1; i++)
+{
+    total_price += global.ship.slot[i].price;
+}
+
+// if the player has enough money, save the ship
+if (global.current_player.credits - total_price) &gt;= 0
+{
+    // update the amount of credits available
+
+    // UNCOMMENT AFTER TESTING (decrements credits after purchase)
+    global.current_player.credits = global.current_player.credits - total_price;
+
+    
+    // save the player and the ship configuration 
+    update_player(global.current_player.save_slot);
+    save_player_ship(global.current_player.ship_save_file);
+    
+    dialog_box(room_width/2, room_height/2, 100, 100, "Done!", "Changes saved! Thank you!");
+    avatar = instance_create(dialog.x - 48, dialog.y, o_robot_avatar);
+    dialog.avatar = avatar.object_index;
+    avatar.image_xscale = .5;
+    avatar.image_yscale = .5;
+    dialog.ttl = 10;    
+}
+else
+{
+    // otherwise show a dialog box
+    dialog_box(room_width/2, room_height/2, 100, 100, "Insufficient funds!", "Not enough money. Sorry, changes will not be saved!");
+    avatar = instance_create(dialog.x - 48, dialog.y, o_robot_avatar);
+    dialog.avatar = avatar.object_index;
+    avatar.image_xscale = .5;
+    avatar.image_yscale = .5;
+    dialog.ttl = 10;    
+}
+
+// Reset the total price
+total_price = 0;
 </string>
           </argument>
         </arguments>
