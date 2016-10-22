@@ -47,6 +47,9 @@ ship_save_file = "default_ship.ini";
 
 // the slot save ID, default 0
 save_slot = 0;
+
+// array of purchased weapons
+purchased[0] = 0; // reset the array
 </string>
           </argument>
         </arguments>

@@ -110,35 +110,34 @@ else
           <argument>
             <kind>1</kind>
             <string>///Add the selected weapons to the list of unlocked weapons
-
-unlocked_weapons_list = ds_list_size(global.current_player.unlocked_weapons);
 for (i = 0; i &lt; global.ship.ship_slots; i++)
 {
     gun = object_get_name(global.ship.slot[i].object_index);
     is_in_the_list = false; // assume not in the list
-    for (j = 0; j &lt; unlocked_weapons_list; j++)
+    for (j = 0; j &lt; array_length_1d(global.current_player.purchased); j++)
     {
-        loaded_weapon = ds_list_find_value(global.current_player.unlocked_weapons, j);
+        loaded_weapon = global.current_player.purchased[j];
         if gun == loaded_weapon // check for duplicates, replace them 
         {
-            show_debug_message("replacing slot " + string(j));
-            ds_list_replace(global.current_player.unlocked_weapons, j, loaded_weapon);
+            show_debug_message("already in the list = " + string(loaded_weapon));
             is_in_the_list = true;
         }
     }
     // HERE save the weapon, after the first loop
     if is_in_the_list == false &amp;&amp; (object_get_parent(global.ship.slot[i].object_index) != o_empty_slot)
     {
-        ds_list_add(global.current_player.unlocked_weapons, gun);
+        global.current_player.purchased[array_length_1d(global.current_player.purchased)] = gun;
     }
 }
 
-
-for (g = 0; g &lt; ds_list_size(global.current_player.unlocked_weapons); g++)
+// DEBUG ONLY
+for (g = 0; g &lt; array_length_1d(global.current_player.purchased); g++)
 {
-    loaded_weapon = global.current_player.unlocked_weapons[| g];
+    loaded_weapon = global.current_player.purchased[g];
     show_debug_message("unlocked slot[" + string(g) + "] = " + string(loaded_weapon));  
 }
+
+
 
 </string>
           </argument>
