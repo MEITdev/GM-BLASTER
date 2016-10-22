@@ -33,6 +33,7 @@ text = "";
 // Slot [0]
 weapons_slot[0] = o_ship_02_dummyGun;
 weapons_slot[1] = o_ship_01_turret;
+weapons_slot[2] = o_ship_02_turret;
 
 // initialize with the first gun
 gun_choice = 0;

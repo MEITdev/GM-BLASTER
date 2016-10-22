@@ -22,6 +22,7 @@
       <sounds name="Weapon Sounds">
         <sound>sound\a_projectile_shot</sound>
         <sound>sound\a_laser_shot</sound>
+        <sound>sound\a_plasma_shot</sound>
       </sounds>
       <sound>sound\a_explosion</sound>
       <sound>sound\a_explosion_lowQ</sound>
@@ -29,17 +30,23 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\s_me_it_logo</sprite>
+    <sprite>sprites\s_menu_logo</sprite>
     <sprites name="Player Ships">
       <sprite>sprites\s_ship_01_hull</sprite>
       <sprite>sprites\s_ship_mini</sprite>
-      <sprite>sprites\s_ship_01_Lgun</sprite>
-      <sprite>sprites\s_ship_01_Rgun</sprite>
-      <sprite>sprites\s_ship_02_Lgun</sprite>
-      <sprite>sprites\s_ship_02_Rgun</sprite>
       <sprite>sprites\s_player_ship</sprite>
       <sprite>sprites\s_ship</sprite>
       <sprite>sprites\s_ship_01_engine_jet</sprite>
-      <sprite>sprites\s_ship_01_turret</sprite>
+      <sprites name="Weapons">
+        <sprite>sprites\s_ship_01_Lgun</sprite>
+        <sprite>sprites\s_ship_02_Lgun</sprite>
+        <sprite>sprites\s_ship_01_Rgun</sprite>
+        <sprite>sprites\s_ship_01_turret</sprite>
+        <sprite>sprites\s_ship_02_Rgun</sprite>
+        <sprite>sprites\s_ship_03_Lgun</sprite>
+        <sprite>sprites\s_ship_03_Rgun</sprite>
+        <sprite>sprites\s_ship_02_turret</sprite>
+      </sprites>
     </sprites>
     <sprites name="Enemy Ships">
       <sprite>sprites\s_enemy_two</sprite>
@@ -51,6 +58,8 @@
       <sprite>sprites\s_enemy_boss_01_Lgun</sprite>
       <sprite>sprites\s_enemy_boss_01_Rgun</sprite>
       <sprite>sprites\s_enemy_boss_01_turret</sprite>
+      <sprite>sprites\s_enemy_01</sprite>
+      <sprite>sprites\s_enemy_02</sprite>
     </sprites>
     <sprites name="Player Powerups">
       <sprite>sprites\s_laser_powerup</sprite>
@@ -70,6 +79,7 @@
       <sprite>sprites\s_music_button</sprite>
       <sprite>sprites\s_input_box</sprite>
       <sprite>sprites\s_delete_save</sprite>
+      <sprite>sprites\s_delete_save_new</sprite>
       <sprites name="Weapons">
         <sprite>sprites\s_gun_00_avatar</sprite>
         <sprite>sprites\s_gun_00_box</sprite>
@@ -81,7 +91,6 @@
         <sprite>sprites\s_gun_01_box_alt2</sprite>
         <sprite>sprites\s_gun_02_box_alt2</sprite>
       </sprites>
-      <sprite>sprites\s_delete_save_new</sprite>
     </sprites>
     <sprites name="Menu Buttons">
       <sprite>sprites\s_button</sprite>
@@ -89,6 +98,8 @@
       <sprite>sprites\s_credits</sprite>
       <sprite>sprites\s_button_new</sprite>
       <sprite>sprites\s_button_new2</sprite>
+      <sprite>sprites\s_next_button</sprite>
+      <sprite>sprites\s_previous_button</sprite>
     </sprites>
     <sprites name="Space HUD">
       <sprite>sprites\s_armor</sprite>
@@ -110,19 +121,26 @@
     <sprites name="Effects">
       <sprite>sprites\s_explosion_center</sprite>
       <sprite>sprites\s_smoke</sprite>
+      <sprite>sprites\s_plasma_turret_01_hit_flare</sprite>
       <sprite>sprites\s_flare</sprite>
       <sprite>sprites\s_shield_hit</sprite>
     </sprites>
     <sprites name="Weapons">
-      <sprite>sprites\s_laser</sprite>
-      <sprite>sprites\s_laser_flare</sprite>
-      <sprite>sprites\s_laser_directional</sprite>
-      <sprite>sprites\s_projectile</sprite>
-      <sprite>sprites\s_enemy_laser</sprite>
       <sprite>sprites\s_blank</sprite>
       <sprites name="Projectiles">
         <sprite>sprites\s_projectile_gun_bullet</sprite>
         <sprite>sprites\s_projectile_gun_flare</sprite>
+        <sprite>sprites\s_projectile</sprite>
+      </sprites>
+      <sprites name="Plasma">
+        <sprite>sprites\s_plasma_turret_01_green_gun_flare</sprite>
+        <sprite>sprites\s_plasma_turret_01_laser</sprite>
+      </sprites>
+      <sprites name="Laser">
+        <sprite>sprites\s_laser_directional</sprite>
+        <sprite>sprites\s_laser_flare</sprite>
+        <sprite>sprites\s_enemy_laser</sprite>
+        <sprite>sprites\s_laser</sprite>
       </sprites>
     </sprites>
     <sprites name="Player Characters">
@@ -194,7 +212,6 @@
       <background>background\b_city_background</background>
     </backgrounds>
     <backgrounds name="Mothership">
-      <background>background\b_hangar_01</background>
       <background>background\b_shipyard_ext</background>
     </backgrounds>
   </backgrounds>
@@ -263,6 +280,7 @@
       <object>objects\o_button_player_name</object>
       <object>objects\o_start_button</object>
       <object>objects\o_next_avatar_button</object>
+      <object>objects\o_previous_avatar_button</object>
       <object>objects\o_gun_00_avatar</object>
       <object>objects\o_gun_01_avatar</object>
       <object>objects\o_gun_02_avatar</object>
@@ -324,11 +342,14 @@
         <objects name="Projectiles">
           <object>objects\o_parent_projectile_gun</object>
           <object>objects\o_ship_02_Lgun</object>
+          <object>objects\o_ship_03_Lgun</object>
           <object>objects\o_ship_02_Rgun</object>
+          <object>objects\o_ship_03_Rgun</object>
         </objects>
         <objects name="Turrets">
           <object>objects\o_parent_turrent_gun</object>
           <object>objects\o_ship_01_turret</object>
+          <object>objects\o_ship_02_turret</object>
         </objects>
         <objects name="Dummy Guns">
           <object>objects\o_ship_00_dummyGun</object>
@@ -336,6 +357,9 @@
           <object>objects\o_ship_02_dummyGun</object>
           <object>objects\o_empty_slot</object>
         </objects>
+      </objects>
+      <objects name="Plasma">
+        <object>objects\o_plasma_turret_01_laser</object>
       </objects>
     </objects>
     <objects name="Enemy Ships">
@@ -394,9 +418,11 @@
       <object>objects\o_explosion_center</object>
       <object>objects\o_screen_flash</object>
       <object>objects\o_flare</object>
+      <object>objects\o_plasma_turret_01_hit_flare</object>
       <object>objects\o_projectile_gun_flare</object>
       <object>objects\o_shield_hit</object>
       <object>objects\o_laser_gun_flare</object>
+      <object>objects\o_plasma_turret_01_gun_flare</object>
     </objects>
     <objects name="Spawners">
       <object>objects\o_enemy_boss_spawner</object>
@@ -446,6 +472,7 @@
     <objects name="NPC Ships">
       <object>objects\o_carrier_NPC</object>
     </objects>
+    <object>objects\o_game_logo</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_splashscreen</room>

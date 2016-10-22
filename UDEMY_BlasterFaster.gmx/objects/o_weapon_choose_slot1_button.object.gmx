@@ -33,6 +33,7 @@ image_speed = 0;
 weapons_slot[0] = o_ship_01_dummyGun;
 weapons_slot[1] = o_ship_01_Rgun;
 weapons_slot[2] = o_ship_02_Rgun;
+weapons_slot[3] = o_ship_03_Rgun;
 
 // initialise the variable for toggling the guns
 gun_choice = 0;
