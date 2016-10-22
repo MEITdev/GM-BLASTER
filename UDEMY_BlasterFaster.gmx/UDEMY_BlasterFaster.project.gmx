@@ -66,6 +66,8 @@
       <sprite>sprites\s_down_control</sprite>
       <sprite>sprites\s_left_control</sprite>
       <sprite>sprites\s_right_control</sprite>
+      <sprite>sprites\s_sound_button</sprite>
+      <sprite>sprites\s_music_button</sprite>
       <sprite>sprites\s_input_box</sprite>
       <sprite>sprites\s_delete_save</sprite>
       <sprites name="Weapons">
@@ -76,11 +78,14 @@
         <sprite>sprites\s_gun_stats</sprite>
         <sprite>sprites\s_gun_00_box_alt</sprite>
       </sprites>
+      <sprite>sprites\s_delete_save_new</sprite>
     </sprites>
     <sprites name="Menu Buttons">
       <sprite>sprites\s_button</sprite>
       <sprite>sprites\s_score</sprite>
       <sprite>sprites\s_credits</sprite>
+      <sprite>sprites\s_button_new</sprite>
+      <sprite>sprites\s_button_new2</sprite>
     </sprites>
     <sprites name="Space HUD">
       <sprite>sprites\s_armor</sprite>
