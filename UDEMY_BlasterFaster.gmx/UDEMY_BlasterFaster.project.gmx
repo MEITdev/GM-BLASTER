@@ -305,6 +305,7 @@
           <object>objects\o_ship_00_dummyGun</object>
           <object>objects\o_ship_01_dummyGun</object>
           <object>objects\o_ship_02_dummyGun</object>
+          <object>objects\o_empty_slot</object>
         </objects>
       </objects>
     </objects>

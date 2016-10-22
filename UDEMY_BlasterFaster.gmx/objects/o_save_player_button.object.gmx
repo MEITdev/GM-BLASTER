@@ -57,6 +57,13 @@ global.current_player.credits = 1000;
 // Get the player name from the text box
 global.current_player.name = o_textbox.txt;
 
+// Clear the DS list for the unlocked weapons
+ds_list_clear(global.current_player.unlocked_weapons);
+// add the starting weapons
+ds_list_add(global.current_player.unlocked_weapons, "o_ship_01_Lgun", "o_ship_01_Rgun", "o_ship_01_turret");
+
+
+
 // Save the player information
 save_player(global.current_player.save_slot);
 
