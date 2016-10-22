@@ -77,6 +77,7 @@
         <sprite>sprites\s_gun_02_avatar</sprite>
         <sprite>sprites\s_gun_stats</sprite>
         <sprite>sprites\s_gun_00_box_alt</sprite>
+        <sprite>sprites\s_gun_00_box_alt2</sprite>
       </sprites>
       <sprite>sprites\s_delete_save_new</sprite>
     </sprites>
