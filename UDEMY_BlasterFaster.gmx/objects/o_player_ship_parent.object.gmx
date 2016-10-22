@@ -415,6 +415,7 @@ y = clamp(y, 16, room_height-16);
 // return to the main menu
 if (keyboard_check(vk_backspace))
 {
+    save_player_ship(global.current_player.ship_save_file);
     score = 0;
     room_goto(r_menu);
 }

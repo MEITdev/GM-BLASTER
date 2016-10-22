@@ -103,6 +103,28 @@ gun_stats.energy_consumption = weapons_slot[gun_choice].energy_consumption;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Inherit
+event_inherited();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Toggle available weapons
 
 if gun_choice &gt;= array_length_1d(weapons_slot) - 1

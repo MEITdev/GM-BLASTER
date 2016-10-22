@@ -16,6 +16,15 @@
       <sound>sound\a_powerup</sound>
       <sound>sound\a_hit</sound>
       <sound>sound\a_ship_hit</sound>
+      <sounds name="GUI Sounds">
+        <sound>sound\a_button_click</sound>
+      </sounds>
+      <sounds name="Weapon Sounds">
+        <sound>sound\a_projectile_shot</sound>
+        <sound>sound\a_laser_shot</sound>
+      </sounds>
+      <sound>sound\a_explosion</sound>
+      <sound>sound\a_explosion_lowQ</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -123,6 +132,9 @@
     </sprites>
     <sprites name="Mouse_Cursors">
       <sprite>sprites\s_cursor_crosshair</sprite>
+      <sprite>sprites\s_cursor_menu</sprite>
+      <sprite>sprites\s_cursor_space</sprite>
+      <sprite>sprites\s_cursor_hangar</sprite>
     </sprites>
     <sprites name="Menu Box">
       <sprite>sprites\s_small_box</sprite>
@@ -141,6 +153,7 @@
     <sprites name="Avatars">
       <sprite>sprites\s_dummy_avatar</sprite>
       <sprite>sprites\s_avatar_player_01</sprite>
+      <sprite>sprites\s_avatar_player_02</sprite>
       <sprite>sprites\s_manga_avatar</sprite>
       <sprite>sprites\s_robot_avatar</sprite>
     </sprites>
@@ -206,6 +219,8 @@
     <font>fonts\f_gun_stats</font>
     <font>fonts\f_credits</font>
     <font>fonts\f_timer</font>
+    <font>fonts\f_menu_buttons</font>
+    <font>fonts\f_dialog_box</font>
   </fonts>
   <objects name="objects">
     <object>objects\o_me_it_logo</object>
@@ -217,10 +232,10 @@
       <object>objects\o_quit_button</object>
       <object>objects\o_settings_music</object>
       <object>objects\o_view_controller</object>
-      <object>objects\o_settings_button</object>
       <object>objects\o_settings_display</object>
       <object>objects\o_highscore_table</object>
       <object>objects\o_settings_sound</object>
+      <object>objects\o_settings_button</object>
       <object>objects\o_highscore</object>
       <object>objects\o_select_ship</object>
       <object>objects\o_settings_keyboard_button</object>
@@ -408,6 +423,7 @@
       <object>objects\o_ship_controller</object>
       <object>objects\o_mission_controller</object>
       <object>objects\o_dialog_box_controller</object>
+      <object>objects\o_mouse_cursor_controller</object>
     </objects>
     <objects name="NPC Avatars">
       <object>objects\o_avatar</object>

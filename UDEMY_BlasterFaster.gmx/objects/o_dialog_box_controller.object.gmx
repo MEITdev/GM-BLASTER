@@ -35,7 +35,7 @@ r_name = room_get_name(room);
 if r_name == "r_menu"
 {
     dialog_box(room_width/2 - 125, 100, 75, 250, "Welcome!", "Hello there, welcome to pre-alpha stage of this game. Hope you or your computer do not crash too much...");
-    avatar = instance_create(dialog.x - 96, dialog.y, o_robot_avatar);
+    avatar = instance_create(dialog.x + 250, dialog.y, o_robot_avatar);
     dialog.avatar = avatar.object_index;
     dialog.ttl = 20;    
 }
@@ -46,9 +46,9 @@ if r_name == "r_choose_save_slot"
     dialog.avatar = avatar.object_index;
     dialog.ttl = 30;    
 }
-if r_name == "r_configure_ship"
+if r_name == "r_mothership_hangar"
 {
-    dialog_box(16, 16, 120, 220, "Create your first ship", "Change the left, right and turret guns to find out which suits you the best. Practice on asteroids to get the feeling. Also collect SHIELD, ARMOR and HULL power ups to stay alive.");
+    dialog_box(room_width/2, 16, 120, 220, "Create your first ship", "Change the left, right and turret guns to find out which suits you the best. Practice on asteroids to get the feeling. Also collect SHIELD, ARMOR and HULL power ups to stay alive.");
     avatar = instance_create(dialog.x + dialog.padding, dialog.y + dialog.height + dialog.padding, o_robot_avatar);
     dialog.avatar = avatar.object_index;
     dialog.ttl = 30;

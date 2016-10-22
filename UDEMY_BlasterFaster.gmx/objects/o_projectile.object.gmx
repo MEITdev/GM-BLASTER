@@ -35,7 +35,7 @@
 // play the sound effect
 if global.Sound == 'On'
 {
-    audio_play_sound(a_laser, 5, false);
+    audio_play_sound(a_projectile_shot, 5, false);
 }
 
 // Set the damage amount

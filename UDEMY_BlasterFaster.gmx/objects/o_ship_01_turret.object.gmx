@@ -74,7 +74,7 @@ ammo_counter.parent_gun = object_index;
 event_inherited();
 
 // Override the fire rate
-alarm[LASER_LGUN] = room_speed/16;
+alarm[LASER_LGUN] = room_speed/10;
 </string>
           </argument>
         </arguments>

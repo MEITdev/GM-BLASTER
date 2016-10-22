@@ -130,6 +130,8 @@ instance_destroy();
             <kind>1</kind>
             <string>///Draw the string and the box
 
+draw_set_font(f_dialog_box);
+
 // draw the box first, 50% transparency
 draw_set_alpha(.5);
 //draw_roundrect_colour(x, y, x+width, y+height, c_blue, c_red, true);

@@ -37,7 +37,7 @@
     <background visible="-1" foreground="0" name="b_space_large" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="3" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
-    <background visible="0" foreground="0" name="b_nebulae_violet" x="0" y="0" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="-1" name="b_nebulae_violet" x="9200" y="3800" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="b_gas_giant" x="0" y="0" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
@@ -52,11 +52,11 @@
   </views>
   <instances>
     <instance objName="o_sun" x="8217" y="4664" name="inst_B9F81DFF" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="o_menu_button" x="45" y="24" name="inst_F1789868" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_ship_mini" x="9495" y="4232" name="inst_9F42B4E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_view_controller" x="27" y="72" name="inst_B007C8BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_carrier_NPC" x="9657" y="4040" name="inst_10D188AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="o_dialog_box_controller" x="27" y="104" name="inst_154AD61D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_mouse_cursor_controller" x="36" y="144" name="inst_9E0AEFE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
