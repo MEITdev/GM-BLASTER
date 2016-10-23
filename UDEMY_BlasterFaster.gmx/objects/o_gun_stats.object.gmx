@@ -57,24 +57,25 @@ owner = noone;
           <argument>
             <kind>1</kind>
             <string>///Draw the stats
-draw_set_font(f_gun_stats);
+draw_set_halign(fa_left);
+draw_set_valign(fa_center);
 
-// damage
-draw_text(owner.x-38, owner.y-26, string(damage));
-// fire_rate
-draw_text(owner.x-20, owner.y-26, string(fire_rate));
-// recharge_time
-draw_text(owner.x-2, owner.y-26, string(recharge_time));
-// ammo
-draw_text(owner.x+16, owner.y-26, string(ammo_capacity));
-// energy_consumption
-draw_text(owner.x+30, owner.y-26, string(energy_consumption));
 draw_set_font(f_credits);
 // price
-draw_text(owner.x, owner.y + 2, string(price));
+draw_text(owner.x + 8, owner.y + 16, string(price));
 
+draw_set_font(f_gun_stats);
+// damage
+draw_text(owner.x+8, owner.y+34, "DAMAGE: " + string(damage));
+// fire_rate
+draw_text(owner.x+8, owner.y+46, "RATE OF FIRE: " + string(fire_rate));
+// ammo
+draw_text(owner.x+8, owner.y+58, "AMMO: " + string(ammo_capacity));
+// recharge_time
+//draw_text(owner.x-2, owner.y-26, string(recharge_time));
+// energy_consumption
+//draw_text(owner.x+30, owner.y-26, string(energy_consumption));
 // set the font back
-draw_set_font(f_score);
 </string>
           </argument>
         </arguments>

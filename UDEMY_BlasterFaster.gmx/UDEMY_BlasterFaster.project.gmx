@@ -97,6 +97,9 @@
         <sprite>sprites\s_gun_00_box_alt2</sprite>
         <sprite>sprites\s_gun_01_box_alt2</sprite>
         <sprite>sprites\s_gun_02_box_alt2</sprite>
+        <sprite>sprites\s_gun_00_box_alr3</sprite>
+        <sprite>sprites\s_gun_01_box_alt3</sprite>
+        <sprite>sprites\s_gun_02_box_alt3</sprite>
       </sprites>
     </sprites>
     <sprites name="Menu Buttons">
