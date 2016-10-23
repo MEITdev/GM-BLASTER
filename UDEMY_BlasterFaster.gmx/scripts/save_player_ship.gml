@@ -34,10 +34,16 @@ for (i = 0; i <= global.ship.ship_slots -1; i++)
             ini_write_real("slots", string(i) + "_ammo", global.ship.slot[i].ammo);
         }
     }
+    else
+    {
+        // if there is nothing on this slot insert dummy gun information
+        ini_write_string("slots", string(i), "o_ship_0" + string(i) + "_dummyGun");
+        // write 0 for ammo
+        ini_write_real("slots", string(i) + "_ammo", 0);
+    }
     // save mont points for the guns as well
     ini_write_real("slots", string(i) + "_mount_x", global.ship.ship_mount_x[i]);
     ini_write_real("slots", string(i) + "_mount_y", global.ship.ship_mount_y[i]);
-
 }
 
 // close the file

@@ -7,11 +7,28 @@ title = argument4;
 str = argument5;
 ttl = argument6;
 
+// if dialog box already exists, destrot it
+if instance_exists(global.dialog)
+{
+    with (global.dialog)
+    {
+        instance_destroy();
+    }
+}
+// and the avatar if it exists
+if instance_exists(global.avatar)
+{
+    with (global.avatar)
+    {
+        instance_destroy();
+    }
+}
+
 // instantiate the dialog box object
-dialog = instance_create(xx, yy, o_dialog_box);
-dialog.height = height;
-dialog.width = width;
-dialog.title = title;
-dialog.message = str
-dialog.ttl = ttl;
+global.dialog = instance_create(xx, yy, o_dialog_box);
+global.dialog.height = height;
+global.dialog.width = width;
+global.dialog.title = title;
+global.dialog.message = str
+global.dialog.ttl = ttl;
 // hope for the best...

@@ -62,6 +62,7 @@ if is_marked == false &amp;&amp; this_room != "r_create_player"
         {
             // skill already learned, indicate on the screen
             instance_create(x, y, o_known_skill_indicator);
+            is_marked = true;
         }
     };
 }

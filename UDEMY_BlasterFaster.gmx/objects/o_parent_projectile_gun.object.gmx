@@ -172,8 +172,13 @@ if can_fire == true
             // reset the cooldown counter
             //cooldown = room_speed/2;
             can_fire = false;
-            // subtract the ammo
-            ammo -= 1;
+            
+            // subtract the ammo if not in the hangar
+            this_room = room_get_name(room);
+            if this_room != "r_mothership_hangar"
+            {
+                ammo -= 1;
+            }
         }
         else
         {

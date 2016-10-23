@@ -53,9 +53,6 @@ ttl = 0;
 // wait for 0.5 second and then get the TTL for the dialog box
 alarm[GET_TIMER] = room_speed * 0.5;
 
-
-// id to the corresponding avatar that has been created with the dialog box
-avatar = noone;
 </string>
           </argument>
         </arguments>
@@ -104,9 +101,12 @@ ds_list_destroy(start);
           <argument>
             <kind>1</kind>
             <string>///Destroy the dialog box and the avatar
-with (avatar)
+if instance_exists(global.avatar)
 {
-    instance_destroy();
+    with (global.avatar)
+    {
+        instance_destroy();
+    }
 }
 instance_destroy();
 </string>
