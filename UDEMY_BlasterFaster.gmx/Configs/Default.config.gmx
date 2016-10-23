@@ -206,12 +206,12 @@
     <option_audioGroupCount>1</option_audioGroupCount>
     <option_author>Marek Ertinger</option_author>
     <option_backimage>nil</option_backimage>
-    <option_borderless>True</option_borderless>
+    <option_borderless>False</option_borderless>
     <option_changed>false</option_changed>
     <option_changeresolution>false</option_changeresolution>
     <option_closeesc>true</option_closeesc>
     <option_colordepth>0</option_colordepth>
-    <option_display_name>GameMaker: Studio</option_display_name>
+    <option_display_name>BLASTER: early ALPHA</option_display_name>
     <option_displayerrors>True</option_displayerrors>
     <option_ecma>0</option_ecma>
     <option_facebook_app_display_name></option_facebook_app_display_name>
@@ -220,7 +220,7 @@
     <option_freeze>false</option_freeze>
     <option_frequency>0</option_frequency>
     <option_frontimage>nil</option_frontimage>
-    <option_fullscreen>True</option_fullscreen>
+    <option_fullscreen>False</option_fullscreen>
     <option_gameguid>{D2F5EBBF-2C70-48FC-93BD-5789548A2E22}</option_gameguid>
     <option_gameid>643283961</option_gameid>
     <option_haptic_effects>0</option_haptic_effects>
@@ -476,7 +476,7 @@
     <option_version_description></option_version_description>
     <option_version_major>0</option_version_major>
     <option_version_minor>0</option_version_minor>
-    <option_version_product></option_version_product>
+    <option_version_product>Blaster</option_version_product>
     <option_version_release>0</option_version_release>
     <option_win8_advertising_appid></option_win8_advertising_appid>
     <option_win8_advertising_enable>0</option_win8_advertising_enable>
@@ -557,7 +557,7 @@
     <option_windows_mainor_version>0</option_windows_mainor_version>
     <option_windows_major_version>0</option_windows_major_version>
     <option_windows_nsis_file>Configs\Default\windows\RunnerInstaller.nsi</option_windows_nsis_file>
-    <option_windows_product_info></option_windows_product_info>
+    <option_windows_product_info>Blaster</option_windows_product_info>
     <option_windows_release_version>0</option_windows_release_version>
     <option_windows_runner_finished>Configs\Default\windows\Runner_finish.bmp</option_windows_runner_finished>
     <option_windows_runner_header>Configs\Default\windows\Runner_header.bmp</option_windows_runner_header>

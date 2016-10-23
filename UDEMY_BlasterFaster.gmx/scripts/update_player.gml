@@ -10,7 +10,18 @@ ini_write_real("player", "experience", global.current_player.experience);
 ini_write_real("player", "level", global.current_player.level);
 ini_write_real("player", "credits", global.current_player.credits);
 ini_write_real("player", "avatar_id", global.current_player.avatar_id);
-ini_write_real("player", "skill_id", global.current_player.skill_id);
+ini_write_real("player", "skill_points", global.current_player.skill_points);
+    
+// save the count of how many skills does the player know
+ini_write_real("skills", "count", array_length_1d(global.current_player.skills_known));
+
+// save the player known skills
+for (i=0; i<array_length_1d(global.current_player.skills_known); i+=1)
+{
+    ini_write_real("skills", string(i), global.current_player.skill_id);        
+};
+//ini_write_real("player", "skill_id", global.current_player.skill_id);
+
 
 // save the number of purchased weapons
 ini_write_real("purchased", "count", array_length_1d(global.current_player.purchased));

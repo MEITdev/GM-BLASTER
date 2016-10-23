@@ -111,6 +111,7 @@
     <sprites name="Space HUD">
       <sprite>sprites\s_ship_stats_box</sprite>
       <sprite>sprites\s_armor_new_alt</sprite>
+      <sprite>sprites\s_xp_bar</sprite>
       <sprite>sprites\s_shield_new_alt</sprite>
       <sprite>sprites\s_hull_new_alt</sprite>
       <sprite>sprites\s_hull_new</sprite>
@@ -309,6 +310,7 @@
       <object>objects\o_mission_select_button</object>
       <object>objects\o_save_game_button</object>
       <object>objects\o_save_player_button</object>
+      <object>objects\o_purchase_skill_button</object>
       <object>objects\o_save_slot_0</object>
       <object>objects\o_save_slot_1</object>
       <object>objects\o_save_slot_2</object>
@@ -418,6 +420,7 @@
       <object>objects\o_shield_new</object>
       <object>objects\o_armor_new</object>
       <object>objects\o_hull_new</object>
+      <object>objects\o_xp_bar</object>
       <object>objects\o_score</object>
       <object>objects\o_credits</object>
       <object>objects\o_armor</object>

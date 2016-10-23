@@ -464,6 +464,12 @@ if keyboard_check_pressed(vk_pagedown)
     armor -= 1;
     hull -= 1;
 }
+
+
+if keyboard_check_pressed(vk_pageup)
+{
+    global.current_player.experience += 10;
+}
 </string>
           </argument>
         </arguments>

@@ -51,7 +51,8 @@ if global.Sound == 'On'
           <argument>
             <kind>1</kind>
             <string>/// Set the skill ID
-global.current_player.skill_id = 0;
+// set the skkill
+global.current_player.skill_selected = 0;
 </string>
           </argument>
         </arguments>

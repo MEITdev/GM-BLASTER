@@ -3,7 +3,7 @@
   <spriteName>s_ship_stats_box</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -32,6 +32,9 @@ y_correction = 32;
 instance_create(x + x_correction, y + y_correction, o_shield_new);
 instance_create(x + x_correction, y + y_correction + 21, o_armor_new);
 instance_create(x + x_correction, y + y_correction + 42, o_hull_new);
+
+// XP bar counter
+instance_create(x + 64, y + 15, o_xp_bar);
 </string>
           </argument>
         </arguments>

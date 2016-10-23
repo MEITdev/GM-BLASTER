@@ -41,8 +41,11 @@ if r_name == "r_menu"
 }
 if r_name == "r_choose_save_slot"
 {
-    dialog_box(16, 16, 128, 200, "Choose Save slot", "Select a slot with already existing game to continue. To start a new game simply click on a empty slot, or delete an existing one with the [X] button to make room for your own ultimate adventure! Screw the other pilot!", 15);
-    avatar = instance_create(dialog.x + dialog.width + dialog.padding, dialog.y, o_robot_avatar);
+    dialog_box(104, 346, 58, 550, "Choose Save slot", "Select a slot with already existing game to continue. To start a new game simply click on a empty slot, or delete an existing one with the [X] button to make room for your own ultimate adventure! Screw the other pilot!", 15);
+    avatar = instance_create(584, 296, o_pirate_avatar);
+    avatar.image_xscale = 0.5;
+    avatar.image_yscale = 0.5;
+    
     dialog.avatar = avatar.object_index;
     //dialog.ttl = 30;    
 }

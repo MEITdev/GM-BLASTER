@@ -12,10 +12,18 @@ if file_exists(file_name)
     global.current_player.level = ini_read_real("player","level", 1);
     global.current_player.credits = ini_read_real("player", "credits", 0);
     global.current_player.avatar_id = ini_read_real("player", "avatar_id", 0);
-    global.current_player.skill_id = ini_read_real("player", "skill_id", 0);
-    
+    global.current_player.skill_points = ini_read_real("player", "skill_points", 0);
+
+    // load the known skills to the global array
+    count = ini_read_real("skills", "count", 0);
+    for (i=0; i<count; i+=1)
+    {
+        global.current_player.skills_known[i] = ini_read_real("skills", string(i), "");
+    };
+    // global.current_player.skill_id = ini_read_real("player", "skill_id", 0);
+        
     // read the number of purchased items to a variable
-    count = ini_read_real("purchased", "count", 3);
+    count = ini_read_real("purchased", "count", 0);
     // load purchased weapons to the global list
     for (i = 0; i < count; i++)
     {

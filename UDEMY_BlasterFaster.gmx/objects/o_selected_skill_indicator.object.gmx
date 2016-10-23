@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Move to the currently selected skill object
-if global.current_player.skill_id == 0
+if global.current_player.skill_selected == 0
 {
     if x != o_dash_skill_button.x
     {
@@ -36,7 +36,7 @@ if global.current_player.skill_id == 0
         speed = 0;
         
 }
-else if global.current_player.skill_id == 1
+else if global.current_player.skill_selected == 1
 {
     if x != o_repair_skill_button.x
     {
@@ -45,7 +45,7 @@ else if global.current_player.skill_id == 1
     else
         speed = 0;
 }
-else if global.current_player.skill_id == 2
+else if global.current_player.skill_selected == 2
 {
     if x != o_sensor_skill_button.x
     {

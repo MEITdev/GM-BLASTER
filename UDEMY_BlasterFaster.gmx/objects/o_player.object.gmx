@@ -29,9 +29,11 @@
 // all of this needs to be loaded from a save file
 name = "";
 experience = 0;
+required_experience = 0;
 level = 1;
 credits = 1000;
 
+// ===== GAME SCORE =====
 // pointer to players created ship
 score = 0;
 highscore = 0;
@@ -39,17 +41,88 @@ highscore = 0;
 // the ID of the avatar that the player has chosen
 avatar_id = 0;
 
+// ===== SKILLS =====
 // the ID of the skill chosen by the player
 skill_id = 0; // default value
+// start with one skill point
+skill_points = 1;
+skill_selected = 0;
+skills_known[0] = 0;
+skill_count = 0;
 
 // default ship file save name 
 ship_save_file = "default_ship.ini";
-
 // the slot save ID, default 0
 save_slot = 0;
 
+// === PRUCHASED WEAPONS ===
 // array of purchased weapons
 purchased[0] = 0; // reset the array
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Manage the level experience requirements
+
+if level == 1
+{
+    required_experience = 100;
+}
+if level == 2
+{
+    required_experience = 200;
+}
+if level == 3
+{
+    required_experience = 300;
+}   
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Manage leveling up
+
+if experience &gt;= required_experience
+{
+    // increase the current level
+    level += 1;
+    // set the current experience to 0
+    experience = 0;
+}
 </string>
           </argument>
         </arguments>
