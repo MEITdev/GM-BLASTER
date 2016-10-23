@@ -121,7 +121,17 @@ alarm[ASTEROID] = alarm_time;
 
 // PROXIMITY SENSOR
 // ONLY when the player has the skill
-if global.current_player.skill_id == 2
+// check if the player knows the DASH skill
+player_knows_sensor = false;
+for (i=0; i&lt;array_length_1d(global.current_player.skills_known); i+=1)
+{
+    if global.current_player.skills_known[i] = 3
+    {
+        player_knows_sensor = true;
+    }
+}
+
+if player_knows_sensor == true
 {
     if instance_exists(asteroid)
     {

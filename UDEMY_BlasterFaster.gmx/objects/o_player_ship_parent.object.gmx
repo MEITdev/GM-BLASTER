@@ -259,7 +259,17 @@ else
     }
     else if (global.Controller == 'Keyboard')
     {
-        if keyboard_check(vk_lshift)
+        // check if the player knows the DASH skill
+        player_knows_dash = false;
+        for (i=0; i&lt;array_length_1d(global.current_player.skills_known); i+=1)
+        {
+            if global.current_player.skills_known[i] = 1
+            {
+                player_knows_dash = true;
+            }
+        }
+        
+        if keyboard_check(vk_lshift)  &amp;&amp; player_knows_dash == true
         {
             if can_use_boost == true
             {

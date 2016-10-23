@@ -203,6 +203,7 @@
     </sprites>
     <sprites name="Skills">
       <sprite>sprites\s_selected_skill_indicator</sprite>
+      <sprite>sprites\s_known_skill_indicator</sprite>
       <sprite>sprites\s_player_skill_dash</sprite>
       <sprite>sprites\s_player_skill_repair</sprite>
       <sprite>sprites\s_player_skill_sensor</sprite>
@@ -333,6 +334,7 @@
         <object>objects\o_repair_skill_button</object>
         <object>objects\o_sensor_skill_button</object>
         <object>objects\o_selected_skill_indicator</object>
+        <object>objects\o_known_skill_indicator</object>
       </objects>
       <objects name="Avatars">
         <object>objects\o_avatar_player</object>

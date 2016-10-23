@@ -47,7 +47,7 @@ skill_id = 0; // default value
 // start with one skill point
 skill_points = 1;
 skill_selected = 0;
-skills_known[0] = 0;
+skills_known[0] = "none";
 skill_count = 0;
 
 // default ship file save name 
@@ -122,6 +122,8 @@ if experience &gt;= required_experience
     level += 1;
     // set the current experience to 0
     experience = 0;
+    // add one skill point to the player
+    skill_points += 1;
 }
 </string>
           </argument>

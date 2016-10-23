@@ -8,6 +8,68 @@
   <parentName>o_button_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Initialise object
+event_inherited();
+// use this value to track if the "is known skill" instance has been already created
+is_marked = false;
+skill_number = 2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Check the known skills, mark them on the screen
+this_room = room_get_name(room);
+if is_marked == false &amp;&amp; this_room != "r_create_player"
+{
+    for (i=0; i&lt;array_length_1d(global.current_player.skills_known); i++)
+    {
+        if global.current_player.skills_known[i] == skill_number
+        {
+            // skill already learned, indicate on the screen
+            instance_create(x, y, o_known_skill_indicator);
+        }
+    };
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
@@ -51,7 +113,7 @@ if global.Sound == 'On'
           <argument>
             <kind>1</kind>
             <string>/// Set the skill ID
-global.current_player.skill_selected = 2;
+global.current_player.skill_selected = skill_number;
 </string>
           </argument>
         </arguments>

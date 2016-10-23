@@ -28,7 +28,7 @@
             <string>///Initialise the danger indicator
 target_asteroid = 0;
 image_angle = 0;
-image_speed = .25;
+image_speed = 1;
 </string>
           </argument>
         </arguments>

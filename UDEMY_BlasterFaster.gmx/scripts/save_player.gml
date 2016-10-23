@@ -19,13 +19,15 @@ else
     ini_write_real("player", "avatar_id", global.current_player.avatar_id);
     ini_write_real("player", "skill_points", global.current_player.skill_points);
 
+    show_debug_message("known skills array size: " + string(array_length_1d(global.current_player.skills_known)));
+    
     // save the count of how many skills does the player know
     ini_write_real("skills", "count", array_length_1d(global.current_player.skills_known));
-    
     // save the player known skills
-    for (i=0; i<array_length_1d(global.current_player.skills_known); i+=1)
+    for (i=0; i < array_length_1d(global.current_player.skills_known); i++)
     {
-        ini_write_real("skills", string(i), global.current_player.skill_id);        
+        show_debug_message("In saving loop for: " + string(global.current_player.skills_known[i]));
+        ini_write_real("skills", string(i), global.current_player.skills_known[i]);
     };
     
     

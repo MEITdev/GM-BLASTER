@@ -18,7 +18,7 @@ ini_write_real("skills", "count", array_length_1d(global.current_player.skills_k
 // save the player known skills
 for (i=0; i<array_length_1d(global.current_player.skills_known); i+=1)
 {
-    ini_write_real("skills", string(i), global.current_player.skill_id);        
+    ini_write_real("skills", string(i), global.current_player.skills_known[i]);        
 };
 //ini_write_real("player", "skill_id", global.current_player.skill_id);
 
