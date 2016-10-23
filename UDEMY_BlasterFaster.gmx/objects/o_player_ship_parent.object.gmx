@@ -232,140 +232,148 @@ vspeed = 0;
             <kind>1</kind>
             <string>/// Handle user input
 
-// Select control type depending on the settings
-if (global.Controller == 'Mouse')
+// When in mothership the controls do not work!
+this_room = room_get_name(room);
+if this_room == "r_mothership_hangar"
 {
-//    if mouse_check_button(mb_left)
-//    {
-        target_x = mouse_x;
-        target_y = mouse_y;
-        if point_distance(x, y, target_x, target_y) &gt; 5
-        {
-           move_towards_point(target_x, target_y, movement_speed);
-        }
-        else 
-        {
-            speed = 0;
-        }
-//    }
+    // do nothing
 }
-else if (global.Controller == 'Keyboard')
+else
 {
-    if keyboard_check(vk_lshift)
+    // Select control type depending on the settings
+    if (global.Controller == 'Mouse')
     {
-        if can_use_boost == true
-        {
-            can_use_boost = false;
-            alarm[BOOSTER_ALLOWED] = room_speed * 5;
-
-            //speed_boost = false;
-            // start the boost
-            movement_speed = max_movement_speed + 5;
-            // player cannot be hit by lasers
-            can_be_hit = false;
-            
-            draw_dash_sprite = true;
-            
-            
-            // call the alarm that will stop the boost
-            image_alpha = .5;
-
-            // set the initial X and Y for the dash effect sprites
-            old_x = x;
-            old_y = y;
-            
-            // now loop all the guns and set the alpha for them
-            for (i = 0; i &lt;= ship_slots - 1; i++)
+    //    if mouse_check_button(mb_left)
+    //    {
+            target_x = mouse_x;
+            target_y = mouse_y;
+            if point_distance(x, y, target_x, target_y) &gt; 5
             {
-                if instance_exists(slot[i])
+               move_towards_point(target_x, target_y, movement_speed);
+            }
+            else 
+            {
+                speed = 0;
+            }
+    //    }
+    }
+    else if (global.Controller == 'Keyboard')
+    {
+        if keyboard_check(vk_lshift)
+        {
+            if can_use_boost == true
+            {
+                can_use_boost = false;
+                alarm[BOOSTER_ALLOWED] = room_speed * 5;
+    
+                //speed_boost = false;
+                // start the boost
+                movement_speed = max_movement_speed + 5;
+                // player cannot be hit by lasers
+                can_be_hit = false;
+                
+                draw_dash_sprite = true;
+                
+                
+                // call the alarm that will stop the boost
+                image_alpha = .5;
+    
+                // set the initial X and Y for the dash effect sprites
+                old_x = x;
+                old_y = y;
+                
+                // now loop all the guns and set the alpha for them
+                for (i = 0; i &lt;= ship_slots - 1; i++)
                 {
-                    slot[i].image_alpha = .5;
-                    // set the old X and Y values for the dash effect
-                    slot[i].old_x = slot[i].x;
-                    slot[i].old_y = slot[i].y;
+                    if instance_exists(slot[i])
+                    {
+                        slot[i].image_alpha = .5;
+                        // set the old X and Y values for the dash effect
+                        slot[i].old_x = slot[i].x;
+                        slot[i].old_y = slot[i].y;
+                    }
                 }
+                
+                // how long until the alarm is reset
+                // after 1 second the boost will be unavailable and the countdown to allow the boost again will start via alarm
+                alarm[SHIP_BOOSTER] = room_speed;
             }
-            
-            // how long until the alarm is reset
-            // after 1 second the boost will be unavailable and the countdown to allow the boost again will start via alarm
-            alarm[SHIP_BOOSTER] = room_speed;
+        }
+        
+    /*    
+        // TESTING
+        if keyboard_check(global.LEFT) &amp;&amp; keyboard_check(vk_lshift)
+        {
+            // if can boost
+            if speed_boost == true
+            {
+                can_be_hit = false;
+                image_alpha = .5;
+                if booster_speed &gt; 0
+                {
+                    booster_speed -= 1;
+                }
+                else
+                {
+                    speed_boost = false;
+                    can_be_hit = true;
+                }
+                x -= booster_speed;
+           }
+        }
+        else if keyboard_check(global.RIGHT) &amp;&amp; keyboard_check(vk_lshift)
+        {
+            // if can boost
+            if speed_boost == true
+            {
+                if booster_speed &gt; 0
+                {
+                    booster_speed -= 1;
+                }
+                else
+                {
+                    speed_boost = false;
+                }
+                x += booster_speed;
+            }
+        }
+    
+        // reset the alpha of the ship
+        if speed_boost == false image_alpha = 1;
+    */    
+        // keyboard controls as well
+        if keyboard_check(global.LEFT)
+        {
+            x -= movement_speed;
+        }
+        if (keyboard_check(global.RIGHT))
+        {
+            x += movement_speed;
+        }
+        
+        if (keyboard_check(global.UP))
+        {
+            y -= movement_speed;
+        }
+        if (keyboard_check(global.DOWN))
+        {
+            y += movement_speed;
         }
     }
     
-/*    
-    // TESTING
-    if keyboard_check(global.LEFT) &amp;&amp; keyboard_check(vk_lshift)
-    {
-        // if can boost
-        if speed_boost == true
-        {
-            can_be_hit = false;
-            image_alpha = .5;
-            if booster_speed &gt; 0
-            {
-                booster_speed -= 1;
-            }
-            else
-            {
-                speed_boost = false;
-                can_be_hit = true;
-            }
-            x -= booster_speed;
-       }
-    }
-    else if keyboard_check(global.RIGHT) &amp;&amp; keyboard_check(vk_lshift)
-    {
-        // if can boost
-        if speed_boost == true
-        {
-            if booster_speed &gt; 0
-            {
-                booster_speed -= 1;
-            }
-            else
-            {
-                speed_boost = false;
-            }
-            x += booster_speed;
-        }
-    }
+    
+    // Create the laser - default weapon
+    //if (keyboard_check_pressed(vk_space))
+    //{
+    //    instance_create(x, y-10, o_laser);
+    //}
+    
+    // Restrict the ship to the window
+    x = clamp(x, 16, room_width-16);
+    y = clamp(y, 16, room_height-16);
+    
 
-    // reset the alpha of the ship
-    if speed_boost == false image_alpha = 1;
-*/    
-    // keyboard controls as well
-    if keyboard_check(global.LEFT)
-    {
-        x -= movement_speed;
-    }
-    if (keyboard_check(global.RIGHT))
-    {
-        x += movement_speed;
-    }
-    
-    if (keyboard_check(global.UP))
-    {
-        y -= movement_speed;
-    }
-    if (keyboard_check(global.DOWN))
-    {
-        y += movement_speed;
-    }
 }
-
-
-// Create the laser - default weapon
-//if (keyboard_check_pressed(vk_space))
-//{
-//    instance_create(x, y-10, o_laser);
-//}
-
-// Restrict the ship to the window
-x = clamp(x, 16, room_width-16);
-y = clamp(y, 16, room_height-16);
-
-
-
 </string>
           </argument>
         </arguments>
@@ -448,6 +456,13 @@ if (keyboard_check_pressed(vk_home))
 if keyboard_check_pressed(vk_end)
 {
     shield += 1;
+}
+
+if keyboard_check_pressed(vk_pagedown)
+{
+    shield -= 1;
+    armor -= 1;
+    hull -= 1;
 }
 </string>
           </argument>

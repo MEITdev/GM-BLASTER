@@ -53,6 +53,10 @@ recharge_time = 0;
 fire_rate = room_speed/4;
 price = 500;
 energy_consumption = 0;
+
+// create the hull status indicator
+hull_status = instance_create(0, 0, o_hull_turret);
+hull_status.parent_gun = object_index;
 </string>
           </argument>
         </arguments>
@@ -148,9 +152,14 @@ image_angle = (point_direction(x, y, mouse_x, mouse_y));
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Update ammo counter
+            <string>///Update ammo counter and hull status
 if instance_exists(global.ship)
 {
+
+    hull_status.image_index = hull;
+    hull_status.x = global.ship.x + global.ship.ship_mount_x[gun_slot_id];
+    hull_status.y = global.ship.y + global.ship.ship_mount_y[gun_slot_id] + 88;
+
     // update the value to be displayed on the ammo counter
     ammo_counter.counter = ammo;
     // update the ammo counter position

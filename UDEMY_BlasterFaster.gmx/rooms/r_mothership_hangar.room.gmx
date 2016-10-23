@@ -64,6 +64,7 @@
     <instance objName="o_purchase_button" x="784" y="336" name="inst_8E355DE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_mouse_cursor_controller" x="272" y="16" name="inst_32F369A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_ship_stats_box" x="8" y="8" name="inst_BE1197B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_repair_ship_button" x="784" y="232" name="inst_81A4B259" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

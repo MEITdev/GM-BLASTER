@@ -101,6 +101,7 @@ if !(file_exists("slot_0.ini"))
     // RESET the purchased list when loading a player
     global.current_player.purchased = "";
     global.current_player.purchased[0] = 0;
+    global.current_player.skill_id = 0;
 
     room_goto(r_create_player);
 }

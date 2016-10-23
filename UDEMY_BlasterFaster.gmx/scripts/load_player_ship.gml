@@ -46,6 +46,13 @@ if file_exists(file_name)
             gun_to_create = asset_get_index(ini_read_string("slots", string(i), 0));
             //add_weapon(ship, asset_get_index(gun_to_create), i);
             global.ship.slot[i] = instance_create(global.ship.ship_mount_x[i], global.ship.ship_mount_y[i], gun_to_create);
+            
+            if object_get_parent(global.ship.slot[i].object_index) != o_parent_power_gun
+            {
+                global.ship.slot[i].ammo = ini_read_real("slots", string(i) + "_ammo", 0);
+            }
+
+            
             global.ship.slot[i].gun_slot_id = i;
         }
         ini_close();   

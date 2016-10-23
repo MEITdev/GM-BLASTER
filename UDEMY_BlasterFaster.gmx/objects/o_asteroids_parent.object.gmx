@@ -67,6 +67,23 @@ if (hull &lt;= 0)
     instance_destroy();
     
     score += 1;
+    
+    
+    // PROXIMITY SENSOR
+    // ONLY when the player has the skill
+    if global.current_player.skill_id == 2
+    {
+        for (i = 0; i &lt; no_of_fragments; i++)
+        {
+            if instance_exists(global.ship)
+            {
+                danger_indicator = instance_create(o_ship_new.x, o_ship_new.y+32, o_danger_indicator);
+                danger_indicator.target_asteroid = fragment[i];
+            }
+        }
+    }
+    
+    
 }
 </string>
           </argument>

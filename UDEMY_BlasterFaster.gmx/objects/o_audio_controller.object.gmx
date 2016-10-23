@@ -51,16 +51,16 @@
             <string>///Manage the music
 if global.Music == 'On'
 {
-    if !(audio_is_playing(a_menu_music))
+    if !(audio_is_playing(a_menu_music_01))
     {
-        audio_play_sound(a_menu_music, 10, true);
+        audio_play_sound(a_menu_music_01, 10, true);
     }
 }
 else if global.Music == 'Off'
 {
-    if audio_is_playing(a_menu_music)
+    if audio_is_playing(a_menu_music_01)
     {
-        audio_stop_sound(a_menu_music);
+        audio_stop_sound(a_menu_music_01);
     }
 }
 </string>
@@ -90,9 +90,9 @@ if global.Music == 'On'
 {
     if this_room == "r_mission_01"
     {
-        if audio_is_playing(a_menu_music)
+        if audio_is_playing(a_menu_music_01)
         {
-            audio_stop_sound(a_menu_music);
+            audio_stop_sound(a_menu_music_01);
         }
         if !(audio_is_playing(a_mission_music_01))
         {
@@ -105,7 +105,7 @@ if global.Music == 'On'
         {
             audio_stop_sound(a_mission_music_01);
             // play the menu tune
-            audio_play_sound(a_menu_music, 10, true);
+            audio_play_sound(a_menu_music_01, 10, true);
         }    
     }
 }

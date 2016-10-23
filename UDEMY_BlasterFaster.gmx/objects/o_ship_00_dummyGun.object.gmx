@@ -32,6 +32,8 @@ event_inherited();
 hull = 0;
 armor = 0;
 gun_slot_id = 0;
+ammo = 0;
+
 
 // Gun stats - displayed in the hangar - override
 damage = 0;

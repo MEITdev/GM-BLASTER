@@ -118,12 +118,18 @@ else if what_direction &gt;= 136 and what_direction &lt;= 224
 alarm[ASTEROID] = alarm_time;
 //instance_create(random_range(16, room_width-16), -16, asteroid);
 
-if instance_exists(asteroid)
+
+// PROXIMITY SENSOR
+// ONLY when the player has the skill
+if global.current_player.skill_id == 2
 {
-    if instance_exists(global.ship)
+    if instance_exists(asteroid)
     {
-        danger_indicator = instance_create(o_ship_new.x, o_ship_new.y+32, o_danger_indicator);
-        danger_indicator.target_asteroid = asteroid;
+        if instance_exists(global.ship)
+        {
+            danger_indicator = instance_create(o_ship_new.x, o_ship_new.y+32, o_danger_indicator);
+            danger_indicator.target_asteroid = asteroid;
+        }
     }
 }
 </string>

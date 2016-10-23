@@ -30,9 +30,17 @@
 // inherit the events from the parent
 event_inherited();
 
-//create the ship engine jet
-ship_engine_jet = instance_create(x,y+32, o_ship_01_engine_jet);
-
+// When in mothership no engine as the ship is docked
+this_room = room_get_name(room);
+if this_room == "r_mothership_hangar"
+{
+    // do nothing
+}
+else
+{
+    //create the ship engine jet
+    ship_engine_jet = instance_create(x,y+32, o_ship_01_engine_jet);
+}
 /*
 // Set the ship slots, this depends on the type of the ship
 ship_slots = 2;

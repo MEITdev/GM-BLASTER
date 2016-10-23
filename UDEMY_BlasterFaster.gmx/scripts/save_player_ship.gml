@@ -27,6 +27,12 @@ for (i = 0; i <= global.ship.ship_slots -1; i++)
     if instance_exists(global.ship.slot[i])
     {
         ini_write_string("slots", string(i), object_get_name(global.ship.slot[i].object_index));
+
+        // No need to save ammo for power type guns as they recharge and will be loaded always full
+        if object_get_parent(global.ship.slot[i].object_index) != o_parent_power_gun
+        {
+            ini_write_real("slots", string(i) + "_ammo", global.ship.slot[i].ammo);
+        }
     }
     // save mont points for the guns as well
     ini_write_real("slots", string(i) + "_mount_x", global.ship.ship_mount_x[i]);
