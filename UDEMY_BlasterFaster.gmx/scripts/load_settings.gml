@@ -3,6 +3,7 @@ ini_open("settings.ini");
 global.Music = ini_read_string("general", "Music", "On");
 global.Sound = ini_read_string("general", "Sound", "On");
 global.Controller = ini_read_string("general", "Controller", "Keyboard");
+global.Fullscreen = ini_read_real("general", "Fullscreen", 0);
 
 // Controls
 global.UP = ini_read_real("controls", "UP", ord("W"));

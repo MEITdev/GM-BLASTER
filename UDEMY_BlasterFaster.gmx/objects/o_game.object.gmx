@@ -51,6 +51,7 @@ else
     global.DOWN = ord("S");
     global.LEFT = ord("A");
     global.RIGHT = ord("D");
+    global.Fullscreen = 1;
     
     save_settings();
     load_settings();
@@ -63,10 +64,10 @@ else
 //}
 
 // set the Player Ship image index when the game starts
-global.player_ship_type = 0;
+//global.player_ship_type = 0;
 
 // enable the mouse cursor
-window_set_cursor(cr_default);
+//window_set_cursor(cr_default);
 </string>
           </argument>
         </arguments>

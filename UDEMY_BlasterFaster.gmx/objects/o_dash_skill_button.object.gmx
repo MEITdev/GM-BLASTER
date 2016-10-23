@@ -121,6 +121,29 @@ global.current_player.skill_selected = skill_number;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Create Information dialog
+dialog_box(568, 136, 128, 260, "DASH", "The DASH skill allows you, for a short period of time, to increase your speed and change your molecular structure in such a way....that you cannot be hit by projectiles or objects, in a nutshell.", 30);
+global.avatar = noone;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
   </events>
   <PhysicsObject>0</PhysicsObject>

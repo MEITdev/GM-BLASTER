@@ -60,6 +60,7 @@
     <instance objName="o_settings_right_control" x="520" y="344" name="inst_25F43498" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_settings_music_icon" x="264" y="96" name="inst_E274AD39" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_settings_sound_icon" x="600" y="96" name="inst_0ECF552D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_settings_fullscreen_toggle" x="432" y="96" name="inst_13A96FC3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

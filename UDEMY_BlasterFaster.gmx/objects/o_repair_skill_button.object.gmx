@@ -89,6 +89,29 @@ if is_marked == false &amp;&amp; this_room != "r_create_player"
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Create Information dialog
+dialog_box(568, 136, 128, 260, "Repair", "The REPAIR skill gives you access to NANObots that will try to repair your Hull and Armor over time. Quite a good thing if you suck at this game and are hit by the enemy or asteroids all the time.", 30);
+global.avatar = noone;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Play sound effect
 if global.Sound == 'On'
 {

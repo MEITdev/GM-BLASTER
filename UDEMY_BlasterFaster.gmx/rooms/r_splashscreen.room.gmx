@@ -10,7 +10,25 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>///Toggle full screen
+if file_exists("settings.ini")
+{
+    // read existing settings
+    load_settings();
+
+    if global.Fullscreen == 0
+       {
+       window_set_fullscreen(false);
+       }
+    else
+       {
+       window_set_fullscreen(true);
+       }
+}
+else
+{
+    window_set_fullscreen(true);
+}</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
