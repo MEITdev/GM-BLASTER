@@ -34,7 +34,7 @@ r_name = room_get_name(room);
 
 if r_name == "r_menu"
 {
-    dialog_box(32, 200, 75, 250, "Welcome!", "Hello there, welcome to pre-alpha stage of this game. Hope you or your computer do not crash too much...", 5);
+    dialog_box(32, 200, 75, 250, " Welcome!", "Hello there, welcome to pre-alpha stage of this game. Hope you or your computer do not crash too much...", 5);
     global.avatar = noone;
 //    avatar = instance_create(dialog.x + 250, dialog.y, o_robot_avatar);
 //    dialog.avatar = avatar.object_index;
@@ -59,10 +59,15 @@ if r_name == "r_mothership_hangar"
 }
 if r_name == "r_create_player"
 {
-    dialog_box(16, 16, 100, 200, "Create your pilot", "Select a name, your avatar and one special Skill that you can use during your next mission. You can always change those once docked at the mothership.", 25);
-    global.avatar = instance_create(global.dialog.x + global.dialog.width + global.dialog.padding, global.dialog.y, o_robot_avatar);
-    global.dialog.avatar = global.avatar.object_index;
-    //dialog.ttl = 30;    
+    message_text = "Create your pilot here. Type in your name in the _YOUR_NAME_ input field. " +
+    "Then using the icons next to the _AVATAR_ choose how your pilot will look. " +
+    "Below the _AVATAR_ are the available _SKILLS_. Use the _LEFT_MOUSE_BUTTON_ to select a "+
+    "_SKILL_ and information will be displayed in the right hand side of the screen. " +
+    "To confirm the creation of your character simply click on the _CONTINUE_ button in the "+
+    "lower right corner of the screen.";
+    
+    dialog_box(19, 136, 192, 260, "Create your pilot", message_text, 25);
+    global.avatar = noone;
 }
 if r_name == "r_mission_select"
 {

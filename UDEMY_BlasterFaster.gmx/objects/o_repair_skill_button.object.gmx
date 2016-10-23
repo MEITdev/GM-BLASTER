@@ -90,7 +90,7 @@ if is_marked == false &amp;&amp; this_room != "r_create_player"
           <argument>
             <kind>1</kind>
             <string>///Create Information dialog
-dialog_box(568, 136, 128, 260, "Repair", "The REPAIR skill gives you access to NANObots that will try to repair your Hull and Armor over time. Quite a good thing if you suck at this game and are hit by the enemy or asteroids all the time.", 30);
+dialog_box(568, 136, 128, 260, "Repair [ PASSIVE ]", "The REPAIR skill gives you access to NANObots that will try to repair your Hull and Armor over time. Quite a good thing if you suck at this game and are hit by the enemy or asteroids all the time.", 30);
 global.avatar = noone;
 </string>
           </argument>

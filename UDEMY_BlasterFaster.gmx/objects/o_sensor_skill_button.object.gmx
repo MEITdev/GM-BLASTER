@@ -114,7 +114,7 @@ if global.Sound == 'On'
           <argument>
             <kind>1</kind>
             <string>///Create Information dialog
-dialog_box(568, 136, 128, 260, "RADAR", "The science of sound in space, oh yeah. You can use your favourite songs to bounce of rogue asteroids, and so revealing their locationn. This device will serve you as a early warning system against asteroid impacts.", 30);
+dialog_box(568, 136, 128, 260, "RADAR [ PASSIVE ]", "The science of sound in space, oh yeah. You can use your favourite songs to bounce of rogue asteroids, and so revealing their locationn. This device will serve you as a early warning system against asteroid impacts.", 30);
 global.avatar = noone;
 </string>
           </argument>

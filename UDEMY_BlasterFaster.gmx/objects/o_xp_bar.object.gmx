@@ -89,6 +89,9 @@ draw_set_font(f_dialog_box);
 draw_set_color(c_white);
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
+// Draw the word above the bar
+draw_text(x + sprite_width/2, y - 8, "XP");
+
 // construct the string
 level_stats =   string(global.current_player.experience) + " / " + 
                 string(global.current_player.required_experience);

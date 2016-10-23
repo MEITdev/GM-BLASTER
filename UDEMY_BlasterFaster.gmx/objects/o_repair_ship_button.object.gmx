@@ -55,16 +55,20 @@ price = 100;
             <string>/// Repair the ship if player has enough money
 event_inherited();
 
-if global.current_player.credits &gt; price
+// repair ship only if the ship is not repaired already
+if global.ship.armor &lt; global.ship.max_armor || global.ship.hull &lt; global.ship.max_hull || global.ship.shield &lt; global.ship.max_shield
 {
-    // update the credits
-    global.current_player.credits -= price;
-    update_player(global.current_player.save_slot);
-    
-    // repair the ship
-    global.ship.shield = global.ship.max_shield;
-    global.ship.armor = global.ship.max_armor;
-    global.ship.hull = global.ship.max_armor;
+    if global.current_player.credits &gt; price
+    {
+        // update the credits
+        global.current_player.credits -= price;
+        update_player(global.current_player.save_slot);
+        
+        // repair the ship
+        global.ship.shield = global.ship.max_shield;
+        global.ship.armor = global.ship.max_armor;
+        global.ship.hull = global.ship.max_armor;
+    }
 }
 </string>
           </argument>

@@ -86,6 +86,7 @@
       <sprite>sprites\s_input_box</sprite>
       <sprite>sprites\s_delete_save</sprite>
       <sprite>sprites\s_delete_save_new</sprite>
+      <sprite>sprites\s_dialog_close_button</sprite>
       <sprites name="Weapons">
         <sprite>sprites\s_gun_00_avatar</sprite>
         <sprite>sprites\s_gun_00_box</sprite>
@@ -107,6 +108,7 @@
       <sprite>sprites\s_next_button</sprite>
       <sprite>sprites\s_previous_button</sprite>
       <sprite>sprites\s_repair_ship_button</sprite>
+      <sprite>sprites\s_help_dialog_button</sprite>
     </sprites>
     <sprites name="Space HUD">
       <sprite>sprites\s_ship_stats_box</sprite>
@@ -272,8 +274,10 @@
     <font>fonts\f_credits</font>
     <font>fonts\f_menu_buttons</font>
     <font>fonts\f_dialog_box</font>
+    <font>fonts\f_experience_stats</font>
     <font>fonts\f_timer</font>
     <font>fonts\f_gun_ammo</font>
+    <font>fonts\f_level_stats</font>
   </fonts>
   <objects name="objects">
     <object>objects\o_me_it_logo</object>
@@ -328,6 +332,7 @@
       <object>objects\o_delete_save_button</object>
       <object>objects\o_gun_stats</object>
       <object>objects\o_repair_ship_button</object>
+      <object>objects\o_help_button</object>
     </objects>
     <objects name="Player Characters">
       <object>objects\o_player_character</object>

@@ -3,7 +3,7 @@
   <caption></caption>
   <width>854</width>
   <height>480</height>
-  <vsnap>1</vsnap>
+  <vsnap>8</vsnap>
   <hsnap>1</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
@@ -51,17 +51,18 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="o_textbox" x="416" y="96" name="inst_B47259FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_textbox" x="425" y="96" name="inst_B47259FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_save_player_button" x="776" y="440" name="inst_73B1D0BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_menu_button" x="72" y="440" name="inst_B261CD64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_avatar_player" x="416" y="216" name="inst_BC49C2C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_next_avatar_button" x="528" y="272" name="inst_2678EB05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_dash_skill_button" x="344" y="360" name="inst_D2EF3E47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_avatar_player" x="425" y="216" name="inst_BC49C2C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_next_avatar_button" x="537" y="272" name="inst_2678EB05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_dash_skill_button" x="353" y="360" name="inst_D2EF3E47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_dialog_box_controller" x="32" y="32" name="inst_B29C84BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_previous_avatar_button" x="304" y="272" name="inst_3EA01440" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_repair_skill_button" x="416" y="360" name="inst_6769C7CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_sensor_skill_button" x="488" y="360" name="inst_39489A9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_selected_skill_indicator" x="344" y="360" name="inst_55BCF42C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_previous_avatar_button" x="313" y="272" name="inst_3EA01440" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_repair_skill_button" x="425" y="360" name="inst_6769C7CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_sensor_skill_button" x="497" y="360" name="inst_39489A9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_selected_skill_indicator" x="353" y="360" name="inst_55BCF42C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_help_button" x="824" y="32" name="inst_F9FE79EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
