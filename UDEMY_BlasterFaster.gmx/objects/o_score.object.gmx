@@ -25,12 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Draw the score
+            <string>/// Draw the scor
 draw_self(); // draw self, we are overriding the default draw event...
 
-draw_set_halign(fa_right);
-draw_set_valign(fa_top);
-draw_text(x - 3, y, score);
+draw_set_font(f_score);
+draw_set_halign(fa_center);
+draw_set_valign(fa_center);
+draw_text(x, y, score);
 // Draw player name
 // draw_text(x - 3, y + 16, o_ship.name);
 </string>

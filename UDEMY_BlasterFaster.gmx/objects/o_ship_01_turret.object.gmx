@@ -192,7 +192,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>event_inherited();
+draw_self();
 </string>
           </argument>
         </arguments>

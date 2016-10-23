@@ -32,7 +32,7 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 draw_set_font(f_credits);
 draw_set_colour(c_aqua);
-draw_text(x, y, global.current_player.credits);
+draw_text(x, y, "C" + string(global.current_player.credits));
 draw_set_font(f_score);
 draw_set_colour(c_white);
 </string>

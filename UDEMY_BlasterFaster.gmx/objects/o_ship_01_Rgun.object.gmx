@@ -229,6 +229,8 @@ draw_set_valign(fa_bottom);
 draw_text(x+46, y, energy_level);
 
 */
+
+
 </string>
           </argument>
         </arguments>

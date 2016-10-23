@@ -273,6 +273,7 @@
     <font>fonts\f_menu_buttons</font>
     <font>fonts\f_dialog_box</font>
     <font>fonts\f_timer</font>
+    <font>fonts\f_gun_ammo</font>
   </fonts>
   <objects name="objects">
     <object>objects\o_me_it_logo</object>

@@ -53,7 +53,8 @@ counter = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>event_inherited();
+draw_self();
 
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
