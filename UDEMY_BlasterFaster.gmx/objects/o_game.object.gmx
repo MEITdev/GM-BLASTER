@@ -57,10 +57,10 @@ else
 }
 
 // Play the music
-if global.Music = "On"
-{
-    audio_play_sound(a_menu_music, 10, true);
-}
+//if global.Music = "On"
+//{
+//    audio_play_sound(a_menu_music, 10, true);
+//}
 
 // set the Player Ship image index when the game starts
 global.player_ship_type = 0;

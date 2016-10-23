@@ -34,6 +34,7 @@ if (hull &lt;= 0)
     if object_index == o_asteroid_grey_01_fragment_01 || object_index == o_asteroid_grey_01_fragment_02
     {
         // do not spawn any more fragments
+        no_of_fragments = 0;
     }
     // the biggest asteroid produces 2 smaller asteroids
     else if object_index == o_asteroid_grey_03
