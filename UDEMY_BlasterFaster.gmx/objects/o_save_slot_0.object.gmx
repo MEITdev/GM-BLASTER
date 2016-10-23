@@ -112,6 +112,10 @@ if !(file_exists("slot_0.ini"))
 }
 else // take the player to the "hangar" of the mothership
 {
+    global.current_player.skill_selected = 0;
+    global.current_player.skills_known = 0;
+    global.current_player.skills_known[0] = 0;
+
     // load the global data again to memory
     load_player_data(0);
     room_goto(r_mothership_hangar);
