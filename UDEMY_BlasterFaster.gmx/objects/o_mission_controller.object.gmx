@@ -128,16 +128,16 @@ if level == 1
     {
         mission1_stage1 = true;
         // display message
-        dialog_box(room_width/2 - 75, room_height/2 - 25, 50, 150, "Stage 1", "Enough with the warmup. Let's start!");
-        dialog.ttl = 10; 
+        dialog_box(room_width/2 - 75, room_height/2 - 25, 50, 150, "Stage 1", "Enough with the warmup. Let's start!", 10);
+        //dialog.ttl = 10; 
     }
     
     if enemy_spawner.stage == 2 &amp;&amp; mission1_stage2 == false
     {
         mission1_stage2 = true;
         // display message
-        dialog_box(room_width/2 - 75, room_height/2 - 25, 50, 150, "Stage 2", "Shit just got real...");
-        dialog.ttl = 10; 
+        dialog_box(room_width/2 - 75, room_height/2 - 25, 50, 150, "Stage 2", "Shit just got real...", 10);
+        //dialog.ttl = 10; 
     }
 
 }
@@ -165,6 +165,8 @@ if level == 1
             <kind>1</kind>
             <string>///Display the mission timer
 draw_set_font(f_timer);
+draw_set_halign(fa_center);
+draw_set_valign(fa_center);
 
 // select colour depending on the timer
 if (time_left / time_limit) &gt; 0.5
@@ -175,8 +177,9 @@ else
 {
     draw_set_colour(c_red);
 }
+
 // Draw the timer on the screen
-draw_text(256, 32, string(time_left));
+draw_text(room_width/2, 32, string(time_left));
 
 // reset font to default
 draw_set_colour(c_white);

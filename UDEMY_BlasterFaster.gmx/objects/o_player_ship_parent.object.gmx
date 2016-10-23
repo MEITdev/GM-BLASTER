@@ -27,8 +27,11 @@
             <kind>1</kind>
             <string>ship_slots = 0;
 shield = 0;
+max_shield = 0;
 armor = 0;
+max_armor = 0;
 hull = 0;
+max_hull = 0;
 movement_speed = 0;
 max_movement_speed = 0;
 
@@ -413,7 +416,7 @@ y = clamp(y, 16, room_height-16);
             <string>///DEV DEBUG TOOLS
 
 // return to the main menu
-if (keyboard_check(vk_backspace))
+if (keyboard_check_pressed(vk_backspace))
 {
     save_player_ship(global.current_player.ship_save_file);
     score = 0;
@@ -440,8 +443,11 @@ if (keyboard_check_pressed(vk_home))
     instance_create(room_width/2 + 32, 0, o_hull_powerup);
     instance_create(room_width/2 - 32, 0, o_shield_powerup);
     instance_create(room_width/2 - 64 , 0, o_laser_powerup);
+}
 
-    
+if keyboard_check_pressed(vk_end)
+{
+    shield += 1;
 }
 </string>
           </argument>

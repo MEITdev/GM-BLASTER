@@ -76,8 +76,8 @@ if keyboard_check(ord("E"))
           <argument>
             <kind>1</kind>
             <string>///Display dialog
-dialog_box(x , y, 48, 128, "Enter Mothership", "Pree [E] to dock to the Shipyard");
-dialog.ttl = 5
+dialog_box(x , y, 48, 128, "Enter Mothership", "Pree [E] to dock to the Shipyard", 5);
+//dialog.ttl = 5
 </string>
           </argument>
         </arguments>

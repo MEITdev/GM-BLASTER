@@ -72,16 +72,16 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Start the game
+            <string>/// Start/Stop music
 if global.Music == 'On'
 {
     global.Music = 'Off';
-    audio_stop_sound(a_space_music);
+//    audio_stop_sound(a_menu_music);
 }
 else
 {
     global.Music = 'On';
-    audio_play_sound(a_space_music, 10, true);
+//    audio_play_sound(a_menu_music, 10, true);
 }
 </string>
           </argument>

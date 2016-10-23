@@ -59,7 +59,7 @@ else
 // Play the music
 if global.Music = "On"
 {
-    audio_play_sound(a_space_music, 10, true);
+    audio_play_sound(a_menu_music, 10, true);
 }
 
 // set the Player Ship image index when the game starts
@@ -90,6 +90,28 @@ window_set_cursor(cr_default);
             <string>/// Create instance of Player object
 // Instantiate the o_player - the global player object that will hold all the information about the player and the ship he/she has
 global.current_player = instance_create(0,0, o_player);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Initialize the audio controller
+global.audio_controller = instance_create(0,0, o_audio_controller);
 </string>
           </argument>
         </arguments>

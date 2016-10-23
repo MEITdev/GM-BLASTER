@@ -8,6 +8,8 @@
   <sounds name="sound">
     <sounds name="Music">
       <sound>sound\a_space_music</sound>
+      <sound>sound\a_menu_music</sound>
+      <sound>sound\a_mission_music_01</sound>
     </sounds>
     <sounds name="SFX">
       <sound>sound\a_explode</sound>
@@ -102,6 +104,12 @@
       <sprite>sprites\s_previous_button</sprite>
     </sprites>
     <sprites name="Space HUD">
+      <sprite>sprites\s_ship_stats_box</sprite>
+      <sprite>sprites\s_armor_new_alt</sprite>
+      <sprite>sprites\s_shield_new_alt</sprite>
+      <sprite>sprites\s_hull_new_alt</sprite>
+      <sprite>sprites\s_hull_new</sprite>
+      <sprite>sprites\s_armor_new</sprite>
       <sprite>sprites\s_armor</sprite>
       <sprite>sprites\s_shield_new</sprite>
       <sprite>sprites\s_shield</sprite>
@@ -109,11 +117,9 @@
       <sprite>sprites\s_ammo_counter_turret</sprite>
       <sprite>sprites\s_ammo_counter_mirror</sprite>
       <sprite>sprites\s_hull</sprite>
-      <sprite>sprites\s_hull_new</sprite>
       <sprite>sprites\s_hull_new_gun</sprite>
       <sprite>sprites\s_hull_new_gun_mirrored</sprite>
       <sprite>sprites\s_armor_new_gun</sprite>
-      <sprite>sprites\s_armor_new</sprite>
       <sprite>sprites\s_danger_indicator</sprite>
       <sprite>sprites\s_mission_indicator</sprite>
       <sprite>sprites\s_skills_toolbar</sprite>
@@ -189,7 +195,9 @@
       <sprite>sprites\s_carrier_NPC</sprite>
     </sprites>
     <sprites name="Skills">
-      <sprite>sprites\s_player_skill</sprite>
+      <sprite>sprites\s_player_skill_dash</sprite>
+      <sprite>sprites\s_player_skill_repair</sprite>
+      <sprite>sprites\s_player_skill_sensor</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -248,10 +256,11 @@
   <fonts name="fonts">
     <font>fonts\f_score</font>
     <font>fonts\f_gun_stats</font>
+    <font>fonts\f_damage_display</font>
     <font>fonts\f_credits</font>
-    <font>fonts\f_timer</font>
     <font>fonts\f_menu_buttons</font>
     <font>fonts\f_dialog_box</font>
+    <font>fonts\f_timer</font>
   </fonts>
   <objects name="objects">
     <object>objects\o_me_it_logo</object>
@@ -284,7 +293,6 @@
       <object>objects\o_gun_00_avatar</object>
       <object>objects\o_gun_01_avatar</object>
       <object>objects\o_gun_02_avatar</object>
-      <object>objects\o_next_skill_button</object>
       <object>objects\o_start_new_game_button</object>
       <object>objects\o_start_platformer_button</object>
       <object>objects\o_configure_ship</object>
@@ -308,7 +316,9 @@
     <objects name="Player Characters">
       <object>objects\o_player_character</object>
       <objects name="Skills">
-        <object>objects\o_player_skill</object>
+        <object>objects\o_dash_skill_button</object>
+        <object>objects\o_repair_skill_button</object>
+        <object>objects\o_sensor_skill_button</object>
       </objects>
       <objects name="Avatars">
         <object>objects\o_avatar_player</object>
@@ -392,15 +402,16 @@
       <object>objects\o_powerup_parent</object>
     </objects>
     <objects name="Game HUD">
+      <object>objects\o_ship_stats_box</object>
+      <object>objects\o_shield_new</object>
+      <object>objects\o_armor_new</object>
       <object>objects\o_hull_new</object>
       <object>objects\o_score</object>
       <object>objects\o_credits</object>
       <object>objects\o_armor</object>
       <object>objects\o_shield</object>
       <object>objects\o_hull</object>
-      <object>objects\o_shield_new</object>
       <object>objects\o_damage_display</object>
-      <object>objects\o_armor_new</object>
       <object>objects\o_danger_indicator</object>
       <object>objects\o_mission_indicator</object>
       <object>objects\o_dialog_box</object>
@@ -464,6 +475,7 @@
       <object>objects\o_mission_controller</object>
       <object>objects\o_dialog_box_controller</object>
       <object>objects\o_mouse_cursor_controller</object>
+      <object>objects\o_audio_controller</object>
     </objects>
     <objects name="NPC Avatars">
       <object>objects\o_avatar</object>

@@ -63,7 +63,7 @@ stage = 0;
             <string>/// Set the timers according to the level
 if level == 1
 {
-    alarm[SPAWNER_ALARM] = room_speed*3; // wait 3 seconds
+    alarm[SPAWNER_ALARM] = room_speed*21; // wait 21 seconds because of music
 }
 
 </string>

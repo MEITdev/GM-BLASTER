@@ -34,47 +34,56 @@ r_name = room_get_name(room);
 
 if r_name == "r_menu"
 {
-    dialog_box(room_width - 380, 200, 75, 250, "Welcome!", "Hello there, welcome to pre-alpha stage of this game. Hope you or your computer do not crash too much...");
+    dialog_box(room_width - 380, 200, 75, 250, "Welcome!", "Hello there, welcome to pre-alpha stage of this game. Hope you or your computer do not crash too much...", 5);
     avatar = instance_create(dialog.x + 250, dialog.y, o_robot_avatar);
     dialog.avatar = avatar.object_index;
-    dialog.ttl = 20;    
+    //dialog.ttl = 20;    
 }
 if r_name == "r_choose_save_slot"
 {
-    dialog_box(16, 16, 128, 200, "Choose Save slot", "Select a slot with already existing game to continue. To start a new game simply click on a empty slot, or delete an existing one with the [X] button to make room for your own ultimate adventure! Screw the other pilot!");
+    dialog_box(16, 16, 128, 200, "Choose Save slot", "Select a slot with already existing game to continue. To start a new game simply click on a empty slot, or delete an existing one with the [X] button to make room for your own ultimate adventure! Screw the other pilot!", 15);
     avatar = instance_create(dialog.x + dialog.width + dialog.padding, dialog.y, o_robot_avatar);
     dialog.avatar = avatar.object_index;
-    dialog.ttl = 30;    
+    //dialog.ttl = 30;    
 }
 if r_name == "r_mothership_hangar"
 {
-    dialog_box(room_width/2 + 40, 16, 120, 220, "Create your first ship", "Change the left, right and turret guns to find out which suits you the best. Practice on asteroids to get the feeling. Also collect SHIELD, ARMOR and HULL power ups to stay alive.");
+    dialog_box(room_width/2 + 40, 16, 120, 220, "Create your first ship", "Change the left, right and turret guns to find out which suits you the best. Practice on asteroids to get the feeling. Also collect SHIELD, ARMOR and HULL power ups to stay alive.", 15);
     avatar = instance_create(dialog.x + dialog.padding, dialog.y + dialog.height + dialog.padding, o_robot_avatar);
     dialog.avatar = avatar.object_index;
-    dialog.ttl = 30;
+    //dialog.ttl = 30;
 }
 if r_name == "r_create_player"
 {
-    dialog_box(16, 16, 100, 200, "Create your pilot", "Select a name, your avatar and one special Skill that you can use during your next mission. You can always change those once docked at the mothership.");
+    dialog_box(16, 16, 100, 200, "Create your pilot", "Select a name, your avatar and one special Skill that you can use during your next mission. You can always change those once docked at the mothership.", 25);
     avatar = instance_create(dialog.x + dialog.width + dialog.padding, dialog.y, o_robot_avatar);
     dialog.avatar = avatar.object_index;
-    dialog.ttl = 30;    
+    //dialog.ttl = 30;    
 }
 if r_name == "r_mission_select"
 {
-    dialog_box(o_carrier_NPC.x - 150, o_carrier_NPC.y - 300, 128, 200, "Mothership", "Fly to the indicated mission area to complete mission. Once done, return to mother ship to refuel, repair and upgrade.. as well as talk to our friendly RoboStaff at the RoboBar!");
+    dialog_box(o_carrier_NPC.x - 150, o_carrier_NPC.y - 300, 128, 200, "Mothership", "Fly to the indicated mission area to complete mission. Once done, return to mother ship to refuel, repair and upgrade.. as well as talk to our friendly RoboStaff at the RoboBar!", 60);
     avatar = instance_create(dialog.x + dialog.width + dialog.padding, dialog.y, o_robot_avatar);
     dialog.avatar = avatar.object_index;
-    dialog.ttl = 60;
+    //dialog.ttl = 60;
 }
 
 if room_get_name(room) == "r_mission_failed"
 {
-    dialog_box(room_width/2 - 125, room_height - 32, 75, 250, "Mission Failed", "Too slow, the mission is a failure. Return to your mothership to repari, refuel and rearm if you wish");
+    dialog_box(room_width/2 - 125, room_height - 32, 75, 250, "Mission Failed", "Too slow, the mission is a failure. Return to your mothership to repari, refuel and rearm if you wish", 10);
     avatar = instance_create(dialog.x - 96, dialog.y, o_robot_avatar);
     dialog.avatar = avatar.object_index;
-    dialog.ttl = 120;    
+    //dialog.ttl = 120;    
 }
+
+if r_name == "r_mission_01"
+{
+    dialog_box(room_width/2 + 40, 16, 120, 220, "Mission Breafing", "STUFF...", 21);
+    avatar = instance_create(dialog.x + dialog.padding, dialog.y + dialog.height + dialog.padding, o_robot_avatar);
+    dialog.avatar = avatar.object_index;
+    //dialog.ttl = 21;
+}
+
 </string>
           </argument>
         </arguments>

@@ -72,7 +72,7 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Start the game
+            <string>/// Trigger sound on/off
 if global.Sound == 'On'
 {
     global.Sound = 'Off';

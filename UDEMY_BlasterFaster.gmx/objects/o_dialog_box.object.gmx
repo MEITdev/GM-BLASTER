@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Initialise the text box
-width = 256;
+width = 128;
 height = 128;
 padding = 4;
 
@@ -48,8 +48,11 @@ message = "";
 str = ""; // what gets displayed to the screen
 
 // Time To Live for the dialog box, default is 5 seconds
-ttl = room_speed * 5;
-alarm[DESTROY_DIALOG_BOX] = ttl;
+ttl = 0;
+
+// wait for 0.5 second and then get the TTL for the dialog box
+alarm[GET_TIMER] = room_speed * 0.5;
+
 
 // id to the corresponding avatar that has been created with the dialog box
 avatar = noone;
@@ -83,7 +86,7 @@ ds_list_destroy(start);
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -106,6 +109,30 @@ with (avatar)
     instance_destroy();
 }
 instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Get the timer for destruction of the dialog box
+alarm[DESTROY_DIALOG_BOX] = room_speed * ttl;
 </string>
           </argument>
         </arguments>

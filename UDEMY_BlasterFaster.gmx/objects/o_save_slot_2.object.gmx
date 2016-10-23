@@ -40,7 +40,7 @@ if file_exists("slot_2.ini")
     avatar.image_index = global.current_player.avatar_id;
     
     // create the delete save button
-    delete_button = instance_create(x + 96, y, o_delete_save_button);
+    delete_button = instance_create(x, y + 160, o_delete_save_button);
     delete_button.selected_save = 2;
 }
 else

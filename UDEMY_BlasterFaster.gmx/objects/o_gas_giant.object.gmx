@@ -108,8 +108,8 @@ image_angle -= 1;
           <argument>
             <kind>1</kind>
             <string>///Display dialog
-dialog_box(x , y, 48, 128, "Mission 01", "Pree [E] to start this mission.");
-dialog.ttl = 5
+dialog_box(x , y, 48, 128, "Mission 01", "Pree [E] to start this mission.", 1);
+//dialog.ttl = 5
 </string>
           </argument>
         </arguments>

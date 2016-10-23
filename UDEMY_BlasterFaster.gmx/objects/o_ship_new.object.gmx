@@ -91,8 +91,13 @@ for (i = 0; i &lt;= ship_slots - 1; i++)
           <argument>
             <kind>1</kind>
             <string>/// Collect the shield powerup
-shield += 1;
-shield = min(shield, 7); // select the min value from the values given
+if shield &lt; max_shield
+{
+    shield += 1;
+}
+else
+    score += 5;
+//shield = min(shield, 7); // select the min value from the values given
 
 // run inside the other object
 with (other)
@@ -128,8 +133,6 @@ if global.Sound == 'On'
           <argument>
             <kind>1</kind>
             <string>/// Collect the laser powerup
-
-
 for (i = 0; i &lt;= global.ship.ship_slots - 1; i++)
 {
     // add power when weapon is power based
@@ -209,10 +212,16 @@ if global.Sound == 'On'
           <argument>
             <kind>1</kind>
             <string>/// Collect the hull powerup
-hull += 1;
+if hull &lt; max_hull
+{
+    hull += 1;
+}
+else
+    score +=5;
+    
 // TODO: This needs to reflect the max hull value for the ship TYPE!!
 // should go to PARENT object!!!
-hull = min(hull, 7); // select the min value from the values given
+//hull = min(hull, 7); // select the min value from the values given
 
 // run inside the other object
 with (other)
@@ -248,8 +257,13 @@ if global.Sound == 'On'
           <argument>
             <kind>1</kind>
             <string>/// Collect the armor powerup
-armor += 1;
-armor = min(armor, 7); // select the min value from the values given
+if armor &lt; max_armor
+{
+    armor += 1;
+}
+else
+    score += 5;
+//armor = min(armor, 7); // select the min value from the values given
 
 // run inside the other object
 with (other)

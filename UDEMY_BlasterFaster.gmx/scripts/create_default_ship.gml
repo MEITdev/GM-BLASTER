@@ -5,8 +5,11 @@ global.ship = instance_create(room_width/2, room_height/2, o_ship_new);
 // Set the ship slots, this depends on the type of the ship
 global.ship.ship_slots = 3;
 global.ship.shield = 3;
+global.ship.max_shield = 3;
 global.ship.armor = 3;
+global.ship.max_armor = 3;
 global.ship.hull = 3;
+global.ship.max_hull = 3;
 global.ship.movement_speed = 7;
 global.ship.max_movement_speed = 7;
 

@@ -28,9 +28,9 @@
             <string>///Initialise the toolbar
 
 // load the sprite of the active skill
-active_skill = instance_create(x + 2, y + 2, o_player_skill);
+//active_skill = instance_create(x + 2, y + 2, o);
 // set the right image index
-active_skill.image_index = global.current_player.skill_id;
+//active_skill.image_index = global.current_player.skill_id;
 </string>
           </argument>
         </arguments>
@@ -54,6 +54,7 @@ active_skill.image_index = global.current_player.skill_id;
           <argument>
             <kind>1</kind>
             <string>///Draw the readiness status of the skill
+/*
 if instance_exists(global.ship)
 {
     if o_player_ship_parent.can_use_boost
@@ -69,6 +70,7 @@ else
 {
     instance_destroy();
 }
+*/
 </string>
           </argument>
         </arguments>

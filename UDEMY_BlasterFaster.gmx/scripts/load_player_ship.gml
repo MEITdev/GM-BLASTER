@@ -9,8 +9,11 @@ if file_exists(file_name)
 
         ship_type = ini_read_string("ship", "type", 0);
         ship_shield = ini_read_real("ship", "shield", 0);
+        ship_max_shield = ini_read_real("ship", "max_shield", 0);        
         ship_armor = ini_read_real("ship", "armor", 0);
+        ship_max_armor = ini_read_real("ship", "max_armor", 0);        
         ship_hull = ini_read_real("ship", "hull", 0);
+        ship_max_hull = ini_read_real("ship", "max_hull", 0);        
         ship_speed = ini_read_real("ship", "speed", 0);
         ship_slots = ini_read_real("ship", "ship_slots", 0);
 
@@ -21,8 +24,11 @@ if file_exists(file_name)
         // Set the ship slots, this depends on the type of the ship
         global.ship.ship_slots = ship_slots;
         global.ship.shield = ship_shield;
+        global.ship.max_shield = ship_max_shield;        
         global.ship.armor = ship_armor;
+        global.ship.max_armor = ship_max_armor;        
         global.ship.hull = ship_hull;
+        global.ship.max_hull = ship_max_hull;
         global.ship.movement_speed = ship_speed;
         global.ship.max_movement_speed = global.ship.movement_speed;
         

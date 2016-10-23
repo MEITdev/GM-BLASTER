@@ -568,7 +568,7 @@
     <option_windows_steam_app_id>0</option_windows_steam_app_id>
     <option_windows_texture_page>2048</option_windows_texture_page>
     <option_windows_use_splash>0</option_windows_use_splash>
-    <option_windows_vertex_buffer_method2>1</option_windows_vertex_buffer_method2>
+    <option_windows_vertex_buffer_method2>2</option_windows_vertex_buffer_method2>
     <option_winphone_480_splash_image>Configs\Default\WinPhone\SplashScreenImage480.jpg</option_winphone_480_splash_image>
     <option_winphone_720_splash_image>Configs\Default\WinPhone\SplashScreenImage720.jpg</option_winphone_720_splash_image>
     <option_winphone_768_splash_image>Configs\Default\WinPhone\SplashScreenImage.jpg</option_winphone_768_splash_image>
@@ -655,7 +655,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="24">
+    <constants number="25">
       <constant name="LASER_ALARM">0</constant>
       <constant name="SPAWNER_ALARM">0</constant>
       <constant name="POWERUP_SPAWNER">1</constant>
@@ -679,7 +679,8 @@
       <constant name="BLUR_TIMER">4</constant>
       <constant name="LEVEL_CHOOSER">7</constant>
       <constant name="BOSS_SPAWNER">10</constant>
-      <constant name="DESTROY_DIALOG_BOX">0</constant>
+      <constant name="DESTROY_DIALOG_BOX">1</constant>
+      <constant name="GET_TIMER">0</constant>
     </constants>
   </ConfigConstants>
 </Config>

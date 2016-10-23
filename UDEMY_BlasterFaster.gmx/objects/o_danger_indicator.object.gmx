@@ -151,7 +151,7 @@ if instance_exists(target_asteroid)
 
     //Draw distance to danger
     // under the asteroid
-    draw_string(target_asteroid.x, target_asteroid.y + 16, "[ " + string(distance_to_asteroid) + "m ]");    
+    draw_text(target_asteroid.x, target_asteroid.y + 16, "[ " + string(distance_to_asteroid) + "m ]");    
 
 }
 </string>
