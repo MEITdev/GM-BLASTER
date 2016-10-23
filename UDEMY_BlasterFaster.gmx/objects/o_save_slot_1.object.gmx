@@ -104,6 +104,9 @@ if !(file_exists("slot_1.ini"))
     global.current_player.skill_selected = 0;
     global.current_player.skills_known = 0;
     global.current_player.skills_known[0] = 0;
+    global.current_player.level = 1;
+    global.current_player.experience = 0;
+    global.current_player.skill_points = 1;
     room_goto(r_create_player);
 }
 else // take the player to the "hangar" of the mothership
