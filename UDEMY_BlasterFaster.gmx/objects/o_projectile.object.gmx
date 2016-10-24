@@ -35,7 +35,7 @@
 // play the sound effect
 if global.Sound == 'On'
 {
-    audio_play_sound(a_projectile_shot, 5, false);
+    audio_play_sound(a_projectile_shot, 2, false);
 }
 
 // Set the damage amount
@@ -104,7 +104,7 @@ instance_create(x, y, o_flare);
 // play the sound effect
 if global.Sound == 'On'
 {
-    audio_play_sound(a_hit, 5, false);
+    audio_play_sound(a_hit, 3, false);
 }
 
 other.hull -= damage; // substract asteroid armor by one
@@ -147,7 +147,7 @@ instance_create(x, y, o_flare);
 // play the sound effect
 if global.Sound == 'On'
 {
-    audio_play_sound(a_hit, 5, false);
+    audio_play_sound(a_hit, 3, false);
 }
 
 if instance_exists(global.boss)
@@ -203,7 +203,7 @@ instance_create(x, y, o_flare);
 // play the sound effect
 if global.Sound == 'On'
 {
-    audio_play_sound(a_hit, 5, false);
+    audio_play_sound(a_hit, 3, false);
 }
 
 other.hull -= damage; // substract enemies armor by one
@@ -246,7 +246,7 @@ instance_create(x, y, o_flare);
 // play the sound effect
 if global.Sound == 'On'
 {
-    audio_play_sound(a_hit, 5, false);
+    audio_play_sound(a_hit, 3, false);
 }
 
 other.hull -= damage; // substract enemies armor by one

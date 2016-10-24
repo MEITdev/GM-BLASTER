@@ -102,7 +102,7 @@ image_index = 1;
             <string>///Play sound effect
 if global.Sound == 'On'
 {
-    audio_play_sound(a_button_click, 2, false);
+    audio_play_sound(a_button_click, 3, false);
 }
 </string>
           </argument>

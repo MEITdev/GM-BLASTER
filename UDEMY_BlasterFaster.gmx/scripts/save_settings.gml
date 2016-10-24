@@ -12,5 +12,8 @@ ini_write_real("controls", "UP", global.UP);
 ini_write_real("controls", "DOWN", global.DOWN);
 ini_write_real("controls", "LEFT", global.LEFT);
 ini_write_real("controls", "RIGHT", global.RIGHT);
+ini_write_real("controls", "ACTION_01", global.ACTION_01);
+ini_write_real("controls", "ACTION_02", global.ACTION_02);
+ini_write_real("controls", "ACTION_03", global.ACTION_03);
 
 ini_close();

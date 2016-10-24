@@ -35,7 +35,7 @@ add_screenshake(8, room_speed*.25);
 // play the sound effect
 if global.Sound == 'On'
 {
-    audio_play_sound(a_explode, 7, false);
+    audio_play_sound(a_explode, 6, false);
 }
 </string>
           </argument>

@@ -34,7 +34,7 @@ max_ammo = ammo;
 hull = 1;
 armor = 0;
 action_button = "1";
-action_mouse_button = mb_left;
+action_mouse_button = global.ACTION_01;
 
 
 // Manual X and Y correction for the spawning projectiles

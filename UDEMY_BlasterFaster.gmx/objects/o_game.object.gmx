@@ -36,26 +36,7 @@ system = part_system_create();
 pt_smoke = create_part_type_sprite(s_smoke, true, 25, 30);
 pt_flare = create_part_type_sprite(s_flare, true, 15, 20);
 
-// Open/ Create settings INI file
-if file_exists("settings.ini")
-{
-    // read existing settings
-    load_settings();
-}
-else
-{
-    global.Music = "On";
-    global.Sound = "On";
-    global.Controller = "Keyboard";
-    global.UP = ord("W");
-    global.DOWN = ord("S");
-    global.LEFT = ord("A");
-    global.RIGHT = ord("D");
-    global.Fullscreen = 1;
-    
-    save_settings();
-    load_settings();
-}
+
 
 // Play the music
 //if global.Music = "On"
@@ -136,6 +117,50 @@ global.audio_controller = instance_create(0,0, o_audio_controller);
             <string>///Initialise Dialog global variables
 global.dialog = noone;
 global.avatar = noone;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Open/ Create settings INI file
+if file_exists("settings.ini")
+{
+    // read existing settings
+    load_settings();
+}
+else
+{
+    global.Music = "On";
+    global.Sound = "On";
+    global.Controller = "Keyboard";
+    global.UP = ord("W");
+    global.DOWN = ord("S");
+    global.LEFT = ord("A");
+    global.RIGHT = ord("D");
+    global.ACTION_01 = mb_left;
+    global.ACTION_02 = mb_right;    
+    global.ACTION_03 = mb_middle;
+    
+    global.Fullscreen = 1;
+    
+    save_settings();
+    load_settings();
+}
 </string>
           </argument>
         </arguments>

@@ -127,7 +127,7 @@ add_screenshake(4, room_speed*.125);
 // play the sound effect
 if global.Sound == 'On'
 {
-    audio_play_sound(a_ship_hit, 6, false);
+    audio_play_sound(a_ship_hit, 3, false);
 }    
 
 </string>

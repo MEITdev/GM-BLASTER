@@ -10,6 +10,9 @@ global.UP = ini_read_real("controls", "UP", ord("W"));
 global.DOWN = ini_read_real("controls", "DOWN", ord("S"));
 global.LEFT = ini_read_real("controls", "LEFT", ord("A"));
 global.RIGHT = ini_read_real("controls", "RIGHT", ord("D"));
+global.ACTION_01 = ini_read_real("controls", "ACTION_01", mb_left);
+global.ACTION_02 = ini_read_real("controls", "ACTION_02", mb_right);
+global.ACTION_03 = ini_read_real("controls", "ACTION_03", mb_middle);
 
 ini_close();
 

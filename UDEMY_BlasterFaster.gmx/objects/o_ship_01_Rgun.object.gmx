@@ -32,7 +32,7 @@ event_inherited(); // super();
 
 // Override the gun specific values
 action_button = "2";
-action_mouse_button = mb_right;
+action_mouse_button = global.ACTION_02;
 
 // initialise energy
 max_energy_level = 100;

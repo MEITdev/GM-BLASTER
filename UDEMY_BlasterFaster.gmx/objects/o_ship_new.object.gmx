@@ -116,7 +116,7 @@ with (other)
 // play the sound effect
 if global.Sound == 'On'
 {
-    audio_play_sound(a_powerup, 5, false);
+    audio_play_sound(a_powerup, 1, false);
 }
 </string>
           </argument>
@@ -195,7 +195,7 @@ with (other)
 // play the sound effect
 if global.Sound == 'On'
 {
-    audio_play_sound(a_powerup, 5, false);
+    audio_play_sound(a_powerup, 1, false);
 }
 </string>
           </argument>
@@ -240,7 +240,7 @@ with (other)
 // play the sound effect
 if global.Sound == 'On'
 {
-    audio_play_sound(a_powerup, 5, false);
+    audio_play_sound(a_powerup, 1, false);
 }
 </string>
           </argument>
@@ -282,7 +282,7 @@ with (other)
 // play the sound effect
 if global.Sound == 'On'
 {
-    audio_play_sound(a_powerup, 5, false);
+    audio_play_sound(a_powerup, 1, false);
 }
 </string>
           </argument>

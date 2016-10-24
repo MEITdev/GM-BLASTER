@@ -36,7 +36,7 @@ instance_create(x, y, o_flare);
 // play the sound effect
 if global.Sound == 'On'
 {
-    audio_play_sound(a_enemy_laser, 4, false);
+    audio_play_sound(a_enemy_laser, 2, false);
 }
 
 // Get the player ships X and Y coordinates when the laser is created

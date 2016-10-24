@@ -323,18 +323,21 @@
       <object>objects\o_save_slot_0</object>
       <object>objects\o_save_slot_1</object>
       <object>objects\o_save_slot_2</object>
-      <object>objects\o_settings_up_control</object>
-      <object>objects\o_settings_down_control</object>
-      <object>objects\o_settings_left_control</object>
-      <object>objects\o_settings_right_control</object>
-      <object>objects\o_setup_up_key</object>
-      <object>objects\o_setup_down_key</object>
-      <object>objects\o_setup_left_key</object>
-      <object>objects\o_setup_right_key</object>
       <object>objects\o_delete_save_button</object>
       <object>objects\o_gun_stats</object>
       <object>objects\o_repair_ship_button</object>
       <object>objects\o_help_button</object>
+      <objects name="Settings">
+        <object>objects\o_settings_action_01_control</object>
+        <object>objects\o_settings_up_control</object>
+        <object>objects\o_settings_down_control</object>
+        <object>objects\o_settings_left_control</object>
+        <object>objects\o_settings_right_control</object>
+        <object>objects\o_setup_up_key</object>
+        <object>objects\o_setup_down_key</object>
+        <object>objects\o_setup_left_key</object>
+        <object>objects\o_setup_right_key</object>
+      </objects>
     </objects>
     <objects name="Player Characters">
       <object>objects\o_player_character</object>
