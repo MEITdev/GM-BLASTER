@@ -35,7 +35,12 @@ owner = noone;
 owner_slot = 0;
 
 // TESTING
-global.purchase_update = false;
+for (i=0; i&lt;global.ship.ship_slots; i+=1)
+{
+    global.purchase_update[i] = false;
+};
+
+
 </string>
           </argument>
         </arguments>
@@ -170,7 +175,7 @@ if (global.current_player.credits - total_price) &gt;= 0
 
     
     // TESTING
-    global.purchase_update = true;
+    global.purchase_update[owner_slot] = true;
     
       
     dialog_box(room_width/2 + 91, room_height/2, 72, 220, "Done!", "Changes saved! Thank you!", 3);

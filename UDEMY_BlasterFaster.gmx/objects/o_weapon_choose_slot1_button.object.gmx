@@ -140,9 +140,9 @@ purchase_button.owner_slot = 1;
           <argument>
             <kind>1</kind>
             <string>/// Check for purchase updates
-if global.purchase_update == true
+if global.purchase_update[1] == true
 {
-    global.purchase_update = false;
+    global.purchase_update[1] = false;
     
     // update the gun stats
     // now set the price
