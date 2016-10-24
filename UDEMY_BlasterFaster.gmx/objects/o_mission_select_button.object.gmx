@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// initialise the button
 event_inherited();
-text = "UNDOCK";
+text = "MISSION ALPHA";
 </string>
           </argument>
         </arguments>
@@ -73,7 +73,7 @@ event_inherited();
           <argument>
             <kind>1</kind>
             <string>/// Configure Ship room
-room_goto(r_mission_select);
+room_goto(r_mission_01);
 </string>
           </argument>
         </arguments>

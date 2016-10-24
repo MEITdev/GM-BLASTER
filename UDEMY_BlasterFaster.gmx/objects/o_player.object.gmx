@@ -58,6 +58,7 @@ save_slot = 0;
 // === PRUCHASED WEAPONS ===
 // array of purchased weapons
 purchased[0] = 0; // reset the array
+
 </string>
           </argument>
         </arguments>

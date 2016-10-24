@@ -528,7 +528,7 @@ else
           <argument>
             <kind>1</kind>
             <string>///DEV DEBUG TOOLS
-
+/*
 // return to the main menu
 if (keyboard_check_pressed(vk_backspace))
 {
@@ -576,6 +576,7 @@ if keyboard_check_pressed(vk_pageup)
 {
     global.current_player.experience += 10;
 }
+*/
 </string>
           </argument>
         </arguments>
@@ -614,9 +615,30 @@ if (hull &lt;= 0)
     
     // PERMANENT DEATH
     // reset all stats and save player character
-    global.current_player.experience = 0;
-    global.current_player.level = 1;
-
+//    global.current_player.experience = 0;
+ //   global.current_player.level = 1;
+ //   global.current_pla
+ 
+ 
+    delete_player_file_name = "slot_" + string(global.current_player.save_slot) + ".ini";
+    // delete the player save file
+    if file_exists(delete_player_file_name)
+    {
+        // open the file and delete the associated ship file first
+        ini_open(delete_player_file_name);
+        ship_file = ini_read_string("player", "ship", "default_ship.ini");
+        ini_close();
+        if file_exists(ship_file)
+        {
+            file_delete(ship_file);
+        }
+    
+        // delete the player save file
+        file_delete(delete_player_file_name);
+        
+        // restart the room
+        room_goto(r_choose_save_slot);
+    }
 }
 </string>
           </argument>
