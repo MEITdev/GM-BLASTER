@@ -298,6 +298,7 @@
       <object>objects\o_menu_button</object>
       <object>objects\o_purchase_button</object>
       <object>objects\o_purchase_slot_button</object>
+      <object>objects\o_purchase_slot_ammo_button</object>
       <object>objects\o_quit_button</object>
       <object>objects\o_view_controller</object>
       <object>objects\o_settings_display</object>
@@ -328,6 +329,7 @@
       <object>objects\o_save_slot_2</object>
       <object>objects\o_delete_save_button</object>
       <object>objects\o_gun_stats</object>
+      <object>objects\o_gun_box_purchased</object>
       <object>objects\o_repair_ship_button</object>
       <object>objects\o_help_button</object>
       <objects name="Settings">
@@ -353,7 +355,6 @@
         <object>objects\o_setup_left_key</object>
         <object>objects\o_setup_right_key</object>
       </objects>
-      <object>objects\o_gun_box_purchased</object>
     </objects>
     <objects name="Player Characters">
       <object>objects\o_player_character</object>
