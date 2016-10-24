@@ -4,7 +4,7 @@
   <width>854</width>
   <height>480</height>
   <vsnap>8</vsnap>
-  <hsnap>8</hsnap>
+  <hsnap>18</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -51,19 +51,7 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="o_menu_button" x="108" y="440" name="inst_99F0BEFB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_settings_music" x="264" y="152" name="inst_359A1FE7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_settings_sound" x="600" y="152" name="inst_6A9ED6C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_settings_up_control" x="440" y="336" name="inst_142E77B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_settings_down_control" x="440" y="424" name="inst_9DCE3325" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_settings_left_control" x="360" y="416" name="inst_ABDADE1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_settings_right_control" x="520" y="416" name="inst_25F43498" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_settings_music_icon" x="264" y="96" name="inst_E274AD39" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_settings_sound_icon" x="600" y="96" name="inst_0ECF552D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_settings_fullscreen_toggle" x="432" y="96" name="inst_13A96FC3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_settings_action_01_control" x="352" y="320" name="inst_45EB4D6C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_settings_action_02_control" x="528" y="320" name="inst_7BF3335F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_settings_action_03_control" x="440" y="248" name="inst_738A09BE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_setup_action_03_key" x="72" y="224" name="inst_FB1F0324" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -99,6 +99,9 @@
         <sprite>sprites\s_gun_01_box_alt3</sprite>
         <sprite>sprites\s_gun_02_box_alt3</sprite>
       </sprites>
+      <sprite>sprites\s_action_01_control</sprite>
+      <sprite>sprites\s_action_03_control</sprite>
+      <sprite>sprites\s_action_02_control</sprite>
     </sprites>
     <sprites name="Menu Buttons">
       <sprite>sprites\s_button</sprite>
@@ -289,25 +292,18 @@
       <object>objects\o_menu_button</object>
       <object>objects\o_purchase_button</object>
       <object>objects\o_quit_button</object>
-      <object>objects\o_settings_music</object>
       <object>objects\o_view_controller</object>
       <object>objects\o_settings_display</object>
       <object>objects\o_highscore_table</object>
-      <object>objects\o_settings_sound</object>
       <object>objects\o_settings_button</object>
       <object>objects\o_highscore</object>
       <object>objects\o_select_ship</object>
-      <object>objects\o_settings_keyboard_button</object>
-      <object>objects\o_settings_mouse_button</object>
-      <object>objects\o_settings_music_icon</object>
-      <object>objects\o_settings_sound_icon</object>
       <object>objects\o_ship_choose_button</object>
       <object>objects\o_weapon_choose_slot0_button</object>
       <object>objects\o_weapon_choose_slot1_button</object>
       <object>objects\o_weapon_choose_slot2_button</object>
       <object>objects\o_button_player_name</object>
       <object>objects\o_start_button</object>
-      <object>objects\o_settings_fullscreen_toggle</object>
       <object>objects\o_next_avatar_button</object>
       <object>objects\o_previous_avatar_button</object>
       <object>objects\o_gun_00_avatar</object>
@@ -329,11 +325,23 @@
       <object>objects\o_help_button</object>
       <objects name="Settings">
         <object>objects\o_settings_action_01_control</object>
+        <object>objects\o_settings_action_02_control</object>
+        <object>objects\o_settings_action_03_control</object>
+        <object>objects\o_settings_mouse_button</object>
+        <object>objects\o_settings_fullscreen_toggle</object>
+        <object>objects\o_settings_music</object>
+        <object>objects\o_settings_keyboard_button</object>
+        <object>objects\o_settings_music_icon</object>
+        <object>objects\o_settings_sound_icon</object>
         <object>objects\o_settings_up_control</object>
+        <object>objects\o_settings_sound</object>
         <object>objects\o_settings_down_control</object>
         <object>objects\o_settings_left_control</object>
         <object>objects\o_settings_right_control</object>
         <object>objects\o_setup_up_key</object>
+        <object>objects\o_setup_action_01_key</object>
+        <object>objects\o_setup_action_02_key</object>
+        <object>objects\o_setup_action_03_key</object>
         <object>objects\o_setup_down_key</object>
         <object>objects\o_setup_left_key</object>
         <object>objects\o_setup_right_key</object>
@@ -531,6 +539,9 @@
       <room>rooms\r_create_player</room>
       <rooms name="Settings">
         <room>rooms\r_set_up_key</room>
+        <room>rooms\r_set_action_01_key</room>
+        <room>rooms\r_set_action_02_key</room>
+        <room>rooms\r_set_action_03_key</room>
         <room>rooms\r_set_down_key</room>
         <room>rooms\r_set_left_key</room>
         <room>rooms\r_set_right_key</room>
