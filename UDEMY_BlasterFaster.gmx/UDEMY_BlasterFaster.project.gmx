@@ -547,11 +547,6 @@
   <help>
     <rtf>help.rtf</rtf>
   </help>
-  <audiogroups name="audiogroups">
-    <audiogroup name="audiogroup_default"/>
-    <audiogroup name="Music"/>
-    <audiogroup name="SFX"/>
-  </audiogroups>
   <TutorialState>
     <IsTutorial>0</IsTutorial>
     <TutorialName></TutorialName>

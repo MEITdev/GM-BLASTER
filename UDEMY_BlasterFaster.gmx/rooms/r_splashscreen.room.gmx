@@ -11,6 +11,7 @@
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>///Toggle full screen
+
 if file_exists("settings.ini")
 {
     // read existing settings
