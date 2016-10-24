@@ -353,6 +353,7 @@
         <object>objects\o_setup_left_key</object>
         <object>objects\o_setup_right_key</object>
       </objects>
+      <object>objects\o_gun_box_purchased</object>
     </objects>
     <objects name="Player Characters">
       <object>objects\o_player_character</object>

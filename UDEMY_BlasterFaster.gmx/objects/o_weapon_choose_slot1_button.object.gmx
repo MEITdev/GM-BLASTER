@@ -121,6 +121,28 @@ purchase_button.owner_slot = 1;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Initialise the purchased label variable
+purchased_label = noone;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -154,9 +176,22 @@ if global.purchase_update[1] == true
             weapons_slot[gun_choice].price = 0;
         }
     }
-
-show_debug_message("PRICE: " + string(weapons_slot[gun_choice].price));
-gun_stats.price = weapons_slot[gun_choice].price;
+    
+    show_debug_message("PRICE: " + string(weapons_slot[gun_choice].price));
+    gun_stats.price = weapons_slot[gun_choice].price;
+    
+    if object_get_parent(global.ship.slot[1].object_index) != o_empty_slot
+    {
+    
+        if instance_exists(purchased_label)
+        {
+            with (purchased_label)
+            {
+                instance_destroy();
+            }
+        }
+        purchased_label = instance_create(x, y, o_gun_box_purchased);            
+    }
 }
 </string>
           </argument>
@@ -258,6 +293,63 @@ gun_stats.price = global.ship.slot[0].price;
 gun_stats.energy_consumption = global.ship.slot[0].energy_consumption;
 
 */
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Manage the OWNED label object
+is_owned = false;
+for (i=0; i&lt;array_length_1d(global.current_player.purchased); i+=1)
+{
+    // for each weapon in the purchased list, set the price to 0
+    if object_get_name(global.ship.slot[1].object_index) == global.current_player.purchased[i]
+    {
+        is_owned = true;
+        show_debug_message("Gun OWNED");
+    }
+}
+
+// set the label
+// but not for the empty slot (dummy gun)
+if is_owned == true &amp;&amp; (object_get_parent(global.ship.slot[1].object_index) != o_empty_slot)
+{
+    show_debug_message("Gun OWNED and is NOT EMPTY SLOT");
+    if instance_exists(purchased_label)
+    {
+        with (purchased_label)
+        {
+            instance_destroy();
+        }
+    }
+   purchased_label = instance_create(x, y, o_gun_box_purchased);
+   show_debug_message("SO CREATE A LABEL");
+}
+else
+{
+    if instance_exists(purchased_label)
+    {
+        with (purchased_label)
+        {
+            instance_destroy();
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
