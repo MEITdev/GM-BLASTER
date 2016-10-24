@@ -152,69 +152,72 @@ else
           <argument>
             <kind>1</kind>
             <string>///Handle user input
-if can_fire == true
+if instance_exists(global.ship.slot[2])
 {
-    if (keyboard_check(ord(action_button))) || mouse_check_button(action_mouse_button)
+    if can_fire == true
     {
-        if ammo &gt; 0
+        if (keyboard_check(ord(action_button))) || mouse_check_button(action_mouse_button)
         {
-            // Spawn projectiles and effects depending on the turret type
-            // [2] is always the top turret mount point
-            if object_get_name(global.ship.slot[2].object_index) == "o_ship_02_turret"
+            if ammo &gt; 0
             {
-                // create the projectile instance
-                projectile = instance_create(x + lengthdir_x(correction_x, image_angle), y + lengthdir_y(correction_y, image_angle), o_plasma_turret_01_laser);
-                // create the muzzle flash
-                muzzle_flash = instance_create(x + lengthdir_x(correction_x, image_angle), y + lengthdir_y(correction_y, image_angle), o_plasma_turret_01_gun_flare);
-    
-                projectile.direction = image_angle;
-                projectile.speed = projectile_speed;
-                // adjust the image angle
-                projectile.image_angle = image_angle - 90;
-                muzzle_flash.image_angle = image_angle - 90;
-                can_fire = false;
-                // subtract the ammo if not in the hangar
-                this_room = room_get_name(room);
-                if this_room != "r_mothership_hangar"
+                // Spawn projectiles and effects depending on the turret type
+                // [2] is always the top turret mount point
+                if object_get_name(global.ship.slot[2].object_index) == "o_ship_02_turret"
                 {
-                    ammo -= 1;
-                }
-            }
-            else if object_get_name(global.ship.slot[2].object_index) == "o_ship_01_turret"
-            {
-                // create the projectile instance
-                projectile[0] = instance_create(x + lengthdir_x(correction_x, image_angle - correction_x), y + lengthdir_y(correction_y, image_angle - correction_y), o_projectile);
-                projectile[1] = instance_create(x + lengthdir_x(correction_x, image_angle + correction_x), y + lengthdir_y(correction_y, image_angle + correction_y), o_projectile);
-    
-                // create the muzzle flash
-                muzzle_flash[0] = instance_create(x + lengthdir_x(correction_x, image_angle - correction_x), y + lengthdir_y(correction_y, image_angle - correction_y), o_projectile_gun_flare);
-                muzzle_flash[1] = instance_create(x + lengthdir_x(correction_x, image_angle + correction_x), y + lengthdir_y(correction_y, image_angle + correction_y), o_projectile_gun_flare);
-    
-                           
-                for (i = 0; i &lt;= array_length_1d(projectile) - 1; i++)
-                {
-                    projectile[i].direction = image_angle;
-                    projectile[i].speed = projectile_speed;
+                    // create the projectile instance
+                    projectile = instance_create(x + lengthdir_x(correction_x, image_angle), y + lengthdir_y(correction_y, image_angle), o_plasma_turret_01_laser);
+                    // create the muzzle flash
+                    muzzle_flash = instance_create(x + lengthdir_x(correction_x, image_angle), y + lengthdir_y(correction_y, image_angle), o_plasma_turret_01_gun_flare);
+        
+                    projectile.direction = image_angle;
+                    projectile.speed = projectile_speed;
                     // adjust the image angle
-                    projectile[i].image_angle = image_angle - 90;
-    
-                    muzzle_flash[i].image_angle = image_angle - 90;
+                    projectile.image_angle = image_angle - 90;
+                    muzzle_flash.image_angle = image_angle - 90;
+                    can_fire = false;
+                    // subtract the ammo if not in the hangar
+                    this_room = room_get_name(room);
+                    if this_room != "r_mothership_hangar"
+                    {
+                        ammo -= 1;
+                    }
                 }
-                can_fire = false;
-                // subtract the ammo if not in the hangar
-                this_room = room_get_name(room);
-                if this_room != "r_mothership_hangar"
+                else if object_get_name(global.ship.slot[2].object_index) == "o_ship_01_turret"
                 {
-                    ammo -= 1;
-                } 
+                    // create the projectile instance
+                    projectile[0] = instance_create(x + lengthdir_x(correction_x, image_angle - correction_x), y + lengthdir_y(correction_y, image_angle - correction_y), o_projectile);
+                    projectile[1] = instance_create(x + lengthdir_x(correction_x, image_angle + correction_x), y + lengthdir_y(correction_y, image_angle + correction_y), o_projectile);
+        
+                    // create the muzzle flash
+                    muzzle_flash[0] = instance_create(x + lengthdir_x(correction_x, image_angle - correction_x), y + lengthdir_y(correction_y, image_angle - correction_y), o_projectile_gun_flare);
+                    muzzle_flash[1] = instance_create(x + lengthdir_x(correction_x, image_angle + correction_x), y + lengthdir_y(correction_y, image_angle + correction_y), o_projectile_gun_flare);
+        
+                               
+                    for (i = 0; i &lt;= array_length_1d(projectile) - 1; i++)
+                    {
+                        projectile[i].direction = image_angle;
+                        projectile[i].speed = projectile_speed;
+                        // adjust the image angle
+                        projectile[i].image_angle = image_angle - 90;
+        
+                        muzzle_flash[i].image_angle = image_angle - 90;
+                    }
+                    can_fire = false;
+                    // subtract the ammo if not in the hangar
+                    this_room = room_get_name(room);
+                    if this_room != "r_mothership_hangar"
+                    {
+                        ammo -= 1;
+                    } 
+                }
             }
-        }
-        else
-        {
-            // no ammo left...
-            //instance_create(x, y, o_flare);
-            // Play no ammo sound and display something
-            
+            else
+            {
+                // no ammo left...
+                //instance_create(x, y, o_flare);
+                // Play no ammo sound and display something
+                
+            }
         }
     }
 }

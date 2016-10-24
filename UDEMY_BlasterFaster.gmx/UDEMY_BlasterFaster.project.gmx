@@ -137,6 +137,9 @@
       <sprite>sprites\s_danger_indicator</sprite>
       <sprite>sprites\s_mission_indicator</sprite>
       <sprite>sprites\s_skills_toolbar</sprite>
+      <sprite>sprites\s_ship_stats_shield</sprite>
+      <sprite>sprites\s_ship_stats_armor</sprite>
+      <sprite>sprites\s_ship_stats_hull</sprite>
     </sprites>
     <sprites name="Effects">
       <sprite>sprites\s_explosion_center</sprite>
