@@ -7,7 +7,6 @@
   <NewExtensions/>
   <sounds name="sound">
     <sounds name="Music">
-      <sound>sound\a_space_music</sound>
       <sound>sound\a_mission_music_01</sound>
       <sound>sound\a_menu_music_01</sound>
     </sounds>
@@ -548,6 +547,11 @@
   <help>
     <rtf>help.rtf</rtf>
   </help>
+  <audiogroups name="audiogroups">
+    <audiogroup name="audiogroup_default"/>
+    <audiogroup name="Music"/>
+    <audiogroup name="SFX"/>
+  </audiogroups>
   <TutorialState>
     <IsTutorial>0</IsTutorial>
     <TutorialName></TutorialName>
