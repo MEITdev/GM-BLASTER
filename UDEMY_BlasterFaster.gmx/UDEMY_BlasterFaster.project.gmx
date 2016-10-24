@@ -102,6 +102,7 @@
       <sprite>sprites\s_action_01_control</sprite>
       <sprite>sprites\s_action_03_control</sprite>
       <sprite>sprites\s_action_02_control</sprite>
+      <sprite>sprites\s_action_button_surface</sprite>
     </sprites>
     <sprites name="Menu Buttons">
       <sprite>sprites\s_button</sprite>
