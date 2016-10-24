@@ -27,8 +27,15 @@
             <kind>1</kind>
             <string>/// initialise the button
 event_inherited();
-text = "SAVE";
+text = "BUY";
 total_price = 0;
+
+// who owns this button
+owner = noone;
+owner_slot = 0;
+
+// TESTING
+global.purchase_update = false;
 </string>
           </argument>
         </arguments>
@@ -73,72 +80,10 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Check if all the guns have been paid for
-for (i = 0; i &lt; global.ship.ship_slots; i++)
-{
-    gun = object_get_name(global.ship.slot[i].object_index);
-    is_in_the_list = false; // assume not in the list
-    for (j = 0; j &lt; array_length_1d(global.current_player.purchased); j++)
-    {
-        loaded_weapon = global.current_player.purchased[j];
-        if gun == loaded_weapon // check for duplicates, replace them 
-        {
-            // item is in the purchased list
-            is_in_the_list = true;
-        }
-    }
-    // HERE save the weapon, after the first loop
-    if is_in_the_list == false &amp;&amp; (object_get_parent(global.ship.slot[i].object_index) != o_empty_slot)
-    {
-        total_price += global.ship.slot[i].price;
-    }
-}
-
-// if the player has enough money, save the ship
-if total_price &gt; 0
-{
-    dialog_box(room_width/2 + 91, room_height/2, 72, 220, "WARNING", "First _BUY_ the guns!", 3);
-    global.avatar = noone;
-//    dialog.ttl = 10;    
-}
-else
-{
-    // otherwise show a dialog box
-    dialog_box(room_width/2 + 91, room_height/2, 72, 220, "Done!", "Ship configuration has been SAVED!", 5);
-    global.avatar = noone;
-    // save the player and the ship configuration 
-    update_player(global.current_player.save_slot);
-    save_player_ship(global.current_player.ship_save_file);
-}
-
-// Reset the total price
-total_price = 0; 
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Add the selected weapons to the list of unlocked weapons
-/*
-for (i = 0; i &lt; global.ship.ship_slots; i++)
-{
-    gun = object_get_name(global.ship.slot[i].object_index);
+//for (i = 0; i &lt; global.ship.ship_slots; i++)
+//{
+    gun = object_get_name(global.ship.slot[owner_slot].object_index);
     is_in_the_list = false; // assume not in the list
     for (j = 0; j &lt; array_length_1d(global.current_player.purchased); j++)
     {
@@ -147,14 +92,15 @@ for (i = 0; i &lt; global.ship.ship_slots; i++)
         {
             show_debug_message("already in the list = " + string(loaded_weapon));
             is_in_the_list = true;
+            show_debug_message("BUY BUTTON: Gun already purchased, price set to 0");
         }
     }
     // HERE save the weapon, after the first loop
-    if is_in_the_list == false &amp;&amp; (object_get_parent(global.ship.slot[i].object_index) != o_empty_slot)
+    if is_in_the_list == false &amp;&amp; (object_get_parent(global.ship.slot[owner_slot].object_index) != o_empty_slot)
     {
         global.current_player.purchased[array_length_1d(global.current_player.purchased)] = gun;
     }
-}
+//}
 
 // DEBUG ONLY
 for (g = 0; g &lt; array_length_1d(global.current_player.purchased); g++)
@@ -164,7 +110,7 @@ for (g = 0; g &lt; array_length_1d(global.current_player.purchased); g++)
 }
 
 
-*/
+
 </string>
           </argument>
         </arguments>
@@ -185,11 +131,62 @@ for (g = 0; g &lt; array_length_1d(global.current_player.purchased); g++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Save player stats and ship configuration
-// save the player and the ship configuration 
-//update_player(global.current_player.save_slot);
-//save_player_ship(global.current_player.ship_save_file);
+            <string>/// Purchase the gun
 
+// loop through the choices (weapons on the ship)
+//for (i = 0; i &lt; global.ship.ship_slots - 1; i++)
+//{
+if is_in_the_list == false
+{
+    total_price += global.ship.slot[owner_slot].price;
+    show_debug_message("BUY BUTTON. gun not in list. Price set to = " +string(total_price));
+}
+else
+{
+    total_price = 0;
+    show_debug_message("BUY BUTTON. gun IN list. Price set to = " +string(total_price));
+
+}
+//}
+
+// if the player has enough money, save the ship
+if (global.current_player.credits - total_price) &gt;= 0
+{
+    // update the amount of credits available
+
+    // UNCOMMENT AFTER TESTING (decrements credits after purchase)
+    global.current_player.credits = global.current_player.credits - total_price;
+        
+    // save the player and the ship configuration 
+    update_player(global.current_player.save_slot);
+    save_player_ship(global.current_player.ship_save_file);
+    show_debug_message("BUY BUTTON. Gun price before LOAD = " 
+        + string(global.ship.slot[owner_slot].price));
+
+    
+    // now load the data so everything is current
+    load_player_data(global.current_player.save_slot);
+    //load_player_ship(global.current_player.ship_save_file);
+
+    
+    // TESTING
+    global.purchase_update = true;
+    
+      
+    dialog_box(room_width/2 + 91, room_height/2, 72, 220, "Done!", "Changes saved! Thank you!", 3);
+    global.avatar = noone;
+//    dialog.ttl = 10;    
+}
+else
+{
+    // otherwise show a dialog box
+    dialog_box(room_width/2 + 91, room_height/2, 72, 220, "Insufficient funds!", "Not enough money. Sorry, changes will not be saved!", 5);
+    global.avatar = noone;
+//    dialog.ttl = 10;    
+}
+
+// Reset the total price
+total_price = 0;
 </string>
           </argument>
         </arguments>

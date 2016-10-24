@@ -61,10 +61,10 @@
     <instance objName="o_mission_select_button" x="796" y="448" name="inst_72F23918" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_dialog_box_controller" x="240" y="16" name="inst_E093A691" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_credits" x="792" y="32" name="inst_F4D71BBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_purchase_button" x="572" y="344" name="inst_8E355DE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_purchase_button" x="796" y="392" name="inst_8E355DE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_mouse_cursor_controller" x="272" y="16" name="inst_32F369A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_ship_stats_box" x="8" y="8" name="inst_BE1197B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_repair_ship_button" x="288" y="344" name="inst_81A4B259" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_repair_ship_button" x="796" y="336" name="inst_81A4B259" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_purchase_skill_button" x="432" y="96" name="inst_92BCEB68" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_dash_skill_button" x="372" y="32" name="inst_73F163A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_repair_skill_button" x="432" y="32" name="inst_B7136466" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

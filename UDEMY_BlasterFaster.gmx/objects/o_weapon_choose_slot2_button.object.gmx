@@ -86,6 +86,73 @@ gun_stats.energy_consumption = weapons_slot[gun_choice].energy_consumption;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Instantiate the purchase button
+purchase_button = instance_create(0, 0, o_purchase_slot_button);
+purchase_button.owner = id;
+purchase_button.x = x + sprite_width/2;
+purchase_button.y = y - purchase_button.sprite_height/2 - 2;
+purchase_button.owner_slot = 2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Check for purchase updates
+if global.purchase_update == true
+{
+    global.purchase_update = false;
+    
+    // update the gun stats
+    // now set the price
+    for (i=0; i&lt;array_length_1d(global.current_player.purchased); i+=1)
+    {
+        // for each weapon in the purchased list, set the price to 0
+        if object_get_name(global.ship.slot[2].object_index) == global.current_player.purchased[i]
+        {
+            weapons_slot[gun_choice].price = 0;
+        }
+    }
+
+show_debug_message("PRICE: " + string(weapons_slot[gun_choice].price));
+gun_stats.price = weapons_slot[gun_choice].price;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="6" enumb="4">
       <action>
