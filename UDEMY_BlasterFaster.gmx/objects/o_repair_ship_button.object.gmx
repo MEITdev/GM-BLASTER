@@ -68,7 +68,25 @@ if global.ship.armor &lt; global.ship.max_armor || global.ship.hull &lt; global.
         global.ship.shield = global.ship.max_shield;
         global.ship.armor = global.ship.max_armor;
         global.ship.hull = global.ship.max_armor;
+        
+        ///Create dialog box
+        dialog_box(room_width/2 - 300, room_height/2, 72, 214, "Ship repaired", "Your ship has been fully restored. Shield, Armor, Hull.. all of it.", 5);
+        global.avatar = noone;
+
     }
+    else
+    {
+        ///Create dialog box
+        dialog_box(room_width/2 - 300, room_height/2, 72, 214, "Not enough Credits", "Need more super-galaxy-spacey-wormoholey-credity Credits my friend.", 5);
+        global.avatar = noone;
+    }
+}
+else
+{
+    ///Create dialog box
+    dialog_box(room_width/2 - 300, room_height/2, 72, 214, "Nothing to repair", "I feel bad to tell you but she is not damaged. I cannot take your Cred.. I mean I cannot repair your ship sir!", 10);
+    global.avatar = noone;
+
 }
 </string>
           </argument>

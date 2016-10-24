@@ -138,7 +138,7 @@ global.current_player.skill_selected = skill_number;
           <argument>
             <kind>1</kind>
             <string>///Create Information dialog
-dialog_box(568, 136, 128, 260, "DASH - [ SHIFT ]", "The DASH skill allows you, for a short period of time, to increase your speed and change your molecular structure in such a way....that you cannot be hit by projectiles or objects, in a nutshell. Use your [ LEFT SHIFT ] key to activate this skill.", 30);
+dialog_box(568, 136, 128, 260, "DASH - [ SHIFT ]", "The DASH skill allows you, for a short period of time, to increase your speed and change your molecular structure in such a way....that you cannot be hit by projectiles or objects, in a nutshell. Use your LEFT SHIFT key to activate this skill.", 30);
 global.avatar = noone;
 </string>
           </argument>

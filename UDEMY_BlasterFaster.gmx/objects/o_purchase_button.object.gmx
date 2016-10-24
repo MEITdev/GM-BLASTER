@@ -144,17 +144,15 @@ if (global.current_player.credits - total_price) &gt;= 0
     update_player(global.current_player.save_slot);
     save_player_ship(global.current_player.ship_save_file);
     
-    dialog_box(room_width/2 + 40, 16, 50, 120, "Done!", "Changes saved! Thank you!", 3);
-    global.avatar = instance_create(global.dialog.x + 120, global.dialog.y, o_robot_avatar);
-    global.dialog.avatar = global.avatar.object_index;
+    dialog_box(room_width/2 + 91, room_height/2, 72, 220, "Done!", "Changes saved! Thank you!", 3);
+    global.avatar = noone;
 //    dialog.ttl = 10;    
 }
 else
 {
     // otherwise show a dialog box
-    dialog_box(room_width/2 + 40, 16, 50, 120, "Insufficient funds!", "Not enough money. Sorry, changes will not be saved!", 5);
-    global.avatar = instance_create(global.dialog.x +120, global.dialog.y, o_robot_avatar);
-    global.dialog.avatar = global.avatar.object_index;
+    dialog_box(room_width/2 + 91, room_height/2, 72, 220, "Insufficient funds!", "Not enough money. Sorry, changes will not be saved!", 5);
+    global.avatar = noone;
 //    dialog.ttl = 10;    
 }
 

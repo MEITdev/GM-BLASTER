@@ -90,7 +90,7 @@ draw_set_color(c_white);
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 // Draw the word above the bar
-draw_text(x + sprite_width/2, y - 8, "XP");
+draw_text(x + sprite_width/2, y - 8, "EXP");
 
 // construct the string
 level_stats =   string(global.current_player.experience) + " / " + 

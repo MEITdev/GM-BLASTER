@@ -146,9 +146,16 @@ if this_room = "r_create_player"
 this_room = room_get_name(room);
 if this_room = "r_mothership_hangar"
 {
-    message_text = "";
+    message_text = "Change the left weapon, right weapon and the turret."+
+    "You can also _REPAIR_ your ship here, as well as _FIT_ new weapons if "+
+    "you have enough _CREDITS_. You gain _CREDITS_ by completing missions. "+
+    "Speaking of completing missions, you gain _EXPERIENCE_ or shortened to EXP "+
+    "when you kill enemies. Once you reach new _LEVEL_ you can _LEARN_ one additional "+
+    "_SKILL_ to help you in the combat.#" + 
+    "REMEMBER to _FIT_ your ship before you start a mission, otherwise it will be a very, very "+
+    "short one...";
     
-    dialog_box(19, 136, 192, 260, "Mothership Hangar", message_text, 60);
+    dialog_box(14, 110, 200, 280, "Mothership Hangar", message_text, 60);
     global.avatar = noone;
 }
 </string>

@@ -216,7 +216,7 @@ gun_stats.energy_consumption = global.ship.slot[0].energy_consumption;
             <string>/// Set the image
 image_index = gun_choice;
 draw_self();
-draw_text(x,y,string(gun_choice));
+//draw_text(x,y,string(gun_choice));
 </string>
           </argument>
         </arguments>

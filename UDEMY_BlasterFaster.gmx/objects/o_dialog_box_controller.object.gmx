@@ -52,9 +52,9 @@ if r_name == "r_choose_save_slot"
 }
 if r_name == "r_mothership_hangar"
 {
-    dialog_box(room_width/2 + 40, 16, 120, 220, "Create your first ship", "Change the left, right and turret guns to find out which suits you the best. Practice on asteroids to get the feeling. Also collect SHIELD, ARMOR and HULL power ups to stay alive.", 15);
-    global.avatar = instance_create(global.dialog.x + global.dialog.padding, global.dialog.y + global.dialog.height + global.dialog.padding, o_robot_avatar);
-    global.dialog.avatar = global.avatar.object_index;
+//    dialog_box(room_width/2 + 40, 16, 120, 220, "Create your first ship", "Change the left, right and turret guns to find out which suits you the best. Practice on asteroids to get the feeling. Also collect SHIELD, ARMOR and HULL power ups to stay alive.", 15);
+//    global.avatar = instance_create(global.dialog.x + global.dialog.padding, global.dialog.y + global.dialog.height + global.dialog.padding, o_robot_avatar);
+//    global.dialog.avatar = global.avatar.object_index;
     //dialog.ttl = 30;
 }
 if r_name == "r_create_player"
