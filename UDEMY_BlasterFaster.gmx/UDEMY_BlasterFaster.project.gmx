@@ -284,6 +284,7 @@
     <font>fonts\f_timer</font>
     <font>fonts\f_gun_ammo</font>
     <font>fonts\f_level_stats</font>
+    <font>fonts\f_control_settings_message</font>
   </fonts>
   <objects name="objects">
     <object>objects\o_me_it_logo</object>
@@ -339,10 +340,10 @@
         <object>objects\o_settings_down_control</object>
         <object>objects\o_settings_left_control</object>
         <object>objects\o_settings_right_control</object>
-        <object>objects\o_setup_up_key</object>
         <object>objects\o_setup_action_01_key</object>
         <object>objects\o_setup_action_02_key</object>
         <object>objects\o_setup_action_03_key</object>
+        <object>objects\o_setup_up_key</object>
         <object>objects\o_setup_down_key</object>
         <object>objects\o_setup_left_key</object>
         <object>objects\o_setup_right_key</object>
