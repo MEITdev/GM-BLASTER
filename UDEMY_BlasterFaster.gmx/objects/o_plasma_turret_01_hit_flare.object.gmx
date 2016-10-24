@@ -28,7 +28,7 @@
             <string>/// Fade
 if (image_alpha &gt; 0)
 {
-    image_alpha -= .25;
+    image_alpha -= .15;
 }
 else
 {

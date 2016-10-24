@@ -8,7 +8,6 @@
   <sounds name="sound">
     <sounds name="Music">
       <sound>sound\a_space_music</sound>
-      <sound>sound\a_menu_music</sound>
       <sound>sound\a_mission_music_01</sound>
       <sound>sound\a_menu_music_01</sound>
     </sounds>
@@ -200,9 +199,9 @@
       <sprite>sprites\s_dummy_avatar</sprite>
       <sprite>sprites\s_avatar_player_01</sprite>
       <sprite>sprites\s_avatar_player_02</sprite>
-      <sprite>sprites\sprite136</sprite>
       <sprite>sprites\s_manga_avatar</sprite>
       <sprite>sprites\s_robot_avatar</sprite>
+      <sprite>sprites\s_avatar_mission_01_boss</sprite>
     </sprites>
     <sprites name="NPC ships">
       <sprite>sprites\s_carrier_NPC</sprite>

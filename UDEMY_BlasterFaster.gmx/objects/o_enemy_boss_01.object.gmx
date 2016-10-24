@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialise the enemy
+event_inherited();
+
 vspeed = .25; // positive value will move down the object
 hspeed = choose(-1,1); // choose at random one of the values
 
@@ -193,12 +195,15 @@ if instance_exists(global.boss)
         // Set the FLAG for this mission
         mission_completed = true;
         
-        score += 100;       
-        
+        score += 100;
+       
         if instance_exists(global.ship)
         {
             // Save the payer score to the local highscore file
             highscore_add(global.current_player.name, score);
+            
+            global.current_player.experience += 50;
+
         }
         
         // set player score to 0 (for the next player)

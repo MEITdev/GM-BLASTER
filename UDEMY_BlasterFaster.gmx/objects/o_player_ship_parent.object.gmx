@@ -611,6 +611,12 @@ if (hull &lt;= 0)
     
     // reset score to 0 for next game
     score = 0;
+    
+    // PERMANENT DEATH
+    // reset all stats and save player character
+    global.current_player.experience = 0;
+    global.current_player.level = 1;
+
 }
 </string>
           </argument>
