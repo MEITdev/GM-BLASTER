@@ -267,6 +267,7 @@
     </scripts>
     <scripts name="Player Ship">
       <script>scripts\add_weapon.gml</script>
+      <script>scripts\remove_from_purchased.gml</script>
     </scripts>
     <scripts name="Game HUD">
       <script>scripts\draw_damage.gml</script>

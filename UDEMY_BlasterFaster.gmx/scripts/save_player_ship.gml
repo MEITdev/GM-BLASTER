@@ -34,7 +34,7 @@ for (i = 0; i <= global.ship.ship_slots -1; i++)
             ini_write_real("slots", string(i) + "_ammo", global.ship.slot[i].ammo);
         }
     }
-    else
+    else        // ALTERNATIVE would be to instantiate the dummy gun in the DIE code of the gun that is being destroyed... not much difference i guess
     {
         // if there is nothing on this slot insert dummy gun information
         ini_write_string("slots", string(i), "o_ship_0" + string(i) + "_dummyGun");
