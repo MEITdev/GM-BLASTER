@@ -200,6 +200,7 @@
       <sprite>sprites\s_dummy_avatar</sprite>
       <sprite>sprites\s_avatar_player_01</sprite>
       <sprite>sprites\s_avatar_player_02</sprite>
+      <sprite>sprites\sprite136</sprite>
       <sprite>sprites\s_manga_avatar</sprite>
       <sprite>sprites\s_robot_avatar</sprite>
     </sprites>
