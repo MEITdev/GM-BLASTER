@@ -116,6 +116,31 @@ alarm[LASER_LGUN] = room_speed/8;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/// Die code
+if hull == 0
+{
+    instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Update position
 
 ship = global.ship;
@@ -154,65 +179,45 @@ else
           <argument>
             <kind>1</kind>
             <string>///Handle user input
-if can_fire == true
+if instance_exists(global.ship)
 {
-    if (keyboard_check(ord(action_button))) || mouse_check_button(action_mouse_button)
+
+    if can_fire == true
     {
-        if ammo &gt; 0
+        if (keyboard_check(ord(action_button))) || mouse_check_button(action_mouse_button)
         {
-            // create the laser instance
-//            instance_create(x, y-20, o_projectile);
-            projectile = instance_create(x + correction_x , y + correction_y, o_projectile);
-            projectile.direction = image_angle + 90;
-            projectile.speed = projectile_speed;
-           
-            // create the muzzle flash
-            instance_create(x + correction_x, y + correction_y, o_projectile_gun_flare);
-            
-            // reset the cooldown counter
-            //cooldown = room_speed/2;
-            can_fire = false;
-            
-            // subtract the ammo if not in the hangar
-            this_room = room_get_name(room);
-            if this_room != "r_mothership_hangar"
+            if ammo &gt; 0
             {
-                ammo -= 1;
+                // create the laser instance
+    //            instance_create(x, y-20, o_projectile);
+                projectile = instance_create(x + correction_x , y + correction_y, o_projectile);
+                projectile.direction = image_angle + 90;
+                projectile.speed = projectile_speed;
+               
+                // create the muzzle flash
+                instance_create(x + correction_x, y + correction_y, o_projectile_gun_flare);
+                
+                // reset the cooldown counter
+                //cooldown = room_speed/2;
+                can_fire = false;
+                
+                // subtract the ammo if not in the hangar
+                this_room = room_get_name(room);
+                if this_room != "r_mothership_hangar"
+                {
+                    ammo -= 1;
+                }
+            }
+            else
+            {
+                // no ammo left...
+                //instance_create(x, y-20, o_flare);
+                // Play no ammo sound and display something
+                
             }
         }
-        else
-        {
-            // no ammo left...
-            //instance_create(x, y-20, o_flare);
-            // Play no ammo sound and display something
-            
-        }
     }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Die code
-if hull == 0
-{
-    instance_destroy();
+
 }
 </string>
           </argument>

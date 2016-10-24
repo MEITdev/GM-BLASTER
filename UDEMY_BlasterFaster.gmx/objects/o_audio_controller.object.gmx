@@ -54,6 +54,7 @@ if global.Music == 'On'
     if !(audio_is_playing(a_menu_music_01))
     {
         audio_play_sound(a_menu_music_01, 10, true);
+        audio_sound_gain(a_menu_music_01, 0.5, 0);
     }
 }
 else if global.Music == 'Off'
@@ -97,6 +98,8 @@ if global.Music == 'On'
         if !(audio_is_playing(a_mission_music_01))
         {
             audio_play_sound(a_mission_music_01, 10, true);
+            // set volume to 50%, this song is loud
+            audio_sound_gain(a_mission_music_01, 0.4, 0);
         }
     }
     else
@@ -106,6 +109,7 @@ if global.Music == 'On'
             audio_stop_sound(a_mission_music_01);
             // play the menu tune
             audio_play_sound(a_menu_music_01, 10, true);
+            audio_sound_gain(a_menu_music_01, 0.5, 0);
         }    
     }
 }

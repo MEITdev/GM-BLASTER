@@ -27,6 +27,10 @@
             <kind>1</kind>
             <string>///Create relevant spawners for this level
 
+// store mission time limit in a global variable so it is accessible for other objects 
+// if required
+global.time_left = 0;
+
 if room_get_name(room) == "r_mission_01"
 {
     // each instance takes one argument = the level
@@ -93,7 +97,7 @@ if room_get_name(room) == "r_mission_02"
 diff = date_second_span(start_time, date_current_datetime());
 
 // time to display to the player
-time_left = round(time_limit - diff);
+global.time_left = round(time_limit - diff);
 if diff &gt; time_limit
 {
 
@@ -179,7 +183,7 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 
 // select colour depending on the timer
-if (time_left / time_limit) &gt; 0.5
+if (global.time_left / time_limit) &gt; 0.5
 {
     draw_set_colour(c_green);
 }
@@ -189,7 +193,7 @@ else
 }
 
 // Draw the timer on the screen
-draw_text(room_width/2, 32, string(time_left));
+draw_text(room_width/2, 32, string(global.time_left));
 
 // reset font to default
 draw_set_colour(c_white);

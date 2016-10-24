@@ -54,6 +54,7 @@ alarm[LEVEL_CHOOSER] = room_speed / 4;
           <argument>
             <kind>1</kind>
             <string>/// Set the timers according to the level
+
 if level == 1
 {
     alarm[ASTEROID] = room_speed; // wait 1 second
@@ -142,6 +143,30 @@ if player_knows_sensor == true
         }
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Control the time related actions
+
 </string>
           </argument>
         </arguments>

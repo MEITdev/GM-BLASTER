@@ -134,6 +134,154 @@ purchase_button.owner_slot = 2;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Initialise the ammo buy button variable
+ammo_buy = noone;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Check if the gun is owned
+is_owned = false;
+for (i=0; i&lt;array_length_1d(global.current_player.purchased); i+=1)
+{
+    // for each weapon in the purchased list, set the price to 0
+    if object_get_name(global.ship.slot[2].object_index) == global.current_player.purchased[i]
+    {
+        is_owned = true;
+        show_debug_message("Gun OWNED");
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Manage the OWNED label object
+// set the label
+// but not for the empty slot (dummy gun)
+if is_owned == true &amp;&amp; (object_get_parent(global.ship.slot[2].object_index) != o_empty_slot)
+{
+    show_debug_message("Gun OWNED and is NOT EMPTY SLOT");
+    if instance_exists(purchased_label)
+    {
+        with (purchased_label)
+        {
+            instance_destroy();
+        }
+    }
+   purchased_label = instance_create(x, y, o_gun_box_purchased);
+   show_debug_message("SO CREATE A LABEL");
+}
+else
+{
+    if instance_exists(purchased_label)
+    {
+        with (purchased_label)
+        {
+            instance_destroy();
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Manage the AMMO BUY button
+if is_owned == true &amp;&amp;
+    ((object_get_parent(global.ship.slot[2].object_index) != o_empty_slot) &amp;&amp;
+    (object_get_parent(global.ship.slot[2].object_index) != o_parent_power_gun))
+{    
+    //Instantiate the reload ammo button
+    if instance_exists(ammo_buy)
+    {
+        with(ammo_buy)
+        {
+            instance_destroy();
+        }
+    }
+    ammo_buy = instance_create(0, 0, o_purchase_slot_ammo_button);
+    ammo_buy.owner = id;
+    ammo_buy.x = x + sprite_width/2;
+    ammo_buy.y = y - purchase_button.sprite_height/2 - 32;
+    ammo_buy.owner_slot = 2;
+}
+else
+{
+    if instance_exists(ammo_buy)
+    {
+        with(ammo_buy)
+        {
+            instance_destroy();
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -183,6 +331,35 @@ if global.purchase_update[2] == true
         }
         purchased_label = instance_create(x, y, o_gun_box_purchased);            
     }
+    
+    //Instantiate the reload ammo button (only for non POWER weapons
+    if  (object_get_parent(global.ship.slot[2].object_index) != o_empty_slot) &amp;&amp;
+        (object_get_parent(global.ship.slot[2].object_index) != o_parent_power_gun)    
+    {
+        if instance_exists(ammo_buy)
+        {
+            with(ammo_buy)
+            {
+                instance_destroy();
+            }
+        }
+        ammo_buy = instance_create(0, 0, o_purchase_slot_ammo_button);
+        ammo_buy.owner = id;
+        ammo_buy.x = x + sprite_width/2;
+        ammo_buy.y = y - purchase_button.sprite_height/2 - 32;
+        ammo_buy.owner_slot = 2;
+    }
+    else
+    {
+        if instance_exists(ammo_buy)
+        {
+            with(ammo_buy)
+            {
+                instance_destroy();
+            }
+        }
+    }
+    
 }
 </string>
           </argument>
@@ -292,7 +469,7 @@ gun_stats.energy_consumption = weapons_slot[gun_choice].energy_consumption;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Manage the OWNED label object
+            <string>/// Check if the gun is owned
 is_owned = false;
 for (i=0; i&lt;array_length_1d(global.current_player.purchased); i+=1)
 {
@@ -303,7 +480,27 @@ for (i=0; i&lt;array_length_1d(global.current_player.purchased); i+=1)
         show_debug_message("Gun OWNED");
     }
 }
-
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Manage the OWNED label object
 // set the label
 // but not for the empty slot (dummy gun)
 if is_owned == true &amp;&amp; (object_get_parent(global.ship.slot[2].object_index) != o_empty_slot)
@@ -324,6 +521,55 @@ else
     if instance_exists(purchased_label)
     {
         with (purchased_label)
+        {
+            instance_destroy();
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Manage the AMMO BUY button
+if is_owned == true &amp;&amp;
+    ((object_get_parent(global.ship.slot[2].object_index) != o_empty_slot) &amp;&amp;
+    (object_get_parent(global.ship.slot[2].object_index) != o_parent_power_gun))
+{    
+    //Instantiate the reload ammo button
+    if instance_exists(ammo_buy)
+    {
+        with(ammo_buy)
+        {
+            instance_destroy();
+        }
+    }
+    ammo_buy = instance_create(0, 0, o_purchase_slot_ammo_button);
+    ammo_buy.owner = id;
+    ammo_buy.x = x + sprite_width/2;
+    ammo_buy.y = y - purchase_button.sprite_height/2 - 32;
+    ammo_buy.owner_slot = 2;
+}
+else
+{
+    if instance_exists(ammo_buy)
+    {
+        with(ammo_buy)
         {
             instance_destroy();
         }

@@ -71,34 +71,6 @@ if level == 1
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Create the powerup
-var powerup = choose(o_armor_powerup, o_laser_powerup, o_shield_powerup, o_hull_powerup);
-instance_create(random_range(16, room_width-16), -16, powerup);
-
-// reset the alarm
-alarm[POWERUP_SPAWNER] = random_range(room_speed*10, room_speed*15); // 10 - 15 seconds
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -132,7 +104,7 @@ if (score &gt;= stage2)
 {
     stage = 2;
     enemy = choose(o_enemy_one, o_enemy_two, o_enemy_two);
-    alarm_time = random_range(room_speed*.25, room_speed);
+    alarm_time = random_range(room_speed*.5, room_speed*2);
 }
 
 // If boss is present do not reset the timer
