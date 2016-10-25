@@ -83,7 +83,7 @@ hull_status.parent_gun = object_index;
 event_inherited();
 
 // Override the fire rate
-alarm[LASER_LGUN] = room_speed/10;
+alarm[LASER_LGUN] = room_speed/8;
 </string>
           </argument>
         </arguments>

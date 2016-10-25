@@ -494,6 +494,7 @@ else
         // ESCAPE to get back to the hangar
         if (keyboard_check(vk_escape))
         {
+            score = 0;
             room_goto(r_mothership_hangar);
         }
 

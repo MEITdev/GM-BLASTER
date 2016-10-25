@@ -165,12 +165,12 @@ if instance_exists(global.ship)
             {
                 // create the laser instance
     //            instance_create(x, y-20, o_projectile);
-                projectile = instance_create(x + correction_x , y + correction_y, o_plasma_projectile);
+                projectile = instance_create(x + correction_x , y + correction_y, o_ship_03_projectile);
                 projectile.direction = image_angle + 90;
                 projectile.speed = projectile_speed;
                
                 // create the muzzle flash
-                instance_create(x + correction_x, y + correction_y, o_plasma_turret_01_gun_flare);
+                instance_create(x + correction_x, y + correction_y, o_ship_03_gun_flare);
                 
                 // reset the cooldown counter
                 //cooldown = room_speed/2;

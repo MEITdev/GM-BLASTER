@@ -31,6 +31,9 @@
 // if required
 global.time_left = 0;
 
+// DEFAULT variable used to track if the current mission has been completed
+global.mission_complete = false;
+
 if room_get_name(room) == "r_mission_01"
 {
     // each instance takes one argument = the level
@@ -154,6 +157,41 @@ if level == 1
         global.avatar.image_yscale = 0.5;
     
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Mission COMPLETED tasks
+if room_get_name(room) == "r_mission_01" &amp;&amp; global.mission_complete == true
+{
+    // reset flag
+    global.mission_complete = false;
+    
+    // Save the player information
+    update_player(global.current_player.save_slot);   
+    // save player ship
+    save_player_ship(global.current_player.ship_save_file);
+    // now load player data
+    load_player_data(global.current_player.save_slot);
+    
+    room_goto(r_mission_completed);
 }
 </string>
           </argument>

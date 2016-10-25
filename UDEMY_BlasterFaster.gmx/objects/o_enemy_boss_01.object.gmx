@@ -115,8 +115,54 @@ alarm[LASER_ALARM] = room_speed;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/// Die code
+if instance_exists(global.boss)
+{
+    if (hull &lt;= 0)
+    {
+        create_explosion(x, y);
+        score += 100;
+      
+        if instance_exists(global.ship)
+        {
+            // Save the payer score to the local highscore file
+            highscore_add(global.current_player.name, score);
+            
+            global.current_player.experience += 50;
+            global.current_player.credits += 200;
+            // save changes to the player
+            update_player(global.current_player.save_slot);
+            save_player_ship(global.current_player.ship_save_slot);
+        }
+        
+        // set player score to 0 (for the next player)
+        score = 0;
+        global.mission_complete = true;
+
+        instance_destroy();
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Bounce of edges
-event_inherited();
 if instance_exists(global.boss)
 {
     if (x &gt; room_width - global.boss.sprite_width) or (x &lt; global.boss.sprite_width)
@@ -160,56 +206,6 @@ if instance_exists(global.boss)
     }
 }
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Die code
-if instance_exists(global.boss)
-{
-    if (hull &lt;= 0)
-    {
-        
-        // create the top10 button
-        instance_create(room_width/2, room_height/2, o_highscore_button);
-       
-        create_explosion(x, y);
-        instance_destroy();
-        
-        // Set the FLAG for this mission
-        mission_completed = true;
-        
-        score += 100;
-       
-        if instance_exists(global.ship)
-        {
-            // Save the payer score to the local highscore file
-            highscore_add(global.current_player.name, score);
-            
-            global.current_player.experience += 50;
-
-        }
-        
-        // set player score to 0 (for the next player)
-        score = 0;
-    }
-}
 </string>
           </argument>
         </arguments>

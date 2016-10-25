@@ -10,7 +10,7 @@ if level == 1
     global.boss.ship_slots = 3;
     global.boss.shield = 15;
     global.boss.armor = 25;
-    global.boss.hull = 30;
+    global.boss.hull = 50;
     
     // instantiate the slots upon creation
     for (i = 0; i <= global.boss.ship_slots - 1; i++)

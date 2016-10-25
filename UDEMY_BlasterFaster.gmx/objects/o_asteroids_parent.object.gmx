@@ -8,6 +8,31 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// set collision flag
+collidet_with_player = false;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -30,45 +55,46 @@ if (hull &lt;= 0)
 {
     create_explosion(x, y);
     
-    // ONLY if not fragment asteroid already
-    if object_index == o_asteroid_grey_01_fragment_01 || object_index == o_asteroid_grey_01_fragment_02
-    {
-        // do not spawn any more fragments
-        no_of_fragments = 0;
-    }
-    // the biggest asteroid produces 2 smaller asteroids
-    else if object_index == o_asteroid_grey_03
-    {
-        // spawn fragment asteroids
-        // random number form 0 to 3 asteroids
-        no_of_fragments = random_range(0, 1);
-        for (i = 0; i &lt;= no_of_fragments; i++)
+    if collidet_with_player == false
+    {        
+        // ONLY if not fragment asteroid already
+        if object_index == o_asteroid_grey_01_fragment_01 || object_index == o_asteroid_grey_01_fragment_02
         {
-            // create on of the smaller asteroids
-            fragment[i] = instance_create(x, y, choose(o_asteroid_grey_01, o_asteroid_grey_02));
-            // set the direction and motion of the asteroid
-            fragment[i].direction = random_range(1, 360);
+            // do not spawn any more fragments
+            no_of_fragments = 0;
         }
-    }
-    else
-    {
-        // spawn fragment asteroids
-        // random number form 0 to 3 asteroids
-        no_of_fragments = random_range(0, 3);
-        for (i = 0; i &lt;= no_of_fragments; i++)
+        // the biggest asteroid produces 2 smaller asteroids
+        else if object_index == o_asteroid_grey_03
         {
-            // create on of the asteroid fragments
-            fragment[i] = instance_create(x, y, choose(o_asteroid_grey_01_fragment_01, o_asteroid_grey_01_fragment_02));
-            // set the direction and motion of the asteroid
-            fragment[i].direction = random_range(1, 360);
+            // spawn fragment asteroids
+            // random number form 0 to 3 asteroids
+            no_of_fragments = random_range(0, 1);
+            for (i = 0; i &lt;= no_of_fragments; i++)
+            {
+                // create on of the smaller asteroids
+                fragment[i] = instance_create(x, y, choose(o_asteroid_grey_01, o_asteroid_grey_02));
+                // set the direction and motion of the asteroid
+                fragment[i].direction = random_range(1, 360);
+            }
+        }
+        else
+        {
+            // spawn fragment asteroids
+            // random number form 0 to 3 asteroids
+            no_of_fragments = random_range(0, 3);
+            for (i = 0; i &lt;= no_of_fragments; i++)
+            {
+                // create on of the asteroid fragments
+                fragment[i] = instance_create(x, y, choose(o_asteroid_grey_01_fragment_01, o_asteroid_grey_01_fragment_02));
+                // set the direction and motion of the asteroid
+                fragment[i].direction = random_range(1, 360);
+            }
         }
     }
 
     //destroy the parent asteroid    
     instance_destroy();
-    
     score += 1;
-    
     
     // PROXIMITY SENSOR
     // ONLY when the player has the skill
@@ -182,6 +208,8 @@ add_screenshake(4, room_speed*.125);
           <argument>
             <kind>1</kind>
             <string>/// Damage the gun
+collidet_with_player = true;
+
 if global.ship.can_be_hit == true
 {
     if instance_exists(global.ship)
@@ -236,6 +264,9 @@ if global.ship.can_be_hit == true
           <argument>
             <kind>1</kind>
             <string>/// Damage the ship
+// set collision flag
+collidet_with_player = true;
+
 if global.ship.can_be_hit == true
 {
     if (other.armor &gt; 0)

@@ -32,7 +32,7 @@ name = "";
 experience = 0;
 required_experience = 0;
 level = 1;
-credits = 1000;
+credits = 250;
 
 // ===== GAME SCORE =====
 // pointer to players created ship

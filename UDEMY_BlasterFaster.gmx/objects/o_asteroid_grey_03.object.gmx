@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Initialise the asteroid object
+event_inherited();
 hull = 2;
 alarm[ASTEROID] = 1;
 
@@ -57,7 +58,9 @@ motion_set(direction, speed);
           <argument>
             <kind>1</kind>
             <string>///Rotate the asteroid
-image_angle++;
+asteroid_rotation = choose(-1, 1);
+image_angle += asteroid_rotation;
+
 
 // reset the alarm
 alarm[ASTEROID] = room_speed/60;

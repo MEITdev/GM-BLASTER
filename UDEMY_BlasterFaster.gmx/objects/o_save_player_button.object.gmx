@@ -98,30 +98,42 @@ event_inherited();
             <string>///Save the player
 
 // set the new default player values
-global.current_player.credits = 1000;
+global.current_player.credits = 250;
+
 // Get the player name from the text box
 global.current_player.name = o_textbox.txt;
 
-// array of purchased guns
-global.current_player.purchased[0] = 0; // reset the array
-// add the starting weapons
-global.current_player.purchased[0] = "o_ship_01_Lgun";
-global.current_player.purchased[1] = "o_ship_01_Rgun";
-global.current_player.purchased[2] = "o_ship_01_turret";
-
-// Save the selected skill
-// This happens only when the character is created
-// decrease the number of skill points
-global.current_player.skill_id = global.current_player.skill_selected;
-global.current_player.skill_points = 0;
-// add the skill to the list of known skills
-global.current_player.skills_known[0] = global.current_player.skill_id;
-
-// Save the player information
-save_player(global.current_player.save_slot);
-
-// And now go to the ship configuration room
-room_goto(r_mothership_hangar);
+if global.current_player.name != ""
+{
+    // array of purchased guns
+    global.current_player.purchased[0] = 0; // reset the array
+    // add the starting weapons
+    global.current_player.purchased[0] = "o_ship_01_Lgun";
+    global.current_player.purchased[1] = "o_ship_01_Rgun";
+    global.current_player.purchased[2] = "o_ship_01_turret";
+    
+    // Save the selected skill
+    // This happens only when the character is created
+    // decrease the number of skill points
+    global.current_player.skill_id = global.current_player.skill_selected;
+    global.current_player.skill_points = 0;
+    // add the skill to the list of known skills
+    global.current_player.skills_known[0] = global.current_player.skill_id;
+    
+    // Save the player information
+    save_player(global.current_player.save_slot);
+    
+    // And now go to the ship configuration room
+    room_goto(r_mothership_hangar);
+}
+else
+{
+    dialog_box(134, 396, 58, 520, "Enter your name", "Please choose a _NAME_ for your pilot and continue to the _MOTHERSHIP_HANGAR_. Thank you", 5);
+    global.avatar = instance_create(584, 296, o_pirate_avatar);
+    global.avatar.image_xscale = 0.5;
+    global.avatar.image_yscale = 0.5;
+    global.dialog.avatar = global.avatar.object_index;
+}
 </string>
           </argument>
         </arguments>

@@ -57,7 +57,7 @@ alarm[LEVEL_CHOOSER] = room_speed / 4;
 if level == 1
 {
     alarm[PLANET_TIMER] = room_speed * 60;
-    alarm[SCALE_TIMER] = 1;
+    alarm[SCALE_TIMER] = room_speed * 60;
     planet_scale = .1;
     alarm[NEBULAE_TIMER] = room_speed * 30;
 }
@@ -148,9 +148,9 @@ alarm[SCALE_TIMER] = room_speed / 30;
             <string>///Spawn the Ice Giant background
 //room_set_background(r_space_new, 7, 1, 0, b_ice_giant, 0, 0, 0, 0, 0, .25, 1);
 background_visible[7] = true;
-background_y[7] = -480;
+background_y[7] = -600;
 background_x[7] = 0;
-background_vspeed[7] = 1;
+background_vspeed[7] = 0.25;
 background_xscale[7] = planet_scale;
 background_yscale[7] = planet_scale;
 background_vtiled[7] = false;

@@ -46,7 +46,6 @@ if r_name == "r_choose_save_slot"
     global.avatar = instance_create(584, 296, o_pirate_avatar);
     global.avatar.image_xscale = 0.5;
     global.avatar.image_yscale = 0.5;
-    
     global.dialog.avatar = global.avatar.object_index;
     //dialog.ttl = 30;    
 }
@@ -89,7 +88,16 @@ if r_name == "r_mission_01"
 
 if r_name == "r_mission_failed"
 {
-    dialog_box(104, 346, 58, 550, "Too slow!", "You have failed to kill enough enemies in the time limit. Too bad cupcake! Go cry in the corner and then try again", 15);
+    dialog_box(104, 346, 58, 550, "Too slow!", "You have failed to kill enough enemies in the time limit. Too bad cupcake! Go cry in the corner and then try again", 30);
+    global.avatar = instance_create(584, 296, o_pirate_avatar);
+    global.avatar.image_xscale = 0.5;
+    global.avatar.image_yscale = 0.5;
+    global.dialog.avatar = global.avatar;
+}
+
+if r_name == "r_mission_completed"
+{
+    dialog_box(104, 346, 58, 550, "Well done!", "Since this is only the Alpha version, there are no more missions. But what I kindly ask you to do is go back to the hangar, use the credits to purchase new guns, skill points to learn new skills and test them. You may enjoy it a little bit as well :)", 60);
     global.avatar = instance_create(584, 296, o_pirate_avatar);
     global.avatar.image_xscale = 0.5;
     global.avatar.image_yscale = 0.5;

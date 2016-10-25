@@ -104,6 +104,7 @@
       <sprite>sprites\s_action_03_control</sprite>
       <sprite>sprites\s_action_02_control</sprite>
       <sprite>sprites\s_action_button_surface</sprite>
+      <sprite>sprites\s_skill_points_available</sprite>
     </sprites>
     <sprites name="Menu Buttons">
       <sprite>sprites\s_button</sprite>
@@ -148,6 +149,7 @@
       <sprite>sprites\s_plasma_turret_01_hit_flare</sprite>
       <sprite>sprites\s_flare</sprite>
       <sprite>sprites\s_shield_hit</sprite>
+      <sprite>sprites\s_ship_03_hit_flare</sprite>
     </sprites>
     <sprites name="Weapons">
       <sprite>sprites\s_blank</sprite>
@@ -159,6 +161,8 @@
       <sprites name="Plasma">
         <sprite>sprites\s_plasma_turret_01_green_gun_flare</sprite>
         <sprite>sprites\s_plasma_turret_01_laser</sprite>
+        <sprite>sprites\s_ship_03_projectile</sprite>
+        <sprite>sprites\s_ship_03_gun_flare</sprite>
       </sprites>
       <sprites name="Laser">
         <sprite>sprites\s_laser_directional</sprite>
@@ -323,6 +327,7 @@
       <object>objects\o_start_platformer_button</object>
       <object>objects\o_configure_ship</object>
       <object>objects\o_mission_select_button</object>
+      <object>objects\o_mothership_button</object>
       <object>objects\o_save_game_button</object>
       <object>objects\o_save_player_button</object>
       <object>objects\o_purchase_skill_button</object>
@@ -387,8 +392,11 @@
       </objects>
       <objects name="Projectiles">
         <object>objects\o_projectile</object>
-        <object>objects\o_plasma_projectile</object>
         <object>objects\o_enemy_projectile</object>
+      </objects>
+      <objects name="Plasma">
+        <object>objects\o_ship_03_projectile</object>
+        <object>objects\o_plasma_turret_01_laser</object>
       </objects>
       <objects name="Guns">
         <object>objects\o_parent_gun</object>
@@ -418,9 +426,6 @@
           <object>objects\o_ship_02_dummyGun</object>
           <object>objects\o_empty_slot</object>
         </objects>
-      </objects>
-      <objects name="Plasma">
-        <object>objects\o_plasma_turret_01_laser</object>
       </objects>
     </objects>
     <objects name="Enemy Ships">
@@ -467,6 +472,7 @@
       <object>objects\o_danger_indicator</object>
       <object>objects\o_mission_indicator</object>
       <object>objects\o_dialog_box</object>
+      <object>objects\o_skills_available</object>
       <object>objects\o_skills_toolbar</object>
       <objects name="Gun HUD">
         <object>objects\o_weapon_hud_parent</object>
@@ -483,10 +489,12 @@
       <object>objects\o_screen_flash</object>
       <object>objects\o_flare</object>
       <object>objects\o_plasma_turret_01_hit_flare</object>
+      <object>objects\o_ship_03_hit_flare</object>
       <object>objects\o_projectile_gun_flare</object>
       <object>objects\o_shield_hit</object>
       <object>objects\o_laser_gun_flare</object>
       <object>objects\o_plasma_turret_01_gun_flare</object>
+      <object>objects\o_ship_03_gun_flare</object>
     </objects>
     <objects name="Spawners">
       <object>objects\o_enemy_boss_spawner</object>
@@ -568,6 +576,7 @@
       <room>rooms\r_mission_02</room>
       <room>rooms\r_mission_select</room>
       <room>rooms\r_mission_failed</room>
+      <room>rooms\r_mission_completed</room>
       <room>rooms\r_you_died</room>
     </rooms>
     <rooms name="SpaceStations">
