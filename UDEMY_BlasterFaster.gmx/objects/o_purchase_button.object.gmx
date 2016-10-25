@@ -159,6 +159,31 @@ total_price = 0;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/// Fly off "animation"
+global.ship.vspeed = -2;
+
+//create the ship engine jet
+ship_engine_jet = instance_create(x,y+32, o_ship_01_engine_jet);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Add the selected weapons to the list of unlocked weapons
 /*
 for (i = 0; i &lt; global.ship.ship_slots; i++)
