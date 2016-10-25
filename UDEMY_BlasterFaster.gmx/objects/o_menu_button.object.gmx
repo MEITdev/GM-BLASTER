@@ -80,7 +80,7 @@ if room_get_name(room) == 'r_settings'
     save_settings();
 }
 
-if room_get_name(room) == 'r_mothership_hanger'
+if room_get_name(room) == 'r_mothership_hangar'
 {
     // save the player and the ship configuration 
     update_player(global.current_player.save_slot);

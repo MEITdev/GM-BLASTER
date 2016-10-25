@@ -30,7 +30,7 @@
 // Set the damage amount
 damage = 1;
 speed = 0;
-
+owner_id = noone;
 </string>
           </argument>
         </arguments>
@@ -82,6 +82,31 @@ image_angle += 1;
             <kind>1</kind>
             <string>///Motion of the projectile controlled here
 //motion_set(direction, speed);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Die code
+if !(instance_exists(owner_id))
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

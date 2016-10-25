@@ -41,7 +41,7 @@ action_button = "";
 action_mouse_button = "";
 
 // start the alarm
-alarm[LASER_LGUN] = 1;
+//alarm[LASER_LGUN] = 1;
 
 // speed of the projectiles (DEFAULT)
 projectile_speed = 8;
@@ -173,8 +173,11 @@ if instance_exists(global.ship)
                 instance_create(x + correction_x, y + correction_y, o_ship_03_gun_flare);
                 
                 // reset the cooldown counter
+                alarm[LASER_LGUN] = room_speed/8;
+                
                 //cooldown = room_speed/2;
                 can_fire = false;
+
                 
                 // subtract the ammo if not in the hangar
                 this_room = room_get_name(room);

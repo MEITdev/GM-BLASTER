@@ -3,7 +3,7 @@
   <spriteName>s_carrier_NPC</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>1</depth>
+  <depth>10</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -53,10 +53,7 @@ info_box_exists = false;
             <string>///Mission start animation
 if room_get_name(room) == "r_mission_01"
 {
-    if vspeed &lt; 4
-    {
-        vspeed += .1
-    }
+    vspeed = 4
     
     if y &lt; -(room_height)
     {

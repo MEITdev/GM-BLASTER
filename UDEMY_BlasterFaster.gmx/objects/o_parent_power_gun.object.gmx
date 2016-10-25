@@ -44,7 +44,7 @@ action_mouse_button = "";
 alarm[ENERGY_RECHARGE] = 1;
 
 // start the alarm
-alarm[LASER_LGUN] = 1;
+//alarm[LASER_LGUN] = room_speed/4;
 
 // speed of the projectiles (DEFAULT)
 projectile_speed = 10;
@@ -121,11 +121,13 @@ alarm[ENERGY_RECHARGE] = room_speed / 4;
             <string>///Allow the user to fire and reset the alarm
 if can_fire == false
 {
+    show_debug_message("RESET can_fire to true");
     can_fire = true;
 }
 else
 {
 }
+show_debug_message("reset the LaserLGUN alarm");
 alarm[LASER_LGUN] = room_speed/4;
 </string>
           </argument>
@@ -191,11 +193,11 @@ else
             <string>///Handle user input
 if instance_exists(global.ship)
 {
-    
     if can_fire == true
     {
         if (keyboard_check(ord(action_button))) || mouse_check_button(action_mouse_button)
         {
+            show_debug_message("SHOOT REGISTERED");
             if energy_level &gt; 0
             {
                 // create the laser instance
@@ -207,6 +209,11 @@ if instance_exists(global.ship)
                 
                 // reset the cooldown counter
                 can_fire = false;
+                
+                // start the alarm
+                alarm[LASER_LGUN] = room_speed/4;
+
+                show_debug_message("can_fire set to FALSE");
                 // subtract the ammo if not in the hangar
                 this_room = room_get_name(room);
                 if this_room != "r_mothership_hangar"

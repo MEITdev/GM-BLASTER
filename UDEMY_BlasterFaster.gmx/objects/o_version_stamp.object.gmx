@@ -30,7 +30,7 @@ draw_set_font(f_gun_stats);
 draw_self();
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
-draw_text(x, y-1, "0.0.42 closed alpha");
+draw_text(x, y-1, "0.0.43 closed alpha");
 </string>
           </argument>
         </arguments>

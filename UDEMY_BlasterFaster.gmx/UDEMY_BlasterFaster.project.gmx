@@ -306,7 +306,7 @@
       <object>objects\o_button_parent</object>
       <object>objects\o_highscore_button</object>
       <object>objects\o_menu_button</object>
-      <object>objects\o_purchase_button</object>
+      <object>objects\o_start_mission_button</object>
       <object>objects\o_purchase_slot_button</object>
       <object>objects\o_purchase_slot_ammo_button</object>
       <object>objects\o_quit_button</object>

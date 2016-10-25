@@ -40,10 +40,11 @@ action_button = "";
 action_mouse_button = "";
 
 // start the alarm
-alarm[LASER_LGUN] = 1;
+//alarm[LASER_LGUN] = 1;
 
 // speed of the projectiles (DEFAULT)
 projectile_speed = 10;
+projectile = noone;
 
 // correction coordinates for spawning projectiles
 correction_x = 0;
@@ -177,6 +178,11 @@ if instance_exists(global.ship)
                         // adjust the image angle
                         projectile.image_angle = image_angle - 90;
                         muzzle_flash.image_angle = image_angle - 90;
+                        
+                        // reset the fire timer
+                        alarm[LASER_LGUN] = room_speed/8;
+
+                        
                         can_fire = false;
                         // subtract the ammo if not in the hangar
                         this_room = room_get_name(room);
@@ -205,6 +211,10 @@ if instance_exists(global.ship)
             
                             muzzle_flash[i].image_angle = image_angle - 90;
                         }
+
+                        // reset the fire timer
+                        alarm[LASER_LGUN] = room_speed/8;
+                                                
                         can_fire = false;
                         // subtract the ammo if not in the hangar
                         this_room = room_get_name(room);
@@ -217,9 +227,11 @@ if instance_exists(global.ship)
                     {
                         // create the projectile instance
                         //projectile[0] = 
-                        if !(instance_exists(projectile[0].object_index))
+                        if !(instance_exists(projectile))
                         {
-                            projectile[0] = instance_create(x + lengthdir_x(100, image_angle), y + lengthdir_y(100, image_angle), o_projectile_autodefense_turret);
+                            projectile = instance_create(x + lengthdir_x(100, image_angle), y + lengthdir_y(100, image_angle), o_projectile_autodefense_turret);
+                            // eh????? 
+                            projectile.owner_id = o_ship_03_turret;
                         }
                         //projectile[1] = instance_create(x + lengthdir_x(correction_x, image_angle + correction_x), y + lengthdir_y(correction_y, image_angle + correction_y), o_projectile);
             
@@ -238,6 +250,11 @@ if instance_exists(global.ship)
                             muzzle_flash[i].image_angle = image_angle - 90;
                         }
                         */
+                        
+                        // reset the fire timer
+                        alarm[LASER_LGUN] = room_speed/8;
+                        
+                        
                         can_fire = false;
                         // subtract the ammo if not in the hangar
                         this_room = room_get_name(room);

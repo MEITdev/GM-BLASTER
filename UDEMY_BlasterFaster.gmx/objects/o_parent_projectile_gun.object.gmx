@@ -41,7 +41,7 @@ action_button = "";
 action_mouse_button = "";
 
 // start the alarm
-alarm[LASER_LGUN] = 1;
+//alarm[LASER_LGUN] = 1;
 
 // speed of the projectiles (DEFAULT)
 projectile_speed = 10;
@@ -173,6 +173,8 @@ if instance_exists(global.ship)
                 instance_create(x + correction_x, y + correction_y, o_projectile_gun_flare);
                 
                 // reset the cooldown counter
+                alarm[LASER_LGUN] = room_speed/8;
+                
                 //cooldown = room_speed/2;
                 can_fire = false;
                 
