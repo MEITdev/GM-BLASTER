@@ -132,7 +132,7 @@ if instance_exists(global.boss)
             global.current_player.credits += 200;
             // save changes to the player
             update_player(global.current_player.save_slot);
-            save_player_ship(global.current_player.ship_save_slot);
+            save_player_ship(global.current_player.ship_save_file);
         }
         
         // set player score to 0 (for the next player)

@@ -109,6 +109,7 @@
     <sprites name="Menu Buttons">
       <sprite>sprites\s_button</sprite>
       <sprite>sprites\s_score</sprite>
+      <sprite>sprites\s_version_stamp</sprite>
       <sprite>sprites\s_credits</sprite>
       <sprite>sprites\s_button_new</sprite>
       <sprite>sprites\s_button_new2</sprite>
@@ -547,6 +548,7 @@
       <object>objects\o_carrier_NPC</object>
     </objects>
     <object>objects\o_game_logo</object>
+    <object>objects\o_version_stamp</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_splashscreen</room>

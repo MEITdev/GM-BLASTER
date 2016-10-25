@@ -495,6 +495,12 @@ else
         if (keyboard_check(vk_escape))
         {
             score = 0;
+            
+            // save changes to the player
+            update_player(global.current_player.save_slot);
+            save_player_ship(global.current_player.ship_save_file);
+            
+            load_player_data(global.current_player.save_slot);
             room_goto(r_mothership_hangar);
         }
 

@@ -36,6 +36,8 @@ speed = 5;
 image_angle = 0;
 
 motion_set(direction, speed);
+
+asteroid_rotation = choose(-1, 1);
 </string>
           </argument>
         </arguments>
@@ -59,7 +61,7 @@ motion_set(direction, speed);
           <argument>
             <kind>1</kind>
             <string>///Rotate the asteroid
-asteroid_rotation = choose(-1, 1);
+
 image_angle += asteroid_rotation;
 
 // reset the alarm
