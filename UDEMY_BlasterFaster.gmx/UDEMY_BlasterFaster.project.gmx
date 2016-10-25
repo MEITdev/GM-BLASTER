@@ -158,6 +158,7 @@
         <sprite>sprites\s_projectile_gun_bullet</sprite>
         <sprite>sprites\s_projectile_gun_flare</sprite>
         <sprite>sprites\s_projectile</sprite>
+        <sprite>sprites\s_projectile_autodefense_turret</sprite>
       </sprites>
       <sprites name="Plasma">
         <sprite>sprites\s_plasma_turret_01_green_gun_flare</sprite>
@@ -395,6 +396,7 @@
       </objects>
       <objects name="Projectiles">
         <object>objects\o_projectile</object>
+        <object>objects\o_projectile_autodefense_turret</object>
         <object>objects\o_enemy_projectile</object>
       </objects>
       <objects name="Plasma">
@@ -422,6 +424,7 @@
           <object>objects\o_parent_turrent_gun</object>
           <object>objects\o_ship_01_turret</object>
           <object>objects\o_ship_02_turret</object>
+          <object>objects\o_ship_03_turret</object>
         </objects>
         <objects name="Dummy Guns">
           <object>objects\o_ship_00_dummyGun</object>

@@ -4,7 +4,7 @@
   <width>854</width>
   <height>480</height>
   <vsnap>8</vsnap>
-  <hsnap>8</hsnap>
+  <hsnap>4</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -58,7 +58,7 @@
     <instance objName="o_dialog_box_controller" x="27" y="208" name="inst_7C51DF66" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_ship_stats_box" x="8" y="8" name="inst_C21B753C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_mouse_cursor_controller" x="24" y="248" name="inst_CCFEB00F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_carrier_NPC" x="432" y="304" name="inst_4D243EA1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="o_carrier_NPC" x="428" y="304" name="inst_4D243EA1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
