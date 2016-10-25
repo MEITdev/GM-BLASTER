@@ -206,7 +206,9 @@ if instance_exists(global.ship)
                 projectile = instance_create(x + correction_x , y + correction_y, o_laser);
                 projectile.direction = image_angle + 90;
                 projectile.speed = projectile_speed;
-                
+                // create flare
+                muzzle = instance_create(x, y, o_laser_gun_flare);
+                muzzle.owner = object_index;
                 // reset the cooldown counter
                 can_fire = false;
                 

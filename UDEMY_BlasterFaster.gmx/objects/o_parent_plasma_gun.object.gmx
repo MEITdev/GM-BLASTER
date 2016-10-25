@@ -170,8 +170,9 @@ if instance_exists(global.ship)
                 projectile.speed = projectile_speed;
                
                 // create the muzzle flash
-                instance_create(x + correction_x, y + correction_y, o_ship_03_gun_flare);
-                
+                muzzle = instance_create(x + correction_x, y + correction_y, o_ship_03_gun_flare);
+                muzzle.owner = object_index;
+                                
                 // reset the cooldown counter
                 alarm[LASER_LGUN] = room_speed/8;
                 

@@ -224,6 +224,8 @@ else
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -240,12 +242,22 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>/// Force update the X nad Y coordinates
+// this will ensure the values are updated before the attached
+// guns are in their draw phase
+if instance_exists(global.ship.slot[gun_slot_id])
+{   
+
+    x = (global.ship.x + global.ship.ship_mount_x[gun_slot_id]);
+    y = (global.ship.y + global.ship.ship_mount_y[gun_slot_id]);
+    
+}
+//if global.boss.hspeed &gt; 0 x += 1; else x-= 2;
+draw_self();
+</string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
