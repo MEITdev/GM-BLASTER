@@ -76,15 +76,6 @@ if r_name == "r_mission_select"
     //dialog.ttl = 60;
 }
 
-if r_name == "r_mission_01"
-{
-    dialog_box(104, 346, 72, 550, "Mission 01: Ball(s) of Gas", "This should be easy. Simply get to the planetary defense battle cruiser - the Ice Breaker and destroy it. Try not to die. Watch out for asteroids and collisions, your shields only deflect projectile damage, not kinetic one!!!#Also, to _CANCEL_ this mission press _ESCAPE_.", 20);
-    global.avatar = instance_create(584, 296, o_pirate_avatar);
-    global.avatar.image_xscale = 0.5;
-    global.avatar.image_yscale = 0.5;
-    global.dialog.avatar = global.avatar;
-}
-    
 
 if r_name == "r_mission_failed"
 {
@@ -112,6 +103,28 @@ if r_name == "r_you_died"
     global.avatar.image_yscale = 0.5;
     global.dialog.avatar = global.avatar;
 }
+
+
+// =============== MISSIONS =================
+
+if r_name == "r_mission_01"
+{
+    dialog_box(104, 346, 72, 550, "Mission 01: Ball(s) of Gas", "This should be easy. Simply get to the planetary defense battle cruiser - the Ice Breaker and destroy it. Try not to die. Watch out for asteroids and collisions, your shields only deflect projectile damage, not kinetic one!!!#Also, to _CANCEL_ this mission press _ESCAPE_.", 20);
+    global.avatar = instance_create(584, 296, o_pirate_avatar);
+    global.avatar.image_xscale = 0.5;
+    global.avatar.image_yscale = 0.5;
+    global.dialog.avatar = global.avatar;
+}
+
+if r_name == "r_mission_02"
+{
+    dialog_box(104, 346, 72, 550, "Mission 02: That is no Moon!", "", 20);
+    global.avatar = instance_create(584, 296, o_pirate_avatar);
+    global.avatar.image_xscale = 0.5;
+    global.avatar.image_yscale = 0.5;
+    global.dialog.avatar = global.avatar;
+}    
+
 </string>
           </argument>
         </arguments>

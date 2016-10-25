@@ -4,7 +4,7 @@
   <width>854</width>
   <height>480</height>
   <vsnap>8</vsnap>
-  <hsnap>8</hsnap>
+  <hsnap>9</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -51,13 +51,14 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="o_score" x="800" y="32" name="inst_403BD224" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_skills_toolbar" x="96" y="112" name="inst_CF48BFA7" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="o_score" x="846" y="8" name="inst_403BD224" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_hull_new" x="9" y="56" name="inst_B92FEAFC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_armor_new" x="9" y="32" name="inst_95DBEFB1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_shield_new" x="9" y="8" name="inst_CDE72AB6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_skills_toolbar" x="108" y="8" name="inst_CF48BFA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_mission_controller" x="81" y="208" name="inst_AB355DEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_avatar_player" x="48" y="152" name="inst_0D0F965E" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
-    <instance objName="o_dialog_box_controller" x="27" y="208" name="inst_7C51DF66" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_ship_stats_box" x="8" y="8" name="inst_C21B753C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_mouse_cursor_controller" x="24" y="248" name="inst_CCFEB00F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_dialog_box_controller" x="81" y="232" name="inst_81DA94FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_mouse_cursor_controller" x="81" y="256" name="inst_96F313CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

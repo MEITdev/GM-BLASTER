@@ -64,13 +64,40 @@ if room_get_name(room) == "r_mission_01"
     enemy_spawner.stage1 = 100;
     enemy_spawner.stage2 = 250;
     enemy_spawner.stage3 = 400;
-
-           
 }
 
 if room_get_name(room) == "r_mission_02"
 {
+    // each instance takes one argument = the level
+    enemy_spawner = instance_create(0,0, o_enemy_spawner);
+    enemy_spawner.level = 2;
+    asteroid_spawner = instance_create(0,0, o_asteroid_spawner);
+    asteroid_spawner.level = 2;
+    space_objects_spawner = instance_create(0,0, o_space_objects_spawner);
+    space_objects_spawner.level = 2;
+    enemy_boss_spawner = instance_create(0,0, o_enemy_boss_spawner);
+    enemy_boss_spawner.level = 2;
     
+    instance_create(0,0, o_view_controller);
+    instance_create(0,0, o_ship_controller);
+
+    // used for dialog messages
+    level = 2;
+    // START THE TIMER
+    start_time = date_current_datetime();
+    // What is the time limit for the mission in Seconds
+    time_limit = 120;
+
+    // Messages for different levels triggers
+    mission2_stage1 = false;
+    mission2_stage2 = false;    
+    mission2_stage3 = false;    
+        
+    // Target socres
+    // Here decide what stage the player is in, depending on score or target objectives later
+    enemy_spawner.stage1 = 100;
+    enemy_spawner.stage2 = 250;
+    enemy_spawner.stage3 = 400;
 }
 
 

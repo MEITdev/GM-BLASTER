@@ -299,6 +299,8 @@
   </fonts>
   <objects name="objects">
     <object>objects\o_me_it_logo</object>
+    <object>objects\o_game_logo</object>
+    <object>objects\o_version_stamp</object>
     <objects name="Menu Buttons">
       <object>objects\o_button_parent</object>
       <object>objects\o_highscore_button</object>
@@ -547,8 +549,6 @@
     <objects name="NPC Ships">
       <object>objects\o_carrier_NPC</object>
     </objects>
-    <object>objects\o_game_logo</object>
-    <object>objects\o_version_stamp</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_splashscreen</room>

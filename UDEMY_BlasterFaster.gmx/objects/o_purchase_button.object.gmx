@@ -34,6 +34,30 @@ total_price = 0;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Teleport player to Mission room
+room_goto(r_mission_01);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
@@ -104,11 +128,12 @@ if total_price &gt; 0
 else
 {
     // otherwise show a dialog box
-    dialog_box(room_width/2 + 91, room_height/2, 72, 220, "Done!", "Ship configuration has been SAVED!", 5);
+    dialog_box(room_width/2 + 91, room_height/2, 72, 220, "Undocking", "Undocking from the _MOTHERSHIP_. Prepare for battle.", 3);
     global.avatar = noone;
     // save the player and the ship configuration 
     update_player(global.current_player.save_slot);
     save_player_ship(global.current_player.ship_save_file);
+    alarm[ROOM_TELEPORTER] = room_speed * 3;
 }
 
 // Reset the total price

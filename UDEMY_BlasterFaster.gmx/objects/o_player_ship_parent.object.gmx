@@ -570,7 +570,7 @@ else
           <argument>
             <kind>1</kind>
             <string>///DEV DEBUG TOOLS
-/*
+
 // return to the main menu
 if (keyboard_check_pressed(vk_backspace))
 {
@@ -618,7 +618,7 @@ if keyboard_check_pressed(vk_pageup)
 {
     global.current_player.experience += 10;
 }
-*/
+
 </string>
           </argument>
         </arguments>

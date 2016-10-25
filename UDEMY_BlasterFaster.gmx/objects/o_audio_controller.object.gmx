@@ -102,6 +102,19 @@ if global.Music == 'On'
             audio_sound_gain(a_mission_music_01, 0.3, 0);
         }
     }
+    else if this_room == "r_mission_02"
+    {
+        if audio_is_playing(a_menu_music_01)
+        {
+            audio_stop_sound(a_menu_music_01);
+        }
+        if !(audio_is_playing(a_mission_music_01))
+        {
+            audio_play_sound(a_mission_music_01, 10, true);
+            // set volume to 50%, this song is loud
+            audio_sound_gain(a_mission_music_01, 0.3, 0);
+        }
+    }
     else
     {
         if audio_is_playing(a_mission_music_01)

@@ -50,6 +50,12 @@ if r_name == "r_mission_01"
     cursor_sprite = s_cursor_space;
 }
 
+if r_name == "r_mission_02"
+{
+    //set default "cursor"
+    cursor_sprite = s_cursor_space;
+}
+
 if r_name == "r_mothership_hangar"
 {
     //set default "cursor"
