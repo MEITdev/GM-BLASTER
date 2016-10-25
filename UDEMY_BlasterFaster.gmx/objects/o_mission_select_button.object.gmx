@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// initialise the button
 event_inherited();
-text = "MISSION ALPHA";
+text = "START!";
 </string>
           </argument>
         </arguments>

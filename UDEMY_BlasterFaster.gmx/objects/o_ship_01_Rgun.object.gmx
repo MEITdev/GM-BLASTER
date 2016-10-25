@@ -41,7 +41,7 @@ energy_level = max_energy_level;
 //energy_level = max_energy_level;
 
 armor = 0;
-hull = 3;
+hull = 2;
 
 // create the hull status indicator
 hull_status = instance_create(0, 0, o_hull_gun_mirrored);

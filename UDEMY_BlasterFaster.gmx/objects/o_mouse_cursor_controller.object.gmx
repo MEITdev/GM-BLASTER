@@ -44,13 +44,29 @@ if r_name == "r_mission_select"
     cursor_sprite = s_cursor_space;
 }
 
+if r_name == "r_mission_01"
+{
+    //set default "cursor"
+    cursor_sprite = s_cursor_space;
+}
+
 if r_name == "r_mothership_hangar"
 {
     //set default "cursor"
     cursor_sprite = s_cursor_hangar;
 }
 
+if r_name == "r_you_died"
+{
+    //set default "cursor"
+    cursor_sprite = s_cursor_space;
+}
 
+if r_name == "r_mission_failed"
+{
+    //set default "cursor"
+    cursor_sprite = s_cursor_space;
+}
 </string>
           </argument>
         </arguments>

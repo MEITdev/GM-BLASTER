@@ -35,10 +35,10 @@ owner = noone;
 owner_slot = 0;
 
 // TESTING
-for (i=0; i&lt;global.ship.ship_slots; i+=1)
-{
-    global.purchase_update[i] = false;
-};
+//for (i=0; i&lt;global.ship.ship_slots; i+=1)
+//{
+//    global.purchase_update[i] = false;
+//};
 
 
 </string>

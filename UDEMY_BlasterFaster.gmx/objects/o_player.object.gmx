@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///Initialise the player
 // all of this needs to be loaded from a save file
+is_alive = true;
 name = "";
 experience = 0;
 required_experience = 0;
@@ -59,6 +60,30 @@ save_slot = 0;
 // array of purchased weapons
 purchased[0] = 0; // reset the array
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///ROOM teleporter
+room_goto(r_you_died);
 </string>
           </argument>
         </arguments>
@@ -125,6 +150,33 @@ if experience &gt;= required_experience
     experience = 0;
     // add one skill point to the player
     skill_points += 1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Alarm timers
+if is_alive == false
+{
+    is_alive = true;   
+    show_debug_message("PLAYER IS DEAD. START COUNTDOWN");
+    alarm[ROOM_TELEPORTER] = room_speed * 3;
 }
 </string>
           </argument>

@@ -56,10 +56,10 @@ alarm[LEVEL_CHOOSER] = room_speed / 4;
             <string>/// Set the timers according to the level
 if level == 1
 {
-    alarm[PLANET_TIMER] = room_speed * 30;
+    alarm[PLANET_TIMER] = room_speed * 60;
     alarm[SCALE_TIMER] = 1;
     planet_scale = .1;
-    alarm[NEBULAE_TIMER] = room_speed * 5;
+    alarm[NEBULAE_TIMER] = room_speed * 30;
 }
 
 </string>

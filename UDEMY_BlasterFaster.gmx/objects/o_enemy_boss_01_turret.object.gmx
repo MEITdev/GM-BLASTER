@@ -30,9 +30,9 @@
 can_fire = true;
 
 // initialise variables
-ammo = 1000;
+ammo = 9999;
 max_ammo = ammo;
-hull = 20;
+hull = 10;
 armor = 0;
 gun_slot_id = 0;
 
@@ -40,7 +40,7 @@ gun_slot_id = 0;
 alarm[LASER_ALARM] = 1;
 
 // speed of the projectiles (DEFAULT)
-projectile_speed = 10;
+projectile_speed = 9;
 
 // correction coordinates for spawning projectiles
 correction_x = 16;
@@ -94,7 +94,7 @@ else
 
 
 // reset the alarm
-alarm[LASER_ALARM] =  room_speed/4;
+alarm[LASER_ALARM] =  room_speed/3;
 </string>
           </argument>
         </arguments>

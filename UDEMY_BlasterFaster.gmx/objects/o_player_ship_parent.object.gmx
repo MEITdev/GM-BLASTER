@@ -96,6 +96,30 @@ for (i=0; i&lt;array_length_1d(global.current_player.skills_known); i+=1)
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///TELEPORT to rooms depending on the ROOM
+room_goto(r_you_died);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="5">
       <action>
         <libid>1</libid>
@@ -465,8 +489,19 @@ else
         {
             y += movement_speed;
         }
+        
+        
+        // ESCAPE to get back to the hangar
+        if (keyboard_check(vk_escape))
+        {
+            room_goto(r_mothership_hangar);
+        }
+
     }
+
     
+    
+        
     
     // Create the laser - default weapon
     //if (keyboard_check_pressed(vk_space))
@@ -600,12 +635,16 @@ if keyboard_check_pressed(vk_pageup)
             <string>///Die code
 if (hull &lt;= 0)
 {
+    // let the world know player is dead
+    global.current_player.is_alive = false;
 
+    show_debug_message("PLAYER IS DEAD. STATUS" + string(global.current_player.is_alive));
+    
     create_explosion(x, y);
     instance_destroy();
     
     // Create the menu button
-    instance_create(room_width/2, room_height/2, o_menu_button);
+    //instance_create(room_width/2, room_height/2, o_menu_button);
         
     // Save the payer score to the local highscore file
     highscore_add(global.current_player.name, score);
@@ -635,10 +674,9 @@ if (hull &lt;= 0)
     
         // delete the player save file
         file_delete(delete_player_file_name);
-        
-        // restart the room
-        room_goto(r_choose_save_slot);
     }
+    
+
 }
 </string>
           </argument>

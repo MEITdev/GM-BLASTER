@@ -77,17 +77,9 @@ if r_name == "r_mission_select"
     //dialog.ttl = 60;
 }
 
-if room_get_name(room) == "r_mission_failed"
-{
-    dialog_box(room_width/2 - 125, room_height - 32, 75, 250, "Mission Failed", "Too slow, the mission is a failure. Return to your mothership to repari, refuel and rearm if you wish", 10);
-    global.avatar = instance_create(global.dialog.x - 96, global.dialog.y, o_robot_avatar);
-    global.dialog.avatar = global.avatar.object_index;
-    //dialog.ttl = 120;    
-}
-
 if r_name == "r_mission_01"
 {
-    dialog_box(104, 346, 58, 550, "Mission 01: Ball(s) of Gas", "This should be easy. Simply get to the planetary defense battle cruiser - the Ice Breaker and destroy it. Try not to die. Watch out for asteroids and collisions, your shields only deflect projectile damage, not kinetic one!!!", 15);
+    dialog_box(104, 346, 72, 550, "Mission 01: Ball(s) of Gas", "This should be easy. Simply get to the planetary defense battle cruiser - the Ice Breaker and destroy it. Try not to die. Watch out for asteroids and collisions, your shields only deflect projectile damage, not kinetic one!!!#Also, to _CANCEL_ this mission press _ESCAPE_.", 20);
     global.avatar = instance_create(584, 296, o_pirate_avatar);
     global.avatar.image_xscale = 0.5;
     global.avatar.image_yscale = 0.5;
@@ -102,7 +94,15 @@ if r_name == "r_mission_failed"
     global.avatar.image_xscale = 0.5;
     global.avatar.image_yscale = 0.5;
     global.dialog.avatar = global.avatar;
+}
 
+if r_name == "r_you_died"
+{
+    dialog_box(104, 346, 58, 550, "YOU DIED", "You have failed me for the last time... You are dead, like dead dead... Really dead.. Not joking, I deleted your save file. Perma Death my friend. Better luck next time", 60);
+    global.avatar = instance_create(584, 296, o_pirate_avatar);
+    global.avatar.image_xscale = 0.5;
+    global.avatar.image_yscale = 0.5;
+    global.dialog.avatar = global.avatar;
 }
 </string>
           </argument>

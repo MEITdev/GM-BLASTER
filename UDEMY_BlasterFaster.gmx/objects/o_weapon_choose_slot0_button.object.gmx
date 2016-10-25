@@ -116,12 +116,79 @@ old_mount_y = o_ship_new.slot[0].mount_y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Instantiate the purchase button
-purchase_button = instance_create(0, 0, o_purchase_slot_button);
-purchase_button.owner = id;
-purchase_button.x = x + sprite_width/2;
-purchase_button.y = y - purchase_button.sprite_height/2 - 2;
-purchase_button.owner_slot = 0;
+            <string>/// Check if the gun is owned
+is_owned = false;
+for (i=0; i&lt;array_length_1d(global.current_player.purchased); i+=1)
+{
+    // for each weapon in the purchased list, set the price to 0
+    if object_get_name(global.ship.slot[0].object_index) == global.current_player.purchased[i]
+    {
+        is_owned = true;
+        show_debug_message("Gun OWNED");
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Initialise the purchase button variable
+purchase_button = noone;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Instantiate the PURCHASE button
+global.purchase_update[0] = false;
+if is_owned == false &amp;&amp; (object_get_parent(global.ship.slot[0].object_index) != o_empty_slot)
+{  
+    purchase_button = instance_create(0, 0, o_purchase_slot_button);
+    purchase_button.owner = id;
+    purchase_button.x = x + sprite_width/2;
+    purchase_button.y = y - purchase_button.sprite_height/2 - 2;
+    purchase_button.owner_slot = 0;
+}
+else
+{
+    if instance_exists(purchase_button)
+    {
+        with(purchase_button)
+        {
+            instance_destroy();
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -166,37 +233,6 @@ purchased_label = noone;
             <kind>1</kind>
             <string>///Initialise the ammo buy button variable
 ammo_buy = noone;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Check if the gun is owned
-is_owned = false;
-for (i=0; i&lt;array_length_1d(global.current_player.purchased); i+=1)
-{
-    // for each weapon in the purchased list, set the price to 0
-    if object_get_name(global.ship.slot[0].object_index) == global.current_player.purchased[i]
-    {
-        is_owned = true;
-        show_debug_message("Gun OWNED");
-    }
-}
 </string>
           </argument>
         </arguments>
@@ -279,7 +315,7 @@ if is_owned == true &amp;&amp;
     ammo_buy = instance_create(0, 0, o_purchase_slot_ammo_button);
     ammo_buy.owner = id;
     ammo_buy.x = x + sprite_width/2;
-    ammo_buy.y = y - purchase_button.sprite_height/2 - 32;
+    ammo_buy.y = y - ammo_buy.sprite_height/2 - 2;
     ammo_buy.owner_slot = 0;
 }
 else
@@ -362,7 +398,7 @@ if global.purchase_update[0] == true
         ammo_buy = instance_create(0, 0, o_purchase_slot_ammo_button);
         ammo_buy.owner = id;
         ammo_buy.x = x + sprite_width/2;
-        ammo_buy.y = y - purchase_button.sprite_height/2 - 32;
+        ammo_buy.y = y - ammo_buy.sprite_height/2 - 2;
         ammo_buy.owner_slot = 0;
     }
     else
@@ -376,7 +412,14 @@ if global.purchase_update[0] == true
         }
     }
     
-    
+    ///Instantiate the PURCHASE button
+    if instance_exists(purchase_button)
+    {
+        with(purchase_button)
+        {
+            instance_destroy();
+        }
+    }
 }
 </string>
           </argument>
@@ -593,7 +636,7 @@ if is_owned == true &amp;&amp;
     ammo_buy = instance_create(0, 0, o_purchase_slot_ammo_button);
     ammo_buy.owner = id;
     ammo_buy.x = x + sprite_width/2;
-    ammo_buy.y = y - purchase_button.sprite_height/2 - 32;
+    ammo_buy.y = y - ammo_buy.sprite_height/2 - 2;
     ammo_buy.owner_slot = 0;
 }
 else
@@ -601,6 +644,52 @@ else
     if instance_exists(ammo_buy)
     {
         with(ammo_buy)
+        {
+            instance_destroy();
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Instantiate the PURCHASE button
+if is_owned == false &amp;&amp; (object_get_parent(global.ship.slot[0].object_index) != o_empty_slot)
+{
+    if instance_exists(purchase_button)
+    {
+        with (purchase_button)
+        {
+            instance_destroy();
+        }
+    }
+    purchase_button = instance_create(0, 0, o_purchase_slot_button);
+    purchase_button.owner = id;
+    purchase_button.x = x + sprite_width/2;
+    purchase_button.y = y - purchase_button.sprite_height/2 - 2;
+    purchase_button.owner_slot = 0;
+}
+else
+{
+    if instance_exists(purchase_button)
+    {
+        with(purchase_button)
         {
             instance_destroy();
         }

@@ -36,7 +36,7 @@ action_mouse_button = global.ACTION_01;
 max_energy_level = 100;
 energy_level = max_energy_level;
 armor = 0;
-hull = 3;
+hull = 2;
 
 // correction for the lasers spawn X and Y coordinate
 correction_x = -5;
@@ -154,13 +154,8 @@ alarm[LASER_LGUN] = room_speed/4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Die code
-if hull == 0
-{
-    // remove self from the list of purchased items
-    remove_from_purchased(object_index);
-    instance_destroy();
-}
+            <string>///Inherit
+event_inherited();
 </string>
           </argument>
         </arguments>
@@ -181,8 +176,13 @@ if hull == 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Inherit
-event_inherited();
+            <string>/// Die code
+if hull == 0
+{
+    // remove self from the list of purchased items
+    remove_from_purchased(object_index);
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

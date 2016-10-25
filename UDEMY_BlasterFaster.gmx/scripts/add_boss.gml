@@ -8,9 +8,9 @@ if level == 1
     
     // Set the ship slots, this depends on the type of the ship
     global.boss.ship_slots = 3;
-    global.boss.shield = 25;
-    global.boss.armor = 50;
-    global.boss.hull = 100;
+    global.boss.shield = 15;
+    global.boss.armor = 25;
+    global.boss.hull = 30;
     
     // instantiate the slots upon creation
     for (i = 0; i <= global.boss.ship_slots - 1; i++)

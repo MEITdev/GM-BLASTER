@@ -235,6 +235,7 @@
       <background>background\b_space_far</background>
       <background>background\b_space_themed</background>
       <background>background\b_space_themed_2</background>
+      <background>background\b_cyber_reaper_you_died</background>
     </backgrounds>
     <backgrounds name="PlatformerMissions">
       <background>background\b_station_tileset</background>
@@ -257,8 +258,8 @@
       <script>scripts\load_player_data.gml</script>
       <script>scripts\draw_string.gml</script>
       <script>scripts\save_player.gml</script>
-      <script>scripts\update_player.gml</script>
       <script>scripts\create_default_ship.gml</script>
+      <script>scripts\update_player.gml</script>
     </scripts>
     <scripts name="Effects">
       <script>scripts\add_screenshake.gml</script>
@@ -386,6 +387,7 @@
       </objects>
       <objects name="Projectiles">
         <object>objects\o_projectile</object>
+        <object>objects\o_plasma_projectile</object>
         <object>objects\o_enemy_projectile</object>
       </objects>
       <objects name="Guns">
@@ -395,12 +397,15 @@
           <object>objects\o_ship_01_Lgun</object>
           <object>objects\o_ship_01_Rgun</object>
         </objects>
+        <objects name="Plasma">
+          <object>objects\o_parent_plasma_gun</object>
+          <object>objects\o_ship_03_Lgun</object>
+          <object>objects\o_ship_03_Rgun</object>
+        </objects>
         <objects name="Projectiles">
           <object>objects\o_parent_projectile_gun</object>
           <object>objects\o_ship_02_Lgun</object>
-          <object>objects\o_ship_03_Lgun</object>
           <object>objects\o_ship_02_Rgun</object>
-          <object>objects\o_ship_03_Rgun</object>
         </objects>
         <objects name="Turrets">
           <object>objects\o_parent_turrent_gun</object>
@@ -563,6 +568,7 @@
       <room>rooms\r_mission_02</room>
       <room>rooms\r_mission_select</room>
       <room>rooms\r_mission_failed</room>
+      <room>rooms\r_you_died</room>
     </rooms>
     <rooms name="SpaceStations">
       <room>rooms\r_space_station_alpha</room>

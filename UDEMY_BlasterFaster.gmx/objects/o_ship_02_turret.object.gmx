@@ -31,7 +31,7 @@ event_inherited();
 // Override the values
 ammo = 500;
 max_ammo = ammo;
-hull = 7;
+hull = 2;
 armor = 0;
 action_button = " ";
 action_mouse_button = global.ACTION_03;
