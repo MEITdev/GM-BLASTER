@@ -54,8 +54,8 @@ speed = 0;
           <argument>
             <kind>1</kind>
             <string>///Maintain the distance from the player ship on the ellipse
-x = global.ship.slot[2].x + lengthdir_x(150, image_angle)
-y = global.ship.slot[2].y + lengthdir_y(150, image_angle);
+x = global.ship.slot[2].x + lengthdir_x(100, image_angle)
+y = global.ship.slot[2].y + lengthdir_y(100, image_angle);
 //direction = image_angle;
 image_angle += 1;
 //speed = 5;

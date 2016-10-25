@@ -217,7 +217,10 @@ if instance_exists(global.ship)
                     {
                         // create the projectile instance
                         //projectile[0] = 
-                        instance_create(x + lengthdir_x(150, image_angle), y + lengthdir_y(150, image_angle), o_projectile_autodefense_turret);
+                        if !(instance_exists(projectile[0].object_index))
+                        {
+                            projectile[0] = instance_create(x + lengthdir_x(100, image_angle), y + lengthdir_y(100, image_angle), o_projectile_autodefense_turret);
+                        }
                         //projectile[1] = instance_create(x + lengthdir_x(correction_x, image_angle + correction_x), y + lengthdir_y(correction_y, image_angle + correction_y), o_projectile);
             
                         // create the muzzle flash
