@@ -50,6 +50,7 @@
         <sprite>sprites\s_ship_03_Lgun</sprite>
         <sprite>sprites\s_ship_03_Rgun</sprite>
         <sprite>sprites\s_ship_02_turret</sprite>
+        <sprite>sprites\s_ship_03_turret</sprite>
       </sprites>
     </sprites>
     <sprites name="Enemy Ships">
