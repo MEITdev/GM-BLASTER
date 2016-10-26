@@ -81,6 +81,7 @@
       <sprite>sprites\s_left_control</sprite>
       <sprite>sprites\s_right_control</sprite>
       <sprite>sprites\s_sound_button</sprite>
+      <sprite>sprites\s_smoothing_button</sprite>
       <sprite>sprites\s_music_button</sprite>
       <sprite>sprites\s_input_box</sprite>
       <sprite>sprites\s_delete_save</sprite>
@@ -356,6 +357,7 @@
         <object>objects\o_settings_mouse_button</object>
         <object>objects\o_settings_fullscreen_toggle</object>
         <object>objects\o_settings_music</object>
+        <object>objects\o_settings_smoothing_button</object>
         <object>objects\o_settings_keyboard_button</object>
         <object>objects\o_settings_music_icon</object>
         <object>objects\o_settings_sound_icon</object>
