@@ -28,6 +28,7 @@
             <string>/// initialise the button
 event_inherited();
 text = "Settings";
+hover_text = "Change Controlls, Graphics and Sound/Music";
 </string>
           </argument>
         </arguments>

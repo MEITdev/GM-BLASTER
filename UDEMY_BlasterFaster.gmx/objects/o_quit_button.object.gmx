@@ -28,6 +28,7 @@
             <string>/// initialise the button
 event_inherited();
 text = "Quit";
+hover_text = "This button does nothing, really, do not try to use it...";
 </string>
           </argument>
         </arguments>

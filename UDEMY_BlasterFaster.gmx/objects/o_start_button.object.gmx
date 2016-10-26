@@ -28,6 +28,7 @@
             <string>/// initialise the button
 event_inherited();
 text = "Start";
+hover_text = "Continue existing, or start a new game";
 </string>
           </argument>
         </arguments>

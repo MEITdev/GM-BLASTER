@@ -28,6 +28,7 @@
             <string>/// initialise the button
 event_inherited();
 text = global.Sound;
+hover_text = "Toggle Sound effects ON/OFF";
 </string>
           </argument>
         </arguments>

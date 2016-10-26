@@ -117,6 +117,7 @@ global.audio_controller = instance_create(0,0, o_audio_controller);
             <string>///Initialise Dialog global variables
 global.dialog = noone;
 global.avatar = noone;
+global.hover_message = noone;
 </string>
           </argument>
         </arguments>

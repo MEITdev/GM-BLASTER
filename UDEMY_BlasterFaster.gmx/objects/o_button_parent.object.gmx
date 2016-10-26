@@ -28,6 +28,7 @@
             <string>/// Initialize the button
 text = "";
 image_speed = 0;
+hover_text = "";
 </string>
           </argument>
         </arguments>
@@ -57,6 +58,34 @@ image_index = 0;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Destroy hover text box
+if instance_exists(global.hover_message)
+{
+    with(global.hover_message)
+    {
+        instance_destroy();
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="6" enumb="10">
       <action>
@@ -77,6 +106,28 @@ image_index = 0;
             <kind>1</kind>
             <string>/// Lighten the button
 image_index = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set the hover box
+dialog_box_new(hover_text, 1, x, y);
 </string>
           </argument>
         </arguments>
