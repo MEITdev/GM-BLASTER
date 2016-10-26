@@ -118,7 +118,7 @@ if global.current_player.name != ""
     // This happens only when the character is created
     // decrease the number of skill points
     global.current_player.skill_id = global.current_player.skill_selected;
-    global.current_player.skill_points = 0;
+    global.current_player.skill_points = 99; // ALPHA TESTING - change to 0 in production
     // add the skill to the list of known skills
     global.current_player.skills_known[0] = global.current_player.skill_id;
     

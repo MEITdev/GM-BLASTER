@@ -55,7 +55,6 @@ counter = 0;
             <kind>1</kind>
             <string>event_inherited();
 draw_self();
-
 draw_set_halign(fa_right);
 draw_set_valign(fa_center);
 draw_text(x - 4, y, counter);
