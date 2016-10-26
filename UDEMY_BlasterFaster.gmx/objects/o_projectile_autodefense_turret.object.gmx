@@ -54,61 +54,48 @@ owner_id = noone;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Maintain the distance from the player ship on the ellipse
-x = global.ship.slot[2].x + lengthdir_x(100, image_angle)
-y = global.ship.slot[2].y + lengthdir_y(100, image_angle);
-direction = image_angle;
-image_angle += 5;
-//speed = 10;
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Motion of the projectile controlled here
-//motion_set(direction, speed);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Die code
 if !(instance_exists(owner_id))
 {
+    if instance_exists(o_ship_03_turret)
+    {
+        // inform the turret about the angle before destroyed
+        o_ship_03_turret.projectile_last_angle = image_angle;
+        instance_destroy();
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Maintain the distance from the player ship on the ellipse
+if instance_exists(global.ship.slot[2])
+{
 
-    // inform the turret about the angle before destroyed
-    o_ship_03_turret.projectile_last_angle = image_angle;
+    x = global.ship.slot[2].x + lengthdir_x(100, image_angle)
+    y = global.ship.slot[2].y + lengthdir_y(100, image_angle);
+    direction = image_angle;
+    image_angle += 5;
+    //speed = 10;
+}
+else
+{
     instance_destroy();
 }
 </string>

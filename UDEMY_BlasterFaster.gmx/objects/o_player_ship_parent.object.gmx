@@ -83,10 +83,10 @@ alarm[REPAIR_TIMER] = room_speed;
 player_knows_repair = false;
 for (i=0; i&lt;array_length_1d(global.current_player.skills_known); i+=1)
 {
-    show_debug_message("Testing repair skill in ALARM ");
+    //show_debug_message("Testing repair skill in ALARM ");
     if global.current_player.skills_known[i] == 1
     {
-        show_debug_message("Player KNOWS repair");
+        //show_debug_message("Player KNOWS repair");
 
         player_knows_repair = true;
     }
@@ -144,11 +144,11 @@ room_goto(r_you_died);
 
 if player_knows_repair == true
 {
-    show_debug_message("Entering REPAIR FUNCTION");
-    show_debug_message("Hull: " + string(global.ship.hull));
+    //show_debug_message("Entering REPAIR FUNCTION");
+    //show_debug_message("Hull: " + string(global.ship.hull));
     if global.ship.hull &lt; global.ship.max_hull
     {
-        show_debug_message("HULL NEEDS REPAIRING");
+        //show_debug_message("HULL NEEDS REPAIRING");
         // start with 5% repair each second
         repair_amount = global.ship.max_hull / 20;
         global.ship.hull += repair_amount;

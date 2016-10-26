@@ -232,6 +232,7 @@
       <sprite>sprites\s_bottom_up_fade</sprite>
       <sprite>sprites\s_fade_out</sprite>
     </sprites>
+    <sprite>sprites\sprite154</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="space_new">

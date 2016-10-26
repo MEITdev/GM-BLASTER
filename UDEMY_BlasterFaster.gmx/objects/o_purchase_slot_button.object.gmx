@@ -88,6 +88,8 @@ event_inherited();
             <string>///Add the selected weapons to the list of unlocked weapons
 //for (i = 0; i &lt; global.ship.ship_slots; i++)
 //{
+
+
     gun = object_get_name(global.ship.slot[owner_slot].object_index);
     is_in_the_list = false; // assume not in the list
     for (j = 0; j &lt; array_length_1d(global.current_player.purchased); j++)
@@ -95,9 +97,7 @@ event_inherited();
         loaded_weapon = global.current_player.purchased[j];
         if gun == loaded_weapon // check for duplicates, replace them 
         {
-            show_debug_message("already in the list = " + string(loaded_weapon));
             is_in_the_list = true;
-            show_debug_message("BUY BUTTON: Gun already purchased, price set to 0");
         }
     }
     // HERE save the weapon, after the first loop
@@ -105,14 +105,9 @@ event_inherited();
     {
         global.current_player.purchased[array_length_1d(global.current_player.purchased)] = gun;
     }
+    
+    
 //}
-
-// DEBUG ONLY
-for (g = 0; g &lt; array_length_1d(global.current_player.purchased); g++)
-{
-    loaded_weapon = global.current_player.purchased[g];
-    show_debug_message("unlocked slot[" + string(g) + "] = " + string(loaded_weapon));  
-}
 
 
 
