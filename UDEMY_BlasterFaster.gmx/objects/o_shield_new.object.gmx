@@ -63,6 +63,11 @@ if (instance_exists(global.ship))
 {
     // calculate the remaining shield
     remaining_shield = (global.ship.shield / global.ship.max_shield) * 100;
+    // make sure shield never goes below 0%
+    if remaining_shield &lt; 0
+    {
+        remaining_shield = 0;
+    }
     // image_index = global.ship.shield;
     image_index = round(remaining_shield / 10);;
 }

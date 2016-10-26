@@ -76,10 +76,12 @@ event_inherited();
             <string>/// Trigger sound on/off
 if global.Sound == 'On'
 {
+    audio_stop_all();
     global.Sound = 'Off';
 }
 else
 {
+    audio_play_sound(a_button_click, 3, false);
     global.Sound = 'On';
 }
 </string>
