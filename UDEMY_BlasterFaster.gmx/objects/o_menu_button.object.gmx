@@ -88,7 +88,10 @@ if room_get_name(room) == 'r_mothership_hangar'
 }
 
 // Go to the Main Menu room
-room_goto(r_menu);
+fader = instance_create(0,0, o_fade_out);
+fader.to_what_room = r_menu;
+fader.at_what_speed = 0.05;
+//room_goto(r_menu);
 
 
 </string>

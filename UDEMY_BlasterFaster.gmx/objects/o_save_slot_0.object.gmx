@@ -109,7 +109,11 @@ if !(file_exists("slot_0.ini"))
     // ALPHA TESTING - change - 1 in release version
     global.current_player.skill_points = 99;
 
-    room_goto(r_create_player);
+    fader = instance_create(0,0, o_fade_out);
+    fader.to_what_room = r_create_player;
+    fader.at_what_speed = 0.05;      
+    
+    //room_goto(r_create_player);
 }
 else // take the player to the "hangar" of the mothership
 {
@@ -119,7 +123,12 @@ else // take the player to the "hangar" of the mothership
 
     // load the global data again to memory
     load_player_data(0);
-    room_goto(r_mothership_hangar);
+    
+    fader = instance_create(0,0, o_fade_out);
+    fader.to_what_room = r_mothership_hangar;
+    fader.at_what_speed = 0.05;    
+    
+    //room_goto(r_mothership_hangar);
 }
 
 </string>

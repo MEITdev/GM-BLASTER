@@ -126,7 +126,13 @@ if global.current_player.name != ""
     save_player(global.current_player.save_slot);
     
     // And now go to the ship configuration room
-    room_goto(r_mothership_hangar);
+    
+    fader = instance_create(0,0, o_fade_out);
+    fader.to_what_room = r_mothership_hangar;
+    fader.at_what_speed = 0.05;    
+    
+    
+    //room_goto(r_mothership_hangar);
 }
 else
 {
