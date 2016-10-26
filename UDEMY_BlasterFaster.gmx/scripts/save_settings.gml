@@ -7,6 +7,9 @@ ini_write_string("general", "Sound", global.Sound);
 ini_write_string("general", "Controller", global.Controller);
 ini_write_real("general", "Fullscreen", global.Fullscreen);
 ini_write_real("general", "Smoothing", global.Smoothing);
+ini_write_real("general", "Vsync", global.Vsync);
+ini_write_real("general", "AAlevel", global.AAlevel);
+
 
 // user controls
 ini_write_real("controls", "UP", global.UP);

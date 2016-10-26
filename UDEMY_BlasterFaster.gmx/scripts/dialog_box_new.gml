@@ -9,7 +9,7 @@ else if !(instance_exists(global.hover_message))
     with (global.hover_message)
     {
         padding = 8;
-        maxlength = 250;
+        maxlength = 350;
         message_text = argument0;
         display_speed = argument1;
         font = f_dialog_box;

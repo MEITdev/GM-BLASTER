@@ -159,6 +159,8 @@ else
     
     global.Fullscreen = 1;
     global.Smoothing = 1;
+    global.Vsync = 1;
+    global.AAlevel = 2;
     
     save_settings();
     load_settings();
@@ -212,6 +214,34 @@ global.video_controller = instance_create(0,0, o_video_setup);
 part_system_destroy(system);
 part_type_destroy(pt_smoke);
 part_type_destroy(pt_flare);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///DEBUG ONLY FPS counter
+draw_set_font(f_damage_display);
+draw_set_halign(fa_left);
+draw_set_valign(fa_bottom);
+depth = -10000;
+draw_text(0,room_height, "FPS: " + string(fps_real));
 </string>
           </argument>
         </arguments>

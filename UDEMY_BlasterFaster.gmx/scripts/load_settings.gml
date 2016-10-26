@@ -5,6 +5,9 @@ global.Sound = ini_read_string("general", "Sound", "On");
 global.Controller = ini_read_string("general", "Controller", "Keyboard");
 global.Fullscreen = ini_read_real("general", "Fullscreen", 0);
 global.Smoothing = ini_read_real("general", "Smoothing", 0);
+global.Vsync = ini_read_real("general", "Vsync", 0);
+global.AAlevel = ini_read_real("general", "AAlevel", 0);
+
 
 // Controls
 global.UP = ini_read_real("controls", "UP", ord("W"));

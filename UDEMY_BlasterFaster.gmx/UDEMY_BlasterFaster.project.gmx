@@ -82,6 +82,8 @@
       <sprite>sprites\s_right_control</sprite>
       <sprite>sprites\s_sound_button</sprite>
       <sprite>sprites\s_smoothing_button</sprite>
+      <sprite>sprites\s_vsync_button</sprite>
+      <sprite>sprites\s_AA_button</sprite>
       <sprite>sprites\s_music_button</sprite>
       <sprite>sprites\s_input_box</sprite>
       <sprite>sprites\s_delete_save</sprite>
@@ -232,7 +234,6 @@
       <sprite>sprites\s_bottom_up_fade</sprite>
       <sprite>sprites\s_fade_out</sprite>
     </sprites>
-    <sprite>sprites\sprite154</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="space_new">
@@ -358,9 +359,12 @@
         <object>objects\o_settings_action_03_control</object>
         <object>objects\o_settings_mouse_button</object>
         <object>objects\o_settings_fullscreen_toggle</object>
+        <object>objects\o_settings_reset_controls</object>
         <object>objects\o_settings_music</object>
         <object>objects\o_settings_sound</object>
         <object>objects\o_settings_smoothing_button</object>
+        <object>objects\o_settings_vsync_button</object>
+        <object>objects\o_settings_aa_button</object>
         <object>objects\o_settings_keyboard_button</object>
         <object>objects\o_settings_music_icon</object>
         <object>objects\o_settings_sound_icon</object>

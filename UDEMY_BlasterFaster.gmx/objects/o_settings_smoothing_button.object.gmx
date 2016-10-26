@@ -77,12 +77,10 @@ event_inherited();
 if global.Smoothing == 0
 {
     global.Smoothing = 1;
-    texture_set_interpolation(true);
 }
 else
 {
     global.Smoothing = 0;
-    texture_set_interpolation(false);
 }
 </string>
           </argument>
@@ -106,9 +104,55 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Set interpolation
+///Change the smoothing
+if global.Smoothing == 1
+{
+    texture_set_interpolation(true);
+}
+else
+{
+    texture_set_interpolation(false);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Draw the settings
 event_inherited();
 
+
+draw_set_font(f_menu_buttons);
+draw_set_halign(fa_left);
+draw_set_valign(fa_center);
+draw_set_colour(c_white);
+
+if global.Smoothing == 0
+{
+    status = "OFF";
+}
+else
+{
+    status = "ON";
+}
+
+draw_text(x + sprite_width, y, "INTERPOLATION: [ " + string(status) + " ]");
 </string>
           </argument>
         </arguments>

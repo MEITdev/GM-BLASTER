@@ -65,7 +65,14 @@ else
           <argument>
             <kind>1</kind>
             <string>///Set vSync and AA
-display_reset(2, true);
+if global.Vsync == 1
+{
+    display_reset(global.AAlevel, true);
+}
+else
+{
+    display_reset(global.AAlevel, false);
+}
 </string>
           </argument>
         </arguments>

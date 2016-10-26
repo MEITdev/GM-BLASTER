@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1000</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>o_button_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,60 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialise the up control button
-// no animation
-image_speed = 0;
+event_inherited();
 
-// show the first image
-image_index = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="11">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Change image index back
-image_index = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Change the image frame
-image_index = 1;
-
+text = "";
+hover_text = "Change the shoot button for backward movement";
 </string>
           </argument>
         </arguments>
@@ -126,6 +76,55 @@ event_inherited();
             <kind>1</kind>
             <string>///Go to the specific room
 room_goto(r_set_down_key);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Text next to the button
+draw_self();
+
+draw_set_font(f_menu_buttons);
+draw_set_halign(fa_left);
+draw_set_valign(fa_center);
+draw_set_colour(c_white);
+
+// check if the controls are the MOUSE buttons
+if global.DOWN == 1
+{
+    mapped = "LMB";
+}
+else if global.DOWN == 2
+{
+    mapped = "RMB";
+}
+else if global.DOWN == 3
+{
+    mapped = "MMB";
+}
+else
+{
+    mapped = chr(global.DOWN);
+}
+
+draw_text(x + sprite_width, y, "MOVE: MOVE BACKWARD(DOWN)  [ " + string(mapped) + " ]");
 </string>
           </argument>
         </arguments>
