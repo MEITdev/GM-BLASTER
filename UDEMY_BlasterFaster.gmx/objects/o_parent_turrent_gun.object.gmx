@@ -45,6 +45,8 @@ action_mouse_button = "";
 // speed of the projectiles (DEFAULT)
 projectile_speed = 10;
 projectile = noone;
+projectile[0] = noone;
+projectile[1] = noone;
 
 // correction coordinates for spawning projectiles
 correction_x = 0;
@@ -225,33 +227,19 @@ if instance_exists(global.ship)
                             ammo -= 1;
                         } 
                     }
-                    else if object_get_name(global.ship.slot[2].object_index) == "o_ship_03_turret"
+                    
+                    
+                    /*else if object_get_name(global.ship.slot[2].object_index) == "o_ship_03_turret"
                     {
+                        /*
                         // create the projectile instance
                         //projectile[0] = 
-                        if !(instance_exists(projectile))
+                        if !(instance_exists(projectile[0]))
                         {
-                            projectile = instance_create(x + lengthdir_x(100, image_angle), y + lengthdir_y(100, image_angle), o_projectile_autodefense_turret);
-                            // eh????? 
-                            projectile.owner_id = o_ship_03_turret;
+                            projectile[0] = instance_create(x + lengthdir_x(100, image_angle), y + lengthdir_y(100, image_angle), o_projectile_autodefense_turret);
+                            projectile[0].owner_id = o_ship_03_turret;
+                            
                         }
-                        //projectile[1] = instance_create(x + lengthdir_x(correction_x, image_angle + correction_x), y + lengthdir_y(correction_y, image_angle + correction_y), o_projectile);
-            
-                        // create the muzzle flash
-                        //muzzle_flash[0] = instance_create(x + lengthdir_x(correction_x, image_angle - correction_x), y + lengthdir_y(correction_y, image_angle - correction_y), o_projectile_gun_flare);
-                        //muzzle_flash[1] = instance_create(x + lengthdir_x(correction_x, image_angle + correction_x), y + lengthdir_y(correction_y, image_angle + correction_y), o_projectile_gun_flare);
-            
-                        /*           
-                        for (i = 0; i &lt;= array_length_1d(projectile) - 1; i++)
-                        {
-                            projectile[i].direction = image_angle;
-                            projectile[i].speed = projectile_speed;
-                            // adjust the image angle
-                            projectile[i].image_angle = image_angle - 90;
-            
-                            muzzle_flash[i].image_angle = image_angle - 90;
-                        }
-                        */
                         
                         // reset the fire timer
                         alarm[LASER_LGUN] = room_speed/8;
@@ -264,7 +252,7 @@ if instance_exists(global.ship)
                         {
                             ammo -= 1;
                         } 
-                    }
+                    }*/
                 }
                 else
                 {

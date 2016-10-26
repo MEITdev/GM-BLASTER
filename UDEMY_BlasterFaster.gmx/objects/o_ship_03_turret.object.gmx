@@ -61,6 +61,32 @@ energy_consumption = 0;
 // create the hull status indicator
 hull_status = instance_create(0, 0, o_hull_turret);
 hull_status.parent_gun = object_index;
+
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Spawned projectile variables
+projectile_last_angle = 0;
 </string>
           </argument>
         </arguments>
@@ -135,7 +161,7 @@ event_inherited();
             <string>///Update rotation
 
 // always point towards the mouse
-image_angle = (point_direction(x, y, mouse_x, mouse_y));
+//image_angle = (point_direction(x, y, mouse_x, mouse_y));
 </string>
           </argument>
         </arguments>
@@ -200,6 +226,37 @@ if instance_exists(global.ship)
 else
 {
     instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Maintain one DEFENSIVE projectile at a time
+
+// should include some animation and timing I guess...
+
+// create the projectile instance
+//projectile[0] = 
+if !(instance_exists(projectile[0]))
+{
+    projectile[0] = instance_create(x + lengthdir_x(100, projectile_last_angle + 180), y + lengthdir_y(100, projectile_last_angle + 180), o_projectile_autodefense_turret);
+    projectile[0].owner_id = o_ship_03_turret;
 }
 </string>
           </argument>

@@ -159,13 +159,13 @@
         <sprite>sprites\s_projectile_gun_bullet</sprite>
         <sprite>sprites\s_projectile_gun_flare</sprite>
         <sprite>sprites\s_projectile</sprite>
-        <sprite>sprites\s_projectile_autodefense_turret</sprite>
       </sprites>
       <sprites name="Plasma">
         <sprite>sprites\s_plasma_turret_01_green_gun_flare</sprite>
         <sprite>sprites\s_plasma_turret_01_laser</sprite>
         <sprite>sprites\s_ship_03_projectile</sprite>
         <sprite>sprites\s_ship_03_gun_flare</sprite>
+        <sprite>sprites\s_projectile_autodefense_turret</sprite>
       </sprites>
       <sprites name="Laser">
         <sprite>sprites\s_laser_directional</sprite>
@@ -226,6 +226,10 @@
       <sprite>sprites\s_player_skill_dash</sprite>
       <sprite>sprites\s_player_skill_repair</sprite>
       <sprite>sprites\s_player_skill_sensor</sprite>
+    </sprites>
+    <sprites name="Screen Fading">
+      <sprite>sprites\s_bottom_up_fade</sprite>
+      <sprite>sprites\s_fade_out</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -554,6 +558,12 @@
     </objects>
     <objects name="NPC Ships">
       <object>objects\o_carrier_NPC</object>
+    </objects>
+    <objects name="Screen Fade">
+      <object>objects\o_bottom_up_fade</object>
+      <object>objects\o_top_down_fade</object>
+      <object>objects\o_fade_out</object>
+      <object>objects\o_fade_in</object>
     </objects>
   </objects>
   <rooms name="rooms">

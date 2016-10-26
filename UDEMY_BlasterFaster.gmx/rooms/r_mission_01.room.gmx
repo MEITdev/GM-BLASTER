@@ -10,7 +10,13 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>//Fade in to the mission
+
+// create the fader instance
+fader = instance_create(0,(sprite_height * -1) * 2, o_top_down_fade);
+fader.when_to_die = room_height * 2;
+fader.at_what_speed = 12;
+fader.to_what_room = "this";</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

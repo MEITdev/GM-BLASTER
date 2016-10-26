@@ -31,6 +31,7 @@
 damage = 1;
 speed = 0;
 owner_id = noone;
+
 </string>
           </argument>
         </arguments>
@@ -56,9 +57,9 @@ owner_id = noone;
             <string>///Maintain the distance from the player ship on the ellipse
 x = global.ship.slot[2].x + lengthdir_x(100, image_angle)
 y = global.ship.slot[2].y + lengthdir_y(100, image_angle);
-//direction = image_angle;
-image_angle += 1;
-//speed = 5;
+direction = image_angle;
+image_angle += 5;
+//speed = 10;
 
 </string>
           </argument>
@@ -105,6 +106,9 @@ image_angle += 1;
             <string>///Die code
 if !(instance_exists(owner_id))
 {
+
+    // inform the turret about the angle before destroyed
+    o_ship_03_turret.projectile_last_angle = image_angle;
     instance_destroy();
 }
 </string>

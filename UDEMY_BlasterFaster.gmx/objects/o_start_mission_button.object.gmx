@@ -74,7 +74,7 @@ fly_off = false;
           <argument>
             <kind>1</kind>
             <string>///Teleport player to Mission room
-room_goto(r_mission_01);
+//room_goto(r_mission_01);
 </string>
           </argument>
         </arguments>
@@ -187,6 +187,11 @@ else
     save_player_ship(global.current_player.ship_save_file);
     alarm[ROOM_TELEPORTER] = room_speed * 3;
     
+    // create the fader instance
+    fader = instance_create(0,room_height, o_bottom_up_fade);
+    fader.when_to_die = (room_height * -2);
+    fader.at_what_speed = -8;
+    fader.to_what_room = r_mission_01;
     
     /// Fly off "animation"
     fly_off = true;
