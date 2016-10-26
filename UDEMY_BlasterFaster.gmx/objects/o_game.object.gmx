@@ -236,12 +236,13 @@ part_type_destroy(pt_flare);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///DEBUG ONLY FPS counter
+            <string>///DEBUG ONLY FPS counter &amp; VERSION STAMP
 draw_set_font(f_damage_display);
 draw_set_halign(fa_left);
 draw_set_valign(fa_bottom);
 depth = -10000;
 draw_text(0,room_height, "FPS: " + string(fps_real));
+draw_text(0, room_height - 10, "0.0.43 closed alpha");
 </string>
           </argument>
         </arguments>
