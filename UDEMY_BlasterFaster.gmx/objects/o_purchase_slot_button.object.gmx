@@ -100,12 +100,13 @@ event_inherited();
             is_in_the_list = true;
         }
     }
+    /*
     // HERE save the weapon, after the first loop
     if is_in_the_list == false &amp;&amp; (object_get_parent(global.ship.slot[owner_slot].object_index) != o_empty_slot)
     {
         global.current_player.purchased[array_length_1d(global.current_player.purchased)] = gun;
     }
-    
+    */
     
 //}
 
@@ -136,6 +137,9 @@ event_inherited();
 // loop through the choices (weapons on the ship)
 //for (i = 0; i &lt; global.ship.ship_slots - 1; i++)
 //{
+
+
+
 if is_in_the_list == false
 {
     total_price += global.ship.slot[owner_slot].price;
@@ -145,8 +149,11 @@ else
 {
     total_price = 0;
     show_debug_message("BUY BUTTON. gun IN list. Price set to = " +string(total_price));
-
 }
+
+
+
+
 //}
 
 // if the player has enough money, save the ship
@@ -156,7 +163,16 @@ if (global.current_player.credits - total_price) &gt;= 0
 
     // UNCOMMENT AFTER TESTING (decrements credits after purchase)
     global.current_player.credits = global.current_player.credits - total_price;
-        
+
+    
+    // add the gun to the purchased list
+    // HERE save the weapon, after the first loop
+    if is_in_the_list == false &amp;&amp; (object_get_parent(global.ship.slot[owner_slot].object_index) != o_empty_slot)
+    {
+        global.current_player.purchased[array_length_1d(global.current_player.purchased)] = gun;
+    }
+    
+            
     // save the player and the ship configuration 
     update_player(global.current_player.save_slot);
     save_player_ship(global.current_player.ship_save_file);
