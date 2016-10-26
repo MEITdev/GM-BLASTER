@@ -98,7 +98,9 @@ event_inherited();
             <string>///Save the player
 
 // set the new default player values
-global.current_player.credits = 250;
+
+// ALPHA TESTERS SETTING
+global.current_player.credits = 9999;
 
 // Get the player name from the text box
 global.current_player.name = o_textbox.txt;

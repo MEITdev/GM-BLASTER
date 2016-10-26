@@ -149,7 +149,7 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Check if all the guns have been paid for
+            <string>/// Validate ship config, launch mission
 for (i = 0; i &lt; global.ship.ship_slots; i++)
 {
     gun = object_get_name(global.ship.slot[i].object_index);
@@ -196,82 +196,6 @@ else
 
 // Reset the total price
 total_price = 0; 
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Add the selected weapons to the list of unlocked weapons
-/*
-for (i = 0; i &lt; global.ship.ship_slots; i++)
-{
-    gun = object_get_name(global.ship.slot[i].object_index);
-    is_in_the_list = false; // assume not in the list
-    for (j = 0; j &lt; array_length_1d(global.current_player.purchased); j++)
-    {
-        loaded_weapon = global.current_player.purchased[j];
-        if gun == loaded_weapon // check for duplicates, replace them 
-        {
-            show_debug_message("already in the list = " + string(loaded_weapon));
-            is_in_the_list = true;
-        }
-    }
-    // HERE save the weapon, after the first loop
-    if is_in_the_list == false &amp;&amp; (object_get_parent(global.ship.slot[i].object_index) != o_empty_slot)
-    {
-        global.current_player.purchased[array_length_1d(global.current_player.purchased)] = gun;
-    }
-}
-
-// DEBUG ONLY
-for (g = 0; g &lt; array_length_1d(global.current_player.purchased); g++)
-{
-    loaded_weapon = global.current_player.purchased[g];
-    show_debug_message("unlocked slot[" + string(g) + "] = " + string(loaded_weapon));  
-}
-
-
-*/
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Save player stats and ship configuration
-// save the player and the ship configuration 
-//update_player(global.current_player.save_slot);
-//save_player_ship(global.current_player.ship_save_file);
 
 </string>
           </argument>

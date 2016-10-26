@@ -146,7 +146,7 @@ alarm[0] = room_speed; // reset the alarm
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(f_score);
+            <string>draw_set_font(f_text_input);
 draw_sprite(sprite_index, image_index, x, y);
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
