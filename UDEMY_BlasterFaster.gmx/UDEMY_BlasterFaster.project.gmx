@@ -541,6 +541,7 @@
       <objects name="Singletons">
         <object>objects\o_player</object>
         <object>objects\o_game</object>
+        <object>objects\o_video_setup</object>
       </objects>
     </objects>
     <objects name="Text Input">

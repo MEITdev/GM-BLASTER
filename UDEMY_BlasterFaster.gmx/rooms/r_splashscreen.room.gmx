@@ -10,39 +10,7 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>///Toggle full screen
-if file_exists("settings.ini")
-{
-    // read existing settings
-    load_settings();
-
-    if global.Fullscreen == 0
-       {
-       window_set_fullscreen(false);
-       }
-    else
-       {
-       window_set_fullscreen(true);
-       }
-              
-    ///Change the smoothing
-    if global.Smoothing == 0
-    {
-        texture_set_interpolation(false);
-    }
-    else
-    {
-        texture_set_interpolation(true);
-    }       
-}
-else
-{
-    window_set_fullscreen(true);
-    texture_set_interpolation(true);
-}
-
-// turn ON AA and Vsync - put this in to the settings menu as slider
-display_reset(2, true);</code>
+  <code></code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
