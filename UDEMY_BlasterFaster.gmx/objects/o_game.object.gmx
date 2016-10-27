@@ -36,6 +36,13 @@ system = part_system_create();
 pt_smoke = create_part_type_sprite(s_smoke, true, 25, 30);
 pt_flare = create_part_type_sprite(s_flare, true, 15, 20);
 
+// particles for weapons
+pt_plasma = create_part_type_sprite(s_plasma, true, 3, 10);
+
+// A better explosion
+pt_smoke_2 = create_part_type_sprite(s_smoke_2, true, 3, 10);
+pt_flare_2 = create_part_type_sprite(s_flare_2, true, 3, 10);
+
 
 
 // Play the music
