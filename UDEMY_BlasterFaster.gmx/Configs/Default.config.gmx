@@ -655,7 +655,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="27">
+    <constants number="28">
       <constant name="LASER_ALARM">0</constant>
       <constant name="SPAWNER_ALARM">0</constant>
       <constant name="POWERUP_SPAWNER">1</constant>
@@ -683,6 +683,7 @@
       <constant name="GET_TIMER">0</constant>
       <constant name="REPAIR_TIMER">5</constant>
       <constant name="ROOM_TELEPORTER">10</constant>
+      <constant name="DEFENSIVE_PROJECTILE">1</constant>
     </constants>
   </ConfigConstants>
 </Config>

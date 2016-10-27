@@ -61,10 +61,6 @@ energy_consumption = 0;
 // create the hull status indicator
 hull_status = instance_create(0, 0, o_hull_turret);
 hull_status.parent_gun = object_index;
-
-
-
-
 </string>
           </argument>
         </arguments>
@@ -86,7 +82,34 @@ hull_status.parent_gun = object_index;
           <argument>
             <kind>1</kind>
             <string>///Spawned projectile variables
-projectile_last_angle = 0;
+//global.projectile_last_angle = 0;
+spawn_projectile = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Spawn new Defensive projectile
+spawn_projectile = true;
+global.projectile_last_angle += 180;
+projectile[0] = instance_create(x + lengthdir_x(100, global.projectile_last_angle), y + lengthdir_y(100, global.projectile_last_angle), o_projectile_autodefense_turret);    projectile[0].owner_id = object_index;
 </string>
           </argument>
         </arguments>
@@ -138,30 +161,6 @@ alarm[LASER_LGUN] = room_speed/4;
             <kind>1</kind>
             <string>///Inherit from parent class
 event_inherited();
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Update rotation
-
-// always point towards the mouse
-//image_angle = (point_direction(x, y, mouse_x, mouse_y));
 </string>
           </argument>
         </arguments>
@@ -253,10 +252,15 @@ else
 
 // create the projectile instance
 //projectile[0] = 
-if !(instance_exists(projectile[0]))
+if !(instance_exists(projectile[0])) &amp;&amp; spawn_projectile == true
 {
-    projectile[0] = instance_create(x + lengthdir_x(100, projectile_last_angle + 180), y + lengthdir_y(100, projectile_last_angle + 180), o_projectile_autodefense_turret);
-    projectile[0].owner_id = o_ship_03_turret;
+    spawn_projectile = false;
+    show_debug_message("creation last angle: " + string(global.projectile_last_angle));
+    //global.projectile_last_angle += 180;
+    // spawn new projectile in 2 seconds
+    alarm[DEFENSIVE_PROJECTILE] = room_speed * 2;
+    
+    //projectile[0] = instance_create(x + lengthdir_x(100, global.projectile_last_angle), y + lengthdir_y(100, global.projectile_last_angle), o_projectile_autodefense_turret);    projectile[0].owner_id = object_index;
 }
 </string>
           </argument>

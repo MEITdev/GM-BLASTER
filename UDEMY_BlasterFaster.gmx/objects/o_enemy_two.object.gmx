@@ -30,7 +30,7 @@ event_inherited();
 
 vspeed = 1; // positive value will move down the object
 hspeed = choose(-1,1); // choose at random one of the values
-hull = 4;
+hull = 2;
 
 alarm[LASER_ALARM] = 1;
 </string>

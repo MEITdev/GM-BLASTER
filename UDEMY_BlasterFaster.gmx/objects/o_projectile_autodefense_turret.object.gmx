@@ -31,6 +31,33 @@
 damage = 1;
 speed = 0;
 owner_id = noone;
+exists = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Save last angle
+// save the last angle to the parent
+show_debug_message("destory projectile angle: " + string(global.projectile_last_angle));
+//global.projectile_last_angle = image_angle;
 
 </string>
           </argument>
@@ -55,15 +82,37 @@ owner_id = noone;
           <argument>
             <kind>1</kind>
             <string>///Die code
-if !(instance_exists(owner_id))
+//if !(instance_exists(owner_id))
+//{
+
+if exists == false
 {
-    if instance_exists(o_ship_03_turret)
-    {
-        // inform the turret about the angle before destroyed
-        o_ship_03_turret.projectile_last_angle = image_angle;
-        instance_destroy();
-    }
+    show_debug_message("last angle: " + string(image_angle))
+
+    // save the last angle to the parent
+    global.projectile_last_angle = image_angle;
+    
+    // now destroy the instance
+    instance_destroy();
 }
+
+
+/*
+    //if the turret is non existent anymore, destroy the projectile
+    if !(instance_exists(owner_id))
+    {
+        instance_destroy();
+
+        //show_debug_message("owner_id: " + string(owner_id));
+        // inform the turret about the angle before destroyed
+        // owner_id.projectile_last_angle = image_angle;
+    }
+    else
+    {
+        
+    }
+//}
+*/
 </string>
           </argument>
         </arguments>
@@ -86,13 +135,15 @@ if !(instance_exists(owner_id))
             <kind>1</kind>
             <string>///Maintain the distance from the player ship on the ellipse
 
-if instance_exists(global.ship.slot[2])
+if instance_exists(owner_id)
 {
 
-    x = global.ship.slot[2].x + lengthdir_x(100, image_angle)
-    y = global.ship.slot[2].y + lengthdir_y(100, image_angle);
+    x = owner_id.x + lengthdir_x(100, global.projectile_last_angle)
+    y = owner_id.y + lengthdir_y(100, global.projectile_last_angle);
+    //image_angle += 5;
+    global.projectile_last_angle += 10;
+    image_angle = global.projectile_last_angle;
     direction = image_angle;
-    image_angle += 5;
     //speed = 10;
 }
 else
@@ -283,6 +334,7 @@ if global.Sound == 'On'
 }
 
 other.hull -= damage; // substract enemies armor by one
+
 
 instance_destroy(); // destroy the laser object
 </string>
