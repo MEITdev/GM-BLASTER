@@ -133,11 +133,14 @@ if instance_exists(global.boss)
             // save changes to the player
             update_player(global.current_player.save_slot);
             save_player_ship(global.current_player.ship_save_file);
+
+            // set the global flag
+            show_debug_message("MISSION COMPLETED FLAG TRUE");
+            global.mission_complete = true;
         }
         
         // set player score to 0 (for the next player)
         score = 0;
-        global.mission_complete = true;
 
         instance_destroy();
     }

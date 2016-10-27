@@ -208,6 +208,9 @@ if level == 1
             <string>///Mission COMPLETED tasks
 if room_get_name(room) == "r_mission_01" &amp;&amp; global.mission_complete == true
 {
+
+    show_debug_message("MISSION CONTROLLER - MISSION DONE");
+
     // reset flag
     global.mission_complete = false;
     
@@ -217,8 +220,15 @@ if room_get_name(room) == "r_mission_01" &amp;&amp; global.mission_complete == t
     save_player_ship(global.current_player.ship_save_file);
     // now load player data
     load_player_data(global.current_player.save_slot);
+
     
-    room_goto(r_mission_completed);
+    // create the fader instance
+    fader = instance_create(0,room_height, o_bottom_up_fade);
+    fader.when_to_die = (room_height * -2);
+    fader.at_what_speed = -8;
+    fader.to_what_room = r_mission_completed;
+       
+    //room_goto(r_mission_completed);
 }
 </string>
           </argument>

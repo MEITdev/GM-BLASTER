@@ -176,7 +176,13 @@ if is_alive == false
 {
     is_alive = true;   
     show_debug_message("PLAYER IS DEAD. START COUNTDOWN");
-    alarm[ROOM_TELEPORTER] = room_speed * 3;
+    
+    // Screen fader
+    fader = instance_create(0 ,0, o_fade_out);
+    fader.at_what_speed = 0.025;
+    fader.to_what_room = r_you_died;
+    
+    // alarm[ROOM_TELEPORTER] = room_speed * 3;
 }
 </string>
           </argument>
