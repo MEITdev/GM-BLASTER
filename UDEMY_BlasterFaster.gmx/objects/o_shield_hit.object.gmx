@@ -28,7 +28,7 @@
             <string>/// Fade
 if (image_alpha &gt; 0)
 {
-    image_alpha -= .15;
+    image_alpha -= .10;
     
     // stay with the ship location
     x = global.ship.x;

@@ -512,6 +512,7 @@
       <object>objects\o_particle_creator</object>
       <object>objects\o_plasma_particle_creator</object>
       <object>objects\o_explosion_particle_creator</object>
+      <object>objects\o_plasma_explosion_particle_creator</object>
       <object>objects\o_explosion_center</object>
       <object>objects\o_explosion_center_2</object>
       <object>objects\o_screen_flash</object>
