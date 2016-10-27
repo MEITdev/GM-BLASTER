@@ -171,10 +171,13 @@ if instance_exists(global.ship)
                     if object_get_name(global.ship.slot[2].object_index) == "o_ship_02_turret"
                     {
                         // create the projectile instance
+                        show_debug_message("TURRET_02/ correction_x: " + string(correction_x) + " / correction_y: " + string(correction_y));
                         projectile = instance_create(x + lengthdir_x(correction_x, image_angle), y + lengthdir_y(correction_y, image_angle), o_plasma_turret_01_laser);
                         // create the muzzle flash
+                        show_debug_message("TURRET_02 after projectile / correction_x: " + string(correction_x) + " / correction_y: " + string(correction_y));                        
                         muzzle_flash = instance_create(x + lengthdir_x(correction_x, image_angle), y + lengthdir_y(correction_y, image_angle), o_plasma_turret_01_gun_flare);
                         muzzle_flash.owner = object_index;
+                        //muzzle_flash.owner = o_ship_02_turret;
                                     
                         projectile.direction = image_angle;
                         projectile.speed = projectile_speed;
@@ -201,18 +204,19 @@ if instance_exists(global.ship)
                         projectile[1] = instance_create(x + lengthdir_x(correction_x, image_angle + correction_x), y + lengthdir_y(correction_y, image_angle + correction_y), o_projectile);
             
                         // create the muzzle flash
-                        muzzle_flash[0] = instance_create(x + lengthdir_x(correction_x, image_angle - correction_x), y + lengthdir_y(correction_y, image_angle - correction_y), o_projectile_gun_flare);
+                        muzzle_flash[0] = instance_create(x + lengthdir_x(correction_x, image_angle - correction_x), y + lengthdir_y(correction_y, image_angle - correction_y), o_projectile_turret_01_gun_flare);
                         muzzle_flash[0].owner = object_index;
-                        muzzle_flash[1] = instance_create(x + lengthdir_x(correction_x, image_angle + correction_x), y + lengthdir_y(correction_y, image_angle + correction_y), o_projectile_gun_flare);
+                        muzzle_flash[0].muzzle_id = 0;
+                        muzzle_flash[1] = instance_create(x + lengthdir_x(correction_x, image_angle + correction_x), y + lengthdir_y(correction_y, image_angle + correction_y), o_projectile_turret_01_gun_flare);
                         muzzle_flash[1].owner = object_index;                        
-                                   
+                        muzzle_flash[1].muzzle_id = 1;
+                                                           
                         for (i = 0; i &lt;= array_length_1d(projectile) - 1; i++)
                         {
                             projectile[i].direction = image_angle;
                             projectile[i].speed = projectile_speed;
                             // adjust the image angle
                             projectile[i].image_angle = image_angle - 90;
-            
                             muzzle_flash[i].image_angle = image_angle - 90;
                         }
 

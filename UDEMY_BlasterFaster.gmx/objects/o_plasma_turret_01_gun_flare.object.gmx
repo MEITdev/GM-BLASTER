@@ -82,10 +82,18 @@ else
             <kind>1</kind>
             <string>///Force X and Y update before draw
 
-x = owner.x + owner.correction_x;
-y = owner.y + owner.correction_y;
+if instance_exists(owner)
+{
 
-draw_self();
+    x = owner.x + lengthdir_x(owner.correction_x, owner.image_angle);
+    y = owner.y + lengthdir_y(owner.correction_y, owner.image_angle);
+    
+    draw_self();
+}
+else
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

@@ -87,9 +87,16 @@ else
 //y = owner.y + owner.correction_y;
 if instance_exists(owner)
 {
-    x = owner.x + owner.correction_x;
-    y = owner.y + owner.correction_y;
-    
+    if muzzle_id == 0
+    {
+        x = owner.x + lengthdir_x(owner.correction_x, owner.image_angle - owner.correction_x);
+        y = owner.y + lengthdir_y(owner.correction_y, owner.image_angle - owner.correction_y);
+    }
+    else if muzzle_id == 1
+    {
+        x = owner.x + lengthdir_x(owner.correction_x, owner.image_angle + owner.correction_x);
+        y = owner.y + lengthdir_y(owner.correction_y, owner.image_angle + owner.correction_y);
+    }
     draw_self();
 }
 

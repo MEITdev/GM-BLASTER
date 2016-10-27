@@ -129,7 +129,7 @@ else
     mapped = chr(global.ACTION_03);
 }
 
-draw_text(x + sprite_width, y, "Shoot: Right weapon  [ " + string(mapped) + " ]");
+draw_text(x + sprite_width, y, "Shoot: Turret  [ " + string(mapped) + " ]");
 </string>
           </argument>
         </arguments>

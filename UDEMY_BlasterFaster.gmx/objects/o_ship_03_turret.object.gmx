@@ -35,7 +35,7 @@ image_speed = 1;
 // Override the values
 ammo = 500;
 max_ammo = ammo;
-hull = 2;
+hull = 3;
 armor = 0;
 action_button = " ";
 action_mouse_button = global.ACTION_03;

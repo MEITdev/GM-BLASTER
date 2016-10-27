@@ -75,16 +75,18 @@ event_inherited();
             <string>///Save the selected skill
 
 // here check all the existing skills and add the new ones, then save the player data
+skill_already_known = false;
 for (i=0; i &lt; array_length_1d(global.current_player.skills_known); i++)
 {
-    skill_already_known = false;
     if global.current_player.skills_known[i] == global.current_player.skill_selected
     {
         // skill is already in the list
         skill_already_known = true;
     }
-    else
-    {
+}
+
+//    else
+//    {
         // Save the selected skill
         // decrease the number of skill points
         if global.current_player.skill_points &gt; 0 &amp;&amp; skill_already_known == false
@@ -92,23 +94,25 @@ for (i=0; i &lt; array_length_1d(global.current_player.skills_known); i++)
             global.current_player.skill_id = global.current_player.skill_selected;
             global.current_player.skill_points -= 1;
             global.current_player.skills_known[array_length_1d(global.current_player.skills_known)] = global.current_player.skill_id;
-        }                
-    }
-};
 
+            // Save the player information
+            update_player(global.current_player.save_slot);   
+            // now load player data
+            load_player_data(global.current_player.save_slot);
+            
+            
+        }
+//    }
+
+
+/*
 // DEBUG DISPLAY THE array
 for (i=0; i &lt; array_length_1d(global.current_player.skills_known); i++)
 {
     show_debug_message("known skill ID: " + string(global.current_player.skills_known[i]));
 }
 
-// Save the player information
-update_player(global.current_player.save_slot);   
-
-// now load player data
-load_player_data(global.current_player.save_slot);
-
-
+*/
 </string>
           </argument>
         </arguments>

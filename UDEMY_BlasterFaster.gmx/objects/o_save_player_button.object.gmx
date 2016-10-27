@@ -100,7 +100,7 @@ event_inherited();
 // set the new default player values
 
 // ALPHA TESTERS SETTING
-global.current_player.credits = 750;
+global.current_player.credits = 250;
 
 // Get the player name from the text box
 global.current_player.name = o_textbox.txt;

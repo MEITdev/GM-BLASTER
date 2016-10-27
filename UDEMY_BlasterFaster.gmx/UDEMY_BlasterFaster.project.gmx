@@ -511,6 +511,7 @@
       <object>objects\o_plasma_turret_01_hit_flare</object>
       <object>objects\o_ship_03_hit_flare</object>
       <object>objects\o_projectile_gun_flare</object>
+      <object>objects\o_projectile_turret_01_gun_flare</object>
       <object>objects\o_shield_hit</object>
       <object>objects\o_laser_gun_flare</object>
       <object>objects\o_plasma_turret_01_gun_flare</object>

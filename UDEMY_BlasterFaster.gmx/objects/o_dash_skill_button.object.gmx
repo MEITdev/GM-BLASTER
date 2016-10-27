@@ -89,6 +89,40 @@ if is_marked == false &amp;&amp; this_room != "r_create_player"
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Check the known skills, mark them on the screen
+this_room = room_get_name(room);
+if is_marked == false &amp;&amp; this_room != "r_create_player"
+{
+    for (i=0; i&lt;array_length_1d(global.current_player.skills_known); i+=1)
+    {
+        if global.current_player.skills_known[i] == skill_number
+        {
+            // skill already learned, indicate on the screen
+            instance_create(x, y, o_known_skill_indicator);
+            is_marked = true;
+        }
+    };
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Play sound effect
 if global.Sound == 'On'
 {
