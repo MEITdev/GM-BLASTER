@@ -197,6 +197,8 @@ else
             <kind>1</kind>
             <string>///TEST Particle effect
 instance_create(x-8+random(8), y-8+random(8), o_plasma_particle_creator);
+instance_create(x-8+random(16), y-8+random(16), o_plasma_pixel_particle_creator);
+
 </string>
           </argument>
         </arguments>

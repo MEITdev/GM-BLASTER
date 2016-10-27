@@ -24,6 +24,7 @@
         <sound>sound\a_projectile_shot</sound>
         <sound>sound\a_laser_shot</sound>
         <sound>sound\a_plasma_shot</sound>
+        <sound>sound\a_defense_turret_spawn</sound>
       </sounds>
       <sound>sound\a_explosion</sound>
       <sound>sound\a_explosion_lowQ</sound>
@@ -155,6 +156,7 @@
       <sprite>sprites\s_flare</sprite>
       <sprite>sprites\s_shield_hit</sprite>
       <sprite>sprites\s_plasma</sprite>
+      <sprite>sprites\s_plasma_pixel</sprite>
       <sprite>sprites\s_ship_03_hit_flare</sprite>
       <sprite>sprites\s_flare_2</sprite>
       <sprite>sprites\s_smoke_2</sprite>
@@ -513,6 +515,8 @@
       <object>objects\o_plasma_particle_creator</object>
       <object>objects\o_explosion_particle_creator</object>
       <object>objects\o_plasma_explosion_particle_creator</object>
+      <object>objects\o_plasma_pixel_particle_creator</object>
+      <object>objects\o_plasma_defense_turret__pixel_particle_creator</object>
       <object>objects\o_explosion_center</object>
       <object>objects\o_explosion_center_2</object>
       <object>objects\o_screen_flash</object>

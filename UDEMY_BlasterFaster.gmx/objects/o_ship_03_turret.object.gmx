@@ -110,6 +110,13 @@ spawn_projectile = true;
 spawn_projectile = true;
 global.projectile_last_angle += 180;
 projectile[0] = instance_create(x + lengthdir_x(100, global.projectile_last_angle), y + lengthdir_y(100, global.projectile_last_angle), o_projectile_autodefense_turret);    projectile[0].owner_id = object_index;
+instance_create(x+random(16), y-random(16), o_plasma_defense_turret__pixel_particle_creator);
+
+// play the audio
+if global.Sound == "On"
+{
+    audio_play_sound(a_defense_turret_spawn, 2, false);
+}
 </string>
           </argument>
         </arguments>
