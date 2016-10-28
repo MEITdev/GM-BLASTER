@@ -19,6 +19,7 @@
       <sound>sound\a_ship_hit</sound>
       <sounds name="GUI Sounds">
         <sound>sound\a_button_click</sound>
+        <sound>sound\a_delete_player_sound</sound>
       </sounds>
       <sounds name="Weapon Sounds">
         <sound>sound\a_projectile_shot</sound>
@@ -28,6 +29,8 @@
       </sounds>
       <sound>sound\a_explosion</sound>
       <sound>sound\a_explosion_lowQ</sound>
+      <sound>sound\a_shield_hit</sound>
+      <sound>sound\a_engine_sound</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -333,7 +336,6 @@
       <object>objects\o_purchase_slot_button</object>
       <object>objects\o_purchase_slot_ammo_button</object>
       <object>objects\o_quit_button</object>
-      <object>objects\o_view_controller</object>
       <object>objects\o_settings_display</object>
       <object>objects\o_highscore_table</object>
       <object>objects\o_settings_button</object>
@@ -580,6 +582,7 @@
       <object>objects\o_dialog_box_controller</object>
       <object>objects\o_mouse_cursor_controller</object>
       <object>objects\o_audio_controller</object>
+      <object>objects\o_view_controller</object>
       <object>objects\o_surface_controller</object>
     </objects>
     <objects name="NPC Avatars">

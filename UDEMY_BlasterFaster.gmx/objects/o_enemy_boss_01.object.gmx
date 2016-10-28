@@ -123,20 +123,21 @@ if instance_exists(global.boss)
         create_explosion(x, y);
         score += 100;
 
-        // spawn metal goodies
-        for (i=0; i&lt;10; i+=1)
-        {
-            metal = instance_create(x+32-random(64), y+32-random(64), o_metal_resource);
-            metal.direction = point_direction(x, y, global.ship.x, global.ship.y);
-            with (metal)
-            {
-                motion_set(direction, 4);
-            }
-        };
-        
               
         if instance_exists(global.ship)
         {
+        
+            // spawn metal goodies
+            for (i=0; i&lt;10; i+=1)
+            {
+                metal = instance_create(x+32-random(64), y+32-random(64), o_metal_resource);
+                metal.direction = point_direction(x, y, global.ship.x, global.ship.y);
+                with (metal)
+                {
+                    motion_set(direction, 4);
+                }
+            };
+        
             // Save the payer score to the local highscore file
             highscore_add(global.current_player.name, score);
             

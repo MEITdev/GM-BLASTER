@@ -74,6 +74,10 @@ if global.ship.can_be_hit == true
         global.ship.shield -= 1;
         // show the shield hit animation        
         instance_create(global.ship.x, global.ship.y, o_shield_hit);
+        if global.Sound == 'On'
+        {
+            audio_play_sound(a_shield_hit, 3, false);
+        }        
     }
     else if (global.ship.armor &gt; 0)
     {
@@ -134,7 +138,10 @@ if global.ship.can_be_hit == true
             
             // show the shield hit animation        
             instance_create(global.ship.x, global.ship.y, o_shield_hit);
-
+            if global.Sound == 'On'
+            {
+                audio_play_sound(a_shield_hit, 3, false);
+            }
         }
         else if (other.armor &gt; 0)
         {

@@ -272,7 +272,7 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_bottom);
 depth = -10000;
 draw_text(0,room_height, "FPS: " + string(fps_real));
-draw_text(0, room_height - 10, "0.0.43 closed alpha");
+draw_text(0, room_height - 10, "0.0.44 closed alpha");
 </string>
           </argument>
         </arguments>

@@ -712,7 +712,13 @@ if (hull &lt;= 0)
         load_player_data(global.current_player.save_slot);
         */
     }
-    
+
+    /// stop the engine sound
+    if audio_is_playing(a_engine_sound)
+    {
+        audio_stop_sound(a_engine_sound);    
+    }
+
     create_explosion(x, y);
     instance_destroy();
 }
