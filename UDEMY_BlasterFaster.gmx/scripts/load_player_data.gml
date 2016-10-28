@@ -13,6 +13,7 @@ if file_exists(file_name)
     global.current_player.credits = ini_read_real("player", "credits", 0);
     global.current_player.avatar_id = ini_read_real("player", "avatar_id", 0);
     global.current_player.skill_points = ini_read_real("player", "skill_points", 0);
+    global.Metal = ini_read_real("player", "metal", 0);
 
     // load the known skills to the global array
     count = ini_read_real("skills", "count", 0);

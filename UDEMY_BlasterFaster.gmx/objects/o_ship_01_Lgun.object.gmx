@@ -119,7 +119,7 @@ alarm[ENERGY_RECHARGE] = room_speed;
 event_inherited();
 
 //Override the rate of fire value
-alarm[LASER_LGUN] = room_speed/8;
+alarm[LASER_LGUN] = room_speed/6;
 
 /*
 ///Allow the user to fire and reset the alarm

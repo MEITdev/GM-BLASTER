@@ -60,8 +60,8 @@ old_y = 0;
 damage = 2;
 ammo_capacity = max_ammo;
 recharge_time = 0;
-fire_rate = room_speed/3;
-price = 200;
+fire_rate = "3/s"; //room_speed/3;
+price = 50;
 energy_consumption = 0;
 </string>
           </argument>
@@ -93,7 +93,7 @@ if can_fire == false
 else
 {
 }
-alarm[LASER_LGUN] = room_speed/8;
+alarm[LASER_LGUN] = room_speed/3;
 </string>
           </argument>
         </arguments>
@@ -174,7 +174,7 @@ if instance_exists(global.ship)
                 muzzle.owner = object_index;
                                 
                 // reset the cooldown counter
-                alarm[LASER_LGUN] = room_speed/8;
+                alarm[LASER_LGUN] = room_speed/3;
                 
                 //cooldown = room_speed/2;
                 can_fire = false;

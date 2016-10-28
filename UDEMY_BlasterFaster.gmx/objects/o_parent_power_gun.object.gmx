@@ -61,8 +61,8 @@ old_y = 0;
 damage = 1;
 ammo_capacity = max_energy_level;
 recharge_time = room_speed;
-fire_rate = room_speed/8;
-price = 100;
+fire_rate = "6/s"; //room_speed/6;
+price = 10;
 energy_consumption = 0;
 </string>
           </argument>

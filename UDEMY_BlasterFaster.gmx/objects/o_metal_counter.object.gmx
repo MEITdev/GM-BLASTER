@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Init variables
 event_inherited();
-hover_text = "Resource: Metal scraps";
+hover_text = "Resource: Metal scraps.#Found in Asteroids.";
 </string>
           </argument>
         </arguments>

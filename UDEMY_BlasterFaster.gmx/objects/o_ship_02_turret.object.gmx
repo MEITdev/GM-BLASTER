@@ -50,8 +50,8 @@ ammo_counter.parent_gun = object_index;
 damage = 2;
 ammo_capacity = max_ammo;
 recharge_time = 0;
-fire_rate = room_speed/4;
-price = 500;
+fire_rate = "4/s"; //room_speed/4;
+price = 80;
 energy_consumption = 0;
 
 // create the hull status indicator

@@ -117,6 +117,28 @@ global.projectile_last_angle = 0;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Get the room name and store it in a variable
+this_room = room_get_name(room);
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="2" enumb="10">
       <action>
@@ -564,33 +586,6 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Danger Indicator
-
-// create Danger Indicator
-// TODO: this will work only if the player has the right upgrade
-//if instance_exists(o_asteroid_grey_01)
-//{
-//}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///DEV DEBUG TOOLS
 
 // return to the main menu
@@ -710,6 +705,42 @@ if (hull &lt;= 0)
     }
     
 
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Check if hte player has not learned any new skills
+if this_room = "r_mothership_hangar" &amp;&amp; player_knows_repair == false
+{
+    for (i=0; i&lt;array_length_1d(global.current_player.skills_known); i+=1)
+    {
+        //show_debug_message("Testing repair skill in ALARM ");
+        if global.current_player.skills_known[i] == 1
+        {
+            //show_debug_message("Player KNOWS repair");
+    
+            player_knows_repair = true;
+            // kick off the repair timer straight away
+            alarm[REPAIR_TIMER] = room_speed;
+        }
+    };
 }
 </string>
           </argument>

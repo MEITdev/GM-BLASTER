@@ -29,7 +29,8 @@
 event_inherited();
 text = "REPAIR"
 // Repair cost
-price = 100;
+price = 5;
+hover_text = "Repair for#5 Metal";
 </string>
           </argument>
         </arguments>
@@ -58,10 +59,10 @@ event_inherited();
 // repair ship only if the ship is not repaired already
 if global.ship.armor &lt; global.ship.max_armor || global.ship.hull &lt; global.ship.max_hull || global.ship.shield &lt; global.ship.max_shield
 {
-    if global.current_player.credits &gt; price
+    if global.Metal &gt; price
     {
         // update the credits
-        global.current_player.credits -= price;
+        global.Metal -= price;
         update_player(global.current_player.save_slot);
         
         // repair the ship
