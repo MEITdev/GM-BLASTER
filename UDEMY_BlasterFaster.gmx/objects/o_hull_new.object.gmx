@@ -27,6 +27,11 @@
             <kind>1</kind>
             <string>/// Initialize the hull
 image_speed = 0; // no animation
+if instance_exists(global.ship)
+{
+    remaining_hull = (global.ship.hull / global.ship.max_hull) * 100;
+}
+
 image_index = 0;
 </string>
           </argument>

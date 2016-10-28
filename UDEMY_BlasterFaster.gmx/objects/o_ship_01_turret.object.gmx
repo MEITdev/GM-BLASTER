@@ -155,7 +155,10 @@ image_angle = (point_direction(x, y, mouse_x, mouse_y));
 if hull == 0
 {
     // remove self from the list of purchased items
-    remove_from_purchased(object_index);
+    if global.Difficulty == "Normal"
+    {
+        remove_from_purchased(object_index);
+    }
     instance_destroy();
 }
 </string>

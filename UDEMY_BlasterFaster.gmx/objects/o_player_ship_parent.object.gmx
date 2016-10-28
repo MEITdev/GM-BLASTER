@@ -217,7 +217,7 @@ if player_knows_repair == true
         global.ship.armor = global.ship.max_armor;
     }
     // reset the alarm
-    alarm[REPAIR_TIMER] = room_speed;
+    alarm[REPAIR_TIMER] = room_speed * 2;
 }
 </string>
           </argument>
@@ -438,7 +438,7 @@ else
             if can_use_boost == true
             {
                 can_use_boost = false;
-                alarm[BOOSTER_ALLOWED] = room_speed * 5;
+                alarm[BOOSTER_ALLOWED] = room_speed * 3;
     
                 //speed_boost = false;
                 // start the boost
@@ -547,7 +547,6 @@ else
             load_player_data(global.current_player.save_slot);
             room_goto(r_mothership_hangar);
         }
-
     }
 
     
@@ -666,10 +665,6 @@ if (hull &lt;= 0)
     show_debug_message("PLAYER IS DEAD. STATUS" + string(global.current_player.is_alive));
 
     //Fade in to the mission
-
-        
-    create_explosion(x, y);
-    instance_destroy();
     
     // Create the menu button
     //instance_create(room_width/2, room_height/2, o_menu_button);
@@ -687,24 +682,39 @@ if (hull &lt;= 0)
  //   global.current_pla
  
  
-    delete_player_file_name = "slot_" + string(global.current_player.save_slot) + ".ini";
-    // delete the player save file
-    if file_exists(delete_player_file_name)
+// PERMADEATH only for the NORMAL difficulty
+    if global.Difficulty == "Normal"
     {
-        // open the file and delete the associated ship file first
-        ini_open(delete_player_file_name);
-        ship_file = ini_read_string("player", "ship", "default_ship.ini");
-        ini_close();
-        if file_exists(ship_file)
-        {
-            file_delete(ship_file);
-        }
-    
+        delete_player_file_name = "slot_" + string(global.current_player.save_slot) + ".ini";
         // delete the player save file
-        file_delete(delete_player_file_name);
+        if file_exists(delete_player_file_name)
+        {
+            // open the file and delete the associated ship file first
+            ini_open(delete_player_file_name);
+            ship_file = ini_read_string("player", "ship", "default_ship.ini");
+            ini_close();
+            if file_exists(ship_file)
+            {
+                file_delete(ship_file);
+            }
+        
+            // delete the player save file
+            file_delete(delete_player_file_name);
+        }
+    }
+    else
+    {
+        
+        // save changes to the player
+        update_player(global.current_player.save_slot);
+        /*
+        save_player_ship(global.current_player.ship_save_file);
+        load_player_data(global.current_player.save_slot);
+        */
     }
     
-
+    create_explosion(x, y);
+    instance_destroy();
 }
 </string>
           </argument>

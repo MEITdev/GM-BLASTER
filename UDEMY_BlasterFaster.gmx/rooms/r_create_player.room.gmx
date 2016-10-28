@@ -64,6 +64,9 @@ fader.at_what_speed = 0.05;</code>
     <instance objName="o_sensor_skill_button" x="497" y="360" name="inst_39489A9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_selected_skill_indicator" x="353" y="360" name="inst_55BCF42C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_help_button" x="824" y="32" name="inst_F9FE79EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_difficulty_cry_baby_button" x="351" y="432" name="inst_F27307A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_difficulty_normal_button" x="499" y="432" name="inst_7F61E163" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_selected_difficulty_indicator" x="351" y="432" name="inst_40082710" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

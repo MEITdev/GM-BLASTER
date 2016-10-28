@@ -118,6 +118,7 @@
       <sprite>sprites\s_credits</sprite>
       <sprite>sprites\s_button_new</sprite>
       <sprite>sprites\s_button_new2</sprite>
+      <sprite>sprites\s_button_selection_glow</sprite>
       <sprite>sprites\s_next_button</sprite>
       <sprite>sprites\s_previous_button</sprite>
       <sprite>sprites\s_repair_ship_button</sprite>
@@ -325,6 +326,9 @@
       <object>objects\o_button_parent</object>
       <object>objects\o_highscore_button</object>
       <object>objects\o_menu_button</object>
+      <object>objects\o_difficulty_cry_baby_button</object>
+      <object>objects\o_difficulty_normal_button</object>
+      <object>objects\o_selected_difficulty_indicator</object>
       <object>objects\o_start_mission_button</object>
       <object>objects\o_purchase_slot_button</object>
       <object>objects\o_purchase_slot_ammo_button</object>

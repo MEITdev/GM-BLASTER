@@ -198,7 +198,10 @@ event_inherited();
 if hull == 0
 {
     // remove self from the list of purchased items
-    remove_from_purchased(object_index);
+    if global.Difficulty == "Normal"
+    {
+        remove_from_purchased(object_index);
+    }
     instance_destroy();
 }
 </string>
@@ -270,8 +273,8 @@ if !(instance_exists(projectile[0])) &amp;&amp; spawn_projectile == true
     spawn_projectile = false;
     show_debug_message("creation last angle: " + string(global.projectile_last_angle));
     //global.projectile_last_angle += 180;
-    // spawn new projectile in 2 seconds
-    alarm[DEFENSIVE_PROJECTILE] = room_speed * 2;
+    // spawn new projectile in 1.5 seconds
+    alarm[DEFENSIVE_PROJECTILE] = room_speed * 1.5;
     
     //projectile[0] = instance_create(x + lengthdir_x(100, global.projectile_last_angle), y + lengthdir_y(100, global.projectile_last_angle), o_projectile_autodefense_turret);    projectile[0].owner_id = object_index;
 }

@@ -19,6 +19,7 @@ else
     ini_write_real("player", "avatar_id", global.current_player.avatar_id);
     ini_write_real("player", "skill_points", global.current_player.skill_points);
     ini_write_real("player", "metal", global.Metal);
+    ini_write_string("player", "difficulty", global.Difficulty);
     
     show_debug_message("known skills array size: " + string(array_length_1d(global.current_player.skills_known)));
     

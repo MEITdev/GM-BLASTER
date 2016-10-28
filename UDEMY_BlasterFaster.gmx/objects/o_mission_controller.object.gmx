@@ -62,7 +62,7 @@ if room_get_name(room) == "r_mission_01"
     // Target socres
     // Here decide what stage the player is in, depending on score or target objectives later
     enemy_spawner.stage1 = 100;
-    enemy_spawner.stage2 = 250;
+    enemy_spawner.stage2 = 200;
     enemy_spawner.stage3 = 400;
 }
 
@@ -96,8 +96,10 @@ if room_get_name(room) == "r_mission_02"
     // Target socres
     // Here decide what stage the player is in, depending on score or target objectives later
     enemy_spawner.stage1 = 100;
-    enemy_spawner.stage2 = 250;
-    enemy_spawner.stage3 = 400;
+    enemy_spawner.stage2 = 200;
+    enemy_spawner.stage3 = 300;
+    enemy_spawner.stage4 = 400;
+    enemy_spawner.stage5 = 500;
 }
 
 

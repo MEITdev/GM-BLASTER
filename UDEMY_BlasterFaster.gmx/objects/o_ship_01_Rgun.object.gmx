@@ -162,7 +162,10 @@ alarm[LASER_LGUN] = room_speed/4;
 if hull == 0
 {
     // remove self from the list of purchased items
-    remove_from_purchased(object_index);
+    if global.Difficulty == "Normal"
+    {
+        remove_from_purchased(object_index);
+    }
     instance_destroy();
 }
 </string>

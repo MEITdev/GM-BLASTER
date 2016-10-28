@@ -180,7 +180,11 @@ event_inherited();
 if hull == 0
 {
     // remove self from the list of purchased items
-    remove_from_purchased(object_index);
+    // only on normal difficulty
+    if global.Difficulty == "Normal"
+    {
+        remove_from_purchased(object_index);
+    }
     instance_destroy();
 }
 </string>

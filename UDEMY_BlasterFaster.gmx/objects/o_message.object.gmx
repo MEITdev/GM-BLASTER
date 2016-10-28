@@ -80,8 +80,8 @@ if (time &lt; message_length)
             <kind>1</kind>
             <string>///Render box with text
 draw_set_alpha(alpha);
-if (alpha &lt; 0.5) alpha += display_speed / 10;
-    else alpha = 0.5;
+if (alpha &lt; 0.7) alpha += display_speed / 10;
+    else alpha = 0.7;
 
 draw_set_font(font);
 draw_set_color(c_gray);
