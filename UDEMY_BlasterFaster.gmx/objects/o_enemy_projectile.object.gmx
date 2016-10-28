@@ -36,7 +36,7 @@ instance_create(x, y, o_flare);
 // play the sound effect
 if global.Sound == 'On'
 {
-    audio_play_sound(a_laser, 2, false);
+    audio_play_sound(a_projectile_shot, 2, false);
 }
 
 // Set the damage amount
