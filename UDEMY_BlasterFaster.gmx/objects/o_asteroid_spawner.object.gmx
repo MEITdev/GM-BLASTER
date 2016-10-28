@@ -55,6 +55,11 @@ alarm[LEVEL_CHOOSER] = room_speed / 4;
             <kind>1</kind>
             <string>/// Set the timers according to the level
 
+if level == 0 // this is the menu screen and menu screens in general
+{
+    alarm[ASTEROID] = room_speed / 2; // wait 0.5 second
+}
+
 if level == 1
 {
     alarm[ASTEROID] = room_speed; // wait 1 second

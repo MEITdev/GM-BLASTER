@@ -69,6 +69,7 @@ fader.at_what_speed = 0.05;</code>
     <instance objName="o_settings_vsync_button" x="38" y="164" name="inst_2D4F7397" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_settings_aa_button" x="38" y="224" name="inst_3CFCE00C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_settings_reset_controls" x="713" y="386" name="inst_3B1C2FC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_asteroid_spawner" x="274" y="24" name="inst_07CB8E72" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

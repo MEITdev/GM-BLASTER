@@ -60,7 +60,12 @@ asteroid_rotation = choose(-1, 1);
           <argument>
             <kind>1</kind>
             <string>/// Spawn the metal resource 
-instance_create(x,y, o_metal_resource);
+choice = choose(1, 2, 3, 4, 5);
+
+if choice &gt; 2
+{
+    instance_create(x,y, o_metal_resource);
+}
 </string>
           </argument>
         </arguments>

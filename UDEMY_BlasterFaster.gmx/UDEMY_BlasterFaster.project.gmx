@@ -604,6 +604,7 @@
     <room>rooms\r_splashscreen</room>
     <rooms name="Menu">
       <room>rooms\r_menu</room>
+      <room>rooms\r_credits</room>
       <room>rooms\r_choose_save_slot</room>
       <room>rooms\r_configure_ship</room>
       <room>rooms\r_mothership_hangar</room>

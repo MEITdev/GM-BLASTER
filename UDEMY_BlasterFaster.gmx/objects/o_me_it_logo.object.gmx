@@ -51,7 +51,7 @@ timer = 0;
           <argument>
             <kind>1</kind>
             <string>/// Go to main menu
-timer = room_speed * 4;
+//timer = room_speed * 4;
 
 if timer &lt; room_speed * 3
 {
@@ -63,7 +63,11 @@ if timer &lt; room_speed * 3
 }
 else
 {
-    room_goto_next();
+    event_inherited();
+    fader = instance_create(0,0, o_fade_out);
+    fader.to_what_room = r_menu;
+    fader.at_what_speed = 0.05;
+    //room_goto_next();
 }
 </string>
           </argument>
