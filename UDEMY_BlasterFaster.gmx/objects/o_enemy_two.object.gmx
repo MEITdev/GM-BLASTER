@@ -33,6 +33,9 @@ hspeed = choose(-1,1); // choose at random one of the values
 hull = 2;
 
 alarm[LASER_ALARM] = 1;
+
+correction_x = 0;
+correction_y = 0;
 </string>
           </argument>
         </arguments>

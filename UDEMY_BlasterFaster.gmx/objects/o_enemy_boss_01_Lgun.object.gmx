@@ -50,7 +50,7 @@ projectile_speed = 9;
 
 // correction coordinates for spawning projectiles
 correction_x = 0;
-correction_y = 16;
+correction_y = 32;
 
 </string>
           </argument>
