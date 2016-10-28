@@ -35,7 +35,7 @@ max_ammo = ammo;
 hull = 0;
 armor = 0;
 gun_slot_id = 0;
-
+rate_of_fire = 0;
 action_button = "";
 action_mouse_button = "";
 
@@ -94,7 +94,7 @@ if can_fire == false
 else
 {
 }
-alarm[LASER_LGUN] = room_speed/8;
+alarm[LASER_LGUN] = room_speed/rate_of_fire;
 </string>
           </argument>
         </arguments>
@@ -186,7 +186,7 @@ if instance_exists(global.ship)
                         muzzle_flash.image_angle = image_angle - 90;
                         
                         // reset the fire timer
-                        alarm[LASER_LGUN] = room_speed/8;
+                        alarm[LASER_LGUN] = room_speed/rate_of_fire;
 
                         
                         can_fire = false;
@@ -221,7 +221,7 @@ if instance_exists(global.ship)
                         }
 
                         // reset the fire timer
-                        alarm[LASER_LGUN] = room_speed/8;
+                        alarm[LASER_LGUN] = room_speed/rate_of_fire;
                                                 
                         can_fire = false;
                         // subtract the ammo if not in the hangar

@@ -35,6 +35,7 @@ hull = 2;
 armor = 0;
 action_button = " ";
 action_mouse_button = global.ACTION_03;
+rate_of_fire = 4;
 
 projectile_speed = 6;
 
@@ -79,11 +80,8 @@ hull_status.parent_gun = object_index;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Fire rate
+            <string>///Allow the user to fire and reset the alarm
 event_inherited();
-
-// Override the fire rate
-alarm[LASER_LGUN] = room_speed/4;
 </string>
           </argument>
         </arguments>

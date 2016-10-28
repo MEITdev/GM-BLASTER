@@ -61,7 +61,9 @@ instance_create(x + 64, y + 15, o_xp_bar);
 draw_self();
 draw_set_font(f_level_stats);
 draw_set_colour(c_white);
-draw_text(x + 27, y + 16, "Lvl: " + string(global.current_player.level));
+draw_set_halign(fa_left);
+draw_set_valign(fa_center);
+draw_text(x + 6, y + 16, "Lvl: " + string(global.current_player.level));
 </string>
           </argument>
         </arguments>
