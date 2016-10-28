@@ -53,7 +53,7 @@ timer = 0;
             <string>/// Go to main menu
 //timer = room_speed * 4;
 
-if timer &lt; room_speed * 3
+if timer &lt; room_speed * 2
 {
     if image_index &gt; image_number -1 
     {
