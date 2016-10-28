@@ -29,7 +29,7 @@
 event_inherited();
 
 text = "";
-hover_text = "Change the shoot button for forward movement";
+hover_text = "Change the button for forward movement";
 </string>
           </argument>
         </arguments>

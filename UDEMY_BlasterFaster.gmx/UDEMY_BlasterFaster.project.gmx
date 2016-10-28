@@ -479,12 +479,12 @@
       </objects>
     </objects>
     <objects name="Player Powerups">
+      <object>objects\o_powerup_parent</object>
       <object>objects\o_armor_powerup</object>
       <object>objects\o_trap_powerup</object>
       <object>objects\o_hull_powerup</object>
       <object>objects\o_laser_powerup</object>
       <object>objects\o_shield_powerup</object>
-      <object>objects\o_powerup_parent</object>
     </objects>
     <objects name="Game HUD">
       <object>objects\o_ship_stats_box</object>
@@ -494,6 +494,7 @@
       <object>objects\o_xp_bar</object>
       <object>objects\o_score</object>
       <object>objects\o_credits</object>
+      <object>objects\o_metal_counter</object>
       <object>objects\o_armor</object>
       <object>objects\o_shield</object>
       <object>objects\o_hull</object>

@@ -100,6 +100,17 @@ for (i = 0; i &lt;= ship_slots - 1; i++)
             <kind>1</kind>
             <string>///Collect Metal resource
 global.Metal += 1;
+
+with (other)
+{
+    instance_destroy();
+}
+
+// play the sound effect
+if global.Sound == 'On'
+{
+    audio_play_sound(a_powerup, 1, false);
+}
 </string>
           </argument>
         </arguments>

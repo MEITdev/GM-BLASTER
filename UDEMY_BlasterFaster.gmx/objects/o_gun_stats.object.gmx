@@ -62,7 +62,7 @@ draw_set_valign(fa_center);
 
 draw_set_font(f_credits);
 // price
-draw_text(owner.x + 8, owner.y + 16, string(price));
+draw_text(owner.x + 26, owner.y + 16, string(price));
 
 draw_set_font(f_gun_stats);
 // damage
