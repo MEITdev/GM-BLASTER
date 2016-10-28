@@ -25,13 +25,48 @@ for (i=0; i<array_length_1d(global.current_player.skills_known); i+=1)
 //ini_write_real("player", "skill_id", global.current_player.skill_id);
 
 
-// save the number of purchased weapons
-ini_write_real("purchased", "count", array_length_1d(global.current_player.purchased));
-// Save players purchased weapons
-for (i = 0; i < array_length_1d(global.current_player.purchased); i++)
+
+
+// check each slot on the ship
+for (i = 0; i < array_length_1d(global.ship.ship_slots); i++)
 {
-    ini_write_string("purchased", string(i), string(global.current_player.purchased[i]));
+    found = false; // the flag
+    slot_weapon = object_get_name(global.ship.slot[i].object_index); // weapon in the current slot
+    show_debug_message("slot weapon: " + string(slot_weapon));    
+    // now try to find its ID in the purchased list
+    for (j = 0; j < array_height_2d(global.current_player.purchased); j++)
+    {
+        purchased_weapon = global.current_player.purchased[j, 0]; // weapon from the purchased list
+        show_debug_message("purchased_weapon: " + string(purchased_weapon));
+        // now compare those two
+        if slot_weapon == purchased_weapon 
+        {
+            show_debug_message("weapon in thep purchased list");
+            found = true; // toggle flag
+            global.current_player.purchased[j, 1] = slot_weapon.ammo; // save the ammo count to the array purchased 2nd dimension
+            show_debug_message("set ammo to " + string(slot_weapon.ammo));
+        }
+    }
+    
 }
+
+// find the position ID of the weapons in the purchased list
+// update the ammo in the second dimension of the ID in the purchased list
+// update the purchased ammo 
+
+
+
+// save the number of purchased weapons
+ini_write_real("purchased", "count", array_height_2d(global.current_player.purchased));
+// Save players purchased weapons
+for (i = 0; i < array_height_2d(global.current_player.purchased); i++)
+{
+    ini_write_string("purchased", string(i), string(global.current_player.purchased[i, 0]));
+    ini_write_real("purchased", string(i) + "_ammo", global.current_player.purchased[i, 1]);
+}
+
+
+
 
 ini_write_string("player", "ship", global.current_player.ship_save_file);
 

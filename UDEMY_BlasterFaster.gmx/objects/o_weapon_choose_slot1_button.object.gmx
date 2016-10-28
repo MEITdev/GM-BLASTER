@@ -97,9 +97,9 @@ gun_stats.ammo_capacity = weapons_slot[gun_choice].ammo_capacity;
 gun_stats.recharge_time = weapons_slot[gun_choice].recharge_time;
 gun_stats.fire_rate = weapons_slot[gun_choice].fire_rate;
 // now set the price
-for (i=0; i&lt;array_length_1d(global.current_player.purchased); i+=1)
+for (i=0; i&lt;array_height_2d(global.current_player.purchased); i+=1)
 {
-    if object_get_name(global.ship.slot[1].object_index) == global.current_player.purchased[i]
+    if object_get_name(global.ship.slot[1].object_index) == global.current_player.purchased[i, 0]
     {
         weapons_slot[gun_choice].price = 0;
     }
@@ -135,10 +135,10 @@ old_mount_y = o_ship_new.slot[0].mount_y;
             <kind>1</kind>
             <string>/// Check if the gun is owned
 is_owned = false;
-for (i=0; i&lt;array_length_1d(global.current_player.purchased); i+=1)
+for (i=0; i&lt;array_height_2d(global.current_player.purchased); i+=1)
 {
     // for each weapon in the purchased list, set the price to 0
-    if object_get_name(global.ship.slot[1].object_index) == global.current_player.purchased[i]
+    if object_get_name(global.ship.slot[1].object_index) == global.current_player.purchased[i, 0]
     {
         is_owned = true;
         show_debug_message("Gun OWNED");
@@ -388,10 +388,10 @@ if global.purchase_update[1] == true
     
     // update the gun stats
     // now set the price
-    for (i=0; i&lt;array_length_1d(global.current_player.purchased); i+=1)
+    for (i=0; i&lt;array_height_2d(global.current_player.purchased); i+=1)
     {
         // for each weapon in the purchased list, set the price to 0
-        if object_get_name(global.ship.slot[1].object_index) == global.current_player.purchased[i]
+        if object_get_name(global.ship.slot[1].object_index) == global.current_player.purchased[i, 0]
         {
             weapons_slot[gun_choice].price = 0;
         }
@@ -596,9 +596,9 @@ gun_stats.ammo_capacity = weapons_slot[gun_choice].ammo_capacity;
 gun_stats.recharge_time = weapons_slot[gun_choice].recharge_time;
 gun_stats.fire_rate = weapons_slot[gun_choice].fire_rate;
 // now set the price
-for (i=0; i&lt;array_length_1d(global.current_player.purchased); i+=1)
+for (i=0; i&lt;array_height_2d(global.current_player.purchased); i+=1)
 {
-    if object_get_name(global.ship.slot[1].object_index) == global.current_player.purchased[i]
+    if object_get_name(global.ship.slot[1].object_index) == global.current_player.purchased[i, 0]
     {
         weapons_slot[gun_choice].price = 0;
     }
@@ -638,10 +638,10 @@ gun_stats.energy_consumption = global.ship.slot[0].energy_consumption;
             <kind>1</kind>
             <string>/// Check if the gun is owned
 is_owned = false;
-for (i=0; i&lt;array_length_1d(global.current_player.purchased); i+=1)
+for (i=0; i&lt;array_height_2d(global.current_player.purchased); i+=1)
 {
     // for each weapon in the purchased list, set the price to 0
-    if object_get_name(global.ship.slot[1].object_index) == global.current_player.purchased[i]
+    if object_get_name(global.ship.slot[1].object_index) == global.current_player.purchased[i, 0]
     {
         is_owned = true;
         show_debug_message("Gun OWNED");

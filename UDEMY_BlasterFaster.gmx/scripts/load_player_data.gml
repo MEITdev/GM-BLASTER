@@ -29,7 +29,8 @@ if file_exists(file_name)
     // load purchased weapons to the global list
     for (i = 0; i < count; i++)
     {
-        global.current_player.purchased[i] = ini_read_string("purchased", string(i), "");
+        global.current_player.purchased[i, 0] = ini_read_string("purchased", string(i), "");
+        global.current_player.purchased[i, 1] = ini_read_real("purchased", string(i) + "_ammo", 0);
     }
     
     // now select that as the file ship name   

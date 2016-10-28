@@ -100,7 +100,7 @@ if !(file_exists("slot_1.ini"))
 {
     // RESET the purchased list when loading a player
     global.current_player.purchased = "";
-    global.current_player.purchased[0] = 0;
+    global.current_player.purchased[0, 0] = 0;
     global.current_player.skill_selected = 0;
     global.current_player.skills_known = 0;
     global.current_player.skills_known[0] = 0;

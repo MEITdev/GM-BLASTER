@@ -109,11 +109,17 @@ global.current_player.name = o_textbox.txt;
 if global.current_player.name != ""
 {
     // array of purchased guns
-    global.current_player.purchased[0] = 0; // reset the array
+    //global.current_player.purchased[0, 0] = 0; // reset the array
     // add the starting weapons
-    global.current_player.purchased[0] = "o_ship_01_Lgun";
-    global.current_player.purchased[1] = "o_ship_01_Rgun";
-    global.current_player.purchased[2] = "o_ship_01_turret";
+    global.current_player.purchased[0, 0] = "o_ship_01_Lgun";
+    global.current_player.purchased[0, 1] = 0;
+
+    global.current_player.purchased[1, 0] = "o_ship_01_Rgun";
+    global.current_player.purchased[1, 1] = 0;    
+
+    global.current_player.purchased[2, 0] = "o_ship_01_turret";
+    global.current_player.purchased[2, 1] = 0;    
+    
     
     // Save the selected skill
     // This happens only when the character is created

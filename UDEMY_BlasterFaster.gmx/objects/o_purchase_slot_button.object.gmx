@@ -85,16 +85,21 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Add the selected weapons to the list of unlocked weapons
+            <string>///Find if the gun is in the list
 //for (i = 0; i &lt; global.ship.ship_slots; i++)
 //{
 
 
+// =======================================================================================
+show_debug_message("PRUCHASE SLOT: " + string(owner_slot) + " / PURCHASED COUNT: "+ string(array_height_2d(global.current_player.purchased)));
+
+
+
     gun = object_get_name(global.ship.slot[owner_slot].object_index);
     is_in_the_list = false; // assume not in the list
-    for (j = 0; j &lt; array_length_1d(global.current_player.purchased); j++)
+    for (j = 0; j &lt; array_height_2d(global.current_player.purchased); j++)
     {
-        loaded_weapon = global.current_player.purchased[j];
+        loaded_weapon = global.current_player.purchased[j, 0];
         if gun == loaded_weapon // check for duplicates, replace them 
         {
             is_in_the_list = true;
@@ -135,24 +140,16 @@ event_inherited();
             <string>/// Purchase the gun
 
 // loop through the choices (weapons on the ship)
-//for (i = 0; i &lt; global.ship.ship_slots - 1; i++)
-//{
-
-
-
 if is_in_the_list == false
 {
     total_price += global.ship.slot[owner_slot].price;
-    show_debug_message("BUY BUTTON. gun not in list. Price set to = " +string(total_price));
+    //show_debug_message("BUY BUTTON. gun not in list. Price set to = " +string(total_price));
 }
 else
 {
     total_price = 0;
-    show_debug_message("BUY BUTTON. gun IN list. Price set to = " +string(total_price));
+    //show_debug_message("BUY BUTTON. gun IN list. Price set to = " +string(total_price));
 }
-
-
-
 
 //}
 
@@ -169,16 +166,18 @@ if (global.Metal - total_price) &gt;= 0
     // HERE save the weapon, after the first loop
     if is_in_the_list == false &amp;&amp; (object_get_parent(global.ship.slot[owner_slot].object_index) != o_empty_slot)
     {
-        global.current_player.purchased[array_length_1d(global.current_player.purchased)] = gun;
+        last_in_array = array_height_2d(global.current_player.purchased);
+        // BACKUP: global.current_player.purchased[array_length_1d(global.current_player.purchased)] = gun;    
+        global.current_player.purchased[last_in_array, 0] = gun;
+        global.current_player.purchased[last_in_array, 1] = asset_get_index(gun).ammo;        
+        //global.current_player.purchased[array_height_2d(global.current_player.purchased), 1] = global.ship.slot[owner_slot].ammo;        
     }
-    
+
+    //show_debug_message("ArrayHEIGHT: " + string(array_height_2d(global.current_player.purchased)));
             
     // save the player and the ship configuration 
     update_player(global.current_player.save_slot);
     save_player_ship(global.current_player.ship_save_file);
-    show_debug_message("BUY BUTTON. Gun price before LOAD = " 
-        + string(global.ship.slot[owner_slot].price));
-
     
     // now load the data so everything is current
     load_player_data(global.current_player.save_slot);

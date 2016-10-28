@@ -121,13 +121,13 @@ alarm[ENERGY_RECHARGE] = room_speed / 4;
             <string>///Allow the user to fire and reset the alarm
 if can_fire == false
 {
-    show_debug_message("RESET can_fire to true");
+    //show_debug_message("RESET can_fire to true");
     can_fire = true;
 }
 else
 {
 }
-show_debug_message("reset the LaserLGUN alarm");
+//show_debug_message("reset the LaserLGUN alarm");
 alarm[LASER_LGUN] = room_speed/4;
 </string>
           </argument>

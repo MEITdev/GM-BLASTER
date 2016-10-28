@@ -55,9 +55,7 @@ fader.at_what_speed = 0.05;</code>
     <instance objName="o_ship_controller" x="208" y="16" name="inst_48EBE9B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_menu_button" x="64" y="448" name="inst_EB7F68A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_weapon_choose_slot0_button" x="224" y="376" name="inst_ACFB37A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_weapon_choose_slot1_button" x="507" y="376" name="inst_EB8F79FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_view_controller" x="144" y="16" name="inst_0508C31D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_weapon_choose_slot2_button" x="366" y="376" name="inst_33080E9F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_dialog_box_controller" x="240" y="16" name="inst_E093A691" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_start_mission_button" x="794" y="448" name="inst_8E355DE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_mouse_cursor_controller" x="272" y="16" name="inst_32F369A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -72,6 +70,8 @@ fader.at_what_speed = 0.05;</code>
     <instance objName="o_skills_available" x="488" y="96" name="inst_8F8AA5F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_carrier_NPC" x="428" y="50" name="inst_08FC81A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="o_metal_counter" x="650" y="20" name="inst_EE3934F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_weapon_choose_slot1_button" x="505" y="376" name="inst_8075014F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_weapon_choose_slot2_button" x="365" y="376" name="inst_314B0CB4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
