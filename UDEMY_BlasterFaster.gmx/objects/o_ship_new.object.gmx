@@ -81,6 +81,30 @@ for (i = 0; i &lt;= ship_slots - 1; i++)
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="o_metal_resource">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Collect Metal resource
+global.Metal += 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="o_shield_powerup">
       <action>
         <libid>1</libid>
@@ -146,7 +170,7 @@ for (i = 0; i &lt;= global.ship.ship_slots - 1; i++)
     // add power when weapon is power based
     if instance_exists(slot[i])
     {
-        if object_get_parent(slot[i].object_index) == o_parent_power_gun
+        if (object_get_parent(slot[i].object_index) == o_parent_power_gun)
         {
             if slot[i].energy_level &lt; slot[i].max_energy_level
             {
@@ -168,6 +192,7 @@ for (i = 0; i &lt;= global.ship.ship_slots - 1; i++)
     {
         if (object_get_parent(slot[i].object_index) == o_parent_projectile_gun)
         || (object_get_parent(slot[i].object_index) == o_parent_turrent_gun)
+        || (object_get_parent(slot[i].object_index) == o_parent_plasma_gun)
         {
             if slot[i].ammo &lt; slot[i].max_ammo
             {

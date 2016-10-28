@@ -30,6 +30,8 @@ event_inherited();
 // use this value to track if the "is known skill" instance has been already created
 is_marked = false;
 skill_number = 2;
+
+hover_text = "Displays indicators in the direction of incoming Asteroids";
 </string>
           </argument>
         </arguments>

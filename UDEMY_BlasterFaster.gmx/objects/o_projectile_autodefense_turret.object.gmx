@@ -28,7 +28,7 @@
             <string>/// Initialise the object
 
 // Set the damage amount
-damage = 1;
+damage = 3;
 speed = 0;
 owner_id = noone;
 exists = true;

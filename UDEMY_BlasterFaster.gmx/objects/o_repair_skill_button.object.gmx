@@ -31,6 +31,8 @@ event_inherited();
 // use this value to track if the "is known skill" instance has been already created
 is_marked = false;
 skill_number = 1;
+
+hover_text = "Repair 5% of Hull or Armor each second.";
 </string>
           </argument>
         </arguments>
@@ -90,7 +92,7 @@ if is_marked == false &amp;&amp; this_room != "r_create_player"
           <argument>
             <kind>1</kind>
             <string>///Create Information dialog
-dialog_box(568, 136, 128, 260, "Repair [ PASSIVE ]", "The REPAIR skill gives you access to NANObots that will try to repair your Hull and Armor over time. Quite a good thing if you suck at this game and are hit by the enemy or asteroids all the time.", 30);
+dialog_box(568, 136, 128, 260, "Repair [ PASSIVE ]", "The REPAIR skill gives you access to NANObots that will try to repair your Hull and Armor over time. Quite a good thing if you suck at this game and are hit by the enemy or asteroids all the time.##NANObots repair 5% of your Armor or Hull each second. If the Hull is damaged, it is repaired first.", 30);
 global.avatar = noone;
 </string>
           </argument>

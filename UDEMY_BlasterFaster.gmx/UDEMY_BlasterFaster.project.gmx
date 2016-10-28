@@ -129,6 +129,7 @@
       <sprite>sprites\s_shield_new_alt</sprite>
       <sprite>sprites\s_armor_new_alt</sprite>
       <sprite>sprites\s_xp_bar</sprite>
+      <sprite>sprites\s_metal_counter</sprite>
       <sprite>sprites\s_hull_new</sprite>
       <sprite>sprites\s_armor_new</sprite>
       <sprite>sprites\s_armor</sprite>
@@ -239,6 +240,9 @@
     <sprites name="Screen Fading">
       <sprite>sprites\s_bottom_up_fade</sprite>
       <sprite>sprites\s_fade_out</sprite>
+    </sprites>
+    <sprites name="Resources">
+      <sprite>sprites\s_metal_resource</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -586,6 +590,9 @@
       <object>objects\o_top_down_fade</object>
       <object>objects\o_fade_out</object>
       <object>objects\o_fade_in</object>
+    </objects>
+    <objects name="Resources">
+      <object>objects\o_metal_resource</object>
     </objects>
   </objects>
   <rooms name="rooms">

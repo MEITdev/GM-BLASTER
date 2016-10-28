@@ -65,7 +65,7 @@ if r_name == "r_mothership_hangar"
 if r_name == "r_you_died"
 {
     //set default "cursor"
-    cursor_sprite = s_cursor_space;
+    cursor_sprite = s_cursor_menu;
 }
 
 if r_name == "r_mission_failed"

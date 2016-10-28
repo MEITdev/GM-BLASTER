@@ -33,7 +33,7 @@ image_index = 0;
 image_speed = 1;
 
 // Override the values
-ammo = 500;
+ammo = 100;
 max_ammo = ammo;
 hull = 3;
 armor = 0;
@@ -51,10 +51,10 @@ ammo_counter = instance_create(0, 0, o_ammo_counter_turret);
 ammo_counter.parent_gun = object_index;
 
 // Gun stats - displayed in the hangar - override
-damage = 2;
+damage = 3;
 ammo_capacity = max_ammo;
 recharge_time = 0;
-fire_rate = room_speed/4;
+fire_rate = 0;
 price = 500;
 energy_consumption = 0;
 
@@ -107,15 +107,21 @@ spawn_projectile = true;
           <argument>
             <kind>1</kind>
             <string>///Spawn new Defensive projectile
-spawn_projectile = true;
-global.projectile_last_angle += 180;
-projectile[0] = instance_create(x + lengthdir_x(100, global.projectile_last_angle), y + lengthdir_y(100, global.projectile_last_angle), o_projectile_autodefense_turret);    projectile[0].owner_id = object_index;
-instance_create(x+random(16), y-random(16), o_plasma_defense_turret__pixel_particle_creator);
 
-// play the audio
-if global.Sound == "On"
+// Only when ammo &gt; 0
+if ammo &gt; 0
 {
-    audio_play_sound(a_defense_turret_spawn, 2, false);
+    ammo -= 1;
+    spawn_projectile = true;
+    global.projectile_last_angle += 180;
+    projectile[0] = instance_create(x + lengthdir_x(100, global.projectile_last_angle), y + lengthdir_y(100, global.projectile_last_angle), o_projectile_autodefense_turret);    projectile[0].owner_id = object_index;
+    instance_create(x+random(16), y-random(16), o_plasma_defense_turret__pixel_particle_creator);
+    
+    // play the audio
+    if global.Sound == "On"
+    {
+        audio_play_sound(a_defense_turret_spawn, 2, false);
+    }
 }
 </string>
           </argument>

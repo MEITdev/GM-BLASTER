@@ -31,6 +31,8 @@ event_inherited();
 // use this value to track if the "is known skill" instance has been already created
 is_marked = false;
 skill_number = 0;
+
+hover_text = "Invulnerability for 1 second. Recharge time 5 seconds";
 </string>
           </argument>
         </arguments>
