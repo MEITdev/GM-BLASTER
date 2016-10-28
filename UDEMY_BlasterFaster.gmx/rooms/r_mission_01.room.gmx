@@ -66,6 +66,7 @@ fader.to_what_room = "this";</code>
     <instance objName="o_carrier_NPC" x="428" y="350" name="inst_4D243EA1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="o_surface_controller" x="91" y="252" name="inst_B21DEF76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_metal_counter" x="650" y="20" name="inst_A01D8C4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_score" x="818" y="20" name="inst_E156D645" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
