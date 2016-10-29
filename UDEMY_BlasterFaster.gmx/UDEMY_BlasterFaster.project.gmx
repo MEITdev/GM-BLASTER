@@ -621,6 +621,7 @@
       <room>rooms\r_settings</room>
       <room>rooms\r_highscore</room>
       <room>rooms\r_help</room>
+      <room>rooms\r_mission_select</room>
       <room>rooms\r_create_player</room>
       <rooms name="Settings">
         <room>rooms\r_set_up_key</room>
@@ -636,7 +637,6 @@
       <room>rooms\r_space</room>
       <room>rooms\r_mission_01</room>
       <room>rooms\r_mission_02</room>
-      <room>rooms\r_mission_select</room>
       <room>rooms\r_mission_failed</room>
       <room>rooms\r_mission_completed</room>
       <room>rooms\r_you_died</room>

@@ -73,7 +73,7 @@ event_inherited();
           <argument>
             <kind>1</kind>
             <string>/// Configure Ship room
-room_goto(r_mission_02);
+room_goto(r_mission_select);
 </string>
           </argument>
         </arguments>
