@@ -65,6 +65,12 @@ if level == 1
     alarm[ASTEROID] = room_speed; // wait 1 second
 }
 
+
+if level == 2
+{
+    alarm[ASTEROID] = room_speed; // wait 1 second
+}
+
 </string>
           </argument>
         </arguments>

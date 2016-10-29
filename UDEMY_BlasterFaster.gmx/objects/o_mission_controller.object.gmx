@@ -92,14 +92,14 @@ if room_get_name(room) == "r_mission_02"
     mission2_stage1 = false;
     mission2_stage2 = false;    
     mission2_stage3 = false;    
-        
+    mission2_stage4 = false;    
+            
     // Target socres
     // Here decide what stage the player is in, depending on score or target objectives later
     enemy_spawner.stage1 = 100;
-    enemy_spawner.stage2 = 200;
-    enemy_spawner.stage3 = 300;
-    enemy_spawner.stage4 = 400;
-    enemy_spawner.stage5 = 500;
+    enemy_spawner.stage2 = 300;
+    enemy_spawner.stage3 = 900;
+    enemy_spawner.stage4 = 1800;
 }
 
 
@@ -189,7 +189,7 @@ if level == 1
 }
 
 ///Mission dialogue manager
-if level == 1
+if level == 2
 {
     if enemy_spawner.stage == 1 &amp;&amp; mission2_stage1 == false
     {

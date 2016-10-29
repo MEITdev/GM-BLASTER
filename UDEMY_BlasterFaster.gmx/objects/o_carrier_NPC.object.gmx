@@ -60,6 +60,16 @@ if room_get_name(room) == "r_mission_01"
         instance_destroy();
     }
 }
+
+if room_get_name(room) == "r_mission_02"
+{
+    vspeed = 4
+    
+    if y &lt; -(room_height)
+    {
+        instance_destroy();
+    }
+}
 </string>
           </argument>
         </arguments>

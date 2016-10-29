@@ -186,7 +186,7 @@ global.Difficulty = "CryBaby"; // default
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Initialize the game object
+            <string>/// Initialize the game object AND Particle SYSTEM
 draw_set_colour(c_white);
 draw_set_font(f_score);
 
@@ -204,6 +204,9 @@ pt_plasma_pixel = create_part_type_sprite(s_plasma_pixel, true, 3, 10);
 // A better explosion
 pt_smoke_2 = create_part_type_sprite(s_smoke_2, true, 3, 10);
 pt_flare_2 = create_part_type_sprite(s_flare_2, true, 3, 10);
+
+// Jet Engine particles
+pt_engine = create_part_type_sprite(s_engine_jet_pixel, true, 3, 8);
 
 
 
