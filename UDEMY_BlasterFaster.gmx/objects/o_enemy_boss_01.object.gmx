@@ -40,6 +40,31 @@ hspeed_update = false;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Start the TimeLine
+timeline_index = tl_level1_boss;
+timeline_position = 0;
+timeline_running = true;
+timeline_loop = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="2" enumb="1">
       <action>
@@ -209,6 +234,7 @@ if instance_exists(global.boss)
           <argument>
             <kind>1</kind>
             <string>/// Stop when room is reached
+/*
 if instance_exists(global.boss)
 {
     if y &gt;= 64
@@ -221,7 +247,7 @@ if instance_exists(global.boss)
         }
     }
 }
-
+*/
 </string>
           </argument>
         </arguments>

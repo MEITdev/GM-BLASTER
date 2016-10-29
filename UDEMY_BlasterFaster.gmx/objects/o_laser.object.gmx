@@ -151,8 +151,8 @@ if global.Sound == 'On'
 
 if instance_exists(global.boss)
 {
-    if global.boss.shield &lt;= 0
-    {
+//    if global.boss.shield &lt;= 0
+//    {
         if other.armor &gt; 0
         {
             other.armor -= damage;
@@ -161,7 +161,7 @@ if instance_exists(global.boss)
         {
             other.hull -= damage; // substract enemies armor by one
         }
-    }
+//    }
 }
 
 instance_destroy(); // destroy the projectile object

@@ -603,6 +603,9 @@
       <object>objects\o_metal_resource</object>
     </objects>
   </objects>
+  <timelines name="timelines">
+    <timeline>timelines\tl_level1_boss</timeline>
+  </timelines>
   <rooms name="rooms">
     <room>rooms\r_splashscreen</room>
     <rooms name="Menu">
