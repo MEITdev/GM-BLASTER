@@ -166,7 +166,7 @@ if instance_exists(global.boss)
             // Save the payer score to the local highscore file
             highscore_add(global.current_player.name, score);
             
-            global.current_player.experience += 50;
+            global.current_player.experience += 25;
             global.current_player.credits += 200;
             // save changes to the player
             update_player(global.current_player.save_slot);

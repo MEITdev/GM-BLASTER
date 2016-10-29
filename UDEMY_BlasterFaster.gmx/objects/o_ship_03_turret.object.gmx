@@ -55,7 +55,7 @@ damage = 3;
 ammo_capacity = max_ammo;
 recharge_time = 0;
 fire_rate = 0;
-price = 75;
+price = 65;
 energy_consumption = 0;
 
 // create the hull status indicator

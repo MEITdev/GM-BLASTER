@@ -61,7 +61,7 @@ damage = .5;
 ammo_capacity = max_ammo;
 recharge_time = 0;
 fire_rate = "8/s"; //room_speed/8;
-price = 30;
+price = 20;
 energy_consumption = 0;
 </string>
           </argument>
