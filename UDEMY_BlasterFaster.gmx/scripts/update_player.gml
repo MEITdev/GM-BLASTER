@@ -29,20 +29,32 @@ for (i=0; i<array_length_1d(global.current_player.skills_known); i+=1)
 for (i = 0; i < global.ship.ship_slots; i++)
 {
     found = false; // the flag
-    slot_weapon = global.ship.slot[i]; // weapon in the current slot
-    show_debug_message("slot weapon: " + string(slot_weapon));    
-    // now try to find its ID in the purchased list
-    for (j = 0; j < array_height_2d(global.current_player.purchased); j++)
+    // do not check power weapons, those recharge and do not need any ammo
+    if object_get_parent(global.ship.slot[i].object_index) == o_parent_power_gun 
+    || object_get_parent(global.ship.slot[i].object_index) == o_empty_slot
     {
-        purchased_weapon = global.current_player.purchased[j, 0]; // weapon from the purchased list
-        show_debug_message("purchased_weapon: " + string(purchased_weapon));
-        // now compare those two
-        if object_get_name(slot_weapon.object_index) == purchased_weapon 
+        // no need to update the ammo
+        
+    }
+    else
+    {
+        
+        slot_weapon = global.ship.slot[i]; // weapon in the current slot
+        show_debug_message("slot weapon: " + string(slot_weapon));    
+        // now try to find its ID in the purchased list
+        for (j = 0; j < array_height_2d(global.current_player.purchased); j++)
         {
-            show_debug_message("weapon in thep purchased list");
-            found = true; // toggle flag
-            global.current_player.purchased[j, 1] = slot_weapon.ammo; // save the ammo count to the array purchased 2nd dimension
-            show_debug_message("set ammo to " + string(slot_weapon.ammo));
+            purchased_weapon = global.current_player.purchased[j, 0]; // weapon from the purchased list
+            show_debug_message("purchased_weapon: " + string(purchased_weapon));
+            show_debug_message("slot_weapon: " + string(slot_weapon));
+            // now compare those two
+            if object_get_name(slot_weapon.object_index) == purchased_weapon 
+            {
+                show_debug_message("weapon in thep purchased list");
+                found = true; // toggle flag
+                global.current_player.purchased[j, 1] = slot_weapon.ammo; // save the ammo count to the array purchased 2nd dimension
+                show_debug_message("set ammo to " + string(slot_weapon.ammo));
+            }
         }
     }
 }

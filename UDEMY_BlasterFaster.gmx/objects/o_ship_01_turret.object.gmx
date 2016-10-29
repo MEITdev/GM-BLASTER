@@ -63,30 +63,6 @@ hull_status.parent_gun = object_index;
         </arguments>
       </action>
     </event>
-    <event eventtype="1" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>o_ship_01_Lgun</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Add dummy gun when destroyed
-global.ship.slot[gun_slot_id] = instance_create(x, y, o_ship_02_dummyGun);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -183,6 +159,12 @@ if hull == 0
     {
         remove_from_purchased(object_index);
     }
+    
+    ///Add dummy gun when destroyed
+    global.ship.slot[2] = instance_create(x, y, o_ship_02_dummyGun);
+    show_debug_message("attached dummy weapon at " + string(gun_slot_id));
+    
+    
     instance_destroy();
 }
 </string>
