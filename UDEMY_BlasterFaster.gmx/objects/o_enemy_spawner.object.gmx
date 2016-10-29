@@ -65,7 +65,10 @@ if level == 1
 {
     alarm[SPAWNER_ALARM] = room_speed*21; // wait 21 seconds because of music
 }
-
+if level == 2
+{
+    alarm[SPAWNER_ALARM] = room_speed*10;
+}
 </string>
           </argument>
         </arguments>
@@ -89,38 +92,50 @@ if level == 1
           <argument>
             <kind>1</kind>
             <string>/// Create the enemies
-var enemy = o_enemy_one;
-var alarm_time = random_range(room_speed*.5, room_speed*2);
+if level == 1
+{
+    
+    var enemy = o_enemy_one;
+    var alarm_time = random_range(room_speed*.5, room_speed*2);
+    
+    // Increase the difficulty
+    if (score &gt;= stage1)
+    {
+        stage = 1;
+        enemy = choose(o_enemy_one, o_enemy_one, o_enemy_two);
+        alarm_time = random_range(room_speed*.25, room_speed*1.5);
+    }
+    // Increase the difficulty
+    if (score &gt;= stage2)
+    {
+        stage = 2;
+        enemy = choose(o_enemy_one, o_enemy_two, o_enemy_two);
+        alarm_time = random_range(room_speed*.5, room_speed*2);
+    }
+    
+    // If boss is present do not reset the timer
+    // this can be hardcoded for now as this is the only boss in this level
+    if instance_exists(o_enemy_boss_01)
+    {
+        // do not reset the alarm
+    }
+    else
+    {
+        // reset the alarm
+        alarm[SPAWNER_ALARM] = alarm_time;
+    }
+    
+    // Create the enemy
+    instance_create(random_range(16, room_width-16), -16, enemy);
 
-// Increase the difficulty
-if (score &gt;= stage1)
-{
-    stage = 1;
-    enemy = choose(o_enemy_one, o_enemy_one, o_enemy_two);
-    alarm_time = random_range(room_speed*.25, room_speed*1.5);
-}
-// Increase the difficulty
-if (score &gt;= stage2)
-{
-    stage = 2;
-    enemy = choose(o_enemy_one, o_enemy_two, o_enemy_two);
-    alarm_time = random_range(room_speed*.5, room_speed*2);
 }
 
-// If boss is present do not reset the timer
-// this can be hardcoded for now as this is the only boss in this level
-if instance_exists(o_enemy_boss_01)
+if level == 2
 {
-    // do not reset the alarm
+    var enemy = o_enemy_one;
+    var alarm_time = random_range(room_speed*.5, room_speed*2);
+    
 }
-else
-{
-    // reset the alarm
-    alarm[SPAWNER_ALARM] = alarm_time;
-}
-
-// Create the enemy
-instance_create(random_range(16, room_width-16), -16, enemy);
 </string>
           </argument>
         </arguments>

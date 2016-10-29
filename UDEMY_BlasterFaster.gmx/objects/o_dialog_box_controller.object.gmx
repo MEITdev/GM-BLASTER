@@ -118,7 +118,7 @@ if r_name == "r_mission_01"
 
 if r_name == "r_mission_02"
 {
-    dialog_box(104, 346, 72, 550, "Mission 02: That is no Moon!", "", 20);
+    dialog_box(104, 346, 72, 550, "Mission 02: That is no Moon!", "We can gather some resources in this asteroid field! It seems to be quite empty in here. Go for it", 10);
     global.avatar = instance_create(584, 296, o_pirate_avatar);
     global.avatar.image_xscale = 0.5;
     global.avatar.image_yscale = 0.5;

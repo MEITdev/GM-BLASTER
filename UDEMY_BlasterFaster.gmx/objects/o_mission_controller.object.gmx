@@ -187,6 +187,54 @@ if level == 1
     
     }
 }
+
+///Mission dialogue manager
+if level == 1
+{
+    if enemy_spawner.stage == 1 &amp;&amp; mission2_stage1 == false
+    {
+        mission2_stage1 = true;
+        // display message
+        dialog_box(104, 346, 58, 550, "Stage 1", "Pile up on those Asteroids! NOW!", 5);
+        global.avatar = instance_create(584, 296, o_pirate_avatar);
+        show_debug_message("TTL: " + string(global.dialog.ttl));
+        global.avatar.image_xscale = 0.5;
+        global.avatar.image_yscale = 0.5;
+    }
+    
+    if enemy_spawner.stage == 2 &amp;&amp; mission2_stage2 == false
+    {
+        mission2_stage2 = true;
+        // display message
+        dialog_box(104, 346, 58, 550, "Stage 2", "Ah crap, it seems that this asteroid field is not undefended after all... Kill them all!", 5);        
+        global.avatar = instance_create(584, 296, o_pirate_avatar);
+        global.avatar.image_xscale = 0.5;
+        global.avatar.image_yscale = 0.5;
+    
+    }
+    
+    if enemy_spawner.stage == 3 &amp;&amp; mission2_stage3 == false
+    {
+        mission2_stage3 = true;
+        // display message
+        dialog_box(104, 346, 58, 550, "Stage 3", "Watch out! They are trying to flank us!", 5);        
+        global.avatar = instance_create(584, 296, o_pirate_avatar);
+        global.avatar.image_xscale = 0.5;
+        global.avatar.image_yscale = 0.5;
+    
+    }
+    
+    if enemy_spawner.stage == 4 &amp;&amp; mission2_stage4 == false
+    {
+        mission2_stage4 = true;
+        // display message
+        dialog_box(104, 346, 58, 550, "Stage 4", "What the hell? They must be defending something important.", 5);        
+        global.avatar = instance_create(584, 296, o_pirate_avatar);
+        global.avatar.image_xscale = 0.5;
+        global.avatar.image_yscale = 0.5;
+    
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -209,6 +257,31 @@ if level == 1
             <kind>1</kind>
             <string>///Mission COMPLETED tasks
 if room_get_name(room) == "r_mission_01" &amp;&amp; global.mission_complete == true
+{
+
+    show_debug_message("MISSION CONTROLLER - MISSION DONE");
+
+    // reset flag
+    global.mission_complete = false;
+    
+    // Save the player information
+    update_player(global.current_player.save_slot);   
+    // save player ship
+    save_player_ship(global.current_player.ship_save_file);
+    // now load player data
+    load_player_data(global.current_player.save_slot);
+
+    
+    // create the fader instance
+    fader = instance_create(0,room_height, o_bottom_up_fade);
+    fader.when_to_die = (room_height * -2);
+    fader.at_what_speed = -8;
+    fader.to_what_room = r_mission_completed;
+       
+    //room_goto(r_mission_completed);
+}
+
+if room_get_name(room) == "r_mission_02" &amp;&amp; global.mission_complete == true
 {
 
     show_debug_message("MISSION CONTROLLER - MISSION DONE");
@@ -275,6 +348,27 @@ draw_text(room_width/2, 32, string(global.time_left));
 // reset font to default
 draw_set_colour(c_white);
 draw_set_font(f_score);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Display STAGE notifications - IMPLEMENT!!!!
 </string>
           </argument>
         </arguments>
