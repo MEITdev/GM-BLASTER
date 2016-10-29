@@ -202,11 +202,20 @@
       <sprite>sprites\s_platform_ground_01</sprite>
     </sprites>
     <sprites name="Space Asteroids">
-      <sprite>sprites\s_asteroid_grey_01</sprite>
-      <sprite>sprites\s_asteroid_grey_01_fragment_01</sprite>
-      <sprite>sprites\s_asteroid_grey_01_fragment_02</sprite>
-      <sprite>sprites\s_asteroid_grey_02</sprite>
-      <sprite>sprites\s_asteroid_grey_03</sprite>
+      <sprites name="grey">
+        <sprite>sprites\s_asteroid_grey_01_fragment_02</sprite>
+        <sprite>sprites\s_asteroid_grey_01_fragment_01</sprite>
+        <sprite>sprites\s_asteroid_grey_02</sprite>
+        <sprite>sprites\s_asteroid_grey_03</sprite>
+        <sprite>sprites\s_asteroid_grey_01</sprite>
+      </sprites>
+      <sprites name="red">
+        <sprite>sprites\s_asteroid_red_01</sprite>
+        <sprite>sprites\s_asteroid_red_03</sprite>
+        <sprite>sprites\s_asteroid_red_02</sprite>
+        <sprite>sprites\s_asteroid_red_01_fragment_01</sprite>
+        <sprite>sprites\s_asteroid_red_01_fragment_02</sprite>
+      </sprites>
     </sprites>
     <sprites name="Mouse_Cursors">
       <sprite>sprites\s_cursor_crosshair</sprite>
@@ -261,6 +270,8 @@
       <background>background\b_space_large</background>
       <background>background\b_gas_giant</background>
       <background>background\b_nebulae_violet</background>
+      <background>background\b_nebulae</background>
+      <background>background\b_exoplanet_01</background>
     </backgrounds>
     <backgrounds name="SpaceMissions">
       <background>background\b_stars_far</background>
@@ -568,11 +579,20 @@
     </objects>
     <objects name="Space Asteroids">
       <object>objects\o_asteroids_parent</object>
-      <object>objects\o_asteroid_grey_01</object>
-      <object>objects\o_asteroid_grey_01_fragment_01</object>
       <object>objects\o_asteroid_grey_01_fragment_02</object>
-      <object>objects\o_asteroid_grey_02</object>
-      <object>objects\o_asteroid_grey_03</object>
+      <objects name="grey">
+        <object>objects\o_asteroid_grey_01</object>
+        <object>objects\o_asteroid_grey_01_fragment_01</object>
+        <object>objects\o_asteroid_grey_03</object>
+        <object>objects\o_asteroid_grey_02</object>
+      </objects>
+      <objects name="red">
+        <object>objects\o_asteroid_red_02</object>
+        <object>objects\o_asteroid_red_03</object>
+        <object>objects\o_asteroid_red_01_fragment_02</object>
+        <object>objects\o_asteroid_red_01_fragment_01</object>
+        <object>objects\o_asteroid_red_01</object>
+      </objects>
     </objects>
     <objects name="Persistent objects">
       <objects name="Singletons">

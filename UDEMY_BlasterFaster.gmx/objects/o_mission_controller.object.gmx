@@ -130,18 +130,20 @@ diff = date_second_span(start_time, date_current_datetime());
 
 // time to display to the player
 global.time_left = round(time_limit - diff);
-if diff &gt; time_limit
+if level == 1
 {
-
-    // save the current state of the player and ship stats
-    update_player(global.current_player.save_slot);
-    save_player_ship(global.current_player.ship_save_file);
+    if diff &gt; time_limit
+    {
     
-    // if it took more than 5 seconds to finish the level, reset
-    // for testing - just go to the main menu
-    room_goto(r_mission_failed);
+        // save the current state of the player and ship stats
+        update_player(global.current_player.save_slot);
+        save_player_ship(global.current_player.ship_save_file);
+        
+        // if it took more than 5 seconds to finish the level, reset
+        // for testing - just go to the main menu
+        room_goto(r_mission_failed);
+    }
 }
-
 </string>
           </argument>
         </arguments>
