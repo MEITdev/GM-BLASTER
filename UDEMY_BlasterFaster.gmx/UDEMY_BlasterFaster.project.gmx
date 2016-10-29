@@ -115,6 +115,8 @@
       <sprite>sprites\s_skill_points_available</sprite>
       <sprite>sprites\s_master_volume_increase</sprite>
       <sprite>sprites\s_master_volume_decrease</sprite>
+      <sprite>sprites\s_volume_control</sprite>
+      <sprite>sprites\s_volume_bar</sprite>
     </sprites>
     <sprites name="Menu Buttons">
       <sprite>sprites\s_button</sprite>
@@ -372,6 +374,8 @@
       <object>objects\o_repair_ship_button</object>
       <object>objects\o_help_button</object>
       <objects name="Settings">
+        <object>objects\o_master_volume_increase_button</object>
+        <object>objects\o_master_volume_decrease_button</object>
         <object>objects\o_settings_action_01_control</object>
         <object>objects\o_settings_action_02_control</object>
         <object>objects\o_settings_action_03_control</object>
@@ -397,6 +401,7 @@
         <object>objects\o_setup_down_key</object>
         <object>objects\o_setup_left_key</object>
         <object>objects\o_setup_right_key</object>
+        <object>objects\o_volume_bar</object>
       </objects>
     </objects>
     <objects name="Player Characters">

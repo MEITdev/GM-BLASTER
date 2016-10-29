@@ -2,6 +2,7 @@
 ini_open("settings.ini");
 global.Music = ini_read_string("general", "Music", "On");
 global.Sound = ini_read_string("general", "Sound", "On");
+global.Volume = ini_read_real("general", "Volume", 1);
 global.Controller = ini_read_string("general", "Controller", "Keyboard");
 global.Fullscreen = ini_read_real("general", "Fullscreen", 0);
 global.Smoothing = ini_read_real("general", "Smoothing", 0);

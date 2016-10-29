@@ -25,38 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Initialize the game object
-draw_set_colour(c_white);
-draw_set_font(f_score);
-
-// Create the particle system
-system = part_system_create();
-
-// Create the particle types
-pt_smoke = create_part_type_sprite(s_smoke, true, 25, 30);
-pt_flare = create_part_type_sprite(s_flare, true, 15, 20);
-
-// particles for weapons
-pt_plasma = create_part_type_sprite(s_plasma, true, 5, 15);
-pt_plasma_pixel = create_part_type_sprite(s_plasma_pixel, true, 3, 10);
-
-// A better explosion
-pt_smoke_2 = create_part_type_sprite(s_smoke_2, true, 3, 10);
-pt_flare_2 = create_part_type_sprite(s_flare_2, true, 3, 10);
-
-
-
-// Play the music
-//if global.Music = "On"
-//{
-//    audio_play_sound(a_menu_music, 10, true);
-//}
-
-// set the Player Ship image index when the game starts
-//global.player_ship_type = 0;
-
-// enable the mouse cursor
-//window_set_cursor(cr_default);
+            <string>/// Create instance of Player object
+// Instantiate the o_player - the global player object that will hold all the information about the player and the ship he/she has
+global.current_player = instance_create(0,0, o_player);
 </string>
           </argument>
         </arguments>
@@ -77,9 +48,34 @@ pt_flare_2 = create_part_type_sprite(s_flare_2, true, 3, 10);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Create instance of Player object
-// Instantiate the o_player - the global player object that will hold all the information about the player and the ship he/she has
-global.current_player = instance_create(0,0, o_player);
+            <string>/// Open/ Create settings INI file
+if file_exists("settings.ini")
+{
+    // read existing settings
+    load_settings();
+}
+else
+{
+    global.Music = "On";
+    global.Sound = "On";
+    global.Volume = 1;
+    global.Controller = "Keyboard";
+    global.UP = ord("W");
+    global.DOWN = ord("S");
+    global.LEFT = ord("A");
+    global.RIGHT = ord("D");
+    global.ACTION_01 = mb_left;
+    global.ACTION_02 = mb_right;    
+    global.ACTION_03 = mb_middle;
+    
+    global.Fullscreen = 1;
+    global.Smoothing = 1;
+    global.Vsync = 1;
+    global.AAlevel = 2;
+    
+    save_settings();
+    load_settings();
+}
 </string>
           </argument>
         </arguments>
@@ -146,53 +142,6 @@ global.hover_message = noone;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Open/ Create settings INI file
-if file_exists("settings.ini")
-{
-    // read existing settings
-    load_settings();
-}
-else
-{
-    global.Music = "On";
-    global.Sound = "On";
-    global.Controller = "Keyboard";
-    global.UP = ord("W");
-    global.DOWN = ord("S");
-    global.LEFT = ord("A");
-    global.RIGHT = ord("D");
-    global.ACTION_01 = mb_left;
-    global.ACTION_02 = mb_right;    
-    global.ACTION_03 = mb_middle;
-    
-    global.Fullscreen = 1;
-    global.Smoothing = 1;
-    global.Vsync = 1;
-    global.AAlevel = 2;
-    
-    save_settings();
-    load_settings();
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Initialise Video settings
 global.video_controller = instance_create(0,0, o_video_setup);
 </string>
@@ -217,6 +166,58 @@ global.video_controller = instance_create(0,0, o_video_setup);
             <kind>1</kind>
             <string>///Game difficulty variable
 global.Difficulty = "CryBaby"; // default
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Initialize the game object
+draw_set_colour(c_white);
+draw_set_font(f_score);
+
+// Create the particle system
+system = part_system_create();
+
+// Create the particle types
+pt_smoke = create_part_type_sprite(s_smoke, true, 25, 30);
+pt_flare = create_part_type_sprite(s_flare, true, 15, 20);
+
+// particles for weapons
+pt_plasma = create_part_type_sprite(s_plasma, true, 5, 15);
+pt_plasma_pixel = create_part_type_sprite(s_plasma_pixel, true, 3, 10);
+
+// A better explosion
+pt_smoke_2 = create_part_type_sprite(s_smoke_2, true, 3, 10);
+pt_flare_2 = create_part_type_sprite(s_flare_2, true, 3, 10);
+
+
+
+// Play the music
+//if global.Music = "On"
+//{
+//    audio_play_sound(a_menu_music, 10, true);
+//}
+
+// set the Player Ship image index when the game starts
+//global.player_ship_type = 0;
+
+// enable the mouse cursor
+//window_set_cursor(cr_default);
 </string>
           </argument>
         </arguments>

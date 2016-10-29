@@ -4,6 +4,7 @@
 ini_open("settings.ini");
 ini_write_string("general", "Music", global.Music);
 ini_write_string("general", "Sound", global.Sound);
+ini_write_real("general", "Volume", global.Volume);
 ini_write_string("general", "Controller", global.Controller);
 ini_write_real("general", "Fullscreen", global.Fullscreen);
 ini_write_real("general", "Smoothing", global.Smoothing);
