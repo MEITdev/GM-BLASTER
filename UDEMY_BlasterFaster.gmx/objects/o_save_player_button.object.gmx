@@ -118,7 +118,7 @@ if global.current_player.name != ""
     global.current_player.purchased[1, 1] = 0;    
 
     global.current_player.purchased[2, 0] = "o_ship_01_turret";
-    global.current_player.purchased[2, 1] = 0;    
+    global.current_player.purchased[2, 1] = 1000; // This is manual at the moment    
     
     
     // Save the selected skill

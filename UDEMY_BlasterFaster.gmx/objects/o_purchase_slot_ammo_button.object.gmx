@@ -84,6 +84,7 @@ if  (object_get_parent(global.ship.slot[owner_slot].object_index) != o_empty_slo
     if global.ship.slot[owner_slot].ammo &lt; global.ship.slot[owner_slot].max_ammo
     {
         global.ship.slot[owner_slot].ammo = global.ship.slot[owner_slot].max_ammo;
+        update_player(global.current_player.save_slot);
     }
 }
 </string>
