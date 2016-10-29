@@ -364,6 +364,7 @@
       <object>objects\o_save_slot_1</object>
       <object>objects\o_save_slot_2</object>
       <object>objects\o_delete_save_button</object>
+      <object>objects\o_confirm_delete_save_button</object>
       <object>objects\o_gun_stats</object>
       <object>objects\o_gun_box_purchased</object>
       <object>objects\o_repair_ship_button</object>
