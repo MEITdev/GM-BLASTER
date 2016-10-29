@@ -113,6 +113,8 @@
       <sprite>sprites\s_action_02_control</sprite>
       <sprite>sprites\s_action_button_surface</sprite>
       <sprite>sprites\s_skill_points_available</sprite>
+      <sprite>sprites\s_master_volume_increase</sprite>
+      <sprite>sprites\s_master_volume_decrease</sprite>
     </sprites>
     <sprites name="Menu Buttons">
       <sprite>sprites\s_button</sprite>
