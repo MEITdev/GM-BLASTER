@@ -201,6 +201,10 @@ pt_flare = create_part_type_sprite(s_flare, true, 15, 20);
 pt_plasma = create_part_type_sprite(s_plasma, true, 5, 15);
 pt_plasma_pixel = create_part_type_sprite(s_plasma_pixel, true, 3, 10);
 
+// enemy plasma turret gun particles
+pt_enemy_plasma = create_part_type_sprite(s_enemy_plasma, true, 5, 15);
+pt_enemy_plasma_pixel = create_part_type_sprite(s_enemy_plasma_pixel, true, 3, 10);
+
 // A better explosion
 pt_smoke_2 = create_part_type_sprite(s_smoke_2, true, 3, 10);
 pt_flare_2 = create_part_type_sprite(s_flare_2, true, 3, 10);

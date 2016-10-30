@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-2</depth>
   <persistent>0</persistent>
-  <parentName>o_parent_turrent_gun</parentName>
+  <parentName>o_enemy_boss_weapon_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -68,6 +68,12 @@ correction_y = 26;
             <string>///Spawned projectile variables
 //global.projectile_last_angle = 0;
 spawn_projectile = true;
+
+// spawn the projectile straight away
+alarm[DEFENSIVE_PROJECTILE] = 0;
+
+// init
+projectile[0] = noone;
 </string>
           </argument>
         </arguments>
@@ -96,9 +102,9 @@ if ammo &gt; 0
 {
 //    ammo -= 1;
     spawn_projectile = true;
-    projectile[0] = instance_create(x + lengthdir_x(100, 0), y + lengthdir_y(100, 0), o_projectile_autodefense_turret);    
+    projectile[0] = instance_create(x + lengthdir_x(100, 0), y + lengthdir_y(100, 0), o_enemy_projectile_autodefense_turret);
     projectile[0].owner_id = object_index;
-    instance_create(x+random(16), y-random(16), o_plasma_defense_turret__pixel_particle_creator);
+    instance_create(x+random(16), y-random(16), o_enemy_plasma_defense_turret_pixel_particle_creator);
     
     // play the audio
     if global.Sound == "On"
@@ -185,8 +191,8 @@ if !(instance_exists(projectile[0])) &amp;&amp; spawn_projectile == true
 {
     spawn_projectile = false;
     //global.projectile_last_angle += 180;
-    // spawn new projectile in 1.5 seconds
-    alarm[DEFENSIVE_PROJECTILE] = room_speed * 1.5;
+    // spawn new projectile in 1 second
+    alarm[DEFENSIVE_PROJECTILE] = room_speed * 1;
 }
 </string>
           </argument>

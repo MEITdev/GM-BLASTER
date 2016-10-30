@@ -50,7 +50,7 @@ if level == 2
     global.boss = instance_create(room_width + 64, room_height / 2, o_enemy_boss_02);
     
     // Set the ship slots, this depends on the type of the ship
-    global.boss.ship_slots = 4;
+    global.boss.ship_slots = 5;
     global.boss.shield = 20;
     global.boss.armor = 30;
     global.boss.hull = 70;
@@ -79,7 +79,11 @@ if level == 2
 
     global.boss.ship_mount_x[3] = -36;
     global.boss.ship_mount_y[3] = -4;
+
     
+    // TESTING attaching the turret
+    global.boss.ship_mount_x[4] = 0;
+    global.boss.ship_mount_y[4] = 0;
     
         
     // attach guns to the ship
@@ -89,13 +93,14 @@ if level == 2
     global.boss.slot[1] = instance_create(global.boss.ship_mount_x[1], global.boss.ship_mount_y[1], o_enemy_boss_01_Lgun);
     global.boss.slot[1].gun_slot_id = 1;
 
-    global.boss.slot[2] = instance_create(global.boss.ship_mount_x[1], global.boss.ship_mount_y[1], o_enemy_boss_01_Rgun);
+    global.boss.slot[2] = instance_create(global.boss.ship_mount_x[2], global.boss.ship_mount_y[2], o_enemy_boss_01_Rgun);
     global.boss.slot[2].gun_slot_id = 2;
 
-    global.boss.slot[3] = instance_create(global.boss.ship_mount_x[1], global.boss.ship_mount_y[1], o_enemy_boss_01_Rgun);
+    global.boss.slot[3] = instance_create(global.boss.ship_mount_x[3], global.boss.ship_mount_y[3], o_enemy_boss_01_Rgun);
     global.boss.slot[3].gun_slot_id = 3;
         
-    
+    global.boss.slot[4] = instance_create(global.boss.ship_mount_x[4], global.boss.ship_mount_y[4], o_enemy_boss_02_defensive_turret);
+    global.boss.slot[4].gun_slot_id = 4;
     
 }
 

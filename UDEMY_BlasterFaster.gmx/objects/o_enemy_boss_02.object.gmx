@@ -28,7 +28,7 @@
             <string>/// Initialise the enemy
 event_inherited();
 
-hspeed = -2 // start goig to the left
+hspeed = -3 // start goig to the left
 
 hull = 1;
 alarm[LASER_ALARM] = 1;
@@ -55,6 +55,28 @@ alarm[LASER2_ALARM] = 1;
             <kind>1</kind>
             <string>///Timeline trigger
 timeline_trigger = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Defensive angle variable
+global.boss_projectile_last_angle = 0;
 </string>
           </argument>
         </arguments>
@@ -211,7 +233,7 @@ if instance_exists(global.boss)
         timeline_index = tl_level2_boss;
         timeline_position = 0;
         timeline_running = true;
-        timeline_loop = true;        
+        timeline_loop = false;        
     }
 }
 
@@ -236,10 +258,40 @@ if instance_exists(global.boss)
           <argument>
             <kind>1</kind>
             <string>///Stop when the top of the room is reached
-if y &lt; 32
+if y &lt; 64
 {
     vspeed = 0;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Bounce of edges after timeline has been activated
+if instance_exists(global.boss) &amp;&amp; timeline_trigger == true
+{
+    if (x &gt; room_width - global.boss.sprite_width) or (x &lt; global.boss.sprite_width)
+    {
+        hspeed = hspeed * -1;
+    } 
+}
+
+
 </string>
           </argument>
         </arguments>

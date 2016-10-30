@@ -74,6 +74,9 @@
         <sprite>sprites\s_enemy_boss_01_Rgun</sprite>
         <sprite>sprites\s_enemy_boss_scarab_hull</sprite>
         <sprite>sprites\s_enemy_boss_mantis_hull</sprite>
+        <sprites name="Boss Mobs">
+          <sprite>sprites\s_enemy_boss_mantis_mob_01_turret</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Player Powerups">
@@ -171,7 +174,9 @@
       <sprite>sprites\s_flare</sprite>
       <sprite>sprites\s_shield_hit</sprite>
       <sprite>sprites\s_plasma</sprite>
+      <sprite>sprites\s_enemy_plasma</sprite>
       <sprite>sprites\s_plasma_pixel</sprite>
+      <sprite>sprites\s_enemy_plasma_pixel</sprite>
       <sprite>sprites\s_engine_jet_pixel</sprite>
       <sprite>sprites\s_ship_03_hit_flare</sprite>
       <sprite>sprites\s_flare_2</sprite>
@@ -188,9 +193,11 @@
       <sprites name="Plasma">
         <sprite>sprites\s_plasma_turret_01_green_gun_flare</sprite>
         <sprite>sprites\s_plasma_turret_01_laser</sprite>
+        <sprite>sprites\s_enemy_plasma_projectile</sprite>
         <sprite>sprites\s_ship_03_projectile</sprite>
         <sprite>sprites\s_ship_03_gun_flare</sprite>
         <sprite>sprites\s_projectile_autodefense_turret</sprite>
+        <sprite>sprites\s_enemy_projectile_autodefense_turret</sprite>
       </sprites>
       <sprites name="Laser">
         <sprite>sprites\s_laser_directional</sprite>
@@ -452,6 +459,8 @@
       <objects name="Projectiles">
         <object>objects\o_projectile</object>
         <object>objects\o_projectile_autodefense_turret</object>
+        <object>objects\o_enemy_projectile_autodefense_turret</object>
+        <object>objects\o_enemy_plasma_projectile_directional</object>
         <object>objects\o_enemy_projectile</object>
       </objects>
       <objects name="Plasma">
@@ -511,6 +520,9 @@
         <object>objects\o_enemy_three</object>
         <object>objects\o_enemy_four</object>
       </objects>
+      <objects name="Boss Mobs">
+        <object>objects\o_enemy_boss_02_mob_01</object>
+      </objects>
     </objects>
     <objects name="Player Powerups">
       <object>objects\o_powerup_parent</object>
@@ -552,10 +564,13 @@
     <objects name="Effects">
       <object>objects\o_particle_creator</object>
       <object>objects\o_plasma_particle_creator</object>
+      <object>objects\o_enemy_plasma_particle_creator</object>
+      <object>objects\o_enemy_plasma_pixel_particle_creator</object>
       <object>objects\o_explosion_particle_creator</object>
       <object>objects\o_plasma_explosion_particle_creator</object>
       <object>objects\o_plasma_pixel_particle_creator</object>
       <object>objects\o_plasma_defense_turret__pixel_particle_creator</object>
+      <object>objects\o_enemy_plasma_defense_turret_pixel_particle_creator</object>
       <object>objects\o_engine_particle_creator</object>
       <object>objects\o_explosion_center</object>
       <object>objects\o_explosion_center_2</object>

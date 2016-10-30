@@ -19,13 +19,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///spawn couple of turrets around the boss
-instance_create(x - 16, y, o_enemy_four);
-instance_create(x + 16, y, o_enemy_four);
+            <string>///Move the boss ship to the top of the screen
+vspeed = -2;
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+  </entry>
+  <entry>
+    <step>120</step>
+    <event>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -42,8 +46,223 @@ instance_create(x + 16, y, o_enemy_four);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Move the boss ship to the top of the screen
-vspeed = -2;
+            <string>///After 2 seconds spawn first two turrets
+
+mob01 = instance_create(x - 16, y, o_enemy_boss_02_mob_01);
+mob02 = instance_create(x + 16, y, o_enemy_boss_02_mob_01);
+
+// set the horizontal speed and vertical speed for the turrets
+mob01.vspeed = 2;
+mob02.vspeed = 2;
+mob01.hspeed = -2;
+mob02.hspeed = 2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </entry>
+  <entry>
+    <step>180</step>
+    <event>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///After 1 second stop the turrets from moving
+
+// set the horizontal speed and vertical speed for the turrets
+mob01.vspeed = 0;
+mob02.vspeed = 0;
+mob01.hspeed = 0;
+mob02.hspeed = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </entry>
+  <entry>
+    <step>300</step>
+    <event>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///At second 5 create 2 additional turrets MOBs
+
+mob03 = instance_create(x - 16, y, o_enemy_boss_02_mob_01);
+mob04 = instance_create(x + 16, y, o_enemy_boss_02_mob_01);
+
+// set the horizontal speed and vertical speed for the turrets
+mob03.vspeed = 6;
+mob04.vspeed = 6;
+mob03.hspeed = -1;
+mob04.hspeed = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </entry>
+  <entry>
+    <step>360</step>
+    <event>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///After 1 second stop the turrets from moving
+
+// set the horizontal speed and vertical speed for the turrets
+mob03.vspeed = 0;
+mob04.vspeed = 0;
+mob03.hspeed = 0;
+mob04.hspeed = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </entry>
+  <entry>
+    <step>361</step>
+    <event>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Boss Charge 
+vspeed = 6;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </entry>
+  <entry>
+    <step>400</step>
+    <event>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// STOP
+vspeed = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </entry>
+  <entry>
+    <step>410</step>
+    <event>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// go back
+vspeed = -4;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </entry>
+  <entry>
+    <step>460</step>
+    <event>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Start going sideways
+hspeed = -4;
 </string>
           </argument>
         </arguments>
