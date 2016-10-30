@@ -140,7 +140,16 @@ else if what_direction &gt;= 136 and what_direction &lt;= 224
     asteroid.direction = what_direction;
 }
 
-alarm[ASTEROID02] = alarm_time;
+if instance_exists(global.boss)
+{
+    // if boss is present do not spawn any more asteroids
+}
+else
+{
+    alarm[ASTEROID02] = alarm_time;
+}
+
+
 //instance_create(random_range(16, room_width-16), -16, asteroid);
 
 
@@ -236,7 +245,15 @@ else if what_direction &gt;= 136 and what_direction &lt;= 224
     asteroid.direction = what_direction;
 }
 
-alarm[ASTEROID] = alarm_time;
+if instance_exists(global.boss)
+{
+    // if boss is present do not spawn any more asteroids
+}
+else
+{
+    alarm[ASTEROID] = alarm_time;
+}
+
 //instance_create(random_range(16, room_width-16), -16, asteroid);
 
 

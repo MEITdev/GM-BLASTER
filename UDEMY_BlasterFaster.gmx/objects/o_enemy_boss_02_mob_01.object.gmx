@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// Initialise the enemy
 
-hull = 10;
+hull = 15;
 
 alarm[LASER_ALARM] = 1;
 </string>

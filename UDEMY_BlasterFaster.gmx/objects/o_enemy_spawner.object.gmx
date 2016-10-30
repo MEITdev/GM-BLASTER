@@ -171,10 +171,17 @@ if level == 2
         // update alarm time
         alarm_time = random_range(room_speed*1, room_speed * 3);  
     }
+    
+    // do not spawn when boss is present
+    if instance_exists(o_enemy_boss_02)
+    {
+        // do not reset the alarm
+    }
     else
     {
+        // reset the alarm
         alarm[SPAWNER_ALARM] = alarm_time;
-    }  
+    }
 
     // create the enemy
     if stage &gt; 1 // first stage does not have enemies in this level

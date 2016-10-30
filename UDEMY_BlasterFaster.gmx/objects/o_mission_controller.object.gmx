@@ -86,7 +86,7 @@ if room_get_name(room) == "r_mission_02"
     // START THE TIMER
     start_time = date_current_datetime();
     // What is the time limit for the mission in Seconds
-    time_limit = 35;
+    time_limit = 180;
 
     // Messages for different levels triggers
     mission2_stage1 = false;

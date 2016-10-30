@@ -189,7 +189,7 @@ vspeed = 6;
     </event>
   </entry>
   <entry>
-    <step>400</step>
+    <step>420</step>
     <event>
       <action>
         <libid>1</libid>
@@ -216,7 +216,7 @@ vspeed = 0;
     </event>
   </entry>
   <entry>
-    <step>410</step>
+    <step>430</step>
     <event>
       <action>
         <libid>1</libid>
@@ -243,7 +243,7 @@ vspeed = -4;
     </event>
   </entry>
   <entry>
-    <step>460</step>
+    <step>500</step>
     <event>
       <action>
         <libid>1</libid>

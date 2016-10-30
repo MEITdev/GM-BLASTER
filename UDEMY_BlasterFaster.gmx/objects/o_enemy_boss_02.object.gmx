@@ -257,8 +257,8 @@ if instance_exists(global.boss)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stop when the top of the room is reached
-if y &lt; 64
+            <string>///Stop when reached the top of the screen
+if y == 90
 {
     vspeed = 0;
 }
