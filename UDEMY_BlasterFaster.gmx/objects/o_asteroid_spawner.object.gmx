@@ -69,8 +69,104 @@ if level == 1
 if level == 2
 {
     alarm[ASTEROID] = room_speed; // wait 1 second
+    alarm[ASTEROID02] = room_speed * 2; // wait 2 seconds before the counter starts
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Create the asteroid RED
+var asteroid = o_asteroid_red_01;
+if level == 1
+{
+    alarm_time = random_range(room_speed*.5, room_speed*2);
+}
+else if level == 2
+{
+    alarm_time = random_range(room_speed*.25, room_speed*1);
+}
+else
+{   // DEFAULT alarm timer for the menu screens
+    alarm_time = random_range(room_speed*.5, room_speed*2);
+}
+
+
+asteroid = choose(o_asteroid_red_01, o_asteroid_red_02, o_asteroid_red_03);
+
+// Spawn the asteroid
+what_direction = random_range(0, 360)
+
+//45 - 135 from bottom
+if what_direction &gt;= 45 and what_direction &lt;= 135
+{
+    asteroid = instance_create(random_range(0, room_width), room_height+16, asteroid);
+    asteroid.direction = what_direction;
+}
+// 225 - 315 from top
+else if what_direction &gt;= 91 and what_direction &lt;= 180
+{
+    asteroid = instance_create(random_range(0, room_width), -16, asteroid);
+    asteroid.direction = what_direction;
+}
+// 316 - 44 from left
+else if what_direction &gt;= 315 and what_direction &lt;= 360 and what_direction &lt;= 44
+{
+    asteroid = instance_create(-16, random_range(0, room_height), asteroid);
+    asteroid.direction = what_direction;
+}
+// 136 - 224 from right
+else if what_direction &gt;= 136 and what_direction &lt;= 224
+{
+    asteroid = instance_create(room_width+16, random_range(0, room_height), asteroid);
+    asteroid.direction = what_direction;
+}
+
+alarm[ASTEROID02] = alarm_time;
+//instance_create(random_range(16, room_width-16), -16, asteroid);
+
+
+// PROXIMITY SENSOR
+// ONLY when the player has the skill
+// check if the player knows the DASH skill
+player_knows_sensor = false;
+for (i=0; i&lt;array_length_1d(global.current_player.skills_known); i+=1)
+{
+    if global.current_player.skills_known[i] = 2
+    {
+        player_knows_sensor = true;
+    }
+}
+
+if player_knows_sensor == true
+{
+    if instance_exists(asteroid)
+    {
+        if instance_exists(global.ship)
+        {
+            danger_indicator = instance_create(o_ship_new.x, o_ship_new.y+32, o_danger_indicator);
+            danger_indicator.target_asteroid = asteroid;
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -93,9 +189,22 @@ if level == 2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Create the asteroid
+            <string>/// Create the asteroid GREY
 var asteroid = o_asteroid_grey_01;
-var alarm_time = random_range(room_speed*.5, room_speed*2);
+
+// set alarm time depending on the level
+if level == 1
+{
+    alarm_time = random_range(room_speed*.5, room_speed*2);
+}
+else if level == 2
+{
+    alarm_time = random_range(room_speed*.25, room_speed*1);
+}
+else
+{   // DEFAULT alarm timer for the menu screens
+    alarm_time = random_range(room_speed*.5, room_speed*2);
+}
 
 asteroid = choose(o_asteroid_grey_01, o_asteroid_grey_02, o_asteroid_grey_03);
 

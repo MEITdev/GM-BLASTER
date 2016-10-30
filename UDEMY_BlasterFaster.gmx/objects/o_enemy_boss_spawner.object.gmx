@@ -56,7 +56,14 @@ boss_spawned = false;
           <argument>
             <kind>1</kind>
             <string>///Boss Spawner
-add_boss(1);
+if level == 1
+{
+    add_boss(1);
+}
+if level == 2
+{
+    add_boss(2);
+}
 
 </string>
           </argument>
@@ -106,6 +113,16 @@ add_boss(1);
             <string>if level = 1
 {
     if score &gt;= 750 &amp;&amp; boss_spawned == false
+    {
+        boss_spawned = true;
+        // call the boss spawn alarm
+        alarm[BOSS_SPAWNER] = 1;
+    }
+}
+
+if level = 2
+{
+    if score &gt;= 1200 &amp;&amp; boss_spawned == false
     {
         boss_spawned = true;
         // call the boss spawn alarm
