@@ -25,10 +25,44 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Initialise the controller
+            <string>///Ininitialise the level selection variable
+level = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Initialise the controller
 
 // Ship controller will instantiate the loaded ship
-load_player_ship(global.current_player.ship_save_file);
+if level == 0
+{
+    // create the default ship.
+    create_default_ship();
+    // now set the shield to 0, armor to 0 and hull to 1
+    global.ship.shield = 0;
+    global.ship.armor = 0;
+    global.hull = 1;
+}
+else
+{
+    load_player_ship(global.current_player.ship_save_file);
+}
 
 
 /*

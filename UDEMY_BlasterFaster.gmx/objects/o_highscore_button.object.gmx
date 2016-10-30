@@ -25,9 +25,61 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// initialise the button
-event_inherited();
-text = "Top10";
+            <string>///Mission COMPLETED tasks
+if room_get_name(room) == "r_mission_01" &amp;&amp; global.mission_complete == true
+{
+    // add the completed mission to the list
+    global.CompletedMissions[1] = 1; // start with 0
+
+
+    show_debug_message("MISSION CONTROLLER - MISSION DONE");
+
+    // reset flag
+    global.mission_complete = false;
+    
+    // Save the player information
+    update_player(global.current_player.save_slot);   
+    // save player ship
+    save_player_ship(global.current_player.ship_save_file);
+    // now load player data
+    load_player_data(global.current_player.save_slot);
+
+    
+    // create the fader instance
+    fader = instance_create(0,room_height, o_bottom_up_fade);
+    fader.when_to_die = (room_height * -2);
+    fader.at_what_speed = -8;
+    fader.to_what_room = r_mission_completed;
+       
+    //room_goto(r_mission_completed);
+}
+
+if room_get_name(room) == "r_mission_02" &amp;&amp; global.mission_complete == true
+{
+   // add the completed mission to the list
+    global.CompletedMissions[2] = 2; 
+
+    show_debug_message("MISSION CONTROLLER - MISSION DONE");
+
+    // reset flag
+    global.mission_complete = false;
+    
+    // Save the player information
+    update_player(global.current_player.save_slot);   
+    // save player ship
+    save_player_ship(global.current_player.ship_save_file);
+    // now load player data
+    load_player_data(global.current_player.save_slot);
+
+    
+    // create the fader instance
+    fader = instance_create(0,room_height, o_bottom_up_fade);
+    fader.when_to_die = (room_height * -2);
+    fader.at_what_speed = -8;
+    fader.to_what_room = r_mission_completed;
+       
+    //room_goto(r_mission_completed);
+}
 </string>
           </argument>
         </arguments>

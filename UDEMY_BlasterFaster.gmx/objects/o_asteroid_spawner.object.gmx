@@ -35,6 +35,32 @@ alarm[LEVEL_CHOOSER] = room_speed / 4;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///stage controling variables
+
+// variables for the mission 00
+stage1 = false;
+stage2 = false;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="2" enumb="7">
       <action>
@@ -57,7 +83,16 @@ alarm[LEVEL_CHOOSER] = room_speed / 4;
 
 if level == 0 // this is the menu screen and menu screens in general
 {
-    alarm[ASTEROID] = room_speed / 2; // wait 0.5 second
+    if stage1 == true
+    {
+        alarm[ASTEROID] = room_speed / 4; // wait 0.25 seconds
+        alarm[ASTEROID02] = room_speed / 2; // wait 0.5 seconds
+    }
+    else if stage2 == true
+    {
+        alarm[ASTEROID] = room_speed / 8; // wait 0.125 seconds
+        alarm[ASTEROID02] = room_speed / 4; // wait 0.25 seconds
+    }
 }
 
 if level == 1

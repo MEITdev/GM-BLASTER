@@ -687,6 +687,7 @@
     <rooms name="SpaceMissions">
       <room>rooms\r_space</room>
       <room>rooms\r_mission_01</room>
+      <room>rooms\r_mission_00</room>
       <room>rooms\r_mission_02</room>
       <room>rooms\r_mission_failed</room>
       <room>rooms\r_mission_completed</room>

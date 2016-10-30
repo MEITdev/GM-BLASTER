@@ -34,6 +34,37 @@ global.time_left = 0;
 // DEFAULT variable used to track if the current mission has been completed
 global.mission_complete = false;
 
+// Intro mission 00 
+if room_get_name(room) == "r_mission_00"
+{
+    // each instance takes one argument = the level
+    asteroid_spawner = instance_create(0,0, o_asteroid_spawner);
+    asteroid_spawner.level = 0;
+    space_objects_spawner = instance_create(0,0, o_space_objects_spawner);
+    space_objects_spawner.level = 0;
+    
+    instance_create(0,0, o_view_controller);
+    ship_controller_instance = instance_create(0,0, o_ship_controller);
+    ship_controller_instance.level = 0;
+
+    // used for dialog messages
+    level = 0;
+    // START THE TIMER
+    start_time = date_current_datetime();
+    // What is the time limit for the mission in Seconds
+    time_limit = 120;
+
+    // Messages for different levels triggers
+    mission0_stage1 = false;
+    mission0_stage2 = false;    
+
+    // HERE use the time remaining as a trigger for the asteroid spawner
+    asteroid_spawner.stage1 = 30;
+    asteroid_spawner.stage2 = 90;
+}
+
+
+
 if room_get_name(room) == "r_mission_01"
 {
     // each instance takes one argument = the level
@@ -158,6 +189,40 @@ if global.time_left == 30 &amp;&amp; warning_voice == false
 {
     warning_voice = true;
     audio_play_sound(a_time_limit_low, 6, false);
+}
+
+if level == 0
+{
+    // control the asteroid spawner variables
+    if diff &gt; stage1 &amp;&amp; mission0_stage1 == false
+    {
+        mission0_stage1 = true;
+        asteroid_spawner.stage1 = true;        
+    }
+    else if diff &gt; stage2 &amp;&amp; mission0_stage2 == false
+    {
+        mission0_stage2 = true;
+        asteroid_spawner.stage1 = false;
+        asteroid_spawner.stage2 = true;
+    }
+
+    if diff &gt; time_limit
+    {
+        // save the current state of the player and ship stats
+        update_player(global.current_player.save_slot);
+        save_player_ship(global.current_player.ship_save_file);
+
+        // Add the docking animation here - start a timeline ideally
+        // player cannot be hit anymore
+        // get the player to the center of the room
+        // show the NPC mothership descend down as if the player was docking to it
+        // show some dialog box
+        // go to the mothership room
+        
+                
+        room_goto(r_mothership_hangar);
+
+    }
 }
 
 if level == 1
@@ -304,6 +369,9 @@ if level == 2
             <string>///Mission COMPLETED tasks
 if room_get_name(room) == "r_mission_01" &amp;&amp; global.mission_complete == true
 {
+    // add the completed mission to the list
+    global.CompletedMissions[1] = 1; // start with 0
+
 
     show_debug_message("MISSION CONTROLLER - MISSION DONE");
 
@@ -329,6 +397,8 @@ if room_get_name(room) == "r_mission_01" &amp;&amp; global.mission_complete == t
 
 if room_get_name(room) == "r_mission_02" &amp;&amp; global.mission_complete == true
 {
+   // add the completed mission to the list
+    global.CompletedMissions[2] = 2; 
 
     show_debug_message("MISSION CONTROLLER - MISSION DONE");
 

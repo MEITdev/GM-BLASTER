@@ -106,6 +106,14 @@ if r_name == "r_you_died"
 
 
 // =============== MISSIONS =================
+if r_name == "r_mission_00"
+{
+    dialog_box(104, 346, 72, 550, "Mission 00: Get the hell out of there!", "The assault was a complete failure. Return to the mothership as soon as possible servant! We need to get out of here as soon as possible!", 10);
+    global.avatar = instance_create(584, 296, o_pirate_avatar);
+    global.avatar.image_xscale = 0.5;
+    global.avatar.image_yscale = 0.5;
+    global.dialog.avatar = global.avatar;
+}
 
 if r_name == "r_mission_01"
 {

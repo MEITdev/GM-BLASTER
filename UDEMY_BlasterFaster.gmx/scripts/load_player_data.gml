@@ -33,6 +33,16 @@ if file_exists(file_name)
         global.current_player.purchased[i, 1] = ini_read_real("purchased", string(i) + "_ammo", 0);
     }
     
+    // load the total mission count
+    count = ini_read_real("missions", "count", 0);
+    // load the current completed missions
+    for (i=0; i<count; i+=1)
+    {
+        global.CompletedMissions[i] = ini_read_real("missions", string(i), 0);
+        show_debug_message("completed mission: " + string(i));
+    };
+    
+    
     // now select that as the file ship name   
     global.current_player.ship_save_file = ini_read_string("player", "ship", "default_ship.ini");
     

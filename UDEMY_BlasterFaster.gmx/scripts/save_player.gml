@@ -42,6 +42,16 @@ else
         ini_write_real("purchased", string(i) + "_ammo", global.current_player.purchased[i, 1]);
     }
     
+    // save the total number of completed missions
+    ini_write_real("missions", "count", array_length_1d(global.CompletedMissions));
+    // save the completed missions
+    for (i=0; i<array_length_1d(global.CompletedMissions); i+=1)
+    {
+        ini_write_real("missions", string(i), global.CompletedMissions[i]);
+    };
+    
+    
+    
     // also save the name of the ship
     // the file name for the ship will be a single integer that is available
     // while the file name exists...    
