@@ -141,7 +141,7 @@
       <sprite>sprites\s_repair_ship_button</sprite>
       <sprite>sprites\s_help_dialog_button</sprite>
     </sprites>
-    <sprites name="Space HUD">
+    <sprites name="Game HUD">
       <sprite>sprites\s_ship_stats_box</sprite>
       <sprite>sprites\s_hull_new_alt</sprite>
       <sprite>sprites\s_shield_new_alt</sprite>
@@ -167,6 +167,10 @@
       <sprite>sprites\s_ship_stats_shield</sprite>
       <sprite>sprites\s_ship_stats_armor</sprite>
       <sprite>sprites\s_ship_stats_hull</sprite>
+      <sprites name="Ship Upgrade">
+        <sprite>sprites\s_add_point_button</sprite>
+        <sprite>sprites\s_ship_upgrade_window</sprite>
+      </sprites>
     </sprites>
     <sprites name="Effects">
       <sprite>sprites\s_explosion_center</sprite>
@@ -560,6 +564,10 @@
         <object>objects\o_ammo_counter_turret</object>
         <object>objects\o_hull_turret</object>
         <object>objects\o_ammo_counter_mirrored</object>
+      </objects>
+      <objects name="Ship Upgrade">
+        <object>objects\o_add_point_button</object>
+        <object>objects\o_ship_upgrade_window</object>
       </objects>
     </objects>
     <objects name="Effects">

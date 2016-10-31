@@ -78,6 +78,11 @@ for (i=0; i<array_length_1d(global.CompletedMissions); i+=1)
 };
 
 
+ini_write_real("ship_upgrade", "shield_upgrade", global.current_player.shield_upgrade);    
+ini_write_real("ship_upgrade", "armor_upgrade", global.current_player.armor_upgrade);        
+ini_write_real("ship_upgrade", "hull_upgrade", global.current_player.hull_upgrade);    
+
+
 ini_write_string("player", "ship", global.current_player.ship_save_file);
 
 //close the save file

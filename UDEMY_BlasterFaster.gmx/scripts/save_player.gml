@@ -49,9 +49,11 @@ else
     {
         ini_write_real("missions", string(i), global.CompletedMissions[i]);
     };
-    
-    
-    
+
+    ini_write_real("ship_upgrade", "shield_upgrade", global.current_player.shield_upgrade);    
+    ini_write_real("ship_upgrade", "armor_upgrade", global.current_player.armor_upgrade);        
+    ini_write_real("ship_upgrade", "hull_upgrade", global.current_player.hull_upgrade);    
+        
     // also save the name of the ship
     // the file name for the ship will be a single integer that is available
     // while the file name exists...    
