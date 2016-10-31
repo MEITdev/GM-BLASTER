@@ -106,6 +106,8 @@ global.Metal = 0;
             <string>///List of completed missions
 
 global.CompletedMissions[0] = 0; // start with 0
+
+global.CompletedIntroMission = false;
 </string>
           </argument>
         </arguments>

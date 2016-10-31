@@ -50,7 +50,10 @@ when_to_die = 0;
           <argument>
             <kind>1</kind>
             <string>///During animation Player cannot be hit
-global.ship.can_be_hit = false;
+if instance_exists(global.ship)
+{
+    global.ship.can_be_hit = false;
+}
 </string>
           </argument>
         </arguments>
@@ -80,7 +83,10 @@ if y &lt;= when_to_die
     {
         room_goto(to_what_room);
     }
-    global.ship.can_be_hit = true;
+    if instance_exists(global.ship)
+    {
+        global.ship.can_be_hit = true;
+    }
     instance_destroy();
 }
 </string>

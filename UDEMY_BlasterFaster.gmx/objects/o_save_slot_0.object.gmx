@@ -117,16 +117,25 @@ if !(file_exists("slot_0.ini"))
 }
 else // take the player to the "hangar" of the mothership
 {
-    global.current_player.skill_selected = 0;
-    global.current_player.skills_known = 0;
-    global.current_player.skills_known[0] = 0;
-
-    // load the global data again to memory
-    load_player_data(0);
+    if global.CompletedIntroMission == true
+    {
+        global.current_player.skill_selected = 0;
+        global.current_player.skills_known = 0;
+        global.current_player.skills_known[0] = 0;
     
-    fader = instance_create(0,0, o_fade_out);
-    fader.to_what_room = r_mothership_hangar;
-    fader.at_what_speed = 0.05;    
+        // load the global data again to memory
+        load_player_data(0);
+        
+        fader = instance_create(0,0, o_fade_out);
+        fader.to_what_room = r_mothership_hangar;
+        fader.at_what_speed = 0.05;    
+    }
+    else
+    {
+        fader = instance_create(0,0, o_fade_out);
+        fader.to_what_room = r_mission_00;
+        fader.at_what_speed = 0.05;    
+    }
     
     //room_goto(r_mothership_hangar);
 }

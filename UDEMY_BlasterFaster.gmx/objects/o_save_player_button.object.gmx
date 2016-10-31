@@ -132,10 +132,9 @@ if global.current_player.name != ""
     // Save the player information
     save_player(global.current_player.save_slot);
     
-    // And now go to the ship configuration room
-    
+    // And now move to the intro room
     fader = instance_create(0,0, o_fade_out);
-    fader.to_what_room = r_mothership_hangar;
+    fader.to_what_room = r_intro_screen;
     fader.at_what_speed = 0.05;    
     
     

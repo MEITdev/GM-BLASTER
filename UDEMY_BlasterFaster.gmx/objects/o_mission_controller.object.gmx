@@ -34,9 +34,31 @@ global.time_left = 0;
 // DEFAULT variable used to track if the current mission has been completed
 global.mission_complete = false;
 
+// Intro room - prologue
+if room_get_name(room) == "r_intro_screen"
+{
+
+    // set that this is a cutscene - do not show the timer
+    is_cutscene = true;
+
+    // set stupid number for the level number
+    level = 9001; // OVER 9000 !!!!
+   
+    // start the timer with the current time
+    start_time = date_current_datetime();
+    time_limit = 5; // 5 seconds for now, then do something else  
+}
+
 // Intro mission 00 
 if room_get_name(room) == "r_mission_00"
 {
+
+    // set that this is a cutscene - do not show the timer
+    is_cutscene = false;
+
+    // used for dialog messages
+    level = 0;
+
     // each instance takes one argument = the level
     asteroid_spawner = instance_create(0,0, o_asteroid_spawner);
     asteroid_spawner.level = 0;
@@ -47,8 +69,6 @@ if room_get_name(room) == "r_mission_00"
     ship_controller_instance = instance_create(0,0, o_ship_controller);
     ship_controller_instance.level = 0;
 
-    // used for dialog messages
-    level = 0;
     // START THE TIMER
     start_time = date_current_datetime();
     // What is the time limit for the mission in Seconds
@@ -57,10 +77,17 @@ if room_get_name(room) == "r_mission_00"
     // Messages for different levels triggers
     mission0_stage1 = false;
     mission0_stage2 = false;    
-
+    mission0_stage3 = false;   
+    
+    // dialog variables
+    mission0_stage1_dialog = false;
+    mission0_stage2_dialog = false;         
+    mission0_stage3_dialog = false;
+    
     // HERE use the time remaining as a trigger for the asteroid spawner
-    asteroid_spawner.stage1 = 30;
-    asteroid_spawner.stage2 = 90;
+    asteroid_spawner.stage1 = 10;
+    asteroid_spawner.stage2 = 30;
+    asteroid_spawner.stage3 = 100;
 }
 
 
@@ -160,6 +187,28 @@ warning_voice = false;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Create timeline FLAG variables
+timeline_played = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -178,7 +227,7 @@ warning_voice = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Mission Time Controller
+            <string>/// Mission Time Events - Controller
 diff = date_second_span(start_time, date_current_datetime());
 
 // time to display to the player
@@ -191,26 +240,70 @@ if global.time_left == 30 &amp;&amp; warning_voice == false
     audio_play_sound(a_time_limit_low, 6, false);
 }
 
+// intro level
+if room_get_name(room) == "r_intro_screen"
+{
+    if diff &gt; time_limit
+    {
+        // create the fade object and jump to the mission 00 room
+        fader = instance_create(0,room_height, o_bottom_up_fade);
+        fader.when_to_die = (room_height * -2);
+        fader.at_what_speed = -8;
+        fader.to_what_room = r_mission_00;
+    }
+}
+
 if level == 0
 {
     // control the asteroid spawner variables
-    if diff &gt; stage1 &amp;&amp; mission0_stage1 == false
+    if diff &gt; asteroid_spawner.stage1 &amp;&amp; mission0_stage1 == false
     {
+        // start spawning asteroids
+        asteroid_spawner.spawn_asteroids = true;
+        // set the stage value
+        stage = 1;
+        // set the mission stage flag so this is done only once
         mission0_stage1 = true;
+        // set this to true to not show the dialog window more than once
         asteroid_spawner.stage1 = true;        
     }
-    else if diff &gt; stage2 &amp;&amp; mission0_stage2 == false
+    else if diff &gt; asteroid_spawner.stage2 &amp;&amp; mission0_stage2 == false
     {
+        stage = 2;
         mission0_stage2 = true;
         asteroid_spawner.stage1 = false;
         asteroid_spawner.stage2 = true;
     }
+    else if diff &gt; asteroid_spawner.stage3 &amp;&amp; mission0_stage3 == false
+    {
+        stage = 3;
+        mission0_stage3 = true;
+        asteroid_spawner.stage2 = false;
+        asteroid_spawner.stage3 = true;
+    }    
 
     if diff &gt; time_limit
     {
-        // save the current state of the player and ship stats
-        update_player(global.current_player.save_slot);
-        save_player_ship(global.current_player.ship_save_file);
+        // stop spawning asteroids
+        asteroid_spawner.spawn_asteroids = false;
+
+        
+        // TESTING=======================================
+        if timeline_played == false
+        {
+            timeline_played = true;
+            ///Start the TimeLine
+            timeline_index = tl_intro_docking;
+            timeline_position = 0;
+            timeline_running = true;
+            timeline_loop = false;      
+            
+            // do this only once....
+            // save the current state of the player and ship stats
+            update_player(global.current_player.save_slot);
+            save_player_ship(global.current_player.ship_save_file);
+        }        
+        
 
         // Add the docking animation here - start a timeline ideally
         // player cannot be hit anymore
@@ -219,9 +312,10 @@ if level == 0
         // show some dialog box
         // go to the mothership room
         
+        // set the global current player to TRUE so the player starts next time in the mothership
+        
                 
-        room_goto(r_mothership_hangar);
-
+        // room_goto(r_mothership_hangar);
     }
 }
 
@@ -274,6 +368,37 @@ if level == 2
           <argument>
             <kind>1</kind>
             <string>///Mission dialogue manager
+if level == 0
+{
+    if asteroid_spawner.stage1 == true &amp;&amp; mission0_stage1_dialog == false
+    {
+        mission0_stage1_dialog = true;
+        // display message
+        dialog_box(104, 346, 58, 550, "Asteroid field", "Try to shake the enemy off in the asteroid field! It may work... you never know", 5);
+        global.avatar = instance_create(584, 296, o_pirate_avatar);
+        global.avatar.image_xscale = 0.5;
+        global.avatar.image_yscale = 0.5;        
+    }
+    if asteroid_spawner.stage2 == true &amp;&amp; mission0_stage2_dialog == false
+    {
+        mission0_stage2_dialog = true;
+        // display message
+        dialog_box(104, 346, 58, 550, "Hold on tight", "Try to make it alive, do not scratch your ship! Not even a little...", 5);
+        global.avatar = instance_create(584, 296, o_pirate_avatar);
+        global.avatar.image_xscale = 0.5;
+        global.avatar.image_yscale = 0.5;        
+    }
+    if asteroid_spawner.stage3 == true &amp;&amp; mission0_stage3_dialog == false
+    {
+        mission0_stage3_dialog = true;
+        // display message
+        dialog_box(104, 346, 58, 550, "Almost there", "Few more moments and you should clear from the asteroid field and dock!", 5);
+        global.avatar = instance_create(584, 296, o_pirate_avatar);
+        global.avatar.image_xscale = 0.5;
+        global.avatar.image_yscale = 0.5;        
+    }
+}
+
 if level == 1
 {
     if enemy_spawner.stage == 1 &amp;&amp; mission1_stage1 == false
@@ -308,7 +433,6 @@ if level == 2
         // display message
         dialog_box(104, 346, 58, 550, "Stage 1", "Pile up on those Asteroids! NOW!", 5);
         global.avatar = instance_create(584, 296, o_pirate_avatar);
-        show_debug_message("TTL: " + string(global.dialog.ttl));
         global.avatar.image_xscale = 0.5;
         global.avatar.image_yscale = 0.5;
     }
@@ -444,26 +568,38 @@ if room_get_name(room) == "r_mission_02" &amp;&amp; global.mission_complete == t
           <argument>
             <kind>1</kind>
             <string>///Display the mission timer
-draw_set_font(f_timer);
-draw_set_halign(fa_center);
-draw_set_valign(fa_center);
-
-// select colour depending on the timer
-if (global.time_left / time_limit) &gt; 0.5
+if is_cutscene == false
 {
-    draw_set_colour(c_green);
+    draw_set_font(f_timer);
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_center);
+    
+    // select colour depending on the timer
+    if (global.time_left / time_limit) &gt; 0.5
+    {
+        draw_set_colour(c_green);
+    }
+    else
+    {
+        draw_set_colour(c_red);
+    }
+    
+    // do not draw the text if the time is already &lt; 0
+    // Draw the timer on the screen
+    if global.time_left &gt;= 0
+    {
+        draw_text(room_width/2, 32, string(global.time_left));
+    }
+    
+    // reset font to default
+    draw_set_colour(c_white);
+    draw_set_font(f_score);
+
 }
-else
+else if is_cutscene == true
 {
-    draw_set_colour(c_red);
+    // do not draw anything
 }
-
-// Draw the timer on the screen
-draw_text(room_width/2, 32, string(global.time_left));
-
-// reset font to default
-draw_set_colour(c_white);
-draw_set_font(f_score);
 </string>
           </argument>
         </arguments>

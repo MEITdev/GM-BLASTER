@@ -9,6 +9,7 @@
     <sounds name="Music">
       <sound>sound\a_mission_music_01</sound>
       <sound>sound\a_menu_music_01</sound>
+      <sound>sound\a_mission_music_00</sound>
     </sounds>
     <sounds name="SFX">
       <sound>sound\a_explode</sound>
@@ -659,6 +660,7 @@
   <timelines name="timelines">
     <timeline>timelines\tl_level1_boss</timeline>
     <timeline>timelines\tl_level2_boss</timeline>
+    <timeline>timelines\tl_intro_docking</timeline>
   </timelines>
   <rooms name="rooms">
     <room>rooms\r_splashscreen</room>
@@ -686,8 +688,9 @@
     </rooms>
     <rooms name="SpaceMissions">
       <room>rooms\r_space</room>
-      <room>rooms\r_mission_01</room>
       <room>rooms\r_mission_00</room>
+      <room>rooms\r_intro_screen</room>
+      <room>rooms\r_mission_01</room>
       <room>rooms\r_mission_02</room>
       <room>rooms\r_mission_failed</room>
       <room>rooms\r_mission_completed</room>

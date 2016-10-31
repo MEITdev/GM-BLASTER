@@ -133,6 +133,16 @@ if r_name == "r_mission_02"
     global.dialog.avatar = global.avatar;
 }    
 
+
+// Game cinematics
+if r_name == "r_intro_screen"
+{
+    dialog_box(104, 346, 72, 550, "Intro dialogue", "This will include alot of information about the war, the conflict and the background of the war, the parties involved and your role in it", 30);
+    global.avatar = instance_create(584, 296, o_pirate_avatar);
+    global.avatar.image_xscale = 0.5;
+    global.avatar.image_yscale = 0.5;
+    global.dialog.avatar = global.avatar;
+}    
 </string>
           </argument>
         </arguments>

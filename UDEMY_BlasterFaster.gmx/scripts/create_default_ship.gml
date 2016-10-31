@@ -43,6 +43,11 @@ global.ship.slot[2] = instance_create(global.ship.ship_mount_x[2], global.ship.s
 global.ship.slot[2].gun_slot_id = 2;
 
 
+// RESET the values like credit, score and Metal
+global.Metal = 0;
+global.current_player.credits = 0;
+score = 0;
+
 
 // and save it so in the next boot we just load it to the game
 save_player_ship(global.current_player.ship_save_file);

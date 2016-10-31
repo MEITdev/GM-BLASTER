@@ -57,7 +57,7 @@ if level == 0
     // now set the shield to 0, armor to 0 and hull to 1
     global.ship.shield = 0;
     global.ship.armor = 0;
-    global.hull = 1;
+    global.ship.hull = 1;
 }
 else
 {

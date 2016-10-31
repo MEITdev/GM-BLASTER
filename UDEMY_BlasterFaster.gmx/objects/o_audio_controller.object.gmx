@@ -91,7 +91,20 @@ this_room = room_get_name(room)
 
 if global.Music == 'On'
 {
-    if this_room == "r_mission_01"
+    if this_room == "r_mission_00"
+    {
+        if audio_is_playing(a_menu_music_01)
+        {
+            audio_stop_sound(a_menu_music_01);
+        }
+        if !(audio_is_playing(a_mission_music_00))
+        {
+            audio_play_sound(a_mission_music_00, 10, true);
+            // set volume to 50%, this song is loud
+            audio_sound_gain(a_mission_music_00, 0.3, 0);
+        }
+    }
+    else if this_room == "r_mission_01"
     {
         if audio_is_playing(a_menu_music_01)
         {
@@ -126,14 +139,20 @@ if global.Music == 'On'
             audio_play_sound(a_menu_music_01, 10, true);
             audio_sound_gain(a_menu_music_01, 0.5, 0);
         }    
+        else if audio_is_playing(a_mission_music_00)
+        {
+            audio_stop_sound(a_mission_music_00);
+            // play the menu tune
+            audio_play_sound(a_menu_music_01, 10, true);
+            audio_sound_gain(a_menu_music_01, 0.5, 0);
+        }    
+        
     }
 }
 else if global.Music == 'Off'
 {
-
 //    audio_stop_sound(a_menu_music);
 //    audio_stop_sound(a_mission_music_01);
-
 }
 
 </string>

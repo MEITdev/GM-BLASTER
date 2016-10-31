@@ -30,7 +30,7 @@
 // default level value
 level = 0;
 
-alarm[LEVEL_CHOOSER] = room_speed / 4;
+level_chooser_activated = false;
 </string>
           </argument>
         </arguments>
@@ -52,11 +52,15 @@ alarm[LEVEL_CHOOSER] = room_speed / 4;
           <argument>
             <kind>1</kind>
             <string>///stage controling variables
+stage = 0;
 
 // variables for the mission 00
 stage1 = false;
 stage2 = false;
+stage3 = false;
 
+// start spawning asteroids?
+spawn_asteroids = false;
 </string>
           </argument>
         </arguments>
@@ -93,6 +97,11 @@ if level == 0 // this is the menu screen and menu screens in general
         alarm[ASTEROID] = room_speed / 8; // wait 0.125 seconds
         alarm[ASTEROID02] = room_speed / 4; // wait 0.25 seconds
     }
+    else if stage3 == true
+    {
+        alarm[ASTEROID] = room_speed / 16; // wait 0.125 seconds
+        alarm[ASTEROID02] = room_speed / 8; // wait 0.25 seconds
+    }   
 }
 
 if level == 1
@@ -131,7 +140,24 @@ if level == 2
             <kind>1</kind>
             <string>/// Create the asteroid RED
 var asteroid = o_asteroid_red_01;
-if level == 1
+
+// set the alarm timers according to the level
+if level == 0
+{
+    if stage1 == true
+    {
+        alarm_time = random_range(room_speed * 0.5, room_speed);
+    }
+    else if stage2 == true
+    {
+        alarm_time = random_range(room_speed * 0.25, room_speed * 0.5);    
+    }
+    else if stage3 == true
+    {
+        alarm_time = random_range(room_speed * 0.125, room_speed * 0.25);
+    }
+}
+else if level == 1
 {
     alarm_time = random_range(room_speed*.5, room_speed*2);
 }
@@ -237,7 +263,22 @@ if player_knows_sensor == true
 var asteroid = o_asteroid_grey_01;
 
 // set alarm time depending on the level
-if level == 1
+if level == 0
+{
+    if stage1 == true
+    {
+        alarm_time = random_range(room_speed * 0.25, room_speed * 0.5);
+    }
+    else if stage2 == true
+    {
+        alarm_time = random_range(room_speed * 0.125, room_speed * 0.25);
+    }
+    else if stage3 == true
+    {
+        alarm_timer = random_range(room_speed * 0.075, room_speed * 0.125);
+    }
+}
+else if level == 1
 {
     alarm_time = random_range(room_speed*.5, room_speed*2);
 }
@@ -338,7 +379,13 @@ if player_knows_sensor == true
           <argument>
             <kind>1</kind>
             <string>/// Control the time related actions
-
+if spawn_asteroids == true &amp;&amp; level_chooser_activated == false
+{
+    // run this only once
+    level_chooser_activated = true;
+    // now go to the level chooser alarm
+    alarm[LEVEL_CHOOSER] = room_speed / 4;
+}
 </string>
           </argument>
         </arguments>
