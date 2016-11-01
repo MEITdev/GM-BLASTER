@@ -56,7 +56,7 @@ cost = 0;
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="7">
+    <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -142,15 +142,15 @@ if can_upgrade == true
 {
     if what_value == "shield"
     {
-        global.current_player.shield_upgrade += 1;
+        global.current_player.shield_upgrade++;
     }
     else if what_value == "armor"
     {
-        global.current_player.armor_upgrade += 1;
+        global.current_player.armor_upgrade++;
     }
     else if what_value == "hull"
     {
-        global.current_player.hull_upgrade += 1;
+        global.current_player.hull_upgrade++;
     } 
 }
 </string>

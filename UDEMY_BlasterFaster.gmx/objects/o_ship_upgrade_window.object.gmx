@@ -27,11 +27,11 @@
             <kind>1</kind>
             <string>///Instantiate the ship upgrade buttons
 shield_upgrade_button = instance_create(x + 16, y + 24, o_add_point_button);
-shield_upgrade_button.what_value = "shield_upgrade";
+shield_upgrade_button.what_value = "shield";
 armor_upgrade_button = instance_create(x + 16, y + 48, o_add_point_button);
-armor_upgrade_button.what_value = "armor_upgrade";
+armor_upgrade_button.what_value = "armor";
 hull_upgrade_button = instance_create(x + 16, y + 72, o_add_point_button);
-hull_upgrade_button.what_value = "hull_upgrade";
+hull_upgrade_button.what_value = "hull";
 </string>
           </argument>
         </arguments>
@@ -55,21 +55,18 @@ hull_upgrade_button.what_value = "hull_upgrade";
           <argument>
             <kind>1</kind>
             <string>///Draw upgrade levels next to the buttons
-
+draw_self();
 
 draw_set_font(f_menu_buttons);
 draw_set_color(c_white);
-draw_set_halign(fa_right);
-draw_set_valign(fa_center);
+draw_set_halign(fa_left);
+draw_set_valign(fa_bottom);
 // shield
-draw_text(shield_upgrade_button.x + shield_upgrade_button.sprite_width, shield_upgrade_button.y, string(global.current_player.shield_upgrade));
+draw_text(shield_upgrade_button.x + shield_upgrade_button.sprite_width, shield_upgrade_button.y, "SHIELD [" + string(global.ship.max_shield) + "]" + string(global.current_player.shield_upgrade));
 // armor
-draw_text(armor_upgrade_button.x + armor_upgrade_button.sprite_width, armor_upgrade_button.y, string(global.current_player.armor_upgrade));
+draw_text(armor_upgrade_button.x + armor_upgrade_button.sprite_width, armor_upgrade_button.y, "ARMOR [" + string(global.ship.max_armor) + "]" + string(global.current_player.armor_upgrade));
 // hull
-draw_text(hull_upgrade_button.x + hull_upgrade_button.sprite_width, hull_upgrade_button.y, string(global.current_player.hull_upgrade));
-
-
-draw_self();
+draw_text(hull_upgrade_button.x + hull_upgrade_button.sprite_width, hull_upgrade_button.y, "HULL [" + string(global.ship.max_hull) + "]" + string(global.current_player.hull_upgrade));
 </string>
           </argument>
         </arguments>
