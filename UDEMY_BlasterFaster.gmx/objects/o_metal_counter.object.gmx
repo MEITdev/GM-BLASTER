@@ -53,11 +53,11 @@ hover_text = "Resource: Metal scraps.#Found in Asteroids.";
             <string>/// Draw the metal
 draw_self(); // draw self, we are overriding the default draw event...
 
-draw_set_halign(fa_left);
+draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 draw_set_font(f_credits);
 draw_set_colour(c_white);
-draw_text(x, y-1, string(global.Metal));
+draw_text(x + 12, y-1, string(global.Metal));
 </string>
           </argument>
         </arguments>

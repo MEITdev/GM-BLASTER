@@ -42,11 +42,7 @@ if file_exists(file_name)
         show_debug_message("completed mission: " + string(i));
     };
     
-    global.current_player.shield_upgrade = ini_read_real("ship_upgrade", "shield_upgrade", 0);    
-    global.current_player.armor_upgrade = ini_read_real("ship_upgrade", "armor_upgrade", 0);        
-    global.current_player.hull_upgrade = ini_read_real("ship_upgrade", "hull_upgrade", 0);    
 
-    
     
     // now select that as the file ship name   
     global.current_player.ship_save_file = ini_read_string("player", "ship", "default_ship.ini");

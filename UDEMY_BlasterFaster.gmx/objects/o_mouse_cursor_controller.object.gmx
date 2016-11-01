@@ -77,9 +77,11 @@ if r_name == "r_mission_failed"
 if r_name == "r_mission_00"
 {
     ///Set mouse cursor
-    
     // Disable the mouse cursor
     window_set_cursor(cr_none);
+    
+    //set default "cursor"
+    cursor_sprite = s_cursor_space;
 }
 </string>
           </argument>

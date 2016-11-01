@@ -78,7 +78,7 @@ if global.ship.armor &lt; global.ship.max_armor || global.ship.hull &lt; global.
     else
     {
         ///Create dialog box
-        dialog_box(room_width/2 - 300, room_height/2, 72, 214, "Not enough Credits", "Need more super-galaxy-spacey-wormoholey-credity Credits my friend.", 5);
+        dialog_box(room_width/2 - 300, room_height/2, 72, 214, "Not enough Credits", "Need more super galaxy spacey wormoholey credity Credits my friend.", 5);
         global.avatar = noone;
     }
 }

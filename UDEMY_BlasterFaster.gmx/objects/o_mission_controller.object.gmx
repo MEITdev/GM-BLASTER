@@ -284,38 +284,7 @@ if level == 0
 
     if diff &gt; time_limit
     {
-        // stop spawning asteroids
-        asteroid_spawner.spawn_asteroids = false;
-
-        
-        // TESTING=======================================
-        if timeline_played == false
-        {
-            timeline_played = true;
-            ///Start the TimeLine
-            timeline_index = tl_intro_docking;
-            timeline_position = 0;
-            timeline_running = true;
-            timeline_loop = false;      
-            
-            // do this only once....
-            // save the current state of the player and ship stats
-            update_player(global.current_player.save_slot);
-            save_player_ship(global.current_player.ship_save_file);
-        }        
-        
-
-        // Add the docking animation here - start a timeline ideally
-        // player cannot be hit anymore
-        // get the player to the center of the room
-        // show the NPC mothership descend down as if the player was docking to it
-        // show some dialog box
-        // go to the mothership room
-        
-        // set the global current player to TRUE so the player starts next time in the mothership
-        
-                
-        // room_goto(r_mothership_hangar);
+        global.mission_complete = true;
     }
 }
 
@@ -491,16 +460,40 @@ if level == 2
           <argument>
             <kind>1</kind>
             <string>///Mission COMPLETED tasks
-if room_get_name(room) == "r_mission_01" &amp;&amp; global.mission_complete == true
+if room_get_name(room) == "r_mission_00" &amp;&amp; global.mission_complete == true
 {
-    // add the completed mission to the list
-    global.CompletedMissions[1] = 1; // start with 0
-
-
-    show_debug_message("MISSION CONTROLLER - MISSION DONE");
-
+   // add the completed mission to the list
+    global.CompletedMissions[0] = 0;
+    
     // reset flag
     global.mission_complete = false;
+    
+        // stop spawning asteroids
+    asteroid_spawner.spawn_asteroids = false;
+    
+    // Run the timeline (Docking) animation
+    if timeline_played == false
+    {
+        timeline_played = true;
+        ///Start the TimeLine
+        timeline_index = tl_intro_docking;
+        timeline_position = 0;
+        timeline_running = true;
+        timeline_loop = false;      
+       
+        // do this only once....
+        // save the current state of the player and ship stats
+        update_player(global.current_player.save_slot);
+        save_player_ship(global.current_player.ship_save_file);
+        // now make sure to load the values
+        load_player_data(global.current_player.save_slot);
+        
+    }        
+} 
+
+if room_get_name(room) == "r_mission_01" &amp;&amp; global.mission_complete == true
+{
+
     
     // Save the player information
     update_player(global.current_player.save_slot);   

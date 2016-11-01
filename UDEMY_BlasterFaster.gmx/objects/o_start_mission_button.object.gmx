@@ -188,7 +188,7 @@ else
     alarm[ROOM_TELEPORTER] = room_speed * 3;
     
     // get the next mission that has not been completed by the player yet
-    mission = array_length_1d(global.CompletedMissions) - 1; // get the last mission ID
+    mission = array_length_1d(global.CompletedMissions); // get the last mission ID
     // construct the string
     room_name_get = "r_mission_0" + string(mission);
     show_debug_message("Next mission to be loaded: " + string(room_name_get));
