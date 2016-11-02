@@ -288,7 +288,7 @@
       <background>background\b_space_large</background>
       <background>background\b_gas_giant</background>
       <background>background\b_nebulae_violet</background>
-      <background>background\b_nebulae</background>
+      <background>background\b_nebulae_brown</background>
       <background>background\b_exoplanet_01</background>
     </backgrounds>
     <backgrounds name="SpaceMissions">
@@ -460,6 +460,7 @@
         <object>objects\o_enemy_laser_directional</object>
         <object>objects\o_enemy_laser_2</object>
         <object>objects\o_enemy_laser</object>
+        <object>objects\o_enemy_laser_upwards</object>
       </objects>
       <objects name="Projectiles">
         <object>objects\o_projectile</object>
@@ -512,6 +513,9 @@
         <object>objects\o_enemy_boss_01_Rgun</object>
         <object>objects\o_enemy_boss_02_defensive_turret</object>
         <object>objects\o_enemy_boss_01_turret</object>
+      </objects>
+      <objects name="Level_0">
+        <object>objects\o_enemy_zero</object>
       </objects>
       <objects name="Boss">
         <object>objects\o_enemy_boss_01</object>

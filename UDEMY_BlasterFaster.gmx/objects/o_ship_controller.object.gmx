@@ -50,7 +50,7 @@ level = 0;
             <string>///Initialise the controller
 
 // Ship controller will instantiate the loaded ship
-if level == 0
+if room_get_name(room) == "r_mission_00"
 {
     // create the default ship.
     create_default_ship();

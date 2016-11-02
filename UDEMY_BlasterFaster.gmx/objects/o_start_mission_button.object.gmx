@@ -55,6 +55,28 @@ fly_off = false;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Cler player score
+score = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="2" enumb="10">
       <action>
@@ -184,20 +206,32 @@ else
     global.avatar = noone;
     // save the player and the ship configuration 
     update_player(global.current_player.save_slot);
+    show_debug_message("UPDATING THE PLAYER");
     save_player_ship(global.current_player.ship_save_file);
     alarm[ROOM_TELEPORTER] = room_speed * 3;
+
+    // reset the global mission complete tag
+    global.mission_complete = false;
     
     // get the next mission that has not been completed by the player yet
-    mission = array_length_1d(global.CompletedMissions); // get the last mission ID
+    mission = global.CompletedMissions + 1; // get the last mission ID
+
+    // JUST FOR NOW
+    if mission &gt; 2
+    {
+        mission = 2;
+    }    
     // construct the string
     room_name_get = "r_mission_0" + string(mission);
-    show_debug_message("Next mission to be loaded: " + string(room_name_get));
-    
+
+       
     // create the fader instance
     fader = instance_create(0,room_height, o_bottom_up_fade);
     fader.when_to_die = (room_height * -2);
     fader.at_what_speed = -8;
     fader.to_what_room = asset_get_index(room_name_get);;
+    
+    show_debug_message("GOING TO ROOM = " + string(room_name_get));
     
     /// Fly off "animation"
     fly_off = true;

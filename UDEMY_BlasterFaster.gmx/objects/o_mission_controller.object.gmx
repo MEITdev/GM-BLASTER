@@ -64,11 +64,16 @@ if room_get_name(room) == "r_mission_00"
     asteroid_spawner.level = 0;
     space_objects_spawner = instance_create(0,0, o_space_objects_spawner);
     space_objects_spawner.level = 0;
-    
+
+    // each instance takes one argument = the level
+    enemy_spawner = instance_create(0,0, o_enemy_spawner);
+    enemy_spawner.level = 0;    
+        
     instance_create(0,0, o_view_controller);
     ship_controller_instance = instance_create(0,0, o_ship_controller);
     ship_controller_instance.level = 0;
 
+    
     // START THE TIMER
     start_time = date_current_datetime();
     // What is the time limit for the mission in Seconds
@@ -94,6 +99,7 @@ if room_get_name(room) == "r_mission_00"
 
 if room_get_name(room) == "r_mission_01"
 {
+    is_cutscene = false;
     // each instance takes one argument = the level
     enemy_spawner = instance_create(0,0, o_enemy_spawner);
     enemy_spawner.level = 1;
@@ -105,7 +111,8 @@ if room_get_name(room) == "r_mission_01"
     enemy_boss_spawner.level = 1;
     
     instance_create(0,0, o_view_controller);
-    instance_create(0,0, o_ship_controller);
+    ship_controller_instance = instance_create(0,0, o_ship_controller);
+    ship_controller_instance.level = 1;
 
     // used for dialog messages
     level = 1;
@@ -126,11 +133,15 @@ if room_get_name(room) == "r_mission_01"
 
 if room_get_name(room) == "r_mission_02"
 {
+    is_cutscene = false;
     // each instance takes one argument = the level
     enemy_spawner = instance_create(0,0, o_enemy_spawner);
     enemy_spawner.level = 2;
     asteroid_spawner = instance_create(0,0, o_asteroid_spawner);
     asteroid_spawner.level = 2;
+    // start spawning asteroids from the beginning of the mission
+    asteroid_spawner.spawn_asteroids = true;
+    
     space_objects_spawner = instance_create(0,0, o_space_objects_spawner);
     space_objects_spawner.level = 2;
     enemy_boss_spawner = instance_create(0,0, o_enemy_boss_spawner);
@@ -154,10 +165,10 @@ if room_get_name(room) == "r_mission_02"
             
     // Target socres
     // Here decide what stage the player is in, depending on score or target objectives later
-    enemy_spawner.stage1 = 100;
-    enemy_spawner.stage2 = 150;
-    enemy_spawner.stage3 = 500;
-    enemy_spawner.stage4 = 900;
+    enemy_spawner.stage1 = 50;
+    enemy_spawner.stage2 = 100;
+    enemy_spawner.stage3 = 300;
+    enemy_spawner.stage4 = 700;
 }
 
 
@@ -236,8 +247,11 @@ global.time_left = round(time_limit - diff);
 // give audio warning to the player
 if global.time_left == 30 &amp;&amp; warning_voice == false
 {
-    warning_voice = true;
-    audio_play_sound(a_time_limit_low, 6, false);
+    if global.Sound == "On"
+    {
+        warning_voice = true;
+        audio_play_sound(a_time_limit_low, 6, false);
+    }
 }
 
 // intro level
@@ -260,6 +274,7 @@ if level == 0
     {
         // start spawning asteroids
         asteroid_spawner.spawn_asteroids = true;
+        enemy_spawner.stage = 1;
         // set the stage value
         stage = 1;
         // set the mission stage flag so this is done only once
@@ -269,6 +284,7 @@ if level == 0
     }
     else if diff &gt; asteroid_spawner.stage2 &amp;&amp; mission0_stage2 == false
     {
+        enemy_spawner.stage = 2;    
         stage = 2;
         mission0_stage2 = true;
         asteroid_spawner.stage1 = false;
@@ -277,6 +293,7 @@ if level == 0
     else if diff &gt; asteroid_spawner.stage3 &amp;&amp; mission0_stage3 == false
     {
         stage = 3;
+        enemy_spawner.stage = 3;        
         mission0_stage3 = true;
         asteroid_spawner.stage2 = false;
         asteroid_spawner.stage3 = true;
@@ -284,6 +301,9 @@ if level == 0
 
     if diff &gt; time_limit
     {
+        enemy_spawner.stage = 4;
+        asteroid_spawner.stage3 = false;
+        asteroid_spawner.stage4 = true;        
         global.mission_complete = true;
     }
 }
@@ -315,6 +335,109 @@ if level == 2
         // for testing - just go to the main menu
         room_goto(r_mission_failed);
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Mission COMPLETED tasks
+if room_get_name(room) == "r_mission_00" &amp;&amp; global.mission_complete == true
+{
+   // add the completed mission to the list
+    global.CompletedMissions = 0;
+
+    // set flag that the intro has been completed
+    global.CompletedIntroMission = true;
+    // reset flag
+    global.mission_complete = false;
+    
+        // stop spawning asteroids
+    asteroid_spawner.spawn_asteroids = false;
+    
+    // Run the timeline (Docking) animation
+    if timeline_played == false
+    {
+        timeline_played = true;
+        ///Start the TimeLine
+        timeline_index = tl_intro_docking;
+        timeline_position = 0;
+        timeline_running = true;
+        timeline_loop = false;      
+       
+        // do this only once....
+        // save the current state of the player and ship stats
+        update_player(global.current_player.save_slot);
+        save_player_ship(global.current_player.ship_save_file);
+        // now make sure to load the values
+        load_player_data(global.current_player.save_slot);
+        
+    }        
+} 
+
+if room_get_name(room) == "r_mission_01" &amp;&amp; global.mission_complete == true
+{
+
+   // add the completed mission to the list
+    global.CompletedMissions = 1; 
+    
+    // Save the player information
+    update_player(global.current_player.save_slot);   
+    // save player ship
+    save_player_ship(global.current_player.ship_save_file);
+    // now load player data
+    load_player_data(global.current_player.save_slot);
+
+    
+    // create the fader instance
+    fader = instance_create(0,room_height, o_bottom_up_fade);
+    fader.when_to_die = (room_height * -2);
+    fader.at_what_speed = -8;
+    fader.to_what_room = r_mission_completed;
+       
+    //room_goto(r_mission_completed);
+}
+
+if room_get_name(room) == "r_mission_02" &amp;&amp; global.mission_complete == true
+{
+   // add the completed mission to the list
+    global.CompletedMissions = 2; 
+
+    show_debug_message("MISSION CONTROLLER - MISSION DONE");
+
+    // reset flag
+    global.mission_complete = false;
+    
+    // Save the player information
+    update_player(global.current_player.save_slot);   
+    // save player ship
+    save_player_ship(global.current_player.ship_save_file);
+    // now load player data
+    load_player_data(global.current_player.save_slot);
+
+    
+    // create the fader instance
+    fader = instance_create(0,room_height, o_bottom_up_fade);
+    fader.when_to_die = (room_height * -2);
+    fader.at_what_speed = -8;
+    fader.to_what_room = r_mission_completed;
+       
+    //room_goto(r_mission_completed);
 }
 </string>
           </argument>
@@ -438,105 +561,6 @@ if level == 2
         global.avatar.image_yscale = 0.5;
     
     }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Mission COMPLETED tasks
-if room_get_name(room) == "r_mission_00" &amp;&amp; global.mission_complete == true
-{
-   // add the completed mission to the list
-    global.CompletedMissions[0] = 0;
-    
-    // reset flag
-    global.mission_complete = false;
-    
-        // stop spawning asteroids
-    asteroid_spawner.spawn_asteroids = false;
-    
-    // Run the timeline (Docking) animation
-    if timeline_played == false
-    {
-        timeline_played = true;
-        ///Start the TimeLine
-        timeline_index = tl_intro_docking;
-        timeline_position = 0;
-        timeline_running = true;
-        timeline_loop = false;      
-       
-        // do this only once....
-        // save the current state of the player and ship stats
-        update_player(global.current_player.save_slot);
-        save_player_ship(global.current_player.ship_save_file);
-        // now make sure to load the values
-        load_player_data(global.current_player.save_slot);
-        
-    }        
-} 
-
-if room_get_name(room) == "r_mission_01" &amp;&amp; global.mission_complete == true
-{
-
-    
-    // Save the player information
-    update_player(global.current_player.save_slot);   
-    // save player ship
-    save_player_ship(global.current_player.ship_save_file);
-    // now load player data
-    load_player_data(global.current_player.save_slot);
-
-    
-    // create the fader instance
-    fader = instance_create(0,room_height, o_bottom_up_fade);
-    fader.when_to_die = (room_height * -2);
-    fader.at_what_speed = -8;
-    fader.to_what_room = r_mission_completed;
-       
-    //room_goto(r_mission_completed);
-}
-
-if room_get_name(room) == "r_mission_02" &amp;&amp; global.mission_complete == true
-{
-   // add the completed mission to the list
-    global.CompletedMissions[2] = 2; 
-
-    show_debug_message("MISSION CONTROLLER - MISSION DONE");
-
-    // reset flag
-    global.mission_complete = false;
-    
-    // Save the player information
-    update_player(global.current_player.save_slot);   
-    // save player ship
-    save_player_ship(global.current_player.ship_save_file);
-    // now load player data
-    load_player_data(global.current_player.save_slot);
-
-    
-    // create the fader instance
-    fader = instance_create(0,room_height, o_bottom_up_fade);
-    fader.when_to_die = (room_height * -2);
-    fader.at_what_speed = -8;
-    fader.to_what_room = r_mission_completed;
-       
-    //room_goto(r_mission_completed);
 }
 </string>
           </argument>

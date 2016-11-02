@@ -28,7 +28,7 @@
             <string>/// Initialise the enemy
 hspeed = 3; // positive value will move down the object
 vspeed = 2;
-image_angle = 90;
+image_angle = 270;
 
 hull = 2;
 

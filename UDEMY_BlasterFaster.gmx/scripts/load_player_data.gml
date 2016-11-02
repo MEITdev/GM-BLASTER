@@ -15,6 +15,16 @@ if file_exists(file_name)
     global.current_player.skill_points = ini_read_real("player", "skill_points", 0);
     global.Difficulty = ini_read_string("player", "difficulty", "CryBaby");    
     global.Metal = ini_read_real("player", "metal", 0);
+    global.CompletedIntroMission = ini_read_real("player", "completedIntro", false);
+    // now turn the string to bool
+    if global.CompletedIntroMission == 1
+    {
+        global.CompletedIntroMission = true;
+    }
+    else if global.CompletedIntroMission == 0
+    {
+        global.CompletedIntroMission = false;
+    }
     
     // load the known skills to the global array
     count = ini_read_real("skills", "count", 0);
@@ -33,14 +43,9 @@ if file_exists(file_name)
         global.current_player.purchased[i, 1] = ini_read_real("purchased", string(i) + "_ammo", 0);
     }
     
-    // load the total mission count
-    count = ini_read_real("missions", "count", 0);
-    // load the current completed missions
-    for (i=0; i<count; i+=1)
-    {
-        global.CompletedMissions[i] = ini_read_real("missions", string(i), 0);
-        show_debug_message("completed mission: " + string(i));
-    };
+    global.CompletedMissions = ini_read_real("missions", "last_completed", 0);
+    show_debug_message("completed mission: " + string(i));
+
     
 
     

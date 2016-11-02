@@ -101,7 +101,7 @@ if global.Music == 'On'
         {
             audio_play_sound(a_mission_music_00, 10, true);
             // set volume to 50%, this song is loud
-            audio_sound_gain(a_mission_music_00, 0.3, 0);
+            audio_sound_gain(a_mission_music_00, 0.4, 0);
         }
     }
     else if this_room == "r_mission_01"
@@ -114,7 +114,7 @@ if global.Music == 'On'
         {
             audio_play_sound(a_mission_music_01, 10, true);
             // set volume to 50%, this song is loud
-            audio_sound_gain(a_mission_music_01, 0.3, 0);
+            audio_sound_gain(a_mission_music_01, 0.4, 0);
         }
     }
     else if this_room == "r_mission_02"
@@ -127,7 +127,7 @@ if global.Music == 'On'
         {
             audio_play_sound(a_mission_music_01, 10, true);
             // set volume to 50%, this song is loud
-            audio_sound_gain(a_mission_music_01, 0.3, 0);
+            audio_sound_gain(a_mission_music_01, 0.4, 0);
         }
     }
     else

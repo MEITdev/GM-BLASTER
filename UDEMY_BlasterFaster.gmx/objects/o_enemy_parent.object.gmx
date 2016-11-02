@@ -54,8 +54,10 @@ if (y &gt; room_height + 16)
 {
     instance_destroy();
 }
-
-
+else if (y &lt; -16)
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -80,10 +82,17 @@ if (y &gt; room_height + 16)
 if (hull &lt;= 0)
 {
     killed_by_player = true;
-    /// Create the powerup
-    var powerup = choose(o_armor_powerup, o_laser_powerup, o_laser_powerup, o_shield_powerup, o_hull_powerup);
-    instance_create(x, y, powerup);
-
+    
+    // get a random value
+    chance = random_range(0, 100);
+    
+    if chance &gt;= 50
+    {
+        /// Create the powerup
+        var powerup = choose(o_armor_powerup, o_laser_powerup, o_laser_powerup, o_shield_powerup, o_hull_powerup);
+        instance_create(x, y, powerup);
+    }
+    
     create_explosion(x, y);
     instance_destroy();
     
@@ -113,6 +122,10 @@ if (hull &lt;= 0)
           <argument>
             <kind>1</kind>
             <string>/// Damage the ship and destroy the asteroid
+
+// same thing, just makes you not gain any XP
+killed_by_player = false;
+
 with (other)
 {
     // asteroid gets destroyed
