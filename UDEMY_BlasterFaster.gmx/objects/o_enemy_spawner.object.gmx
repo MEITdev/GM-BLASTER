@@ -107,7 +107,7 @@ spawn = true;
             <string>/// Set the timers according to the level
 if level == 0
 {
-    alarm[SPAWNER_ALARM] = room_speed * 5; // wait 3 seconds
+    alarm[SPAWNER_ALARM] = room_speed * 5; // wait 5 seconds
 }
 if level == 1
 {
@@ -140,6 +140,7 @@ if level == 2
           <argument>
             <kind>1</kind>
             <string>/// Create the enemies
+
 if level == 0
 {
     var enemy = o_enemy_zero;
@@ -174,11 +175,13 @@ if level == 0
         alarm[SPAWNER_ALARM] = alarm_time;
     }    
     
-       
-    // Create the enemy
-    instance_create(random_range(16, room_width-16), room_height + 16, enemy);
-    
+    if spawn == true
+    {       
+        // Create the enemy
+        instance_create(random_range(16, room_width-16), room_height + 16, enemy);
+    }
 }
+
 if level == 1
 {
     
@@ -281,6 +284,7 @@ if level == 2
         instance_create(random_range(16, room_width - 16), -16, enemy);
     }
 }
+
 </string>
           </argument>
         </arguments>

@@ -153,13 +153,13 @@ if instance_exists(global.boss)
         {
         
             // spawn metal goodies
-            for (i=0; i&lt;10; i+=1)
+            for (i=0; i&lt;15; i+=1)
             {
                 metal = instance_create(x+32-random(64), y+32-random(64), o_metal_resource);
                 metal.direction = point_direction(x, y, global.ship.x, global.ship.y);
                 with (metal)
                 {
-                    motion_set(direction, 4);
+                    motion_set(direction, 10);
                 }
             };
         

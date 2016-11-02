@@ -181,40 +181,44 @@ asteroid = choose(o_asteroid_red_01, o_asteroid_red_02, o_asteroid_red_03);
 // Spawn the asteroid
 what_direction = random_range(0, 360)
 
-//45 - 135 from bottom
-if what_direction &gt;= 45 and what_direction &lt;= 135
+// Spawn asteroids when enabled
+if spawn_asteroids == true
 {
-    asteroid = instance_create(random_range(0, room_width), room_height+16, asteroid);
-    asteroid.direction = what_direction;
+    
+    //45 - 135 from bottom
+    if what_direction &gt;= 45 and what_direction &lt;= 135
+    {
+        asteroid = instance_create(random_range(0, room_width), room_height+16, asteroid);
+        asteroid.direction = what_direction;
+    }
+    // 225 - 315 from top
+    else if what_direction &gt;= 91 and what_direction &lt;= 180
+    {
+        asteroid = instance_create(random_range(0, room_width), -16, asteroid);
+        asteroid.direction = what_direction;
+    }
+    // 316 - 44 from left
+    else if what_direction &gt;= 315 and what_direction &lt;= 360 and what_direction &lt;= 44
+    {
+        asteroid = instance_create(-16, random_range(0, room_height), asteroid);
+        asteroid.direction = what_direction;
+    }
+    // 136 - 224 from right
+    else if what_direction &gt;= 136 and what_direction &lt;= 224
+    {
+        asteroid = instance_create(room_width+16, random_range(0, room_height), asteroid);
+        asteroid.direction = what_direction;
+    }
+    
+    if instance_exists(global.boss)
+    {
+        // if boss is present do not spawn any more asteroids
+    }
+    else
+    {
+        alarm[ASTEROID02] = alarm_time;
+    }
 }
-// 225 - 315 from top
-else if what_direction &gt;= 91 and what_direction &lt;= 180
-{
-    asteroid = instance_create(random_range(0, room_width), -16, asteroid);
-    asteroid.direction = what_direction;
-}
-// 316 - 44 from left
-else if what_direction &gt;= 315 and what_direction &lt;= 360 and what_direction &lt;= 44
-{
-    asteroid = instance_create(-16, random_range(0, room_height), asteroid);
-    asteroid.direction = what_direction;
-}
-// 136 - 224 from right
-else if what_direction &gt;= 136 and what_direction &lt;= 224
-{
-    asteroid = instance_create(room_width+16, random_range(0, room_height), asteroid);
-    asteroid.direction = what_direction;
-}
-
-if instance_exists(global.boss)
-{
-    // if boss is present do not spawn any more asteroids
-}
-else
-{
-    alarm[ASTEROID02] = alarm_time;
-}
-
 
 //instance_create(random_range(16, room_width-16), -16, asteroid);
 
@@ -305,40 +309,44 @@ asteroid = choose(o_asteroid_grey_01, o_asteroid_grey_02, o_asteroid_grey_03);
 // Spawn the asteroid
 what_direction = random_range(0, 360)
 
-//45 - 135 from bottom
-if what_direction &gt;= 45 and what_direction &lt;= 135
-{
-    asteroid = instance_create(random_range(0, room_width), room_height+16, asteroid);
-    asteroid.direction = what_direction;
-}
-// 225 - 315 from top
-else if what_direction &gt;= 91 and what_direction &lt;= 180
-{
-    asteroid = instance_create(random_range(0, room_width), -16, asteroid);
-    asteroid.direction = what_direction;
-}
-// 316 - 44 from left
-else if what_direction &gt;= 315 and what_direction &lt;= 360 and what_direction &lt;= 44
-{
-    asteroid = instance_create(-16, random_range(0, room_height), asteroid);
-    asteroid.direction = what_direction;
-}
-// 136 - 224 from right
-else if what_direction &gt;= 136 and what_direction &lt;= 224
-{
-    asteroid = instance_create(room_width+16, random_range(0, room_height), asteroid);
-    asteroid.direction = what_direction;
-}
 
-if instance_exists(global.boss)
+// Spawn asteroids when enabled
+if spawn_asteroids == true
 {
-    // if boss is present do not spawn any more asteroids
+    //45 - 135 from bottom
+    if what_direction &gt;= 45 and what_direction &lt;= 135
+    {
+        asteroid = instance_create(random_range(0, room_width), room_height+16, asteroid);
+        asteroid.direction = what_direction;
+    }
+    // 225 - 315 from top
+    else if what_direction &gt;= 91 and what_direction &lt;= 180
+    {
+        asteroid = instance_create(random_range(0, room_width), -16, asteroid);
+        asteroid.direction = what_direction;
+    }
+    // 316 - 44 from left
+    else if what_direction &gt;= 315 and what_direction &lt;= 360 and what_direction &lt;= 44
+    {
+        asteroid = instance_create(-16, random_range(0, room_height), asteroid);
+        asteroid.direction = what_direction;
+    }
+    // 136 - 224 from right
+    else if what_direction &gt;= 136 and what_direction &lt;= 224
+    {
+        asteroid = instance_create(room_width+16, random_range(0, room_height), asteroid);
+        asteroid.direction = what_direction;
+    }
+    
+    if instance_exists(global.boss)
+    {
+        // if boss is present do not spawn any more asteroids
+    }
+    else
+    {
+        alarm[ASTEROID] = alarm_time;
+    }
 }
-else
-{
-    alarm[ASTEROID] = alarm_time;
-}
-
 //instance_create(random_range(16, room_width-16), -16, asteroid);
 
 

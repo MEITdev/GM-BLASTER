@@ -68,7 +68,8 @@ if room_get_name(room) == "r_mission_00"
     // each instance takes one argument = the level
     enemy_spawner = instance_create(0,0, o_enemy_spawner);
     enemy_spawner.level = 0;    
-        
+    enemy_spawner.spawn = true;
+            
     instance_create(0,0, o_view_controller);
     ship_controller_instance = instance_create(0,0, o_ship_controller);
     ship_controller_instance.level = 0;
@@ -103,8 +104,11 @@ if room_get_name(room) == "r_mission_01"
     // each instance takes one argument = the level
     enemy_spawner = instance_create(0,0, o_enemy_spawner);
     enemy_spawner.level = 1;
+    enemy_spawner.spawn = true;
     asteroid_spawner = instance_create(0,0, o_asteroid_spawner);
     asteroid_spawner.level = 1;
+    asteroid_spawner.spawn_asteroids = true;    // spawn asteroids from the beginning of the mission
+    
     space_objects_spawner = instance_create(0,0, o_space_objects_spawner);
     space_objects_spawner.level = 1;
     enemy_boss_spawner = instance_create(0,0, o_enemy_boss_spawner);
@@ -137,6 +141,7 @@ if room_get_name(room) == "r_mission_02"
     // each instance takes one argument = the level
     enemy_spawner = instance_create(0,0, o_enemy_spawner);
     enemy_spawner.level = 2;
+    enemy_spawner.spawn = true;
     asteroid_spawner = instance_create(0,0, o_asteroid_spawner);
     asteroid_spawner.level = 2;
     // start spawning asteroids from the beginning of the mission
@@ -301,7 +306,9 @@ if level == 0
 
     if diff &gt; time_limit
     {
+        enemy_spawner.spawn = false;
         enemy_spawner.stage = 4;
+        asteroid_spawner.spawn_asteroids = false;        
         asteroid_spawner.stage3 = false;
         asteroid_spawner.stage4 = true;        
         global.mission_complete = true;

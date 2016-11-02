@@ -115,7 +115,7 @@ if (x &gt;= room_width-16) or (x &lt; 16)
             <string>///Die code - Add experience
 event_inherited();
 
-if killed_by_player = true
+if killed_by_player == true
 {
     global.current_player.experience += 2;
 }

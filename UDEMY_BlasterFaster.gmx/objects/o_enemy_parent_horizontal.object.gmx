@@ -8,6 +8,30 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Initialise enemy
+killed_by_player = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -26,29 +50,58 @@
           <argument>
             <kind>1</kind>
             <string>/// Control the enemy
-if (x &gt; room_width + 16)
+if (y &gt; room_height + 16)
 {
     instance_destroy();
 }
-if (x &lt; -16)
+else if (y &lt; -16)
 {
     instance_destroy();
 }
-if (y &gt; room_height + 32)
-{
-    instance_destroy();
-}
-
-
-
-// Die code
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Die code
 if (hull &lt;= 0)
 {
+    if global.collided_with_plaer == false
+    {
+        killed_by_player = true;
+    }
+    
+    // get a random value
+    chance = random_range(0, 100);
+    
+    if chance &gt;= 50
+    {
+        /// Create the powerup
+        var powerup = choose(o_armor_powerup, o_laser_powerup, o_laser_powerup, o_shield_powerup, o_hull_powerup);
+        instance_create(x, y, powerup);
+    }
+    
     create_explosion(x, y);
     instance_destroy();
     
     score += 5;
 }
+
 </string>
           </argument>
         </arguments>
@@ -72,6 +125,10 @@ if (hull &lt;= 0)
           <argument>
             <kind>1</kind>
             <string>/// Damage the ship and destroy the asteroid
+
+killed_by_player = false;
+global.collided_with_plaer = true;
+
 with (other)
 {
     // asteroid gets destroyed
@@ -112,6 +169,9 @@ if global.Sound == 'On'
           <argument>
             <kind>1</kind>
             <string>/// Damage the gun
+killed_by_player = false;
+global.collided_with_plaer = true;
+
 if instance_exists(global.ship)
 {
     if (global.ship.shield &gt; 0)
@@ -166,6 +226,9 @@ if global.Sound == 'On'
           <argument>
             <kind>1</kind>
             <string>/// Damage the ship
+killed_by_player = false;
+global.collided_with_plaer = true;
+
 if (other.shield &gt; 0)
 {
     other.shield -= 1;

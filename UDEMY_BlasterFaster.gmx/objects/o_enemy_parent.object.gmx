@@ -81,7 +81,10 @@ else if (y &lt; -16)
             <string>/// Die code
 if (hull &lt;= 0)
 {
-    killed_by_player = true;
+    if global.collided_with_plaer == false
+    {
+        killed_by_player = true;
+    }
     
     // get a random value
     chance = random_range(0, 100);
@@ -124,7 +127,8 @@ if (hull &lt;= 0)
             <string>/// Damage the ship and destroy the asteroid
 
 // same thing, just makes you not gain any XP
-killed_by_player = false;
+global.killed_by_player = false;
+global.collided_with_plaer = true;
 
 with (other)
 {
@@ -167,6 +171,9 @@ if global.Sound == 'On'
           <argument>
             <kind>1</kind>
             <string>/// Damage the gun
+global.killed_by_player = false;
+global.collided_with_plaer = true;
+
 if global.ship.can_be_hit == true
 {
     
@@ -262,6 +269,8 @@ if global.ship.can_be_hit == true
           <argument>
             <kind>1</kind>
             <string>/// Damage the ship
+global.killed_by_player = false;
+global.collided_with_plaer = true;
 
 if global.ship.can_be_hit == true
 {

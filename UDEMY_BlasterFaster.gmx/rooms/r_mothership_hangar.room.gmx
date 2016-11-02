@@ -72,7 +72,6 @@ fader.at_what_speed = 0.05;</code>
     <instance objName="o_metal_counter" x="650" y="20" name="inst_EE3934F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_weapon_choose_slot1_button" x="505" y="376" name="inst_8075014F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_weapon_choose_slot2_button" x="365" y="376" name="inst_314B0CB4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_mission_select_button" x="682" y="74" name="inst_FABFCE5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_ship_upgrade_window" x="151" y="8" name="inst_249067E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
