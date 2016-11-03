@@ -26,16 +26,17 @@
           <argument>
             <kind>1</kind>
             <string>///Initialise the ship stats indicators 
+image_alpha = .7;
 
 x_correction = 5;
 y_correction = 32;
 
 shield_bar = instance_create(x + x_correction, y + y_correction, o_shield_new);
-shield_bar.image_alpha = .8;
+shield_bar.image_alpha = .7;
 armor_bar = instance_create(x + x_correction, y + y_correction + 21, o_armor_new);
-armor_bar.image_alpha = .8;
+armor_bar.image_alpha = .7;
 hull_bar = instance_create(x + x_correction, y + y_correction + 42, o_hull_new);
-hull_bar.image_alpha = .8;
+hull_bar.image_alpha = .7;
 
 // XP bar counter
 instance_create(x + 64, y + 15, o_xp_bar);

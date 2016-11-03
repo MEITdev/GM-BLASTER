@@ -32,6 +32,7 @@ event_inherited();
 ammo = 500;
 max_ammo = ammo;
 hull = 2;
+max_hull = hull;
 armor = 0;
 action_button = " ";
 action_mouse_button = global.ACTION_03;
@@ -42,11 +43,11 @@ projectile_speed = 6;
 // correction coordinates for spawning projectiles
 correction_x = 26;
 correction_y = 26;
-
+/*
 // create the ammo counter indicator
 ammo_counter = instance_create(0, 0, o_ammo_counter_turret);
 ammo_counter.parent_gun = object_index;
-
+*/
 // Gun stats - displayed in the hangar - override
 damage = 2;
 ammo_capacity = max_ammo;
@@ -54,10 +55,11 @@ recharge_time = 0;
 fire_rate = "4/s"; //room_speed/4;
 price = 60;
 energy_consumption = 0;
-
+/*
 // create the hull status indicator
 hull_status = instance_create(0, 0, o_hull_turret);
 hull_status.parent_gun = object_index;
+*/
 </string>
           </argument>
         </arguments>
@@ -188,7 +190,7 @@ if hull == 0
             <string>///Update ammo counter and hull status
 if instance_exists(global.ship)
 {
-
+/*
     hull_status.image_index = hull;
     hull_status.x = global.ship.x + global.ship.ship_mount_x[gun_slot_id];
     hull_status.y = global.ship.y + global.ship.ship_mount_y[gun_slot_id] + 88;
@@ -198,7 +200,7 @@ if instance_exists(global.ship)
     // update the ammo counter position
     ammo_counter.x = global.ship.x + global.ship.ship_mount_x[gun_slot_id];
     ammo_counter.y = global.ship.y + global.ship.ship_mount_y[gun_slot_id] + 72;
-}
+*/}
 else
 {
     instance_destroy();

@@ -174,6 +174,9 @@
         <sprite>sprites\s_add_point_button</sprite>
         <sprite>sprites\s_ship_upgrade_window</sprite>
       </sprites>
+      <sprites name="Weapon_HUD">
+        <sprite>sprites\s_weapon_mission_stats</sprite>
+      </sprites>
     </sprites>
     <sprites name="Effects">
       <sprite>sprites\s_explosion_center</sprite>
@@ -356,6 +359,7 @@
     <font>fonts\f_experience_stats</font>
     <font>fonts\f_timer</font>
     <font>fonts\f_gun_ammo</font>
+    <font>fonts\f_gun_hull</font>
     <font>fonts\f_gun_stats</font>
     <font>fonts\f_level_stats</font>
     <font>fonts\f_control_settings_message</font>
@@ -572,6 +576,7 @@
         <object>objects\o_ammo_counter_turret</object>
         <object>objects\o_hull_turret</object>
         <object>objects\o_ammo_counter_mirrored</object>
+        <object>objects\o_weapon_mission_stats</object>
       </objects>
       <objects name="Ship Upgrade">
         <object>objects\o_add_point_button</object>

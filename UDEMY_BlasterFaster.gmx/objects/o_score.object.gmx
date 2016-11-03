@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// Draw the scor
+image_alpha = .7;
 draw_self(); // draw self, we are overriding the default draw event...
 
 draw_set_font(f_score);

@@ -160,6 +160,44 @@ else
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Create Weapon HUD objects
+
+// Not in the mothership or mission 00 room
+
+if room_get_name(room) != "r_mission_00" &amp;&amp; room_get_name(room) != "r_mothership_hangar"
+{
+    // LEFT weapon
+    slot0_weapon_stats = instance_create(233, 430, o_weapon_mission_stats);
+    slot0_weapon_stats.slot_id = 0;
+    
+    //RIGHT weapon
+    slot1_weapon_stats = instance_create(493, 430, o_weapon_mission_stats);
+    slot1_weapon_stats.slot_id = 1;
+    
+    // TURRET
+    slot2_weapon_stats = instance_create(363, 430, o_weapon_mission_stats);
+    slot2_weapon_stats.slot_id = 2;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
   </events>
   <PhysicsObject>0</PhysicsObject>

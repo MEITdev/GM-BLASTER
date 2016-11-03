@@ -34,6 +34,7 @@ event_inherited();
 ammo = 500;
 max_ammo = ammo;
 hull = 3;
+max_hull = hull;
 armor = 0;
 action_button = "2";
 action_mouse_button = global.ACTION_02;
@@ -42,12 +43,14 @@ action_mouse_button = global.ACTION_02;
 correction_x = +7;
 correction_y = -20;
 
+/*
 // create the hull status indicator
 hull_status = instance_create(0, 0, o_hull_gun_mirrored);
 hull_status.parent_gun = object_index;
 // create the ammo counter indicator
 ammo_counter = instance_create(0, 0, o_ammo_counter_mirrored);
 ammo_counter.parent_gun = object_index;
+*/
 
 // for the gun stats we need to re-read the ammo_capacity
 ammo_capacity = max_ammo;
@@ -102,7 +105,7 @@ alarm[LASER_LGUN] = room_speed/8;
             <kind>1</kind>
             <string>///Update the hull and ammo status indicators
 if instance_exists(global.ship)
-{
+{/*
     hull_status.image_index = hull;
     hull_status.x = global.ship.x + global.ship.ship_mount_x[gun_slot_id];
     hull_status.y = global.ship.y + global.ship.ship_mount_y[gun_slot_id] + 16;
@@ -113,7 +116,7 @@ if instance_exists(global.ship)
     ammo_counter.x = global.ship.x + global.ship.ship_mount_x[gun_slot_id];
     ammo_counter.y = global.ship.y + global.ship.ship_mount_y[gun_slot_id] + 44;
 
-}
+*/}
 else
 {
     instance_destroy();
