@@ -187,6 +187,7 @@
       <sprite>sprites\s_flare_2</sprite>
       <sprite>sprites\s_smoke_2</sprite>
       <sprite>sprites\s_explosion_center_2</sprite>
+      <sprite>sprites\s_dash_effect</sprite>
     </sprites>
     <sprites name="Weapons">
       <sprite>sprites\s_blank</sprite>
@@ -597,6 +598,7 @@
       <object>objects\o_laser_gun_flare</object>
       <object>objects\o_plasma_turret_01_gun_flare</object>
       <object>objects\o_ship_03_gun_flare</object>
+      <object>objects\o_dash_effect</object>
     </objects>
     <objects name="Spawners">
       <object>objects\o_enemy_boss_spawner</object>

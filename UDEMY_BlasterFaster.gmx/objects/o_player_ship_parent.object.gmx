@@ -229,39 +229,42 @@ room_goto(r_you_died);
 ///Set timer for REPAIR skill
 
 
-
-if player_knows_repair == true
+// Does not work in the mothership hangar OR the first mission
+if room_get_name(room) != "r_mission_00" || room_get_name(room) != "r_mothership_hangar"
 {
-    //show_debug_message("Entering REPAIR FUNCTION");
-    //show_debug_message("Hull: " + string(global.ship.hull));
-    if global.ship.hull &lt; global.ship.max_hull
+    if player_knows_repair == true
     {
-        //show_debug_message("HULL NEEDS REPAIRING");
-        // start with 5% repair each second
-        repair_amount = global.ship.max_hull / 20;
-        global.ship.hull += repair_amount;
-    }
-    else if global.ship.hull &gt;= global.ship.max_hull
-    {
-        if global.ship.armor &lt; global.ship.max_armor
+        //show_debug_message("Entering REPAIR FUNCTION");
+        //show_debug_message("Hull: " + string(global.ship.hull));
+        if global.ship.hull &lt; global.ship.max_hull
         {
+            //show_debug_message("HULL NEEDS REPAIRING");
             // start with 5% repair each second
-            repair_amount = global.ship.max_armor / 20;
-            global.ship.armor += repair_amount;
+            repair_amount = global.ship.max_hull / 20;
+            global.ship.hull += repair_amount;
         }
+        else if global.ship.hull &gt;= global.ship.max_hull
+        {
+            if global.ship.armor &lt; global.ship.max_armor
+            {
+                // start with 5% repair each second
+                repair_amount = global.ship.max_armor / 20;
+                global.ship.armor += repair_amount;
+            }
+        }
+    
+        //make sure we do not breach 100%
+        if global.ship.hull &gt; global.ship.max_hull
+        {
+            global.ship.hull = global.ship.max_hull;
+        }    
+        if global.ship.armor &gt; global.ship.max_armor
+        {
+            global.ship.armor = global.ship.max_armor;
+        }
+        // reset the alarm
+        alarm[REPAIR_TIMER] = room_speed * 2;
     }
-
-    //make sure we do not breach 100%
-    if global.ship.hull &gt; global.ship.max_hull
-    {
-        global.ship.hull = global.ship.max_hull;
-    }    
-    if global.ship.armor &gt; global.ship.max_armor
-    {
-        global.ship.armor = global.ship.max_armor;
-    }
-    // reset the alarm
-    alarm[REPAIR_TIMER] = room_speed * 2;
 }
 </string>
           </argument>
@@ -285,7 +288,8 @@ if player_knows_repair == true
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Save X and Y for the dash animation
+            <string>///DEPRECATED - Save X and Y for the dash animation
+/*
 with (global.ship)
 {
     old_x = x;
@@ -304,8 +308,7 @@ with (global.ship)
 }
 // allow another sprite to be drawn
 draw_dash_sprite = true;
-
-
+*/
 </string>
           </argument>
         </arguments>
@@ -354,7 +357,7 @@ can_use_boost = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Handle the Speed Booster
+            <string>///STOP the dash skill and reset values to normal
 // If the player is under the boost effect he cannot be hit
 /*
 if speed_boost == true
@@ -377,10 +380,14 @@ else if speed_boost == false
     //speed_boost = true;
     movement_speed = max_movement_speed;
     can_be_hit = true;
+    with (o_dash_effect)
+    {
+        instance_destroy();
+    }
     // disable the dash effect
-    draw_dash_sprite = false;
-    image_alpha = 1;
-    
+//    draw_dash_sprite = false;
+//    image_alpha = 1;
+    /*
     // now loop all the guns and set the alpha for them
     for (i = 0; i &lt;= ship_slots - 1; i++)
     {
@@ -389,7 +396,7 @@ else if speed_boost == false
             slot[i].image_alpha = 1;
         }
     }
-
+*/
 //}
 </string>
           </argument>
@@ -413,7 +420,7 @@ else if speed_boost == false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Reset the vspeed and the can_be_hot of the player sgip
+            <string>///Reset the vspeed and the can_be_hot of the player ship
 can_be_hit = true;
 vspeed = 0;
 </string>
@@ -493,9 +500,13 @@ if user_has_control == true
                     movement_speed = max_movement_speed + 5;
                     // player cannot be hit by lasers
                     can_be_hit = false;
+
+                    // TESTING
+                    // Here create the dash effect object !!!!
+                    instance_create(x, y, o_dash_effect);
                     
+                    /*                    
                     draw_dash_sprite = true;
-                    
                     
                     // call the alarm that will stop the boost
                     image_alpha = .5;
@@ -514,7 +525,7 @@ if user_has_control == true
                             slot[i].old_x = slot[i].x;
                             slot[i].old_y = slot[i].y;
                         }
-                    }
+                    }*/
                     
                     // how long until the alarm is reset
                     // after 1 second the boost will be unavailable and the countdown to allow the boost again will start via alarm
@@ -867,9 +878,10 @@ if is_docking == true
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Create the dash movement effect
+            <string>///DEPRECATED - Create the dash movement effect
 
 draw_self();
+/*
 with (global.ship)
 {
     if can_be_hit == false
@@ -903,7 +915,7 @@ with (global.ship)
             {
                 draw_dash_sprite = false;
                 // play with this to get different effect for dash
-                alarm[BLUR_TIMER] = room_speed/16;
+                //alarm[BLUR_TIMER] = room_speed/16;
             }
     //    }
     }
