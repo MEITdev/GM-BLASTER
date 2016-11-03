@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>///Instantiate the ship upgrade buttons
 
+image_alpha = .7;
+
 // distance is 24 pixels betweel the buttons
 shield_upgrade_button = instance_create(x + 22, y + 32, o_add_point_button);
 shield_upgrade_button.what_value = "shield";

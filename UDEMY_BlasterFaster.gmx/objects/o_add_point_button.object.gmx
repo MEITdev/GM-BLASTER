@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///Initialise the button
 event_inherited();
+image_alpha = .7;
 </string>
           </argument>
         </arguments>
