@@ -135,6 +135,9 @@
       <sprite>sprites\s_credits</sprite>
       <sprite>sprites\s_button_new</sprite>
       <sprite>sprites\s_button_new2</sprite>
+      <sprite>sprites\s_button_new3</sprite>
+      <sprite>sprites\s_button_new5</sprite>
+      <sprite>sprites\s_button_new4</sprite>
       <sprite>sprites\s_button_selection_glow</sprite>
       <sprite>sprites\s_next_button</sprite>
       <sprite>sprites\s_previous_button</sprite>
