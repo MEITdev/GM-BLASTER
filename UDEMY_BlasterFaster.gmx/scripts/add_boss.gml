@@ -4,7 +4,7 @@ level = argument0;
 if level == 1
 {
     /// Create the boss SCARAB object - Level 1 Boss
-    global.boss = instance_create(room_width/2, -64, o_enemy_boss_01);
+    global.boss = instance_create(room_width/2, -32, o_enemy_boss_01);
     
     // Set the ship slots, this depends on the type of the ship
     global.boss.ship_slots = 3;

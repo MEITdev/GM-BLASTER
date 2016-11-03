@@ -107,7 +107,9 @@ if !(file_exists("slot_0.ini"))
     global.current_player.level = 1;
     global.current_player.experience = 0;
     // ALPHA TESTING - change - 1 in release version
-    global.current_player.skill_points = 99;
+    global.current_player.skill_points = 1;
+    global.CompletedIntroMission = false;
+    global.CompletedMissions = 0;
 
     fader = instance_create(0,0, o_fade_out);
     fader.to_what_room = r_create_player;

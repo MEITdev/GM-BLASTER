@@ -291,7 +291,7 @@ global.boss = noone;
             <kind>1</kind>
             <string>///KILLED BY PLAYER
 global.killed_by_player = false;
-global.collided_with_plaer = false;
+global.collided_with_player = false;
 </string>
           </argument>
         </arguments>

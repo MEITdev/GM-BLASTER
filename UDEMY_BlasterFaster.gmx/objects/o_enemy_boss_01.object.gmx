@@ -28,7 +28,7 @@
             <string>/// Initialise the enemy
 event_inherited();
 
-vspeed = .25; // positive value will move down the object
+vspeed = .5; // positive value will move down the object
 hspeed = choose(-1,1); // choose at random one of the values
 
 hull = 1;

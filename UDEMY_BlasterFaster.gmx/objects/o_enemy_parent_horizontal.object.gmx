@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///Initialise enemy
 killed_by_player = false;
+global.collided_with_player = false;
 </string>
           </argument>
         </arguments>
@@ -81,7 +82,7 @@ else if (y &lt; -16)
             <string>/// Die code
 if (hull &lt;= 0)
 {
-    if global.collided_with_plaer == false
+    if global.collided_with_player == false
     {
         killed_by_player = true;
     }
@@ -127,7 +128,7 @@ if (hull &lt;= 0)
             <string>/// Damage the ship and destroy the asteroid
 
 killed_by_player = false;
-global.collided_with_plaer = true;
+global.collided_with_player = true;
 
 with (other)
 {
@@ -170,7 +171,7 @@ if global.Sound == 'On'
             <kind>1</kind>
             <string>/// Damage the gun
 killed_by_player = false;
-global.collided_with_plaer = true;
+global.collided_with_player = true;
 
 if instance_exists(global.ship)
 {
@@ -227,7 +228,7 @@ if global.Sound == 'On'
             <kind>1</kind>
             <string>/// Damage the ship
 killed_by_player = false;
-global.collided_with_plaer = true;
+global.collided_with_player = true;
 
 if (other.shield &gt; 0)
 {

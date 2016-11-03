@@ -88,7 +88,7 @@ if r_name == "r_mission_failed"
 
 if r_name == "r_mission_completed"
 {
-    dialog_box(104, 346, 58, 550, "Well done!", "Since this is only the Alpha version, there are no more missions. But what I kindly ask you to do is go back to the hangar, use the credits to purchase new guns, skill points to learn new skills and test them. You may enjoy it a little bit as well :)", 60);
+    dialog_box(104, 346, 58, 550, "Well done!", "You have managed to complete all the objectives before your battery ran out, well done there! Now make sure to repair your ship, get ammo for your weapons!", 60);
     global.avatar = instance_create(584, 296, o_pirate_avatar);
     global.avatar.image_xscale = 0.5;
     global.avatar.image_yscale = 0.5;

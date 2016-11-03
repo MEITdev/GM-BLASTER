@@ -44,7 +44,7 @@ if file_exists(file_name)
     }
     
     global.CompletedMissions = ini_read_real("missions", "last_completed", 0);
-    show_debug_message("completed mission: " + string(i));
+    show_debug_message("completed mission: " + string(global.CompletedMissions));
 
     
 
