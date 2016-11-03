@@ -160,6 +160,24 @@ draw_set_font(f_gun_ammo);
 // draw the hull status of the gun
 draw_text(x + 64, y + 4, string(ammo_status));
 
+// DRAW what weapon it is
+draw_set_font(f_gun_type_stats_message);
+draw_set_valign(fa_bottom);
+draw_set_halign(fa_center);
+if slot_id == 0
+{
+    text_to_draw = "LEFT WEAPON"
+}
+else if slot_id == 1
+{
+    text_to_draw = "RIGHT WEAPON"
+}
+else if slot_id == 2
+{
+    text_to_draw = "TURRET"
+}
+
+draw_text(round(x + sprite_width/2), y, text_to_draw);
 </string>
           </argument>
         </arguments>

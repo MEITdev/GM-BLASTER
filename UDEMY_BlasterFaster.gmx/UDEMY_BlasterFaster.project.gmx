@@ -361,6 +361,7 @@
     <font>fonts\f_gun_ammo</font>
     <font>fonts\f_gun_hull</font>
     <font>fonts\f_gun_stats</font>
+    <font>fonts\f_gun_type_stats_message</font>
     <font>fonts\f_level_stats</font>
     <font>fonts\f_control_settings_message</font>
   </fonts>
