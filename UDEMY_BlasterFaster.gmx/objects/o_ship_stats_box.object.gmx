@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>///Initialise the ship stats indicators 
-image_alpha = .8;
 
 x_correction = 5;
 y_correction = 32;

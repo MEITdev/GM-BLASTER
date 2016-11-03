@@ -28,7 +28,7 @@
             <string>/// Initialise the enemy
 event_inherited();
 
-vspeed = .5; // positive value will move down the object
+vspeed = 1; // positive value will move down the object
 hspeed = choose(-1,1); // choose at random one of the values
 
 hull = 1;
@@ -156,11 +156,8 @@ if instance_exists(global.boss)
             for (i=0; i&lt;15; i+=1)
             {
                 metal = instance_create(x+32-random(64), y+32-random(64), o_metal_resource);
-                metal.direction = point_direction(x, y, global.ship.x, global.ship.y);
-                with (metal)
-                {
-                    motion_set(direction, 10);
-                }
+                //metal.direction = point_direction(x, y, global.ship.x, global.ship.y);
+                metal.by_boss = true;                
             };
         
             // Save the payer score to the local highscore file

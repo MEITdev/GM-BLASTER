@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// Initialise the enemy
 vspeed = 1; // positive value will move down the object
-
+killed_by_player = false;
 hull = 4;
 
 alarm[LASER_ALARM] = 1;

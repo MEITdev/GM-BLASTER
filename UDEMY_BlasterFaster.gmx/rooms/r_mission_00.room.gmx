@@ -59,11 +59,11 @@ fader.to_what_room = "this";</code>
   <instances>
     <instance objName="o_mission_controller" x="81" y="208" name="inst_AB355DEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_dialog_box_controller" x="27" y="208" name="inst_7C51DF66" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_ship_stats_box" x="8" y="8" name="inst_C21B753C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_ship_stats_box" x="8" y="8" name="inst_C21B753C" locked="0" code="" scaleX="1" scaleY="1" colour="3372220415" rotation="0"/>
     <instance objName="o_mouse_cursor_controller" x="24" y="248" name="inst_CCFEB00F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_surface_controller" x="84" y="248" name="inst_B21DEF76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_metal_counter" x="810" y="50" name="inst_A01D8C4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_score" x="824" y="20" name="inst_E156D645" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_metal_counter" x="811" y="50" name="inst_A01D8C4A" locked="0" code="" scaleX="1" scaleY="1" colour="3372220415" rotation="0"/>
+    <instance objName="o_score" x="824" y="20" name="inst_E156D645" locked="0" code="" scaleX="1" scaleY="1" colour="3372220415" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

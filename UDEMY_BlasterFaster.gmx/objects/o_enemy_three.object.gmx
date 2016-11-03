@@ -26,9 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialise the enemy
+event_inherited();
 hspeed = 3; // positive value will move down the object
 vspeed = 2;
 image_angle = 270;
+
 
 hull = 2;
 

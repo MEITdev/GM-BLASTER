@@ -230,7 +230,12 @@ room_goto(r_you_died);
 
 
 // Does not work in the mothership hangar OR the first mission
-if room_get_name(room) != "r_mission_00" || room_get_name(room) != "r_mothership_hangar"
+if room_get_name(room) == "r_mission_00" || room_get_name(room) == "r_mothership_hangar"
+{
+    // do not repair the ship
+    show_debug_message("DO NOT REPAIR");
+}
+else
 {
     if player_knows_repair == true
     {

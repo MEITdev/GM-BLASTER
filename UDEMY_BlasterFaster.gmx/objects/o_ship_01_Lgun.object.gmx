@@ -42,12 +42,24 @@ hull = 2;
 correction_x = -5;
 correction_y = -24;
 
+
 // create the hull status indicator
 hull_status = instance_create(0, 0, o_hull_gun);
 hull_status.parent_gun = object_index;
 // create the ammo counter indicator
 ammo_counter = instance_create(0, 0, o_ammo_counter);
 ammo_counter.parent_gun = object_index;
+
+
+/*
+// EXPERIMENT
+// create the hull status indicator
+hull_status = instance_create(160, room_height - 32, o_hull_gun);
+hull_status.parent_gun = object_index;
+// create the ammo counter indicator
+ammo_counter = instance_create(160, room_height - 16, o_ammo_counter);
+ammo_counter.parent_gun = object_index;
+*/
 
 //re-read the ammo capacity for the gun stats object
 ammo_capacity = max_energy_level;

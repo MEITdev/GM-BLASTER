@@ -247,7 +247,7 @@ if level == 2
         // choose what enemies to spawn
         enemy = choose(o_enemy_two, o_enemy_three, o_enemy_three);
         // update alarm time
-        alarm_time = random_range(room_speed*0.5, room_speed * 1);
+        alarm_time = random_range(room_speed*0.5, room_speed * 2);
     }   
     if (score &gt;= stage4)
     {
@@ -264,7 +264,7 @@ if level == 2
         }
             
         // update alarm time
-        alarm_time = random_range(room_speed*.5, room_speed * 1);  
+        alarm_time = random_range(room_speed*.5, room_speed * 2);  
     }
     
     // do not spawn when boss is present
@@ -281,7 +281,10 @@ if level == 2
     // create the enemy
     if stage &gt; 1 // first stage does not have enemies in this level
     {
-        instance_create(random_range(16, room_width - 16), -16, enemy);
+        if enemy != noone
+        {
+            instance_create(random_range(16, room_width - 16), -16, enemy);
+        }
     }
 }
 
