@@ -82,7 +82,8 @@ pruchased[0, 1] = 0; // ammo for the weapon
           <argument>
             <kind>1</kind>
             <string>///Materials variables
-global.Metal = 0;
+global.Iron = 0;
+global.Titanium = 0;
 </string>
           </argument>
         </arguments>

@@ -81,7 +81,7 @@ for (i = 0; i &lt;= ship_slots - 1; i++)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="o_metal_resource">
+    <event eventtype="4" ename="o_titanium_resource">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -98,8 +98,43 @@ for (i = 0; i &lt;= ship_slots - 1; i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Collect Metal resource
-global.Metal += 1;
+            <string>///Collect titanium resource
+global.Titanium += 1;
+
+with (other)
+{
+    instance_destroy();
+}
+
+// play the sound effect
+if global.Sound == 'On'
+{
+    audio_play_sound(a_powerup, 1, false);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="o_iron_resource">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Collect ion resource
+global.Iron += 1;
 
 with (other)
 {

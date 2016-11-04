@@ -46,7 +46,50 @@ if global.Sound == 'On'
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="o_asteroids_parent">
+    <event eventtype="4" ename="o_red_asteroids_parent">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Hit the asteroid
+
+// display the damage amount
+//damage_display = instance_create(x, y, o_damage_display);
+//damage_display.value = damage;
+
+// call screen shake
+add_screenshake(4, room_speed*.125);
+
+// create flare
+instance_create(x, y, o_flare);
+
+// play the sound effect
+if global.Sound == 'On'
+{
+    audio_play_sound(a_hit, 2, false);
+}
+
+other.hull -= 1; // substract asteroid armor by one
+
+instance_destroy(); // destroy the laser object
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="o_grey_asteroids_parent">
       <action>
         <libid>1</libid>
         <id>603</id>

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>o_asteroids_parent</parentName>
+  <parentName>o_red_asteroids_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -59,13 +59,13 @@ asteroid_rotation = choose(-1, 1);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Spawn the metal resource 
+            <string>/// Spawn the titanium resource 
 choice = choose(1, 2, 3, 4, 5);
 
 if choice &gt; 2
 {
     // CHANGE the material spawned...
-    instance_create(x,y, o_metal_resource);
+    instance_create(x,y, o_titanium_resource);
 }
 </string>
           </argument>

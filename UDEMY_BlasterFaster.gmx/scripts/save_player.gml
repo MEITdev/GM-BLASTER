@@ -18,7 +18,9 @@ else
     ini_write_real("player", "credits", global.current_player.credits);
     ini_write_real("player", "avatar_id", global.current_player.avatar_id);
     ini_write_real("player", "skill_points", global.current_player.skill_points);
-    ini_write_real("player", "metal", global.Metal);
+    ini_write_real("resources", "iron", global.Iron);
+    ini_write_real("resources", "titanium", global.Titanium);
+    
     ini_write_string("player", "difficulty", global.Difficulty);
     ini_write_real("player", "completedIntro", global.CompletedIntroMission);
     

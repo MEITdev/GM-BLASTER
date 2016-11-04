@@ -150,7 +150,6 @@
       <sprite>sprites\s_shield_new_alt</sprite>
       <sprite>sprites\s_armor_new_alt</sprite>
       <sprite>sprites\s_xp_bar</sprite>
-      <sprite>sprites\s_metal_counter</sprite>
       <sprite>sprites\s_hull_new</sprite>
       <sprite>sprites\s_armor_new</sprite>
       <sprite>sprites\s_armor</sprite>
@@ -176,6 +175,10 @@
       </sprites>
       <sprites name="Weapon_HUD">
         <sprite>sprites\s_weapon_mission_stats</sprite>
+      </sprites>
+      <sprites name="Resource_counters">
+        <sprite>sprites\s_titanium_counter</sprite>
+        <sprite>sprites\s_iron_counter</sprite>
       </sprites>
     </sprites>
     <sprites name="Effects">
@@ -285,7 +288,8 @@
       <sprite>sprites\s_fade_out</sprite>
     </sprites>
     <sprites name="Resources">
-      <sprite>sprites\s_metal_resource</sprite>
+      <sprite>sprites\s_iron_resource</sprite>
+      <sprite>sprites\s_titanium_resource</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -558,7 +562,6 @@
       <object>objects\o_xp_bar</object>
       <object>objects\o_score</object>
       <object>objects\o_credits</object>
-      <object>objects\o_metal_counter</object>
       <object>objects\o_armor</object>
       <object>objects\o_shield</object>
       <object>objects\o_hull</object>
@@ -582,6 +585,10 @@
       <objects name="Ship Upgrade">
         <object>objects\o_add_point_button</object>
         <object>objects\o_ship_upgrade_window</object>
+      </objects>
+      <objects name="Resource_counters">
+        <object>objects\o_iron_counter</object>
+        <object>objects\o_titanium_counter</object>
       </objects>
     </objects>
     <objects name="Effects">
@@ -625,11 +632,12 @@
       <object>objects\o_gas_giant_moon_01</object>
     </objects>
     <objects name="Space Asteroids">
-      <object>objects\o_asteroids_parent</object>
-      <object>objects\o_asteroid_grey_01_fragment_02</object>
+      <object>objects\o_grey_asteroids_parent</object>
+      <object>objects\o_red_asteroids_parent</object>
       <objects name="grey">
         <object>objects\o_asteroid_grey_01</object>
         <object>objects\o_asteroid_grey_01_fragment_01</object>
+        <object>objects\o_asteroid_grey_01_fragment_02</object>
         <object>objects\o_asteroid_grey_03</object>
         <object>objects\o_asteroid_grey_02</object>
       </objects>
@@ -677,7 +685,8 @@
       <object>objects\o_fade_in</object>
     </objects>
     <objects name="Resources">
-      <object>objects\o_metal_resource</object>
+      <object>objects\o_iron_resource</object>
+      <object>objects\o_titanium_resource</object>
     </objects>
   </objects>
   <timelines name="timelines">

@@ -62,8 +62,9 @@ fader.to_what_room = "this";</code>
     <instance objName="o_ship_stats_box" x="8" y="8" name="inst_C21B753C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_mouse_cursor_controller" x="24" y="248" name="inst_CCFEB00F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_surface_controller" x="84" y="248" name="inst_B21DEF76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_metal_counter" x="811" y="50" name="inst_A01D8C4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_iron_counter" x="810" y="50" name="inst_A01D8C4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_score" x="824" y="20" name="inst_E156D645" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_titanium_counter" x="810" y="80" name="inst_44B069FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

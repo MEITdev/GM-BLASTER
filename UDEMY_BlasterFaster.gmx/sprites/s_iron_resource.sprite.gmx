@@ -20,6 +20,6 @@
   <width>19</width>
   <height>19</height>
   <frames>
-    <frame index="0">images\s_metal_resource_0.png</frame>
+    <frame index="0">images\s_iron_resource_0.png</frame>
   </frames>
 </sprite>

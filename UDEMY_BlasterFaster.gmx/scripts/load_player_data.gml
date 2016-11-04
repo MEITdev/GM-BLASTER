@@ -14,7 +14,9 @@ if file_exists(file_name)
     global.current_player.avatar_id = ini_read_real("player", "avatar_id", 0);
     global.current_player.skill_points = ini_read_real("player", "skill_points", 0);
     global.Difficulty = ini_read_string("player", "difficulty", "CryBaby");    
-    global.Metal = ini_read_real("player", "metal", 0);
+    global.Iron = ini_read_real("resources", "iron", 0);
+    global.Titanium = ini_read_real("resources", "titanium", 0);
+    
     global.CompletedIntroMission = ini_read_real("player", "completedIntro", false);
     // now turn the string to bool
     if global.CompletedIntroMission == 1

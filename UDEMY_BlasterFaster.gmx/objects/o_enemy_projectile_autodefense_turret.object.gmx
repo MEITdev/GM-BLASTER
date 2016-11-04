@@ -177,7 +177,7 @@ instance_create(x-8+random(16), y-8+random(16), o_enemy_plasma_pixel_particle_cr
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="o_asteroids_parent">
+    <event eventtype="4" ename="o_grey_asteroids_parent">
       <action>
         <libid>1</libid>
         <id>603</id>
