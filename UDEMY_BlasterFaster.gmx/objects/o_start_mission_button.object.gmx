@@ -224,7 +224,10 @@ else
     // construct the string
     room_name_get = "r_mission_0" + string(mission);
 
-       
+
+    // RESET the score 
+    score = 0;
+           
     // create the fader instance
     fader = instance_create(0,room_height, o_bottom_up_fade);
     fader.when_to_die = (room_height * -2);

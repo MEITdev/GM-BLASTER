@@ -19,6 +19,7 @@ ini_write_real("ship", "max_armor", global.ship.max_armor);
 ini_write_real("ship", "hull", global.ship.hull);
 ini_write_real("ship", "max_hull", global.ship.max_hull);
 ini_write_real("ship", "speed", global.ship.movement_speed);
+ini_write_real("ship", "max_speed", global.ship.max_movement_speed);
 ini_write_real("ship", "ship_slots", global.ship.ship_slots);
 
 // save the ship slots and the weapons

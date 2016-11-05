@@ -132,6 +132,7 @@ global.CompletedIntroMission = false;
 shield_upgrade = 0;
 armor_upgrade = 0;
 hull_upgrade = 0;
+speed_upgrade = 0;
 </string>
           </argument>
         </arguments>

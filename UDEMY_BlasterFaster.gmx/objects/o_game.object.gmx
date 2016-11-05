@@ -345,9 +345,9 @@ part_type_destroy(pt_flare);
 draw_set_font(f_damage_display);
 draw_set_halign(fa_left);
 draw_set_valign(fa_bottom);
-depth = -10000;
+depth = -10001;
 draw_text(0,room_height, "FPS: " + string(fps_real));
-draw_text(0, room_height - 10, "0.0.44 closed alpha");
+draw_text(0, room_height - 10, "0.0.46 closed alpha");
 </string>
           </argument>
         </arguments>

@@ -15,6 +15,7 @@ if file_exists(file_name)
         ship_hull = ini_read_real("ship", "hull", 0);
         ship_max_hull = ini_read_real("ship", "max_hull", 0);        
         ship_speed = ini_read_real("ship", "speed", 0);
+        ship_max_speed = ini_read_real("ship", "max_speed", 0);
         ship_slots = ini_read_real("ship", "ship_slots", 0);
 
         // Create the instance of the ship... this may need to be changed in the end...
@@ -30,7 +31,10 @@ if file_exists(file_name)
         global.ship.hull = ship_hull;
         global.ship.max_hull = ship_max_hull;
         global.ship.movement_speed = ship_speed;
-        global.ship.max_movement_speed = global.ship.movement_speed;
+        global.ship.max_movement_speed = ship_max_speed;
+        // set the movement speed to the maximum upon loading the ship object
+        global.ship.movement_speed = global.ship.max_movement_speed;
+        
         
         // instantiate the slots upon creation
         for (i = 0; i <= global.ship.ship_slots - 1; i++)

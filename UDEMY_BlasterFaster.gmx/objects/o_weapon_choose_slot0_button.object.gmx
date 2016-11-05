@@ -378,6 +378,58 @@ else
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Create the UPGRADE button
+
+// only if the gun is owned already
+if is_owned
+{
+    upgrade_button = instance_create(x,y - 24, o_weapon_upgrade_button);
+    
+    // pass in the slot ID number
+    upgrade_button.owner_id = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Enable player to toggle weapons
+can_toggle = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -576,70 +628,75 @@ event_inherited();
           <argument>
             <kind>1</kind>
             <string>/// Toggle available weapons
-
-if gun_choice &lt; array_length_1d(weapons_slot) - 1
+if can_toggle == false
 {
-    gun_choice += 1;
 }
 else
 {
-    gun_choice = 0;
-}
-
-// destroy if existing gun
-if instance_exists(global.ship.slot[0])
-{
-    with(global.ship.slot[0])
+    if gun_choice &lt; array_length_1d(weapons_slot) - 1
     {
-        instance_destroy();
+        gun_choice += 1;
     }
-}
-
-// now attach the weapon    
-//add_weapon(o_ship_new, weapons_slot[gun_choice], 0);
-
-// TESTING
-//global.ship.slot[0] = instance_create(global.ship.ship_mount_x[0], global.ship.ship_mount_y[0], weapons_slot[gun_choice]);
-//global.ship.slot[0].gun_slot_id = 0;
-
-add_weapon(weapons_slot[gun_choice], 0);
-
-// Read the data from the gun instance
-gun_stats.damage = weapons_slot[gun_choice].damage;
-gun_stats.ammo_capacity = weapons_slot[gun_choice].ammo_capacity;
-gun_stats.recharge_time = weapons_slot[gun_choice].recharge_time;
-gun_stats.fire_rate = weapons_slot[gun_choice].fire_rate;
-
-
-// =======================================================================================
-show_debug_message("SLOT_00 toggle_available_weapons: " + string(array_height_2d(global.current_player.purchased)));
-
-
-
-// now set the price
-for (i=0; i&lt;array_height_2d(global.current_player.purchased); i+=1)
-{
-    // for each weapon in the purchased list, set the price to 0
-    if object_get_name(global.ship.slot[0].object_index) == global.current_player.purchased[i, 0]
+    else
     {
-        weapons_slot[gun_choice].price = 0;
+        gun_choice = 0;
     }
+    
+    // destroy if existing gun
+    if instance_exists(global.ship.slot[0])
+    {
+        with(global.ship.slot[0])
+        {
+            instance_destroy();
+        }
+    }
+    
+    // now attach the weapon    
+    //add_weapon(o_ship_new, weapons_slot[gun_choice], 0);
+    
+    // TESTING
+    //global.ship.slot[0] = instance_create(global.ship.ship_mount_x[0], global.ship.ship_mount_y[0], weapons_slot[gun_choice]);
+    //global.ship.slot[0].gun_slot_id = 0;
+    
+    add_weapon(weapons_slot[gun_choice], 0);
+    
+    // Read the data from the gun instance
+    gun_stats.damage = weapons_slot[gun_choice].damage;
+    gun_stats.ammo_capacity = weapons_slot[gun_choice].ammo_capacity;
+    gun_stats.recharge_time = weapons_slot[gun_choice].recharge_time;
+    gun_stats.fire_rate = weapons_slot[gun_choice].fire_rate;
+    
+    
+    // =======================================================================================
+    show_debug_message("SLOT_00 toggle_available_weapons: " + string(array_height_2d(global.current_player.purchased)));
+    
+    
+    
+    // now set the price
+    for (i=0; i&lt;array_height_2d(global.current_player.purchased); i+=1)
+    {
+        // for each weapon in the purchased list, set the price to 0
+        if object_get_name(global.ship.slot[0].object_index) == global.current_player.purchased[i, 0]
+        {
+            weapons_slot[gun_choice].price = 0;
+        }
+    }
+    
+    show_debug_message("PRICE: " + string(weapons_slot[gun_choice].price));
+    gun_stats.price = weapons_slot[gun_choice].price;
+    gun_stats.energy_consumption = weapons_slot[gun_choice].energy_consumption;
+    
+    /*
+    // Get the detailsfrom the gun for the Gun Stats display
+    gun_stats.damage = global.ship.slot[0].damage;
+    gun_stats.ammo_capacity = global.ship.slot[0].ammo_capacity;
+    gun_stats.recharge_time = global.ship.slot[0].recharge_time;
+    gun_stats.fire_rate = global.ship.slot[0].fire_rate;
+    gun_stats.price = global.ship.slot[0].price;
+    gun_stats.energy_consumption = global.ship.slot[0].energy_consumption;
+    
+    */
 }
-
-show_debug_message("PRICE: " + string(weapons_slot[gun_choice].price));
-gun_stats.price = weapons_slot[gun_choice].price;
-gun_stats.energy_consumption = weapons_slot[gun_choice].energy_consumption;
-
-/*
-// Get the detailsfrom the gun for the Gun Stats display
-gun_stats.damage = global.ship.slot[0].damage;
-gun_stats.ammo_capacity = global.ship.slot[0].ammo_capacity;
-gun_stats.recharge_time = global.ship.slot[0].recharge_time;
-gun_stats.fire_rate = global.ship.slot[0].fire_rate;
-gun_stats.price = global.ship.slot[0].price;
-gun_stats.energy_consumption = global.ship.slot[0].energy_consumption;
-
-*/
 </string>
           </argument>
         </arguments>
@@ -811,6 +868,41 @@ else
             instance_destroy();
         }
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Destroy / Create Upgrade button on empty slots
+
+// if gun is not owned it cannot be upgraded
+if is_owned == false
+{
+    with(upgrade_button)
+    {
+        instance_destroy();
+    }
+}
+if is_owned == true &amp;&amp; instance_exists(upgrade_button) == false
+{
+    upgrade_button = instance_create(x, y - 24, o_weapon_upgrade_button);
+    upgrade_button.owner_id = 0;
 }
 </string>
           </argument>

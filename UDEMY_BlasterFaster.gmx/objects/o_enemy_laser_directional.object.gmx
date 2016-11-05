@@ -122,7 +122,7 @@ if global.Sound == 'On'
     audio_play_sound(a_hit, 2, false);
 }
 
-other.hull -= damage; // substract asteroid armor by one
+other.hull -= 1; // substract asteroid armor by one
 
 instance_destroy(); // destroy the laser object
 </string>

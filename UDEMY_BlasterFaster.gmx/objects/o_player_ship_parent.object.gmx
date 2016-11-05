@@ -689,7 +689,8 @@ if (keyboard_check_pressed(vk_delete))
 {
     score += 50;
     global.current_player.credits += 100;
-    global.Metal += 50;
+    global.Iron += 50;
+    global.Titanium += 50;
 }
 
 if (keyboard_check_pressed(vk_home))

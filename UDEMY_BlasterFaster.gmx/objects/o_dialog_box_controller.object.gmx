@@ -40,6 +40,12 @@ if r_name == "r_menu"
 //    dialog.avatar = avatar.object_index;
     //dialog.ttl = 20;    
 }
+if r_name == "r_credits"
+{
+    dialog_box(32, 200, 75, 250, " Thanks to", "Hello there, welcome to pre-alpha stage of this game. Hope you or your computer do not crash too much...", 5);
+    global.avatar = noone;
+}
+
 if r_name == "r_choose_save_slot"
 {
     dialog_box(104, 346, 58, 550, "Choose Save slot", "Select a slot with already existing game to continue. To start a new game simply click on a empty slot, or delete an existing one with the [X] button to make room for your own ultimate adventure! Screw the other pilot!", 15);

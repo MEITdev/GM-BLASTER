@@ -171,6 +171,7 @@
       <sprite>sprites\s_ship_stats_hull</sprite>
       <sprites name="Ship Upgrade">
         <sprite>sprites\s_add_point_button</sprite>
+        <sprite>sprites\s_upgrade_ship_button</sprite>
         <sprite>sprites\s_ship_upgrade_window</sprite>
       </sprites>
       <sprites name="Weapon_HUD">
@@ -179,6 +180,9 @@
       <sprites name="Resource_counters">
         <sprite>sprites\s_titanium_counter</sprite>
         <sprite>sprites\s_iron_counter</sprite>
+      </sprites>
+      <sprites name="Weapon Upgrade">
+        <sprite>sprites\s_gun_box_upgrade</sprite>
       </sprites>
     </sprites>
     <sprites name="Effects">
@@ -584,11 +588,21 @@
       </objects>
       <objects name="Ship Upgrade">
         <object>objects\o_add_point_button</object>
+        <object>objects\o_ship_upgrade_button</object>
         <object>objects\o_ship_upgrade_window</object>
       </objects>
       <objects name="Resource_counters">
         <object>objects\o_iron_counter</object>
         <object>objects\o_titanium_counter</object>
+      </objects>
+      <objects name="Player Upgrade">
+        <object>objects\o_player_upgrade_button</object>
+        <object>objects\o_add_skill_point_button</object>
+      </objects>
+      <objects name="Gun Upgrade">
+        <object>objects\o_add_weapon_upgrade_point_button</object>
+        <object>objects\o_weapon_upgrade_window</object>
+        <object>objects\o_weapon_upgrade_button</object>
       </objects>
     </objects>
     <objects name="Effects">
