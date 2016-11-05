@@ -115,12 +115,15 @@ if global.current_player.name != ""
     // add the starting weapons
     global.current_player.purchased[0, 0] = "o_ship_01_Lgun";
     global.current_player.purchased[0, 1] = 0;
-
+    global.current_player.purchased[0, 2] = 0;
+    
     global.current_player.purchased[1, 0] = "o_ship_01_Rgun";
     global.current_player.purchased[1, 1] = 0;    
-
+    global.current_player.purchased[1, 2] = 0;
+    
     global.current_player.purchased[2, 0] = "o_ship_01_turret";
-    global.current_player.purchased[2, 1] = 1000; // This is manual at the moment    
+    global.current_player.purchased[2, 1] = 0;
+    global.current_player.purchased[2, 2] = 0;    
     
     
     // Save the selected skill

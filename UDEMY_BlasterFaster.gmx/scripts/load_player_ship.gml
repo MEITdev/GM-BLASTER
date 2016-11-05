@@ -54,6 +54,8 @@ if file_exists(file_name)
             if object_get_parent(global.ship.slot[i].object_index) != o_parent_power_gun
             {
                 global.ship.slot[i].ammo = ini_read_real("slots", string(i) + "_ammo", 0);
+                global.ship.slot[i].damage = ini_read_real("slots", string(i) + "_damage", 0);
+                                
             }
             global.ship.slot[i].gun_slot_id = i;
         }

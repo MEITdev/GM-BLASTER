@@ -43,6 +43,7 @@ else
     {
         ini_write_string("purchased", string(i), string(global.current_player.purchased[i, 0]));
         ini_write_real("purchased", string(i) + "_ammo", global.current_player.purchased[i, 1]);
+        ini_write_real("purchased", string(i) + "_damage", global.current_player.purchased[i, 2]);
     }
     
     // save the completed missions

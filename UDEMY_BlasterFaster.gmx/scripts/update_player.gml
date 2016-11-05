@@ -55,6 +55,8 @@ for (i = 0; i < global.ship.ship_slots; i++)
                 show_debug_message("weapon in thep purchased list");
                 found = true; // toggle flag
                 global.current_player.purchased[j, 1] = slot_weapon.ammo; // save the ammo count to the array purchased 2nd dimension
+                global.current_player.purchased[j, 2] = slot_weapon.damage; // save the damage to the array purchased 3rd dimension
+                                
                 show_debug_message("set ammo to " + string(slot_weapon.ammo));
             }
         }
@@ -68,6 +70,7 @@ for (i = 0; i < array_height_2d(global.current_player.purchased); i++)
 {
     ini_write_string("purchased", string(i), string(global.current_player.purchased[i, 0]));
     ini_write_real("purchased", string(i) + "_ammo", global.current_player.purchased[i, 1]);
+    ini_write_real("purchased", string(i) + "_damage", global.current_player.purchased[i, 2]);    
 }
 
 // save the completed missions

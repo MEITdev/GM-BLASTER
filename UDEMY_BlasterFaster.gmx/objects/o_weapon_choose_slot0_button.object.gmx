@@ -404,6 +404,10 @@ if is_owned
     // pass in the slot ID number
     upgrade_button.owner_id = 0;
 }
+else
+{
+    upgrade_button = noone;
+}
 </string>
           </argument>
         </arguments>
