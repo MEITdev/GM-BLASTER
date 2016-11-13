@@ -130,11 +130,16 @@ else
     {
         instance_destroy();
     }
+    
     // Make the slot clickable
     //asset_get_index(slot_name).object_index.can_toggle = false;
     slot = asset_get_index(slot_name);
     slot.object_index.can_toggle = true;
+ 
+    // TESTING:
+    // update the weapon information upon closing the upgrade window
        
+          
 }
 </string>
           </argument>

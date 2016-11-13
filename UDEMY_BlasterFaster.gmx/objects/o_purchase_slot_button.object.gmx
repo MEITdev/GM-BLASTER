@@ -154,12 +154,12 @@ else
 //}
 
 // if the player has enough money, save the ship
-if (global.Metal - total_price) &gt;= 0
+if (global.Iron - total_price) &gt;= 0
 {
     // update the amount of credits available
 
     // UNCOMMENT AFTER TESTING (decrements credits after purchase)
-    global.Metal = global.Metal - total_price;
+    global.Iron = global.Iron - total_price;
 
     
     // add the gun to the purchased list

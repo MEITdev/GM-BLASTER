@@ -43,7 +43,7 @@ if file_exists(file_name)
             global.ship.ship_mount_x[i] = ini_read_real("slots", string(i) + "_mount_x", 0);
             global.ship.ship_mount_y[i] = ini_read_real("slots", string(i) + "_mount_y", 0);
         }
-    
+        
         // attach guns to the ship
         for (i = 0; i <= global.ship.ship_slots -1; i++)
         {
@@ -54,11 +54,30 @@ if file_exists(file_name)
             if object_get_parent(global.ship.slot[i].object_index) != o_parent_power_gun
             {
                 global.ship.slot[i].ammo = ini_read_real("slots", string(i) + "_ammo", 0);
-                global.ship.slot[i].damage = ini_read_real("slots", string(i) + "_damage", 0);
-                                
+                
+                // this will not work as the damage is stored in the player save file
+                // in the section of purchased weapons...
+                // global.ship.slot[i].damage = ini_read_real("slots", string(i) + "_damage", 0);
             }
             global.ship.slot[i].gun_slot_id = i;
+            
+            is_owned = false;
+            // check if the attached gun is already purchased, if so, update the damage and ammo from the player file
+            for (j = 0; j < array_height_2d(global.current_player.purchased); j+=1)
+            {
+                if object_get_name(global.ship.slot[i].object_index) == global.current_player.purchased[i, 0]
+                {
+                    is_owned = true;
+                    global.ship.slot[i].ammo = global.current_player.purchased[j, 1];
+                    global.ship.slot[i].damage = global.current_player.purchased[j, 2];
+                    
+                }
+            }
         }
+
+        
+        
+        
         ini_close();   
     
     // now that all is loaded, we can go to the mothership room (ship upgrade room)

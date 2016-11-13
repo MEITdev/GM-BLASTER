@@ -232,6 +232,11 @@ else
             <string>///Save changes
 save_player_ship(global.current_player.ship_save_file);
 update_player(global.current_player.save_slot);
+
+// now load the available data from the save file
+//load_player_data(global.current_player.save_slot);
+// now load the ship
+//load_player_ship(global.current_player.ship_save_file);
 </string>
           </argument>
         </arguments>

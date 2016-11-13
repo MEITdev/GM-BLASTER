@@ -39,7 +39,10 @@ if file_exists(file_name)
                 // if weapon is owned, set the ammo
                 is_owned = true;
                 read_ammo = ini_read_real("purchased", string(i) + "_ammo", 0);
+                read_damage = ini_read_real("purchased", string(i) + "_damage", 0);
+                
                 global.ship.slot[slot].ammo = read_ammo;
+                global.ship.slot[slot].damage = read_damage;
             }
         }
     }

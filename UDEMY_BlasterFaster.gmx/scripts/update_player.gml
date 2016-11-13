@@ -65,6 +65,7 @@ for (i = 0; i < global.ship.ship_slots; i++)
 
 // save the number of purchased weapons
 ini_write_real("purchased", "count", array_height_2d(global.current_player.purchased));
+
 // Save players purchased weapons
 for (i = 0; i < array_height_2d(global.current_player.purchased); i++)
 {
