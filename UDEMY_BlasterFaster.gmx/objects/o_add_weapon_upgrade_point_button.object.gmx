@@ -76,7 +76,7 @@ cost = 50;
           <argument>
             <kind>1</kind>
             <string>///Set the hover text
-hover_text = "Upgrade for 50 Metal";
+hover_text = "Upgrade for 50 Iron";
 </string>
           </argument>
         </arguments>
@@ -157,6 +157,9 @@ if global.Iron &gt;= cost
           <argument>
             <kind>1</kind>
             <string>///Increase the relevant attribute
+
+show_debug_message("what_value: " + string(what_value));
+
 if can_upgrade == true
 {
     if what_value == "rof"
@@ -171,6 +174,14 @@ if can_upgrade == true
     {
         max_ammo_upgrade = 1;
     }
+}
+else
+{
+    // cannot upgrade so cannot do anything
+    // TODO: maybe some form of a trigger bool here?....
+    damage_upgrade = 0;
+    rof_upgrade = 0;
+    max_ammo_upgrade = 0;
 }
 </string>
           </argument>
@@ -193,22 +204,20 @@ if can_upgrade == true
           <argument>
             <kind>1</kind>
             <string>///Update the weapon stats
-
 // maximum for all stats is going to be 10 for now
 // TODO: change to make sense out of these values
 
 // increase the damage of the weapon
+show_debug_message("damage_upgrade value = " + string(damage_upgrade));
+
 global.ship.slot[owner_id.owner_id].damage += damage_upgrade;
 
-/*
-if owner_id
-
-else
-{
-    // Display dialog message that maximum has been reached
-}
-
-*/
+show_debug_message("new gun damage = " + string(global.ship.slot[owner_id.owner_id].damage));
+// Try to update the value in the purchased list here
+// get the element index in the purchased list to update it....
+show_debug_message("get index in the purchased list: " + string(find_purchased_weapon_id(owner_id.owner_id)));
+global.current_player.purchased[find_purchased_weapon_id(owner_id.owner_id), 2] 
+    = global.ship.slot[owner_id.owner_id].damage;
 </string>
           </argument>
         </arguments>

@@ -170,6 +170,8 @@ if (global.Iron - total_price) &gt;= 0
         // BACKUP: global.current_player.purchased[array_length_1d(global.current_player.purchased)] = gun;    
         global.current_player.purchased[last_in_array, 0] = gun;
         global.current_player.purchased[last_in_array, 1] = asset_get_index(gun).ammo;        
+        global.current_player.purchased[last_in_array, 2] = asset_get_index(gun).damage;        
+        
         //global.current_player.purchased[array_height_2d(global.current_player.purchased), 1] = global.ship.slot[owner_slot].ammo;        
     }
 
