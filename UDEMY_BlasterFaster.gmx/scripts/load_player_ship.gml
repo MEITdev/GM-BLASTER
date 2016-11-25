@@ -53,7 +53,7 @@ if file_exists(file_name)
             
             if object_get_parent(global.ship.slot[i].object_index) != o_parent_power_gun
             {
-                global.ship.slot[i].ammo = ini_read_real("slots", string(i) + "_ammo", 0);
+                //global.ship.slot[i].ammo = ini_read_real("slots", string(i) + "_ammo", 0);
                 
                 // this will not work as the damage is stored in the player save file
                 // in the section of purchased weapons...
@@ -61,13 +61,14 @@ if file_exists(file_name)
             }
             global.ship.slot[i].gun_slot_id = i;
             
-            is_owned = false;
+            //is_owned = false;
+            
             // check if the attached gun is already purchased, if so, update the damage and ammo from the player file
             for (j = 0; j < array_height_2d(global.current_player.purchased); j+=1)
             {
                 if object_get_name(global.ship.slot[i].object_index) == global.current_player.purchased[i, 0]
                 {
-                    is_owned = true;
+                    
                     global.ship.slot[i].ammo = global.current_player.purchased[j, 1];
                     global.ship.slot[i].damage = global.current_player.purchased[j, 2];
                     
@@ -75,9 +76,6 @@ if file_exists(file_name)
             }
         }
 
-        
-        
-        
         ini_close();   
     
     // now that all is loaded, we can go to the mothership room (ship upgrade room)
@@ -89,3 +87,16 @@ else
 {
     create_default_ship();
 }
+
+
+            // TEST - list the purchased list here
+    for (i=0; i<array_height_2d(global.current_player.purchased); i+=1)
+    {
+        show_debug_message("name: " + string(global.current_player.purchased[i, 0]));        
+        show_debug_message("ammo: " + string(global.current_player.purchased[i, 1]));
+        show_debug_message("damage: " + string(global.current_player.purchased[i, 2]));
+        show_debug_message("name_gun: " + string(object_get_name(global.ship.slot[i].object_index)));
+        show_debug_message("ammo_gun: " + string(global.ship.slot[i].ammo));
+        show_debug_message("damage_gun: " + string(global.ship.slot[i].damage));  
+    };
+

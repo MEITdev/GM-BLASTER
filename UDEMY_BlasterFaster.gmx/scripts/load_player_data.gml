@@ -44,7 +44,8 @@ if file_exists(file_name)
         global.current_player.purchased[i, 0] = ini_read_string("purchased", string(i), "");
         global.current_player.purchased[i, 1] = ini_read_real("purchased", string(i) + "_ammo", 0);
         global.current_player.purchased[i, 2] = ini_read_real("purchased", string(i) + "_damage", 0);
-    }
+        
+    }    
     
     global.CompletedMissions = ini_read_real("missions", "last_completed", 0);
     show_debug_message("completed mission: " + string(global.CompletedMissions));
